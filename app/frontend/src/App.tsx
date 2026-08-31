@@ -241,72 +241,34 @@ export function App() {
               </div>
 
               <div className="flex flex-col gap-5">
-                <div>
-                  <span className="ef-label">Grades — click to set the floor</span>
-                  <div className="mt-2 flex flex-wrap gap-1">
-                    {show.grades.map((g, gi) => {
-                      const st =
-                        gi < show.rarity.min_show
-                          ? "off"
-                          : gi < show.rarity.min_highlight
-                            ? "show"
-                            : "beam";
-                      return (
-                        <button
-                          key={g}
-                          className="ef-btn"
-                          style={{
-                            borderColor:
-                              st === "beam"
-                                ? "var(--ef-accent)"
-                                : st === "off"
-                                  ? "var(--ef-line)"
-                                  : "var(--ef-line-2)",
-                            color:
-                              st === "off" ? "var(--ef-ink-4)" : "var(--ef-ink)",
-                            opacity: st === "off" ? 0.5 : 1,
-                          }}
-                          onClick={() => {
-                            // cycle this grade's floor: beam -> show -> off -> beam
-                            setC((prev) => {
-                              const cur =
-                                gi < (prev.rarity_min_show ?? show.rarity.min_show)
-                                  ? "off"
-                                  : gi <
-                                      (prev.rarity_min_highlight ??
-                                        show.rarity.min_highlight)
-                                    ? "show"
-                                    : "beam";
-                              if (cur === "beam")
-                                return { ...prev, rarity_min_highlight: gi + 1 };
-                              if (cur === "show")
-                                return {
-                                  ...prev,
-                                  rarity_min_show: gi + 1,
-                                  rarity_min_highlight: Math.max(
-                                    gi + 1,
-                                    prev.rarity_min_highlight ??
-                                      show.rarity.min_highlight,
-                                  ),
-                                };
-                              return {
-                                ...prev,
-                                rarity_min_show: gi,
-                                rarity_min_highlight: gi,
-                              };
-                            });
-                          }}
-                        >
-                          {g} · {st}
-                        </button>
-                      );
-                    })}
-                  </div>
-                  <p className="ef-mono mt-1 text-[0.625rem] text-ink-4">
-                    off = won&apos;t drop · show = drops, no beam · beam = chase
-                    affixes get a beam
-                  </p>
-                </div>
+                <GradeRow
+                  label="Won't drop below"
+                  grades={show.grades}
+                  value={show.rarity.min_show}
+                  onPick={(gi) => {
+                    setC((prev) => ({
+                      ...prev,
+                      rarity_min_show: gi,
+                      rarity_min_highlight: Math.max(
+                        gi,
+                        prev.rarity_min_highlight ?? show.rarity.min_highlight,
+                      ),
+                    }));
+                  }}
+                />
+                <GradeRow
+                  label="Beam (chase glow) from"
+                  grades={show.grades}
+                  value={show.rarity.min_highlight}
+                  minIdx={show.rarity.min_show}
+                  onPick={(gi) => {
+                    setC((prev) => ({ ...prev, rarity_min_highlight: gi }));
+                  }}
+                />
+                <p className="ef-mono text-[0.625rem] text-ink-4">
+                  below the drop floor an item won&apos;t appear at all · between
+                  the two, chase affixes are visible but not beamed
+                </p>
 
                 <div>
                   <span className="ef-label">Weapon types on the filter</span>
@@ -528,5 +490,50 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
       <span className="ef-label">{label}</span>
       {children}
     </label>
+  );
+}
+
+function GradeRow({
+  label,
+  grades,
+  value,
+  minIdx = 0,
+  onPick,
+}: {
+  label: string;
+  grades: string[];
+  value: number;
+  minIdx?: number;
+  onPick: (gi: number) => void;
+}) {
+  return (
+    <div>
+      <span className="ef-label">{label}</span>
+      <div className="mt-2 flex flex-wrap gap-1">
+        {grades.map((g, gi) => {
+          const disabled = gi < minIdx;
+          return (
+            <button
+              key={g}
+              type="button"
+              className="ef-btn"
+              disabled={disabled}
+              style={
+                gi === value
+                  ? { borderColor: "var(--ef-accent)", color: "var(--ef-accent-ink)" }
+                  : disabled
+                    ? { opacity: 0.3 }
+                    : undefined
+              }
+              onClick={() => {
+                onPick(gi);
+              }}
+            >
+              {g}
+            </button>
+          );
+        })}
+      </div>
+    </div>
   );
 }
