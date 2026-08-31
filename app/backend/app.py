@@ -18,9 +18,9 @@ from fastapi.responses import PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from hsfilter import (ELEMENTS, PLAYSTYLE_LABEL, PLAYSTYLES, STAGE_LABEL, STAGES, WEAPON_GROUPS,
-                      FilterRequest, archetype_research, compile_build, explain,
-                      profile_to_code)
+from hsfilter import (ATTRIBUTE_LABEL, ATTRIBUTES, ELEMENTS, PLAYSTYLE_LABEL, PLAYSTYLES,
+                      STAGE_LABEL, STAGES, WEAPON_GROUPS, FilterRequest, archetype_research,
+                      compile_build, explain, profile_to_code, recommended_attribute)
 from hsfilter.catalog import catalog as build_catalog
 from hsfilter.catalog import known_build_ids, load_build, validate_all
 
@@ -41,6 +41,7 @@ def catalog() -> dict:
     c["archetype_options"] = {
         "elements": ELEMENTS,
         "playstyles": [{"id": p, "label": PLAYSTYLE_LABEL[p]} for p in PLAYSTYLES],
+        "attributes": [{"id": a, "label": ATTRIBUTE_LABEL[a]} for a in ATTRIBUTES],
         "stages": [{"id": s, "label": STAGE_LABEL[s]} for s in STAGES],
         "weapon_groups": WEAPON_GROUPS,
     }
@@ -57,6 +58,8 @@ class Overrides(BaseModel):
     element: str
     playstyle: str
     stage: str
+    attribute: str | None = None      # damage attribute; None = shape default
+    explosion: bool = False           # does the build scale explosion skills
     item_rarity_min: int | None = Field(None, ge=0, le=4)   # hide items below this rarity
     grade_show_min: int | None = Field(None, ge=0, le=4)    # suppress affix rolls below this grade
     grade_beam_min: int | None = Field(None, ge=0, le=4)    # beam chase affixes at/above this grade
@@ -67,10 +70,12 @@ class Overrides(BaseModel):
 
 
 def _archetype_profile(element: str, playstyle: str, stage: str,
+                       attribute: str | None = None, explosion: bool = False,
                        ov: Overrides | None = None):
     from hsfilter import ALL_IDS
     try:
-        p = compile_build(archetype_research(element, playstyle, stage))
+        p = compile_build(archetype_research(element, playstyle, stage,
+                                             attribute, explosion))
     except ValueError as e:
         raise HTTPException(422, f"bad archetype: {e}")
     if ov is None:
@@ -104,7 +109,17 @@ def _archetype_profile(element: str, playstyle: str, stage: str,
     return p
 
 
-def _explain_payload(p) -> dict:
+def _archetype(element: str, playstyle: str, stage: str, ov: Overrides | None = None):
+    """Compile + return (profile, effective_attribute, effective_explosion)."""
+    attr = (ov.attribute if ov and ov.attribute else
+            recommended_attribute(element, playstyle))
+    expl = bool(ov.explosion) if ov else False
+    p = _archetype_profile(element, playstyle, stage,
+                           ov.attribute if ov else None, expl, ov)
+    return p, attr, expl
+
+
+def _explain_payload(p, attribute: str | None = None, explosion: bool = False) -> dict:
     from hsfilter import NAME, STATS
     why = p.__dict__.get("_why", {})
     hi, hd = set(p.highlight), set(p.hide)
@@ -115,6 +130,7 @@ def _explain_payload(p) -> dict:
         "id": p.id, "name": p.name, "notes": p.notes,
         "grades": _GRADE,
         "rarities": _RARITY,
+        "archetype": {"attribute": attribute, "explosion": explosion},
         "weapon_types": WEAPON_TYPES,
         "rarity": {
             "item_min": p.item_rarity_min,
@@ -140,12 +156,13 @@ def _explain_payload(p) -> dict:
 
 @app.get("/api/archetype/{element}/{playstyle}/{stage}/explain")
 def archetype_explain(element: str, playstyle: str, stage: str) -> dict:
-    return _explain_payload(_archetype_profile(element, playstyle, stage))
+    p, attr, expl = _archetype(element, playstyle, stage)
+    return _explain_payload(p, attr, expl)
 
 
 @app.get("/api/archetype/{element}/{playstyle}/{stage}/filter", response_class=PlainTextResponse)
 def archetype_filter(element: str, playstyle: str, stage: str):
-    p = _archetype_profile(element, playstyle, stage)
+    p, _, _ = _archetype(element, playstyle, stage)
     return PlainTextResponse(profile_to_code(p), headers={
         "Content-Disposition": f'attachment; filename="lootfilter_{p.id}.txt"',
     })
@@ -153,12 +170,13 @@ def archetype_filter(element: str, playstyle: str, stage: str):
 
 @app.post("/api/archetype/explain")
 def archetype_explain_custom(ov: Overrides) -> dict:
-    return _explain_payload(_archetype_profile(ov.element, ov.playstyle, ov.stage, ov))
+    p, attr, expl = _archetype(ov.element, ov.playstyle, ov.stage, ov)
+    return _explain_payload(p, attr, expl)
 
 
 @app.post("/api/archetype/filter", response_class=PlainTextResponse)
 def archetype_filter_custom(ov: Overrides):
-    p = _archetype_profile(ov.element, ov.playstyle, ov.stage, ov)
+    p, _, _ = _archetype(ov.element, ov.playstyle, ov.stage, ov)
     return PlainTextResponse(profile_to_code(p), headers={
         "Content-Disposition": f'attachment; filename="lootfilter_{p.id}_custom.txt"',
     })

@@ -25,6 +25,7 @@ export interface Catalog {
   archetype_options: {
     elements: string[];
     playstyles: { id: string; label: string }[];
+    attributes: { id: string; label: string }[];
     stages: { id: string; label: string }[];
     weapon_groups: Record<string, number[]>;
   };
@@ -46,6 +47,7 @@ export interface Explain {
   notes: string;
   grades: string[];
   rarities: string[];
+  archetype: { attribute: string | null; explosion: boolean };
   weapon_types: string[];
   rarity: {
     item_min: number;
@@ -68,6 +70,8 @@ export interface Overrides {
   element: string;
   playstyle: string;
   stage: string;
+  attribute?: string | null;
+  explosion?: boolean;
   item_rarity_min?: number;
   grade_show_min?: number;
   grade_beam_min?: number;
@@ -117,13 +121,15 @@ export async function downloadFilter(buildId: string): Promise<void> {
 }
 
 export const downloadArchetype = (ov: Overrides, custom: boolean) => {
-  const name = `lootfilter_generic_${ov.element}_${ov.playstyle}_${ov.stage}${custom ? "_custom" : ""}.txt`;
-  const req = custom
-    ? fetch("/api/archetype/filter", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(ov),
-      })
-    : fetch(`/api/archetype/${ov.element}/${ov.playstyle}/${ov.stage}/filter`);
+  const a = ov.attribute ? `_${ov.attribute.slice(0, 3)}` : "";
+  const x = ov.explosion ? "_expl" : "";
+  const name = `lootfilter_generic_${ov.element}_${ov.playstyle}${a}${x}_${ov.stage}${
+    custom ? "_custom" : ""
+  }.txt`;
+  const req = fetch("/api/archetype/filter", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(ov),
+  });
   return req.then((r) => saveBlob(r, name));
 };

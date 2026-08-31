@@ -9,7 +9,6 @@ import {
   type Explain,
   type Overrides,
   downloadArchetype,
-  getArchetypeExplain,
   getArchetypeExplainCustom,
   getCatalog,
 } from "@/api";
@@ -50,8 +49,16 @@ export function App() {
 
   const [flavor, setFlavor] = useState("");
   const [play, setPlay] = useState("");
+  const [attr, setAttr] = useState(""); // "" = shape default
+  const [explosion, setExplosion] = useState(false);
   const [stage, setStage] = useState("nightmare");
   const [c, setC] = useState<Custom>(EMPTY);
+
+  const resetBuild = () => {
+    setAttr("");
+    setExplosion(false);
+    setC(EMPTY);
+  };
 
   const [q, setQ] = useState("");
   const [filter, setFilter] = useState<"all" | "highlight" | "dim" | "neutral">("all");
@@ -71,6 +78,8 @@ export function App() {
       element: flavor,
       playstyle: play,
       stage,
+      attribute: attr || null,
+      explosion,
       item_rarity_min: c.item_rarity_min,
       grade_show_min: c.grade_show_min,
       grade_beam_min: c.grade_beam_min,
@@ -79,16 +88,18 @@ export function App() {
       force_hide: c.force_hide,
       force_neutral: c.force_neutral,
     }),
-    [flavor, play, stage, c],
+    [flavor, play, stage, attr, explosion, c],
   );
   const key =
-    flavor && play ? `generic_${flavor}_${play}_${stage}::${custom ? JSON.stringify(c) : ""}` : "";
+    flavor && play
+      ? `generic_${flavor}_${play}_${stage}::${attr}:${explosion ? "x" : ""}:${custom ? JSON.stringify(c) : ""}`
+      : "";
   const baseId = flavor && play ? `generic_${flavor}_${play}_${stage}` : "";
 
   useEffect(() => {
     if (!flavor || !play) return;
     let live = true;
-    const p = custom ? getArchetypeExplainCustom(ov) : getArchetypeExplain(flavor, play, stage);
+    const p = getArchetypeExplainCustom(ov);
     p.then((x) => {
       if (live) setExplain(x);
     }).catch((e: unknown) => {
@@ -171,7 +182,7 @@ export function App() {
                 value={flavor}
                 onChange={(e) => {
                   setFlavor(e.target.value);
-                  setC(EMPTY);
+                  resetBuild();
                 }}
               >
                 <option value="">—</option>
@@ -189,7 +200,7 @@ export function App() {
                 disabled={!flavor}
                 onChange={(e) => {
                   setPlay(e.target.value);
-                  setC(EMPTY);
+                  resetBuild();
                 }}
               >
                 <option value="">—</option>
@@ -207,7 +218,6 @@ export function App() {
                 disabled={!play}
                 onChange={(e) => {
                   setStage(e.target.value);
-                  setC(EMPTY);
                 }}
               >
                 {(opts?.stages ?? []).map((s) => (
@@ -218,6 +228,68 @@ export function App() {
               </select>
             </Field>
           </div>
+
+          {flavor && play ? (
+            <div className="mt-4 flex flex-wrap items-end gap-x-8 gap-y-4">
+              <div>
+                <span className="ef-label">
+                  Main attribute
+                  {attr === "" && show ? (
+                    <span className="text-ink-4"> · default {show.archetype.attribute}</span>
+                  ) : null}
+                </span>
+                <div className="mt-2 flex flex-wrap gap-1">
+                  <button
+                    type="button"
+                    className="ef-btn"
+                    style={
+                      attr === ""
+                        ? { borderColor: "var(--ef-accent)", color: "var(--ef-accent-ink)" }
+                        : undefined
+                    }
+                    onClick={() => {
+                      setAttr("");
+                    }}
+                  >
+                    auto
+                  </button>
+                  {(opts?.attributes ?? []).map((a) => {
+                    const on = attr === a.id || (attr === "" && show?.archetype.attribute === a.id);
+                    return (
+                      <button
+                        key={a.id}
+                        type="button"
+                        className="ef-btn"
+                        style={
+                          on
+                            ? {
+                                borderColor: "var(--ef-accent)",
+                                color: attr === a.id ? "var(--ef-accent-ink)" : undefined,
+                              }
+                            : undefined
+                        }
+                        onClick={() => {
+                          setAttr(a.id);
+                        }}
+                      >
+                        {a.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+              <label className="flex cursor-pointer items-center gap-2 pb-1.5">
+                <input
+                  type="checkbox"
+                  checked={explosion}
+                  onChange={(e) => {
+                    setExplosion(e.target.checked);
+                  }}
+                />
+                <span className="ef-label">Scales explosion skills</span>
+              </label>
+            </div>
+          ) : null}
         </section>
 
         {show ? (

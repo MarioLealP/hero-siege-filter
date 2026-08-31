@@ -62,6 +62,9 @@ def compile_build(research: Research | dict) -> Profile:
     is_caster = not is_minion and (
         "cast" in delivery or (el in E_SKILLS and not is_attacker)
     )
+    # "spell-scaled" = damage comes from skill damage, not weapon phys: any caster,
+    # or an attacker the player has explicitly told us scales Intelligence.
+    spell_scaled = is_caster or (not is_minion and pa == "intelligence")
 
     # A. baseline
     c.set([201, 51, 52, 53, 54, 173, 174, 161, 162, 170, 25, 288, 26],
@@ -95,14 +98,18 @@ def compile_build(research: Research | dict) -> Profile:
         c.set(list(E_MAXRES.values()) + [174, 152], "highlight", "endgame: max resists / pen")
     early = phase == "lvl"
 
-    # C. attribute
+    # C. attribute — the picked damage attribute always wins; the other two are
+    #    hidden unless a mechanic still needs them. This lets e.g. an Int-scaled
+    #    lightning-melee Amazon keep Int highlighted even though it's an attacker.
     if pa in ATTR:
         c.set(list(ATTR[pa]), "highlight", f"primary attr {pa}")
     c.set(list(ATTR["vitality"]), "highlight", "life")
-    if is_caster or (is_minion and pa == "intelligence"):
-        c.set(list(ATTR["energy"]), "highlight", "spellcaster mana")
-        c.set(list(ATTR["strength"]) + list(ATTR["dexterity"]), "hide", "no str/dex")
-    if is_attacker and not is_caster:
+    if spell_scaled:
+        c.set(list(ATTR["energy"]), "highlight", "spell scaling: mana")
+        for a in ("strength", "dexterity"):
+            if a != pa:
+                c.set(list(ATTR[a]), "hide", "spell scaling: no str/dex")
+    if is_attacker and pa != "intelligence":
         c.set(list(ATTR["intelligence"]), "hide", "attacker: no int")
     if r.defense_model not in ("shield_block", "hybrid") and pa != "armor":
         c.set(list(ATTR["armor"]), "hide", "armor attr unused")
@@ -128,7 +135,7 @@ def compile_build(research: Research | dict) -> Profile:
         for e in els:
             if e in E_SD_FLAT:
                 c.set([E_SD_FLAT[e], E_SD_PCT[e]], "highlight", f"{e} skill damage")
-        if is_caster:
+        if spell_scaled:
             c.set([101, 153], "highlight", "generic magic/elemental skill damage")
         for e, sid in E_SD_FLAT.items():
             if e not in els:

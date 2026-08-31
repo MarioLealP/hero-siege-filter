@@ -7,10 +7,16 @@ canonical skill.
 """
 from __future__ import annotations
 
+from typing import Any
+
 from .models import Research
 
 ELEMENTS = ["physical", "fire", "cold", "lightning", "arcane", "poison"]
 PLAYSTYLES = ["melee", "ranged", "caster", "summon", "sentry"]
+# damage attributes the user can pick (Amazon lightning-melee scales Int, etc.)
+ATTRIBUTES = ["strength", "dexterity", "intelligence"]
+ATTRIBUTE_LABEL = {"strength": "Strength", "dexterity": "Dexterity",
+                   "intelligence": "Intelligence"}
 # difficulty brackets, mirroring the game's own loot-filter presets
 STAGES = ["normal", "nightmare", "hell1", "hell3", "hell5"]
 STAGE_LABEL = {
@@ -54,7 +60,7 @@ def _wtc(playstyle: str) -> int:
     return sum(1 << _WEP[w] for w in _WEAPON_SET[playstyle])
 
 
-_SHAPE = {
+_SHAPE: dict[str, dict[str, Any]] = {
     "melee": dict(delivery=["attack", "melee"], attr_phys="strength",
                   crit="optional", defense="hybrid", cd=False),
     "ranged": dict(delivery=["attack", "projectile"], attr_phys="dexterity",
@@ -68,20 +74,30 @@ _SHAPE = {
 }
 
 
-def archetype_research(element: str, playstyle: str, stage: str) -> Research:
+def recommended_attribute(element: str, playstyle: str) -> str:
+    """The default damage attribute for a shape, before the user overrides it."""
+    s = _SHAPE[playstyle]
+    if element == "physical" or playstyle in ("melee", "ranged"):
+        return s["attr_phys"]
+    return "intelligence"
+
+
+def archetype_research(element: str, playstyle: str, stage: str,
+                       attribute: str | None = None,
+                       explosion: bool = False) -> Research:
     if element not in ELEMENTS:
         raise ValueError(element)
     if playstyle not in PLAYSTYLES:
         raise ValueError(playstyle)
     if stage not in STAGES:
         raise ValueError(stage)
+    if attribute is not None and attribute not in ATTRIBUTES:
+        raise ValueError(f"attribute {attribute!r}")
     s = _SHAPE[playstyle]
 
-    # attribute: physical flavour -> the playstyle's phys attribute;
-    # elemental flavour on an attack playstyle still scales the phys attribute
-    # (weapon hits), casters/minions scale Intelligence.
-    attr = s["attr_phys"] if element == "physical" or playstyle in ("melee", "ranged") \
-        else "intelligence"
+    # attribute: the user's pick wins; otherwise fall back to the shape default
+    # (physical / weapon playstyles -> str/dex, spell playstyles -> int).
+    attr = attribute or recommended_attribute(element, playstyle)
 
     caster_like = playstyle in ("caster", "summon", "sentry")
     scaling = ["all_skills", f"{element}_skills"]
@@ -103,16 +119,23 @@ def archetype_research(element: str, playstyle: str, stage: str) -> Research:
     scaling += ["primary_attribute", "all_attributes",
                 f"ignore_{element}_resist", "ignore_all_resist"]
 
+    delivery = list(s["delivery"])
+    if explosion:
+        delivery.append("explosion")
+        scaling += ["explosion_skills", "explosion_damage", "explosion_aoe"]
+
+    attr_suffix = "" if attribute is None else f" ({ATTRIBUTE_LABEL[attr][:3]})"
     return Research.model_validate({
         "wtc": _wtc(playstyle) if stage == "hell5" else None,
         "id": f"generic_{element}_{playstyle}_{stage}",
-        "name": f"{element.capitalize()} {PLAYSTYLE_LABEL[playstyle]} — {stage.capitalize()}",
+        "name": (f"{element.capitalize()} {PLAYSTYLE_LABEL[playstyle]}{attr_suffix}"
+                 f"{' + explosion' if explosion else ''} — {stage.capitalize()}"),
         "class": "Generic",
         "tree": "—",
         "main_skills": [f"{element} {playstyle}"],
         "element": element,
         "splash_element": None,
-        "delivery": s["delivery"],
+        "delivery": delivery,
         "primary_attribute": attr,
         "cooldown_based": s["cd"],
         "aoe": True,
