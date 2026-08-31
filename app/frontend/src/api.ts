@@ -27,12 +27,18 @@ export interface StatLine {
   name: string;
   why: string | null;
 }
+export type StatState = "highlight" | "dim" | "neutral";
+export interface StatRow extends StatLine {
+  col: number;
+  state: StatState;
+}
 export interface Explain {
   id: string;
   name: string;
   notes: string;
   highlight: StatLine[];
   hide: StatLine[];
+  stats: StatRow[];
 }
 
 async function j<T>(url: string, init?: RequestInit): Promise<T> {

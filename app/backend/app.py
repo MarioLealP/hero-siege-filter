@@ -51,16 +51,26 @@ def _archetype_profile(element: str, playstyle: str, stage: str):
         raise HTTPException(422, f"bad archetype: {e}")
 
 
-@app.get("/api/archetype/{element}/{playstyle}/{stage}/explain")
-def archetype_explain(element: str, playstyle: str, stage: str) -> dict:
-    from hsfilter import NAME
-    p = _archetype_profile(element, playstyle, stage)
+def _explain_payload(p) -> dict:
+    from hsfilter import NAME, STATS
     why = p.__dict__.get("_why", {})
+    hi, hd = set(p.highlight), set(p.hide)
+    state = {i: ("highlight" if i in hi else "dim" if i in hd else "neutral") for i in NAME}
     return {
         "id": p.id, "name": p.name, "notes": p.notes,
         "highlight": [{"id": i, "name": NAME[i], "why": why.get(i)} for i in p.highlight],
         "hide": [{"id": i, "name": NAME[i], "why": why.get(i)} for i in p.hide],
+        "stats": [
+            {"id": i, "name": NAME[i], "col": STATS[str(i)]["col"],
+             "state": state[i], "why": why.get(i)}
+            for i in sorted(NAME, key=lambda x: (STATS[str(x)]["col"], NAME[x]))
+        ],
     }
+
+
+@app.get("/api/archetype/{element}/{playstyle}/{stage}/explain")
+def archetype_explain(element: str, playstyle: str, stage: str) -> dict:
+    return _explain_payload(_archetype_profile(element, playstyle, stage))
 
 
 @app.get("/api/archetype/{element}/{playstyle}/{stage}/filter", response_class=PlainTextResponse)
@@ -96,16 +106,7 @@ def make_filter(req: FilterRequest):
 def explain_filter(build_id: str) -> dict:
     if build_id not in known_build_ids():
         raise HTTPException(404, f"unknown build: {build_id}")
-    profile = compile_build(load_build(build_id))
-    why = profile.__dict__.get("_why", {})
-    from hsfilter import NAME
-    return {
-        "id": profile.id,
-        "name": profile.name,
-        "notes": profile.notes,
-        "highlight": [{"id": i, "name": NAME[i], "why": why.get(i)} for i in profile.highlight],
-        "hide": [{"id": i, "name": NAME[i], "why": why.get(i)} for i in profile.hide],
-    }
+    return _explain_payload(compile_build(load_build(build_id)))
 
 
 if STATIC_DIR.is_dir():

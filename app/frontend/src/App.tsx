@@ -29,6 +29,9 @@ export function App() {
   const [play, setPlay] = useState("");
   const [stage, setStage] = useState("leveling");
 
+  const [q, setQ] = useState("");
+  const [filter, setFilter] = useState<"all" | "highlight" | "dim" | "neutral">("all");
+
   useEffect(() => {
     getCatalog().then(setCatalog).catch((e: unknown) => {
       setErr(String(e));
@@ -176,10 +179,66 @@ export function App() {
 
             <p className="ef-mono mt-4 text-xs text-ink-3">{show.notes}</p>
 
-            <div className="mt-6 grid gap-8 lg:grid-cols-2">
-              <StatList title="Highlight" accent="green" lines={show.highlight} />
-              <StatList title="Dim" accent="ink-4" lines={show.hide} />
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <input
+                className="ef-input flex-1"
+                style={{ minWidth: "12rem" }}
+                placeholder="search 167 stats…"
+                value={q}
+                onChange={(e) => {
+                  setQ(e.target.value);
+                }}
+              />
+              {(["all", "highlight", "dim", "neutral"] as const).map((f) => (
+                <button
+                  key={f}
+                  className="ef-btn"
+                  aria-pressed={filter === f}
+                  data-on={filter === f ? "" : undefined}
+                  style={filter === f ? { borderColor: "var(--ef-accent)", color: "var(--ef-accent-ink)" } : undefined}
+                  onClick={() => {
+                    setFilter(f);
+                  }}
+                >
+                  {f}
+                </button>
+              ))}
             </div>
+
+            <ul className="mt-4 flex flex-col">
+              {show.stats
+                .filter((s) => filter === "all" || s.state === filter)
+                .filter((s) => s.name.toLowerCase().includes(q.toLowerCase()))
+                .map((s) => (
+                  <li
+                    key={s.id}
+                    className="flex items-baseline gap-2 border-b border-line py-1.5"
+                  >
+                    <span
+                      className="ef-diamond mt-1.5 shrink-0"
+                      data-active={s.state === "highlight" ? "" : undefined}
+                      style={
+                        s.state === "dim"
+                          ? { opacity: 0.3 }
+                          : s.state === "neutral"
+                            ? { opacity: 0.55 }
+                            : undefined
+                      }
+                    />
+                    <span
+                      className="text-sm"
+                      style={{ color: s.state === "dim" ? "var(--ef-ink-4)" : "var(--ef-ink)" }}
+                    >
+                      {s.name}
+                    </span>
+                    <span className="ef-mono ml-2 text-[0.5625rem] text-ink-4">
+                      {s.state === "highlight" ? "◆ glow" : s.state === "dim" ? "· dim" : "  —"}
+                    </span>
+                    <span className="flex-1" />
+                    <span className="ef-mono text-[0.625rem] text-ink-4">{s.why}</span>
+                  </li>
+                ))}
+            </ul>
 
             <details className="mt-6">
               <summary className="ef-label cursor-pointer">How to import</summary>
@@ -207,39 +266,3 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
   );
 }
 
-function StatList({
-  title,
-  accent,
-  lines,
-}: {
-  title: string;
-  accent: string;
-  lines: Explain["highlight"];
-}) {
-  return (
-    <div>
-      <div className="ef-sec-head mb-3">
-        <span className="ef-idx" style={{ color: `var(--ef-${accent})` }}>
-          {lines.length.toString().padStart(2, "0")}
-        </span>
-        <h2>{title}</h2>
-      </div>
-      <ul className="flex flex-col">
-        {lines.map((l) => (
-          <li
-            key={l.id}
-            className="flex items-baseline gap-2 border-b border-line py-1.5"
-          >
-            <span
-              className="ef-diamond mt-1.5 shrink-0"
-              data-active={accent === "green" ? "" : undefined}
-            />
-            <span className="text-sm text-ink">{l.name}</span>
-            <span className="flex-1" />
-            <span className="ef-mono text-[0.625rem] text-ink-4">{l.why}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}

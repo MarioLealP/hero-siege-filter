@@ -53,10 +53,15 @@ def compile_build(research: Research | dict) -> Profile:
     defprio = r.defense_priority
     pa = r.primary_attribute.value
 
-    is_caster = "cast" in delivery or (el in E_SKILLS and "attack" not in delivery)
     is_attacker = "attack" in delivery or "melee" in delivery
     is_summon = "summon" in delivery
     is_sentry = "sentry" in delivery
+    is_minion = is_summon or is_sentry
+    # a summon/sentry build isn't a "caster" for stat purposes even if you cast
+    # the minion — the minion's own stat block carries the damage.
+    is_caster = not is_minion and (
+        "cast" in delivery or (el in E_SKILLS and not is_attacker)
+    )
 
     # A. baseline
     c.set([201, 51, 52, 53, 54, 173, 174, 161, 162, 170, 25, 288, 26],
@@ -90,15 +95,15 @@ def compile_build(research: Research | dict) -> Profile:
     if pa in ATTR:
         c.set(list(ATTR[pa]), "highlight", f"primary attr {pa}")
     c.set(list(ATTR["vitality"]), "highlight", "life")
-    if is_caster:
-        c.set(list(ATTR["energy"]), "highlight", "caster mana")
-        c.set(list(ATTR["strength"]) + list(ATTR["dexterity"]), "hide", "caster: no str/dex")
+    if is_caster or (is_minion and pa == "intelligence"):
+        c.set(list(ATTR["energy"]), "highlight", "spellcaster mana")
+        c.set(list(ATTR["strength"]) + list(ATTR["dexterity"]), "hide", "no str/dex")
     if is_attacker and not is_caster:
         c.set(list(ATTR["intelligence"]), "hide", "attacker: no int")
     if r.defense_model not in ("shield_block", "hybrid") and pa != "armor":
         c.set(list(ATTR["armor"]), "hide", "armor attr unused")
 
-    # D. skills
+    # D. skills — +element / +All raise the minion's skill level too, so keep
     for e in els:
         c.set(E_SKILLS[e], "highlight", f"+{e} skills")
     for e, sid in E_SKILLS.items():
@@ -110,15 +115,25 @@ def compile_build(research: Research | dict) -> Profile:
         c.set(419, "highlight", "sub skills")
     c.set(112, "highlight" if "explosion" in delivery else "hide", "explosion skills")
 
-    # E. skill damage
-    for e in els:
-        if e in E_SD_FLAT:
-            c.set([E_SD_FLAT[e], E_SD_PCT[e]], "highlight", f"{e} skill damage")
-    if is_caster:
-        c.set([101, 153], "highlight", "generic magic/elemental skill damage")
-    for e, sid in E_SD_FLAT.items():
-        if e not in els:
-            c.set([sid, E_SD_PCT[e]], "hide", "off-element skill damage")
+    # E. offense — minions have their own block; casters/attackers scale personally
+    if is_summon:
+        c.set(SUMMON_BLOCK, "highlight", "summoner: summon stat block")
+    if is_sentry:
+        c.set(SENTRY_BLOCK, "highlight", "sentry: sentry stat block")
+    if not is_minion:
+        for e in els:
+            if e in E_SD_FLAT:
+                c.set([E_SD_FLAT[e], E_SD_PCT[e]], "highlight", f"{e} skill damage")
+        if is_caster:
+            c.set([101, 153], "highlight", "generic magic/elemental skill damage")
+        for e, sid in E_SD_FLAT.items():
+            if e not in els:
+                c.set([sid, E_SD_PCT[e]], "hide", "off-element skill damage")
+    else:
+        # personal skill damage does little for minion hits — off-element stays hidden
+        for e, sid in E_SD_FLAT.items():
+            if e not in els:
+                c.set([sid, E_SD_PCT[e]], "hide", "minion: off-element noise")
 
     # F. weapon / additive
     if is_attacker and not is_caster:
@@ -127,13 +142,13 @@ def compile_build(research: Research | dict) -> Profile:
             if e in E_ADD:
                 c.set(E_ADD[e], "highlight", f"additive {e}")
     else:
-        c.set(PHYS_WEAPON, "hide", "caster: no weapon phys")
+        c.set(PHYS_WEAPON, "hide", "no weapon attacks")
         for e in els:
-            if e in E_ADD and "additive_element" in scaling:
+            if e in E_ADD and "additive_element" in scaling and not is_minion:
                 c.set(E_ADD[e], "highlight", f"additive {e} (build uses it)")
         for e, sid in E_ADD.items():
-            if e not in els:
-                c.set(sid, "hide", "off-element additive")
+            if e not in els or is_minion:
+                c.set(sid, "hide", "additive weapon damage — off/unused")
 
     # G. attack mechanics
     if is_attacker and not is_caster:
