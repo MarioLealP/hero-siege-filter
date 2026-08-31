@@ -18,7 +18,7 @@ from fastapi.responses import PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from hsfilter import (ELEMENTS, PLAYSTYLE_LABEL, PLAYSTYLES, STAGE_LABEL, STAGES,
+from hsfilter import (ELEMENTS, PLAYSTYLE_LABEL, PLAYSTYLES, STAGE_LABEL, STAGES, WEAPON_GROUPS,
                       FilterRequest, archetype_research, compile_build, explain,
                       profile_to_code)
 from hsfilter.catalog import catalog as build_catalog
@@ -42,6 +42,7 @@ def catalog() -> dict:
         "elements": ELEMENTS,
         "playstyles": [{"id": p, "label": PLAYSTYLE_LABEL[p]} for p in PLAYSTYLES],
         "stages": [{"id": s, "label": STAGE_LABEL[s]} for s in STAGES],
+        "weapon_groups": WEAPON_GROUPS,
     }
     return c
 

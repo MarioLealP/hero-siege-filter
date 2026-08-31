@@ -19,6 +19,7 @@ export interface Catalog {
     elements: string[];
     playstyles: { id: string; label: string }[];
     stages: { id: string; label: string }[];
+    weapon_groups: Record<string, number[]>;
   };
 }
 

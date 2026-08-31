@@ -311,6 +311,39 @@ export function App() {
                 <div>
                   <span className="ef-label">Weapon types on the filter</span>
                   <div className="mt-2 flex flex-wrap gap-1">
+                    {Object.entries(opts?.weapon_groups ?? {}).map(
+                      ([name, bits]) => {
+                        const cur =
+                          c.weapons ??
+                          (show.weapon_bits.length === 0
+                            ? show.weapon_types.map((_, i) => i)
+                            : show.weapon_bits);
+                        const active =
+                          cur.length === bits.length &&
+                          bits.every((b) => cur.includes(b));
+                        return (
+                          <button
+                            key={name}
+                            className="ef-btn ef-btn--ghost"
+                            style={
+                              active
+                                ? {
+                                    borderColor: "var(--ef-accent)",
+                                    color: "var(--ef-accent-ink)",
+                                  }
+                                : undefined
+                            }
+                            onClick={() => {
+                              setC((prev) => ({ ...prev, weapons: [...bits] }));
+                            }}
+                          >
+                            {name}
+                          </button>
+                        );
+                      },
+                    )}
+                  </div>
+                  <div className="mt-2 flex flex-wrap gap-1">
                     {show.weapon_types.map((w, wi) => {
                       const on =
                         c.weapons !== undefined

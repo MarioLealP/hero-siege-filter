@@ -40,6 +40,15 @@ _WEAPON_SET = {
     "sentry": ["item", "staff", "cane", "wand", "book"],
 }
 
+# named quick-select groups for the UI (bit positions)
+WEAPON_GROUPS: dict[str, list[int]] = {
+    "all": list(range(18)),
+    "none": [],
+    "melee": sorted(_WEP[w] for w in _WEAPON_SET["melee"]),
+    "ranged": sorted(_WEP[w] for w in _WEAPON_SET["ranged"]),
+    "caster": sorted(_WEP[w] for w in _WEAPON_SET["caster"]),
+}
+
 
 def _wtc(playstyle: str) -> int:
     return sum(1 << _WEP[w] for w in _WEAPON_SET[playstyle])
