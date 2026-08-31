@@ -51,7 +51,7 @@ export function App() {
   const [play, setPlay] = useState("");
   const [attr, setAttr] = useState(""); // "" = shape default
   const [explosion, setExplosion] = useState(false);
-  const [stage, setStage] = useState("nightmare");
+  const [stage, setStage] = useState("");
   const [c, setC] = useState<Custom>(EMPTY);
 
   const resetBuild = () => {
@@ -91,13 +91,13 @@ export function App() {
     [flavor, play, stage, attr, explosion, c],
   );
   const key =
-    flavor && play
+    flavor && play && stage
       ? `generic_${flavor}_${play}_${stage}::${attr}:${explosion ? "x" : ""}:${custom ? JSON.stringify(c) : ""}`
       : "";
-  const baseId = flavor && play ? `generic_${flavor}_${play}_${stage}` : "";
+  const baseId = flavor && play && stage ? `generic_${flavor}_${play}_${stage}` : "";
 
   useEffect(() => {
-    if (!flavor || !play) return;
+    if (!flavor || !play || !stage) return;
     let live = true;
     const p = getArchetypeExplainCustom(ov);
     p.then((x) => {
@@ -220,6 +220,7 @@ export function App() {
                   setStage(e.target.value);
                 }}
               >
+                <option value="">—</option>
                 {(opts?.stages ?? []).map((s) => (
                   <option key={s.id} value={s.id}>
                     {s.label}
