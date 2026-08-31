@@ -11,13 +11,23 @@ v2  (what we WRITE): one line of base64 -> UTF-8 JSON.
     Ints may be serialised with a trailing .0 by the game; we normalise.
     The game auto-converts v2 -> v3 on load, so writing v2 is safe and simplest.
 
-v3  (what the game SAVES): base64( u8 version=3 | u32 decompressed_len | zlib(body) ).
-    body: ffff | u32 ver | u16 flag | u16 slot_count
-          then per slot: u16 rarity_mask | 7x u8 tier_state | u16 entry_count
-                         | entry[ u16 id, u8 rarity, u8 state ] ...
-          slots after the first are prefixed by a u8 slot id.
-    state: 2 = highlight, 1 = hide/dim, 0 = neutral (observed).
-    We only READ v3 (to diff what the game wrote back).
+v3  (what the game SAVES and reads): base64( u8 ver=3 | u32 zlib_len | zlib(body) ).
+    body: ffff | u16 ver=3 | u32 wtc | u8 slot_count
+          then per slot: u8 slotid | u16 pre(0x3f) | 7x u8 tiermask
+                         | u16 entry_count | entry[ u16 affix, u16 packed ] ...
+    Two independent axes:
+      tiermask[g]  (g = affix-grade column D,C,B,A,S) : a 5-bit ITEM-RARITY mask,
+                   bit0 Common .. bit4 Satanic; 1 = that (grade, rarity) cell can
+                   drop. bytes 5-6 spare (0x1f). Zero a whole column to kill that
+                   grade; clear one bit in every column to kill that rarity.
+      packed       : 5 x 2-bit AFFIX-GRADE states, LE (D bits 0-1 .. S bits 8-9);
+                   0 = visible (red), 1 = off (hidden), 2 = beam (yellow glow).
+                   An entry is written only when it differs from all-visible.
+    An item drops iff at least one of its affix-tiers ends up visible or beamed.
+    We both WRITE v3 (encode_v3) and READ it back (Filter.read_v3, for diffing).
+
+Legacy note: the game still loads a v2 base64-JSON blob and upgrades it, but v2
+cannot express the item-rarity axis, so we emit v3 directly now.
 """
 from __future__ import annotations
 import base64
@@ -46,6 +56,60 @@ WEAPON_TYPES = [
 
 def _ints(xs):
     return [int(round(float(x))) for x in xs]
+
+
+# ---- v3 writer -----------------------------------------------------------
+# The filter the game actually reads. Two axes:
+#   rarity_grid[slot] : 5 bytes, one per affix-grade column D..S; each a 5-bit
+#                       item-rarity mask (bit0 Common .. bit4 Satanic). 1 = the
+#                       (grade, rarity) cell is visible on the ground.
+#   affixes[slot][id] : 5 ints, one per grade D..S; 0 visible / 1 hidden / 2 beam.
+# An item drops only if >=1 of its affix-tiers ends up visible or beamed.
+
+GRADE_STATE_VISIBLE = 0
+GRADE_STATE_OFF = 1
+GRADE_STATE_BEAM = 2
+
+
+def rarity_grid(item_rarity_min: int = 0, grade_show_min: int = 0) -> list[int]:
+    """The 5 affix-grade columns (D..S) of a slot's tiermask.
+
+    Each column is a 5-bit item-rarity mask (bit0 Common .. bit4 Satanic):
+      - rarities below `item_rarity_min` are cleared (item never drops), and
+      - a whole grade column below `grade_show_min` is zeroed (rolls of that
+        grade are suppressed regardless of item rarity).
+    """
+    rar = 0x1F & ~((1 << max(0, item_rarity_min)) - 1)
+    return [0 if g < grade_show_min else rar for g in range(5)]
+
+
+def encode_v3(
+    slots: dict[str, dict],
+    wtc: int = 0,
+) -> str:
+    """slots: {slot_key: {"rarity_grid": [5 ints], "affixes": {id: [5 ints]},
+                          "sockets": [ints 1..6] | None}}"""
+    body = bytearray(b"\xff\xff")
+    body += struct.pack("<H", 3)
+    body += struct.pack("<I", wtc)
+    keys = [k for k in SLOTS if k in slots]
+    body += struct.pack("<B", len(keys))
+    for k in keys:
+        s = slots[k]
+        body += struct.pack("<B", SLOT_ID[k])
+        body += struct.pack("<H", 0x3F)
+        grid = s.get("rarity_grid") or [0x1F] * 5
+        body += bytes(grid[:5]) + b"\x1f\x1f"
+        ents = []
+        for aid, states in sorted(s.get("affixes", {}).items()):
+            if any(v != 0 for v in states):
+                packed = sum((v & 3) << (2 * g) for g, v in enumerate(states[:5]))
+                ents.append((aid, packed))
+        body += struct.pack("<H", len(ents))
+        for aid, packed in ents:
+            body += struct.pack("<HH", aid, packed)
+    blob = zlib.compress(bytes(body), 9)
+    return base64.b64encode(bytes([3]) + struct.pack("<I", len(blob)) + blob).decode()
 
 
 @dataclass
@@ -117,8 +181,12 @@ class Filter:
     # container : base64( u8 ver=3 | u32 zlib_len | zlib(body) )
     # body      : ffff | u16 ver | u32 wtc | u8 slotcount
     #             then per slot: u8 slotid | u16 pre(0x3f) | 7x u8 tiermask
-    #                            | u16 entcount | entries[ u16 affix, u8 rar, u8 state ]
-    #   state: 2 = highlight (yellow), 1 = visible (red), 0 = hidden
+    #                            | u16 entcount | entries[ u16 affix, u16 packed ]
+    #   tiermask[g] (g = affix-grade column D..S) : 5-bit item-rarity mask,
+    #               bit0 Common .. bit4 Satanic; 1 = that (grade,rarity) cell drops.
+    #               bytes 5-6 are spare (always 0x1f).
+    #   packed : 5 x 2-bit affix-grade states, LE (D at bits 0-1 .. S at 8-9);
+    #            0 = visible (red), 1 = off (hidden), 2 = beam (yellow).
     @staticmethod
     def read_v3(text: str) -> dict:
         d = base64.b64decode(text.strip())
@@ -141,10 +209,13 @@ class Filter:
             off += 2
             entries = []
             for _ in range(ecount):
-                affix, rar, st = struct.unpack_from("<HBB", body, off)
+                affix, packed = struct.unpack_from("<HH", body, off)
                 off += 4
-                entries.append((affix, rar, st))
-            slots[slotid] = {"pre": pre, "tiermask": tiermask.hex(),
+                states = [(packed >> (2 * g)) & 3 for g in range(5)]
+                entries.append((affix, packed, states))
+            slots[slotid] = {"pre": pre,
+                             "tiermask": tiermask.hex(),
+                             "grid": [tiermask[g] for g in range(5)],
                              "entries": entries}
         return {"version": ver, "wtc": wtc, "slots": slots,
                 "consumed": off, "total": len(body)}

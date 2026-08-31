@@ -47,7 +47,8 @@ def catalog() -> dict:
     return c
 
 
-_GRADE = ["Common", "Superior", "Rare", "Mythic", "Satanic"]
+_RARITY = ["Common", "Superior", "Rare", "Mythic", "Satanic"]   # item rarity
+_GRADE = ["D", "C", "B", "A", "S"]                              # affix roll grade
 
 
 class Overrides(BaseModel):
@@ -56,8 +57,9 @@ class Overrides(BaseModel):
     element: str
     playstyle: str
     stage: str
-    rarity_min_show: int | None = Field(None, ge=0, le=4)
-    rarity_min_highlight: int | None = Field(None, ge=0, le=4)
+    item_rarity_min: int | None = Field(None, ge=0, le=4)   # hide items below this rarity
+    grade_show_min: int | None = Field(None, ge=0, le=4)    # suppress affix rolls below this grade
+    grade_beam_min: int | None = Field(None, ge=0, le=4)    # beam chase affixes at/above this grade
     weapons: list[int] | None = None          # weapon-type bit positions, or [] / null
     force_highlight: list[int] = []
     force_hide: list[int] = []
@@ -73,10 +75,14 @@ def _archetype_profile(element: str, playstyle: str, stage: str,
         raise HTTPException(422, f"bad archetype: {e}")
     if ov is None:
         return p
-    if ov.rarity_min_show is not None:
-        p.rarity_min_show = ov.rarity_min_show
-    if ov.rarity_min_highlight is not None:
-        p.rarity_min_highlight = max(ov.rarity_min_highlight, p.rarity_min_show)
+    if ov.item_rarity_min is not None:
+        p.item_rarity_min = ov.item_rarity_min
+    if ov.grade_show_min is not None:
+        p.grade_show_min = ov.grade_show_min
+    if ov.grade_beam_min is not None:
+        p.grade_beam_min = max(ov.grade_beam_min, p.grade_show_min)
+    else:
+        p.grade_beam_min = max(p.grade_beam_min, p.grade_show_min)
     if ov.weapons is not None:
         bad = [b for b in ov.weapons if not 0 <= b <= 17]
         if bad:
@@ -108,13 +114,17 @@ def _explain_payload(p) -> dict:
     return {
         "id": p.id, "name": p.name, "notes": p.notes,
         "grades": _GRADE,
+        "rarities": _RARITY,
         "weapon_types": WEAPON_TYPES,
         "rarity": {
-            "min_show": p.rarity_min_show,
-            "min_highlight": p.rarity_min_highlight,
-            "beam_from": _GRADE[p.rarity_min_highlight],
-            "drop_from": _GRADE[p.rarity_min_show],
-            "suppressed": _GRADE[: p.rarity_min_show],
+            "item_min": p.item_rarity_min,
+            "item_from": _RARITY[p.item_rarity_min],
+            "item_suppressed": _RARITY[: p.item_rarity_min],
+            "grade_show_min": p.grade_show_min,
+            "grade_beam_min": p.grade_beam_min,
+            "show_from": _GRADE[p.grade_show_min],
+            "beam_from": _GRADE[p.grade_beam_min],
+            "grade_suppressed": _GRADE[: p.grade_show_min],
         },
         "weapon_bits": [i for i in range(18) if wtc >> i & 1],
         "weapons": [WEAPON_TYPES[i] for i in range(18) if wtc >> i & 1] or None,

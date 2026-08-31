@@ -111,14 +111,20 @@ class Research(BaseModel):
 
 
 class Profile(BaseModel):
-    """Compiled output: highlight/hide over the 167 stat ids, + a rarity policy.
+    """Compiled output: highlight/hide over the 167 stat ids + two rarity axes.
 
-    rarity_min_highlight / rarity_min_show gate by the item's grade
-    (0=Common .. 4=Satanic):
-      grade >= rarity_min_highlight  -> chase affix is highlighted (yellow beam)
-      grade >= rarity_min_show       -> chase affix is visible (red, item drops)
-      below rarity_min_show          -> chase affix hidden too
-    `hide` affixes are hidden at every grade.
+    Hero Siege's filter has two independent knobs:
+
+    * item rarity (Common / Superior / Rare / Mythic / Satanic) -- what colour
+      the item itself is;
+    * affix grade (D / C / B / A / S) -- how well each individual stat rolled.
+
+    `item_rarity_min` (0 Common .. 4 Satanic) hides items below that rarity.
+    `grade_show_min`  (0 D .. 4 S) suppresses affix rolls below that grade.
+    `grade_beam_min`  (0 D .. 4 S) beams (yellow glow) chase affixes at or above
+                      that grade; between show and beam they are visible only.
+    `hide` affixes are turned off at every grade; `highlight` affixes are the
+    chase list that beams.
     """
     id: str
     name: str
@@ -127,8 +133,9 @@ class Profile(BaseModel):
     soc: int | None = None
     highlight: list[int]
     hide: list[int]
-    rarity_min_highlight: int = 0
-    rarity_min_show: int = 0
+    item_rarity_min: int = 0
+    grade_show_min: int = 0
+    grade_beam_min: int = 0
 
 
 # ---- catalog + API shapes ------------------------------------------------

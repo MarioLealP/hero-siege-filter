@@ -14,7 +14,14 @@ export interface Catalog {
   game_version: string;
   archetypes: string[];
   classes: CatalogClass[];
-  builds: { build_id: string; class: string; skill: string; stage: string; element: string; name: string }[];
+  builds: {
+    build_id: string;
+    class: string;
+    skill: string;
+    stage: string;
+    element: string;
+    name: string;
+  }[];
   archetype_options: {
     elements: string[];
     playstyles: { id: string; label: string }[];
@@ -38,13 +45,17 @@ export interface Explain {
   name: string;
   notes: string;
   grades: string[];
+  rarities: string[];
   weapon_types: string[];
   rarity: {
-    min_show: number;
-    min_highlight: number;
+    item_min: number;
+    item_from: string;
+    item_suppressed: string[];
+    grade_show_min: number;
+    grade_beam_min: number;
+    show_from: string;
     beam_from: string;
-    drop_from: string;
-    suppressed: string[];
+    grade_suppressed: string[];
   };
   weapon_bits: number[];
   weapons: string[] | null;
@@ -57,8 +68,9 @@ export interface Overrides {
   element: string;
   playstyle: string;
   stage: string;
-  rarity_min_show?: number;
-  rarity_min_highlight?: number;
+  item_rarity_min?: number;
+  grade_show_min?: number;
+  grade_beam_min?: number;
   weapons?: number[];
   force_highlight?: number[];
   force_hide?: number[];

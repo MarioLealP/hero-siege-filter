@@ -202,28 +202,36 @@ def compile_build(research: Research | dict) -> Profile:
     hi = sorted(i for i, s in c.state.items() if s == "highlight")
     hd = sorted(i for i, s in c.state.items() if s == "hide")
 
-    # rarity policy — grade 0=Common(D) .. 4=Satanic(S). Brackets mirror the
-    # game's own loot-filter presets (translationsoptions loot_filter_preset_*).
-    rmin_hl, rmin_show = {
+    # rarity policy — two axes:
+    #   item_rarity_min : 0 Common .. 4 Satanic — hide items below this rarity.
+    #   grade_show_min  : 0 D .. 4 S — suppress affix rolls below this grade.
+    #   grade_beam_min  : 0 D .. 4 S — beam chase affixes at/above this grade.
+    # grade_show_min ramps with the difficulty bracket so a low-level character
+    # who can't find high grades still sees the lower ones (Mario's ask).
+    item_min, grade_show_min, grade_beam_min = {
         # legacy 3-stage names
-        "leveling": (0, 0),
-        "maps": (2, 1),
-        "endgame": (3, 2),
+        "leveling": (0, 0, 0),
+        "maps": (1, 0, 2),
+        "endgame": (3, 2, 4),
         # difficulty brackets
-        "normal": (0, 0),       # campaign, ~lv1-70 — grab everything, nothing floored
-        "nightmare": (2, 2),    # ~lv70-100 — Common/Superior rolls hidden, chase Rare+
-        "hell1": (2, 3),        # Hell 1-3, just hit 100 — beam Mythic+, show Rare
-        "hell3": (3, 4),        # Hell 3-5, Incarnation — beam Satanic only, show Mythic
-        "hell5": (3, 4),        # Hell 5+ speedfarm — same + weapon restrict + tighter
+        "normal": (0, 0, 0),      # campaign ~lv1-70 — grab everything
+        "nightmare": (1, 0, 2),   # ~lv70-100 — hide Common items, beam B+ rolls
+        "hell1": (2, 1, 3),       # Hell 1-3, just hit 100 — Rare+ items, hide D, beam A+
+        "hell3": (3, 2, 4),       # Hell 3-5, Incarnation — Mythic+ items, hide D/C, beam S
+        "hell5": (3, 3, 4),       # Hell 5+ speedfarm — Mythic+ items, only B+ rolls, beam S
     }[stage]
 
+    _G = ["D", "C", "B", "A", "S"]
+    _R = ["Common", "Superior", "Rare", "Mythic", "Satanic"]
     notes = (f"{r.class_} / {'+'.join(r.main_skills)} / {stage}. element={el}"
              + (f" splash={splash}" if splash else "")
              + f" delivery={sorted(delivery)}."
-             + f" beam >= grade {rmin_hl}, drop chase >= grade {rmin_show}.")
+             + f" Items {_R[item_min]}+; affix rolls {_G[grade_show_min]}+"
+             + f" ({_G[grade_beam_min]}+ beams).")
     prof = Profile(id=r.id, name=r.name, notes=notes,
                    wtc=r.wtc, soc=None, highlight=hi, hide=hd,
-                   rarity_min_highlight=rmin_hl, rarity_min_show=rmin_show)
+                   item_rarity_min=item_min, grade_show_min=grade_show_min,
+                   grade_beam_min=grade_beam_min)
     prof.__dict__["_why"] = {i: c.why[i] for i in hi + hd}
     return prof
 

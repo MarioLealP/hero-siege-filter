@@ -15,8 +15,9 @@ import {
 } from "@/api";
 
 type Custom = {
-  rarity_min_show?: number;
-  rarity_min_highlight?: number;
+  item_rarity_min?: number;
+  grade_show_min?: number;
+  grade_beam_min?: number;
   weapons?: number[];
   force_highlight: number[];
   force_hide: number[];
@@ -26,8 +27,9 @@ const EMPTY: Custom = { force_highlight: [], force_hide: [], force_neutral: [] }
 
 function isCustom(c: Custom): boolean {
   return (
-    c.rarity_min_show !== undefined ||
-    c.rarity_min_highlight !== undefined ||
+    c.item_rarity_min !== undefined ||
+    c.grade_show_min !== undefined ||
+    c.grade_beam_min !== undefined ||
     c.weapons !== undefined ||
     c.force_highlight.length > 0 ||
     c.force_hide.length > 0 ||
@@ -55,9 +57,11 @@ export function App() {
   const [filter, setFilter] = useState<"all" | "highlight" | "dim" | "neutral">("all");
 
   useEffect(() => {
-    getCatalog().then(setCatalog).catch((e: unknown) => {
-      setErr(String(e));
-    });
+    getCatalog()
+      .then(setCatalog)
+      .catch((e: unknown) => {
+        setErr(String(e));
+      });
   }, []);
 
   const opts = catalog?.archetype_options;
@@ -67,8 +71,9 @@ export function App() {
       element: flavor,
       playstyle: play,
       stage,
-      rarity_min_show: c.rarity_min_show,
-      rarity_min_highlight: c.rarity_min_highlight,
+      item_rarity_min: c.item_rarity_min,
+      grade_show_min: c.grade_show_min,
+      grade_beam_min: c.grade_beam_min,
       weapons: c.weapons,
       force_highlight: c.force_highlight,
       force_hide: c.force_hide,
@@ -77,17 +82,13 @@ export function App() {
     [flavor, play, stage, c],
   );
   const key =
-    flavor && play
-      ? `generic_${flavor}_${play}_${stage}::${custom ? JSON.stringify(c) : ""}`
-      : "";
+    flavor && play ? `generic_${flavor}_${play}_${stage}::${custom ? JSON.stringify(c) : ""}` : "";
   const baseId = flavor && play ? `generic_${flavor}_${play}_${stage}` : "";
 
   useEffect(() => {
     if (!flavor || !play) return;
     let live = true;
-    const p = custom
-      ? getArchetypeExplainCustom(ov)
-      : getArchetypeExplain(flavor, play, stage);
+    const p = custom ? getArchetypeExplainCustom(ov) : getArchetypeExplain(flavor, play, stage);
     p.then((x) => {
       if (live) setExplain(x);
     }).catch((e: unknown) => {
@@ -100,7 +101,8 @@ export function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]);
 
-  const show = explain && (explain.id === baseId || explain.id === `${baseId}_custom`) ? explain : null;
+  const show =
+    explain && (explain.id === baseId || explain.id === `${baseId}_custom`) ? explain : null;
   const neutral = show ? 167 - show.highlight.length - show.hide.length : 0;
 
   const download = () => {
@@ -138,9 +140,7 @@ export function App() {
         </span>
         <span className="ef-label hidden sm:block">{"// loot filter"}</span>
         <span className="flex-1" />
-        <span className="ef-mono text-[0.6875rem] text-ink-3">
-          {catalog?.game_version ?? "…"}
-        </span>
+        <span className="ef-mono text-[0.6875rem] text-ink-3">{catalog?.game_version ?? "…"}</span>
         <ThemeToggle surface={surface} onToggle={toggleTheme} />
       </header>
       <div className="ef-rule--tri" style={{ height: 2 }} />
@@ -157,9 +157,7 @@ export function App() {
           watermark="HERO SIEGE"
         />
 
-        {err ? (
-          <p className="ef-mono text-sm text-crimson">API error — {err}</p>
-        ) : null}
+        {err ? <p className="ef-mono text-sm text-crimson">API error — {err}</p> : null}
 
         <section>
           <div className="ef-sec-head mb-5">
@@ -242,76 +240,81 @@ export function App() {
 
               <div className="flex flex-col gap-5">
                 <GradeRow
-                  label="Won't drop below"
+                  label="Hide items below rarity"
+                  grades={show.rarities}
+                  value={show.rarity.item_min}
+                  onPick={(gi) => {
+                    setC((prev) => ({ ...prev, item_rarity_min: gi }));
+                  }}
+                />
+                <GradeRow
+                  label="Hide affix rolls below grade"
                   grades={show.grades}
-                  value={show.rarity.min_show}
+                  value={show.rarity.grade_show_min}
                   onPick={(gi) => {
                     setC((prev) => ({
                       ...prev,
-                      rarity_min_show: gi,
-                      rarity_min_highlight: Math.max(
+                      grade_show_min: gi,
+                      grade_beam_min: Math.max(
                         gi,
-                        prev.rarity_min_highlight ?? show.rarity.min_highlight,
+                        prev.grade_beam_min ?? show.rarity.grade_beam_min,
                       ),
                     }));
                   }}
                 />
                 <GradeRow
-                  label="Beam (chase glow) from"
+                  label="Beam (chase glow) from grade"
                   grades={show.grades}
-                  value={show.rarity.min_highlight}
-                  minIdx={show.rarity.min_show}
+                  value={show.rarity.grade_beam_min}
+                  minIdx={show.rarity.grade_show_min}
                   onPick={(gi) => {
-                    setC((prev) => ({ ...prev, rarity_min_highlight: gi }));
+                    setC((prev) => ({ ...prev, grade_beam_min: gi }));
                   }}
                 />
                 <p className="ef-mono text-[0.625rem] text-ink-4">
-                  below the drop floor an item won&apos;t appear at all · between
-                  the two, chase affixes are visible but not beamed
+                  item rarity (Common…Satanic) and affix-roll grade (D…S) are separate · below the
+                  rarity floor an item never drops · below the grade floor that roll is suppressed ·
+                  between grade floor and beam, chase affixes show but don&apos;t glow
                 </p>
 
                 <div>
                   <span className="ef-label">Weapon types on the filter</span>
                   <div className="mt-2 flex flex-wrap gap-1">
-                    {Object.entries(opts?.weapon_groups ?? {}).map(
-                      ([name, bits]) => {
-                        const cur =
-                          c.weapons ??
-                          (show.weapon_bits.length === 0
-                            ? show.weapon_types.map((_, i) => i)
-                            : show.weapon_bits);
-                        const active =
-                          cur.length === bits.length &&
-                          bits.every((b) => cur.includes(b));
-                        return (
-                          <button
-                            key={name}
-                            className="ef-btn ef-btn--ghost"
-                            style={
-                              active
-                                ? {
-                                    borderColor: "var(--ef-accent)",
-                                    color: "var(--ef-accent-ink)",
-                                  }
-                                : undefined
-                            }
-                            onClick={() => {
-                              setC((prev) => ({ ...prev, weapons: [...bits] }));
-                            }}
-                          >
-                            {name}
-                          </button>
-                        );
-                      },
-                    )}
+                    {Object.entries(opts?.weapon_groups ?? {}).map(([name, bits]) => {
+                      const cur =
+                        c.weapons ??
+                        (show.weapon_bits.length === 0
+                          ? show.weapon_types.map((_, i) => i)
+                          : show.weapon_bits);
+                      const active =
+                        cur.length === bits.length && bits.every((b) => cur.includes(b));
+                      return (
+                        <button
+                          key={name}
+                          className="ef-btn ef-btn--ghost"
+                          style={
+                            active
+                              ? {
+                                  borderColor: "var(--ef-accent)",
+                                  color: "var(--ef-accent-ink)",
+                                }
+                              : undefined
+                          }
+                          onClick={() => {
+                            setC((prev) => ({ ...prev, weapons: [...bits] }));
+                          }}
+                        >
+                          {name}
+                        </button>
+                      );
+                    })}
                   </div>
                   <div className="mt-2 flex flex-wrap gap-1">
                     {show.weapon_types.map((w, wi) => {
                       const on =
                         c.weapons !== undefined
                           ? c.weapons.includes(wi)
-                          : show.weapon_bits.length === 0 ||
-                            show.weapon_bits.includes(wi);
+                          : show.weapon_bits.length === 0 || show.weapon_bits.includes(wi);
                       return (
                         <button
                           key={w}
@@ -351,23 +354,25 @@ export function App() {
                 <span className="ef-tag">{show.highlight.length} highlight</span>
                 <span className="ef-tag">{show.hide.length} dimmed</span>
                 <span className="ef-tag">{neutral} neutral</span>
-                <span className="ef-tag">beam ≥ {show.rarity.beam_from}</span>
-                {show.rarity.suppressed.length > 0 ? (
+                <span className="ef-tag">items {show.rarity.item_from}+</span>
+                <span className="ef-tag">
+                  rolls {show.rarity.show_from}+ · beam {show.rarity.beam_from}+
+                </span>
+                {show.rarity.item_suppressed.length > 0 ? (
                   <span className="ef-tag" style={{ color: "var(--ef-ink-4)" }}>
-                    {show.rarity.suppressed.join(" / ")} off
+                    {show.rarity.item_suppressed.join(" / ")} items off
+                  </span>
+                ) : null}
+                {show.rarity.grade_suppressed.length > 0 ? (
+                  <span className="ef-tag" style={{ color: "var(--ef-ink-4)" }}>
+                    grade {show.rarity.grade_suppressed.join(" / ")} off
                   </span>
                 ) : null}
                 {show.weapons ? (
-                  <span className="ef-tag">
-                    {show.weapons.length} weapon types
-                  </span>
+                  <span className="ef-tag">{show.weapons.length} weapon types</span>
                 ) : null}
                 <span className="flex-1" />
-                <button
-                  className="ef-btn ef-btn--primary"
-                  disabled={busy}
-                  onClick={download}
-                >
+                <button className="ef-btn ef-btn--primary" disabled={busy} onClick={download}>
                   {busy ? <span className="ef-spinner" /> : null}
                   Download filter
                 </button>
@@ -426,40 +431,35 @@ export function App() {
                           }}
                           title="click: highlight → dim → neutral → default"
                         >
-                        <span
-                          className="ef-diamond mt-1.5 shrink-0"
-                          data-active={s.state === "highlight" ? "" : undefined}
-                          style={
-                            s.state === "dim"
-                              ? { opacity: 0.3 }
-                              : s.state === "neutral"
-                                ? { opacity: 0.55 }
-                                : undefined
-                          }
-                        />
-                        <span
-                          className="text-sm"
-                          style={{
-                            color:
+                          <span
+                            className="ef-diamond mt-1.5 shrink-0"
+                            data-active={s.state === "highlight" ? "" : undefined}
+                            style={
                               s.state === "dim"
-                                ? "var(--ef-ink-4)"
-                                : "var(--ef-ink)",
-                          }}
-                        >
-                          {s.name}
-                          {forced ? " *" : ""}
-                        </span>
-                        <span className="ef-mono ml-2 text-[0.5625rem] text-ink-4">
-                          {s.state === "highlight"
-                            ? "◆ glow"
-                            : s.state === "dim"
-                              ? "· dim"
-                              : "  —"}
-                        </span>
-                        <span className="flex-1" />
-                        <span className="ef-mono text-[0.625rem] text-ink-4">
-                          {s.why}
-                        </span>
+                                ? { opacity: 0.3 }
+                                : s.state === "neutral"
+                                  ? { opacity: 0.55 }
+                                  : undefined
+                            }
+                          />
+                          <span
+                            className="text-sm"
+                            style={{
+                              color: s.state === "dim" ? "var(--ef-ink-4)" : "var(--ef-ink)",
+                            }}
+                          >
+                            {s.name}
+                            {forced ? " *" : ""}
+                          </span>
+                          <span className="ef-mono ml-2 text-[0.5625rem] text-ink-4">
+                            {s.state === "highlight"
+                              ? "◆ glow"
+                              : s.state === "dim"
+                                ? "· dim"
+                                : "  —"}
+                          </span>
+                          <span className="flex-1" />
+                          <span className="ef-mono text-[0.625rem] text-ink-4">{s.why}</span>
                         </button>
                       </li>
                     );
@@ -470,8 +470,8 @@ export function App() {
                 <summary className="ef-label cursor-pointer">How to import</summary>
                 <ol className="ef-mono mt-2 flex list-decimal flex-col gap-1 pl-5 text-xs text-ink-2">
                   <li>
-                    Save it to <code>%localappdata%/Hero_Siege/hs2saves/</code>{" "}
-                    (Linux: <code>~/.config/Hero_Siege/hs2saves/</code>).
+                    Save it to <code>%localappdata%/Hero_Siege/hs2saves/</code> (Linux:{" "}
+                    <code>~/.config/Hero_Siege/hs2saves/</code>).
                   </li>
                   <li>In-game loot filter window → pick it from the list.</li>
                 </ol>
