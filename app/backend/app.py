@@ -51,13 +51,24 @@ def _archetype_profile(element: str, playstyle: str, stage: str):
         raise HTTPException(422, f"bad archetype: {e}")
 
 
+_GRADE = ["Common", "Superior", "Rare", "Mythic", "Satanic"]
+
+
 def _explain_payload(p) -> dict:
     from hsfilter import NAME, STATS
     why = p.__dict__.get("_why", {})
     hi, hd = set(p.highlight), set(p.hide)
     state = {i: ("highlight" if i in hi else "dim" if i in hd else "neutral") for i in NAME}
+    wtc = p.wtc or 0
+    from hsfilter import WEAPON_TYPES
     return {
         "id": p.id, "name": p.name, "notes": p.notes,
+        "rarity": {
+            "beam_from": _GRADE[p.rarity_min_highlight],
+            "drop_from": _GRADE[p.rarity_min_show],
+            "suppressed": _GRADE[: p.rarity_min_show],
+        },
+        "weapons": [WEAPON_TYPES[i] for i in range(18) if wtc >> i & 1] or None,
         "highlight": [{"id": i, "name": NAME[i], "why": why.get(i)} for i in p.highlight],
         "hide": [{"id": i, "name": NAME[i], "why": why.get(i)} for i in p.hide],
         "stats": [

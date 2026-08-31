@@ -18,15 +18,30 @@ v2 JSON shape:
 
 ```jsonc
 { "version": 2,
-  "wtc": 262015,                 // weapon-type bitfield (filter-wide), optional
+  "wtc": 7937,                   // weapon-type bitfield (filter-wide), optional
   "t3": {                        // slot: t0..t18  (see hsfilter.SLOTS)
     "soc": 59,                   // socket-count bitfield, optional
-    "tr4": { "hs": [68, 74],     // dimmed stat lines  (stat ids)
-             "hls": [223, 137] } // highlighted stat lines
+    "tr4": { "hs": [68, 74],     // hidden affixes  (affix ids)
+             "hls": [223, 137] } // highlighted affixes
   } }
 ```
 
-Slots `t0..t18`; rarities `tr0..tr4` = tiers **D C B A S**.
+Per **(slot × affix × item grade)** the affix is **hidden** (`hs` — contributes
+to the item not dropping), **visible** (in neither list — drops normally), or
+**highlighted** (`hls` — yellow beam + map icon). An item drops only if ≥1 of its
+affixes is visible or highlighted.
+
+- Slots `t0..t18` (`hsfilter.SLOTS`).
+- `tr0..tr4` = the item's **grade**: **D** Common · **C** Superior · **B** Rare ·
+  **A** Mythic · **S** Satanic  (confirmed in-game 2026-08-31).
+- `wtc` bit positions: `0` Item, `1` Sword, `2` Dagger, `3` Mace, `4` Axe,
+  `5` Claw, `6` Polearm, `7` Chainsaw, `8` Staff, `9` Cane, `10` Wand, `11` Book,
+  `12` Spellblade, `13` Bow, `14` Gun, `15` Flask, `16` Throwing, `17` Novelty.
+
+The game saves back as **v3**: `base64( u8 ver=3 | u32 zlib_len | zlib(body) )`,
+`body = ffff | u16 ver | u32 wtc | u8 slotcount | [ u8 slotid, u16 pre, 7×u8
+tiermask, u16 entcount, entries(u16 affix, u8 rar, u8 state) ]…` — `hsfilter`
+reads it, writes v2.
 
 ## Stat id map
 

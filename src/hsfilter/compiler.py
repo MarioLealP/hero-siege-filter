@@ -197,11 +197,21 @@ def compile_build(research: Research | dict) -> Profile:
 
     hi = sorted(i for i, s in c.state.items() if s == "highlight")
     hd = sorted(i for i, s in c.state.items() if s == "hide")
+
+    # rarity policy — grade 0=Common .. 4=Satanic
+    rmin_hl, rmin_show = {
+        "leveling": (0, 0),   # upgrading constantly — beam every chase roll
+        "maps": (2, 1),       # beam on Rare+, hide chase on Common
+        "endgame": (3, 2),    # beam on Mythic+, junk below Rare doesn't drop
+    }[stage]
+
     notes = (f"{r.class_} / {'+'.join(r.main_skills)} / {stage}. element={el}"
              + (f" splash={splash}" if splash else "")
-             + f" delivery={sorted(delivery)}.")
+             + f" delivery={sorted(delivery)}."
+             + f" beam >= grade {rmin_hl}, drop chase >= grade {rmin_show}.")
     prof = Profile(id=r.id, name=r.name, notes=notes,
-                   wtc=None, soc=None, highlight=hi, hide=hd)
+                   wtc=r.wtc, soc=None, highlight=hi, hide=hd,
+                   rarity_min_highlight=rmin_hl, rarity_min_show=rmin_show)
     prof.__dict__["_why"] = {i: c.why[i] for i in hi + hd}
     return prof
 

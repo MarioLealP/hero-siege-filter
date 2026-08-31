@@ -33,7 +33,10 @@ SLOTS = {
     "t15": "Socketable", "t18": "Vial",
 }
 SLOT_ID = {k: int(k[1:]) for k in SLOTS}          # "t3" -> 3
+# tr0..tr4 = the item's grade (D..S). Confirmed in-game 2026-08-31:
 RARITIES = {"tr0": "D", "tr1": "C", "tr2": "B", "tr3": "A", "tr4": "S"}
+RARITY_NAME = {"tr0": "Common", "tr1": "Superior", "tr2": "Rare",
+               "tr3": "Mythic", "tr4": "Satanic"}
 WEAPON_TYPES = [
     "Item", "Sword", "Dagger", "Mace", "Axe", "Claw", "Polearm", "Chainsaw",
     "Staff", "Cane", "Wand", "Book", "Spellblade", "Bow", "Gun", "Flask",
@@ -111,41 +114,37 @@ class Filter:
         return base64.b64encode(j.encode()).decode()
 
     # ---- v3 (read only) --------------------------------------------------
+    # container : base64( u8 ver=3 | u32 zlib_len | zlib(body) )
+    # body      : ffff | u16 ver | u32 wtc | u8 slotcount
+    #             then per slot: u8 slotid | u16 pre(0x3f) | 7x u8 tiermask
+    #                            | u16 entcount | entries[ u16 affix, u8 rar, u8 state ]
+    #   state: 2 = highlight (yellow), 1 = visible (red), 0 = hidden
     @staticmethod
     def read_v3(text: str) -> dict:
         d = base64.b64decode(text.strip())
         assert d[0] == 3, f"not v3 (version byte {d[0]})"
         body = zlib.decompress(d[5:])
-        off = 0
-
-        def u16():
-            nonlocal off
-            v = struct.unpack_from("<H", body, off)[0]
-            off += 2
-            return v
-
-        magic = u16()
-        ver = struct.unpack_from("<I", body, off)[0]
-        off += 4
-        flag = u16()
-        nslots = u16()
-        slots = {}
-        slot_id = 0
+        assert body[:2] == b"\xff\xff", "bad v3 magic"
+        ver = struct.unpack_from("<H", body, 2)[0]
+        wtc = struct.unpack_from("<I", body, 4)[0]
+        nslots = body[8]
+        off = 9
+        slots: dict[int, dict] = {}
         for _ in range(nslots):
-            rmask = u16()
-            tstate = body[off:off + 7]
+            slotid = body[off]
+            off += 1
+            pre = struct.unpack_from("<H", body, off)[0]
+            off += 2
+            tiermask = body[off:off + 7]
             off += 7
-            ecount = u16()
+            ecount = struct.unpack_from("<H", body, off)[0]
+            off += 2
             entries = []
             for _ in range(ecount):
-                sid = u16()
-                rar = body[off]
-                st = body[off + 1]
-                off += 2
-                entries.append((sid, rar, st))
-            slots[slot_id] = {"rmask": rmask, "tstate": tstate.hex(), "entries": entries}
-            if off < len(body):
-                slot_id = body[off]
-                off += 1
-        return {"magic": magic, "version": ver, "flag": flag, "slots": slots,
+                affix, rar, st = struct.unpack_from("<HBB", body, off)
+                off += 4
+                entries.append((affix, rar, st))
+            slots[slotid] = {"pre": pre, "tiermask": tiermask.hex(),
+                             "entries": entries}
+        return {"version": ver, "wtc": wtc, "slots": slots,
                 "consumed": off, "total": len(body)}

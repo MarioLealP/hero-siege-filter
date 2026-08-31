@@ -177,7 +177,23 @@ export function App() {
               </button>
             </div>
 
-            <p className="ef-mono mt-4 text-xs text-ink-3">{show.notes}</p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="ef-tag">
+                beam ≥ {show.rarity.beam_from}
+              </span>
+              {show.rarity.suppressed.length > 0 ? (
+                <span className="ef-tag" style={{ color: "var(--ef-ink-4)" }}>
+                  {show.rarity.suppressed.join(" / ")} suppressed
+                </span>
+              ) : (
+                <span className="ef-tag">all grades drop</span>
+              )}
+              {show.weapons ? (
+                <span className="ef-tag">weapons: {show.weapons.join(", ")}</span>
+              ) : null}
+            </div>
+
+            <p className="ef-mono mt-3 text-xs text-ink-3">{show.notes}</p>
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <input

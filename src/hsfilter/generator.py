@@ -4,9 +4,12 @@ The game auto-upgrades v2 -> v3 on load, so v2 is what we emit.
 """
 from __future__ import annotations
 
-from .codec import RARITIES, SLOTS, Cell, Filter
+from .codec import SLOTS, Cell, Filter
 from .data import ALL_IDS
 from .models import Profile
+
+
+_RANKS = ("tr0", "tr1", "tr2", "tr3", "tr4")  # grade 0..4 (Common..Satanic)
 
 
 def profile_to_filter(p: Profile) -> Filter:
@@ -24,8 +27,14 @@ def profile_to_filter(p: Profile) -> Filter:
     for slot in SLOTS:
         if p.soc is not None:
             f.soc[slot] = int(p.soc)
-        for rk in RARITIES:
-            f.cells.setdefault(slot, {})[rk] = Cell(hide=list(hd), highlight=list(hi))
+        for grade, rk in enumerate(_RANKS):
+            if grade < p.rarity_min_show:
+                # whole grade suppressed — every affix hidden, item won't drop
+                cell = Cell(hide=sorted(ALL_IDS), highlight=[])
+            else:
+                cell_hi = list(hi) if grade >= p.rarity_min_highlight else []
+                cell = Cell(hide=list(hd), highlight=cell_hi)
+            f.cells.setdefault(slot, {})[rk] = cell
     return f
 
 

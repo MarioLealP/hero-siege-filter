@@ -36,6 +36,8 @@ export interface Explain {
   id: string;
   name: string;
   notes: string;
+  rarity: { beam_from: string; drop_from: string; suppressed: string[] };
+  weapons: string[] | null;
   highlight: StatLine[];
   hide: StatLine[];
   stats: StatRow[];

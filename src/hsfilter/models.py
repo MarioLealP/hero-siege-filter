@@ -94,6 +94,7 @@ class Research(BaseModel):
     stage_notes: dict[str, str] = {}
     sources: list[str] = []
     uncertain: list[str] = []
+    wtc: int | None = None   # weapon-type bitfield, optional (archetypes set it late-game)
 
     @field_validator("scaling_stats", "defense_priority")
     @classmethod
@@ -107,7 +108,15 @@ class Research(BaseModel):
 
 
 class Profile(BaseModel):
-    """Compiled output: highlight/hide over the 167 stat ids."""
+    """Compiled output: highlight/hide over the 167 stat ids, + a rarity policy.
+
+    rarity_min_highlight / rarity_min_show gate by the item's grade
+    (0=Common .. 4=Satanic):
+      grade >= rarity_min_highlight  -> chase affix is highlighted (yellow beam)
+      grade >= rarity_min_show       -> chase affix is visible (red, item drops)
+      below rarity_min_show          -> chase affix hidden too
+    `hide` affixes are hidden at every grade.
+    """
     id: str
     name: str
     notes: str = ""
@@ -115,6 +124,8 @@ class Profile(BaseModel):
     soc: int | None = None
     highlight: list[int]
     hide: list[int]
+    rarity_min_highlight: int = 0
+    rarity_min_show: int = 0
 
 
 # ---- catalog + API shapes ------------------------------------------------

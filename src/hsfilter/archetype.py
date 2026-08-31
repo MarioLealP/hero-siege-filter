@@ -18,6 +18,25 @@ PLAYSTYLE_LABEL = {
     "summon": "Summoner", "sentry": "Sentry / totem",
 }
 
+# weapon-type bit positions (0=Item .. 17=Novelty), confirmed from the game
+_WEP = {"item": 0, "sword": 1, "dagger": 2, "mace": 3, "axe": 4, "claw": 5,
+        "polearm": 6, "chainsaw": 7, "staff": 8, "cane": 9, "wand": 10,
+        "book": 11, "spellblade": 12, "bow": 13, "gun": 14, "flask": 15,
+        "throwing": 16, "novelty": 17}
+_WEAPON_SET = {
+    "melee": ["item", "sword", "dagger", "mace", "axe", "claw", "polearm",
+              "chainsaw", "spellblade"],
+    "ranged": ["item", "bow", "gun", "flask", "throwing"],
+    "caster": ["item", "staff", "cane", "wand", "book", "spellblade"],
+    "summon": ["item", "staff", "cane", "wand", "book"],
+    "sentry": ["item", "staff", "cane", "wand", "book"],
+}
+
+
+def _wtc(playstyle: str) -> int:
+    return sum(1 << _WEP[w] for w in _WEAPON_SET[playstyle])
+
+
 _SHAPE = {
     "melee": dict(delivery=["attack", "melee"], attr_phys="strength",
                   crit="optional", defense="hybrid", cd=False),
@@ -68,6 +87,7 @@ def archetype_research(element: str, playstyle: str, stage: str) -> Research:
                 f"ignore_{element}_resist", "ignore_all_resist"]
 
     return Research.model_validate({
+        "wtc": _wtc(playstyle) if stage == "endgame" else None,
         "id": f"generic_{element}_{playstyle}_{stage}",
         "name": f"{element.capitalize()} {PLAYSTYLE_LABEL[playstyle]} — {stage.capitalize()}",
         "class": "Generic",
