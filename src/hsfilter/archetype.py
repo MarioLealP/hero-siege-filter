@@ -11,7 +11,15 @@ from .models import Research
 
 ELEMENTS = ["physical", "fire", "cold", "lightning", "arcane", "poison"]
 PLAYSTYLES = ["melee", "ranged", "caster", "summon", "sentry"]
-STAGES = ["leveling", "maps", "endgame"]
+# difficulty brackets, mirroring the game's own loot-filter presets
+STAGES = ["normal", "nightmare", "hell1", "hell3", "hell5"]
+STAGE_LABEL = {
+    "normal": "Normal · lv 1–70 · grab everything",
+    "nightmare": "Nightmare · lv 70–100 · chase Rare+",
+    "hell1": "Hell 1–3 · just hit 100 · beam Mythic+",
+    "hell3": "Hell 3–5 · Incarnation · beam Satanic",
+    "hell5": "Hell 5+ · speedfarm · Satanic only, weapons filtered",
+}
 
 PLAYSTYLE_LABEL = {
     "melee": "Melee", "ranged": "Ranged / attack", "caster": "Caster",
@@ -87,7 +95,7 @@ def archetype_research(element: str, playstyle: str, stage: str) -> Research:
                 f"ignore_{element}_resist", "ignore_all_resist"]
 
     return Research.model_validate({
-        "wtc": _wtc(playstyle) if stage == "endgame" else None,
+        "wtc": _wtc(playstyle) if stage == "hell5" else None,
         "id": f"generic_{element}_{playstyle}_{stage}",
         "name": f"{element.capitalize()} {PLAYSTYLE_LABEL[playstyle]} — {stage.capitalize()}",
         "class": "Generic",

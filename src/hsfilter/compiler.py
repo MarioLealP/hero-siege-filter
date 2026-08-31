@@ -76,12 +76,15 @@ def compile_build(research: Research | dict) -> Profile:
     c.set(465, "highlight" if "movespeed_damage" in scaling else "hide", "move-speed conversion")
     c.set([171, 474], "hide", "reflect (opt-in)")
 
-    # B. stage
-    if stage == "leveling":
+    # B. stage — collapse the bracket into three phases
+    phase = {"leveling": "lvl", "normal": "lvl",
+             "maps": "mid", "nightmare": "mid", "hell1": "mid",
+             "endgame": "end", "hell3": "end", "hell5": "end"}[stage]
+    if phase == "lvl":
         c.set(282, "highlight", "leveling: xp")
         c.set([284, 285, 286, 290], "hide", "leveling: not farming yet")
         c.set([59, 66, 58, 65, 55, 63], "highlight", "leveling: sustain")
-    elif stage == "maps":
+    elif phase == "mid":
         c.set(282, "highlight", "maps: xp still good")
         c.set([284, 285], "highlight", "maps: mf matters")
         c.set([59, 66], "highlight", "maps: sustain")
@@ -90,6 +93,7 @@ def compile_build(research: Research | dict) -> Profile:
         c.set([284, 285], "highlight", "endgame: mf")
         c.set(282, "hide", "endgame: capped level")
         c.set(list(E_MAXRES.values()) + [174, 152], "highlight", "endgame: max resists / pen")
+    early = phase == "lvl"
 
     # C. attribute
     if pa in ATTR:
@@ -171,7 +175,7 @@ def compile_build(research: Research | dict) -> Profile:
     # I. penetration
     for e in els:
         if e in E_IGN:
-            c.set(E_IGN[e], "highlight" if stage != "leveling" else None, f"ignore {e} resist")
+            c.set(E_IGN[e], "highlight" if not early else None, f"ignore {e} resist")
     for e, sid in E_IGN.items():
         if e not in els:
             c.set(sid, "hide", "off-element pen")
@@ -198,11 +202,19 @@ def compile_build(research: Research | dict) -> Profile:
     hi = sorted(i for i, s in c.state.items() if s == "highlight")
     hd = sorted(i for i, s in c.state.items() if s == "hide")
 
-    # rarity policy — grade 0=Common .. 4=Satanic
+    # rarity policy — grade 0=Common(D) .. 4=Satanic(S). Brackets mirror the
+    # game's own loot-filter presets (translationsoptions loot_filter_preset_*).
     rmin_hl, rmin_show = {
-        "leveling": (0, 0),   # upgrading constantly — beam every chase roll
-        "maps": (2, 1),       # beam on Rare+, hide chase on Common
-        "endgame": (3, 2),    # beam on Mythic+, junk below Rare doesn't drop
+        # legacy 3-stage names
+        "leveling": (0, 0),
+        "maps": (2, 1),
+        "endgame": (3, 2),
+        # difficulty brackets
+        "normal": (0, 0),       # campaign, ~lv1-70 — grab everything, nothing floored
+        "nightmare": (2, 2),    # ~lv70-100 — Common/Superior rolls hidden, chase Rare+
+        "hell1": (2, 3),        # Hell 1-3, just hit 100 — beam Mythic+, show Rare
+        "hell3": (3, 4),        # Hell 3-5, Incarnation — beam Satanic only, show Mythic
+        "hell5": (3, 4),        # Hell 5+ speedfarm — same + weapon restrict + tighter
     }[stage]
 
     notes = (f"{r.class_} / {'+'.join(r.main_skills)} / {stage}. element={el}"

@@ -17,8 +17,9 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 
-from hsfilter import (ELEMENTS, PLAYSTYLE_LABEL, PLAYSTYLES, STAGES, FilterRequest,
-                      archetype_research, compile_build, explain, profile_to_code)
+from hsfilter import (ELEMENTS, PLAYSTYLE_LABEL, PLAYSTYLES, STAGE_LABEL, STAGES,
+                      FilterRequest, archetype_research, compile_build, explain,
+                      profile_to_code)
 from hsfilter.catalog import catalog as build_catalog
 from hsfilter.catalog import known_build_ids, load_build, validate_all
 
@@ -39,7 +40,7 @@ def catalog() -> dict:
     c["archetype_options"] = {
         "elements": ELEMENTS,
         "playstyles": [{"id": p, "label": PLAYSTYLE_LABEL[p]} for p in PLAYSTYLES],
-        "stages": STAGES,
+        "stages": [{"id": s, "label": STAGE_LABEL[s]} for s in STAGES],
     }
     return c
 

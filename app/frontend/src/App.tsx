@@ -12,12 +12,6 @@ import {
   getCatalog,
 } from "@/api";
 
-const STAGE_LABEL: Record<string, string> = {
-  leveling: "Leveling · 1–100",
-  maps: "Maps · Inferno",
-  endgame: "Endgame · Wormholes",
-};
-
 export function App() {
   const { surface, toggle } = useTheme();
   const [catalog, setCatalog] = useState<Catalog | null>(null);
@@ -27,7 +21,7 @@ export function App() {
 
   const [flavor, setFlavor] = useState("");
   const [play, setPlay] = useState("");
-  const [stage, setStage] = useState("leveling");
+  const [stage, setStage] = useState("nightmare");
 
   const [q, setQ] = useState("");
   const [filter, setFilter] = useState<"all" | "highlight" | "dim" | "neutral">("all");
@@ -145,9 +139,9 @@ export function App() {
                   setStage(e.target.value);
                 }}
               >
-                {(opts?.stages ?? ["leveling", "maps", "endgame"]).map((s) => (
-                  <option key={s} value={s}>
-                    {STAGE_LABEL[s] ?? s}
+                {(opts?.stages ?? []).map((s) => (
+                  <option key={s.id} value={s.id}>
+                    {s.label}
                   </option>
                 ))}
               </select>

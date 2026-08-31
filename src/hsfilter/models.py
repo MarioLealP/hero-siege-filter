@@ -41,7 +41,10 @@ class Attribute(str, Enum):
     vitality = "vitality"
 
 
-Stage = Literal["leveling", "maps", "endgame"]
+Stage = Literal[
+    "leveling", "maps", "endgame",                       # legacy
+    "normal", "nightmare", "hell1", "hell3", "hell5",     # difficulty brackets
+]
 CritScaling = Literal["yes", "no", "optional"]
 DefenseModel = Literal["life", "shield_block", "dodge", "hybrid"]
 

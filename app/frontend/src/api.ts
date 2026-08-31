@@ -18,7 +18,7 @@ export interface Catalog {
   archetype_options: {
     elements: string[];
     playstyles: { id: string; label: string }[];
-    stages: string[];
+    stages: { id: string; label: string }[];
   };
 }
 
