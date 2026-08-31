@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Slab } from "@/components/Slab";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -7,13 +7,40 @@ import { useTheme } from "@/lib/useTheme";
 import {
   type Catalog,
   type Explain,
+  type Overrides,
   downloadArchetype,
   getArchetypeExplain,
+  getArchetypeExplainCustom,
   getCatalog,
 } from "@/api";
 
+type Custom = {
+  rarity_min_show?: number;
+  rarity_min_highlight?: number;
+  weapons?: number[];
+  force_highlight: number[];
+  force_hide: number[];
+  force_neutral: number[];
+};
+const EMPTY: Custom = { force_highlight: [], force_hide: [], force_neutral: [] };
+
+function isCustom(c: Custom): boolean {
+  return (
+    c.rarity_min_show !== undefined ||
+    c.rarity_min_highlight !== undefined ||
+    c.weapons !== undefined ||
+    c.force_highlight.length > 0 ||
+    c.force_hide.length > 0 ||
+    c.force_neutral.length > 0
+  );
+}
+
+function toggle(list: number[], id: number): number[] {
+  return list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
+}
+
 export function App() {
-  const { surface, toggle } = useTheme();
+  const { surface, toggle: toggleTheme } = useTheme();
   const [catalog, setCatalog] = useState<Catalog | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -22,6 +49,7 @@ export function App() {
   const [flavor, setFlavor] = useState("");
   const [play, setPlay] = useState("");
   const [stage, setStage] = useState("nightmare");
+  const [c, setC] = useState<Custom>(EMPTY);
 
   const [q, setQ] = useState("");
   const [filter, setFilter] = useState<"all" | "highlight" | "dim" | "neutral">("all");
@@ -33,35 +61,73 @@ export function App() {
   }, []);
 
   const opts = catalog?.archetype_options;
-  const key = flavor && play ? `generic_${flavor}_${play}_${stage}` : "";
+  const custom = isCustom(c);
+  const ov: Overrides = useMemo(
+    () => ({
+      element: flavor,
+      playstyle: play,
+      stage,
+      rarity_min_show: c.rarity_min_show,
+      rarity_min_highlight: c.rarity_min_highlight,
+      weapons: c.weapons,
+      force_highlight: c.force_highlight,
+      force_hide: c.force_hide,
+      force_neutral: c.force_neutral,
+    }),
+    [flavor, play, stage, c],
+  );
+  const key =
+    flavor && play
+      ? `generic_${flavor}_${play}_${stage}::${custom ? JSON.stringify(c) : ""}`
+      : "";
+  const baseId = flavor && play ? `generic_${flavor}_${play}_${stage}` : "";
 
   useEffect(() => {
-    if (!key) return;
+    if (!flavor || !play) return;
     let live = true;
-    getArchetypeExplain(flavor, play, stage)
-      .then((x) => {
-        if (live) setExplain(x);
-      })
-      .catch((e: unknown) => {
-        if (live) setErr(String(e));
-      });
+    const p = custom
+      ? getArchetypeExplainCustom(ov)
+      : getArchetypeExplain(flavor, play, stage);
+    p.then((x) => {
+      if (live) setExplain(x);
+    }).catch((e: unknown) => {
+      if (live) setErr(String(e));
+    });
     return () => {
       live = false;
     };
-  }, [key, flavor, play, stage]);
+    // `key` already encodes element/playstyle/stage + every tweak
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key]);
 
-  const show = explain && explain.id === key ? explain : null;
+  const show = explain && (explain.id === baseId || explain.id === `${baseId}_custom`) ? explain : null;
   const neutral = show ? 167 - show.highlight.length - show.hide.length : 0;
 
   const download = () => {
     setBusy(true);
-    downloadArchetype(flavor, play, stage)
+    downloadArchetype(ov, custom)
       .catch((e: unknown) => {
         setErr(String(e));
       })
       .finally(() => {
         setBusy(false);
       });
+  };
+
+  const cycleStat = (id: number, cur: string) => {
+    setC((prev) => {
+      const n = {
+        ...prev,
+        force_highlight: prev.force_highlight.filter((x) => x !== id),
+        force_hide: prev.force_hide.filter((x) => x !== id),
+        force_neutral: prev.force_neutral.filter((x) => x !== id),
+      };
+      // highlight -> dim -> neutral -> (back to compiled default)
+      if (cur === "highlight") n.force_hide = [...n.force_hide, id];
+      else if (cur === "dim") n.force_neutral = [...n.force_neutral, id];
+      // cur === "neutral" -> clear all -> compiled default returns
+      return n;
+    });
   };
 
   return (
@@ -75,7 +141,7 @@ export function App() {
         <span className="ef-mono text-[0.6875rem] text-ink-3">
           {catalog?.game_version ?? "…"}
         </span>
-        <ThemeToggle surface={surface} onToggle={toggle} />
+        <ThemeToggle surface={surface} onToggle={toggleTheme} />
       </header>
       <div className="ef-rule--tri" style={{ height: 2 }} />
 
@@ -83,7 +149,11 @@ export function App() {
         <Slab
           kicker="// LOOT FILTER"
           headline={show ? (show.name.split(" — ")[0] ?? "Filter") : "Pick a build"}
-          detail={show ? show.name : "flavor × playstyle × stage → download"}
+          detail={
+            show
+              ? `${show.name}${custom ? " · customised" : ""}`
+              : "flavor × playstyle × stage → tweak → download"
+          }
           watermark="HERO SIEGE"
         />
 
@@ -103,6 +173,7 @@ export function App() {
                 value={flavor}
                 onChange={(e) => {
                   setFlavor(e.target.value);
+                  setC(EMPTY);
                 }}
               >
                 <option value="">—</option>
@@ -120,6 +191,7 @@ export function App() {
                 disabled={!flavor}
                 onChange={(e) => {
                   setPlay(e.target.value);
+                  setC(EMPTY);
                 }}
               >
                 <option value="">—</option>
@@ -137,6 +209,7 @@ export function App() {
                 disabled={!play}
                 onChange={(e) => {
                   setStage(e.target.value);
+                  setC(EMPTY);
                 }}
               >
                 {(opts?.stages ?? []).map((s) => (
@@ -150,117 +223,266 @@ export function App() {
         </section>
 
         {show ? (
-          <section>
-            <div className="ef-sec-head mb-5">
-              <span className="ef-idx">SEC.02</span>
-              <h2>Filter</h2>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="ef-tag">{show.highlight.length} highlight</span>
-              <span className="ef-tag">{show.hide.length} dimmed</span>
-              <span className="ef-tag">{neutral} neutral</span>
-              <span className="flex-1" />
-              <button
-                className="ef-btn ef-btn--primary"
-                disabled={busy}
-                onClick={download}
-              >
-                {busy ? <span className="ef-spinner" /> : null}
-                Download filter
-              </button>
-            </div>
-
-            <div className="mt-4 flex flex-wrap gap-2">
-              <span className="ef-tag">
-                beam ≥ {show.rarity.beam_from}
-              </span>
-              {show.rarity.suppressed.length > 0 ? (
-                <span className="ef-tag" style={{ color: "var(--ef-ink-4)" }}>
-                  {show.rarity.suppressed.join(" / ")} suppressed
-                </span>
-              ) : (
-                <span className="ef-tag">all grades drop</span>
-              )}
-              {show.weapons ? (
-                <span className="ef-tag">weapons: {show.weapons.join(", ")}</span>
-              ) : null}
-            </div>
-
-            <p className="ef-mono mt-3 text-xs text-ink-3">{show.notes}</p>
-
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <input
-                className="ef-input flex-1"
-                style={{ minWidth: "12rem" }}
-                placeholder="search 167 stats…"
-                value={q}
-                onChange={(e) => {
-                  setQ(e.target.value);
-                }}
-              />
-              {(["all", "highlight", "dim", "neutral"] as const).map((f) => (
-                <button
-                  key={f}
-                  className="ef-btn"
-                  aria-pressed={filter === f}
-                  data-on={filter === f ? "" : undefined}
-                  style={filter === f ? { borderColor: "var(--ef-accent)", color: "var(--ef-accent-ink)" } : undefined}
-                  onClick={() => {
-                    setFilter(f);
-                  }}
-                >
-                  {f}
-                </button>
-              ))}
-            </div>
-
-            <ul className="mt-4 flex flex-col">
-              {show.stats
-                .filter((s) => filter === "all" || s.state === filter)
-                .filter((s) => s.name.toLowerCase().includes(q.toLowerCase()))
-                .map((s) => (
-                  <li
-                    key={s.id}
-                    className="flex items-baseline gap-2 border-b border-line py-1.5"
+          <>
+            <section>
+              <div className="ef-sec-head mb-5">
+                <span className="ef-idx">SEC.02</span>
+                <h2>Customise</h2>
+                {custom ? (
+                  <button
+                    className="ef-btn ef-btn--ghost ml-3"
+                    onClick={() => {
+                      setC(EMPTY);
+                    }}
                   >
-                    <span
-                      className="ef-diamond mt-1.5 shrink-0"
-                      data-active={s.state === "highlight" ? "" : undefined}
-                      style={
-                        s.state === "dim"
-                          ? { opacity: 0.3 }
-                          : s.state === "neutral"
-                            ? { opacity: 0.55 }
-                            : undefined
-                      }
-                    />
-                    <span
-                      className="text-sm"
-                      style={{ color: s.state === "dim" ? "var(--ef-ink-4)" : "var(--ef-ink)" }}
-                    >
-                      {s.name}
-                    </span>
-                    <span className="ef-mono ml-2 text-[0.5625rem] text-ink-4">
-                      {s.state === "highlight" ? "◆ glow" : s.state === "dim" ? "· dim" : "  —"}
-                    </span>
-                    <span className="flex-1" />
-                    <span className="ef-mono text-[0.625rem] text-ink-4">{s.why}</span>
-                  </li>
-                ))}
-            </ul>
+                    reset
+                  </button>
+                ) : null}
+              </div>
 
-            <details className="mt-6">
-              <summary className="ef-label cursor-pointer">How to import</summary>
-              <ol className="ef-mono mt-2 flex list-decimal flex-col gap-1 pl-5 text-xs text-ink-2">
-                <li>
-                  Save it to <code>%localappdata%/Hero_Siege/hs2saves/</code>{" "}
-                  (Linux: <code>~/.config/Hero_Siege/hs2saves/</code>).
-                </li>
-                <li>In-game loot filter window → pick it from the list.</li>
-              </ol>
-            </details>
-          </section>
+              <div className="flex flex-col gap-5">
+                <div>
+                  <span className="ef-label">Grades — click to set the floor</span>
+                  <div className="mt-2 flex flex-wrap gap-1">
+                    {show.grades.map((g, gi) => {
+                      const st =
+                        gi < show.rarity.min_show
+                          ? "off"
+                          : gi < show.rarity.min_highlight
+                            ? "show"
+                            : "beam";
+                      return (
+                        <button
+                          key={g}
+                          className="ef-btn"
+                          style={{
+                            borderColor:
+                              st === "beam"
+                                ? "var(--ef-accent)"
+                                : st === "off"
+                                  ? "var(--ef-line)"
+                                  : "var(--ef-line-2)",
+                            color:
+                              st === "off" ? "var(--ef-ink-4)" : "var(--ef-ink)",
+                            opacity: st === "off" ? 0.5 : 1,
+                          }}
+                          onClick={() => {
+                            // cycle this grade's floor: beam -> show -> off -> beam
+                            setC((prev) => {
+                              const cur =
+                                gi < (prev.rarity_min_show ?? show.rarity.min_show)
+                                  ? "off"
+                                  : gi <
+                                      (prev.rarity_min_highlight ??
+                                        show.rarity.min_highlight)
+                                    ? "show"
+                                    : "beam";
+                              if (cur === "beam")
+                                return { ...prev, rarity_min_highlight: gi + 1 };
+                              if (cur === "show")
+                                return {
+                                  ...prev,
+                                  rarity_min_show: gi + 1,
+                                  rarity_min_highlight: Math.max(
+                                    gi + 1,
+                                    prev.rarity_min_highlight ??
+                                      show.rarity.min_highlight,
+                                  ),
+                                };
+                              return {
+                                ...prev,
+                                rarity_min_show: gi,
+                                rarity_min_highlight: gi,
+                              };
+                            });
+                          }}
+                        >
+                          {g} · {st}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <p className="ef-mono mt-1 text-[0.625rem] text-ink-4">
+                    off = won&apos;t drop · show = drops, no beam · beam = chase
+                    affixes get a beam
+                  </p>
+                </div>
+
+                <div>
+                  <span className="ef-label">Weapon types on the filter</span>
+                  <div className="mt-2 flex flex-wrap gap-1">
+                    {show.weapon_types.map((w, wi) => {
+                      const on =
+                        c.weapons !== undefined
+                          ? c.weapons.includes(wi)
+                          : show.weapon_bits.length === 0 ||
+                            show.weapon_bits.includes(wi);
+                      return (
+                        <button
+                          key={w}
+                          className="ef-btn"
+                          style={
+                            on
+                              ? { borderColor: "var(--ef-accent)" }
+                              : { color: "var(--ef-ink-4)", opacity: 0.5 }
+                          }
+                          onClick={() => {
+                            setC((prev) => {
+                              const base =
+                                prev.weapons ??
+                                (show.weapon_bits.length === 0
+                                  ? show.weapon_types.map((_, i) => i)
+                                  : [...show.weapon_bits]);
+                              return { ...prev, weapons: toggle(base, wi) };
+                            });
+                          }}
+                        >
+                          {w}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div className="ef-sec-head mb-5">
+                <span className="ef-idx">SEC.03</span>
+                <h2>Filter</h2>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="ef-tag">{show.highlight.length} highlight</span>
+                <span className="ef-tag">{show.hide.length} dimmed</span>
+                <span className="ef-tag">{neutral} neutral</span>
+                <span className="ef-tag">beam ≥ {show.rarity.beam_from}</span>
+                {show.rarity.suppressed.length > 0 ? (
+                  <span className="ef-tag" style={{ color: "var(--ef-ink-4)" }}>
+                    {show.rarity.suppressed.join(" / ")} off
+                  </span>
+                ) : null}
+                {show.weapons ? (
+                  <span className="ef-tag">
+                    {show.weapons.length} weapon types
+                  </span>
+                ) : null}
+                <span className="flex-1" />
+                <button
+                  className="ef-btn ef-btn--primary"
+                  disabled={busy}
+                  onClick={download}
+                >
+                  {busy ? <span className="ef-spinner" /> : null}
+                  Download filter
+                </button>
+              </div>
+
+              <p className="ef-mono mt-3 text-xs text-ink-3">{show.notes}</p>
+
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <input
+                  className="ef-input flex-1"
+                  style={{ minWidth: "12rem" }}
+                  placeholder="search 167 stats… (click a row to change its state)"
+                  value={q}
+                  onChange={(e) => {
+                    setQ(e.target.value);
+                  }}
+                />
+                {(["all", "highlight", "dim", "neutral"] as const).map((f) => (
+                  <button
+                    key={f}
+                    className="ef-btn"
+                    aria-pressed={filter === f}
+                    style={
+                      filter === f
+                        ? {
+                            borderColor: "var(--ef-accent)",
+                            color: "var(--ef-accent-ink)",
+                          }
+                        : undefined
+                    }
+                    onClick={() => {
+                      setFilter(f);
+                    }}
+                  >
+                    {f}
+                  </button>
+                ))}
+              </div>
+
+              <ul className="mt-4 flex flex-col">
+                {show.stats
+                  .filter((s) => filter === "all" || s.state === filter)
+                  .filter((s) => s.name.toLowerCase().includes(q.toLowerCase()))
+                  .map((s) => {
+                    const forced =
+                      c.force_highlight.includes(s.id) ||
+                      c.force_hide.includes(s.id) ||
+                      c.force_neutral.includes(s.id);
+                    return (
+                      <li key={s.id} className="border-b border-line">
+                        <button
+                          type="button"
+                          className="flex w-full items-baseline gap-2 py-1.5 text-left hover:bg-surface-2"
+                          onClick={() => {
+                            cycleStat(s.id, s.state);
+                          }}
+                          title="click: highlight → dim → neutral → default"
+                        >
+                        <span
+                          className="ef-diamond mt-1.5 shrink-0"
+                          data-active={s.state === "highlight" ? "" : undefined}
+                          style={
+                            s.state === "dim"
+                              ? { opacity: 0.3 }
+                              : s.state === "neutral"
+                                ? { opacity: 0.55 }
+                                : undefined
+                          }
+                        />
+                        <span
+                          className="text-sm"
+                          style={{
+                            color:
+                              s.state === "dim"
+                                ? "var(--ef-ink-4)"
+                                : "var(--ef-ink)",
+                          }}
+                        >
+                          {s.name}
+                          {forced ? " *" : ""}
+                        </span>
+                        <span className="ef-mono ml-2 text-[0.5625rem] text-ink-4">
+                          {s.state === "highlight"
+                            ? "◆ glow"
+                            : s.state === "dim"
+                              ? "· dim"
+                              : "  —"}
+                        </span>
+                        <span className="flex-1" />
+                        <span className="ef-mono text-[0.625rem] text-ink-4">
+                          {s.why}
+                        </span>
+                        </button>
+                      </li>
+                    );
+                  })}
+              </ul>
+
+              <details className="mt-6">
+                <summary className="ef-label cursor-pointer">How to import</summary>
+                <ol className="ef-mono mt-2 flex list-decimal flex-col gap-1 pl-5 text-xs text-ink-2">
+                  <li>
+                    Save it to <code>%localappdata%/Hero_Siege/hs2saves/</code>{" "}
+                    (Linux: <code>~/.config/Hero_Siege/hs2saves/</code>).
+                  </li>
+                  <li>In-game loot filter window → pick it from the list.</li>
+                </ol>
+              </details>
+            </section>
+          </>
         ) : null}
       </main>
     </div>
@@ -275,4 +497,3 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
     </label>
   );
 }
-

@@ -36,11 +36,32 @@ export interface Explain {
   id: string;
   name: string;
   notes: string;
-  rarity: { beam_from: string; drop_from: string; suppressed: string[] };
+  grades: string[];
+  weapon_types: string[];
+  rarity: {
+    min_show: number;
+    min_highlight: number;
+    beam_from: string;
+    drop_from: string;
+    suppressed: string[];
+  };
+  weapon_bits: number[];
   weapons: string[] | null;
   highlight: StatLine[];
   hide: StatLine[];
   stats: StatRow[];
+}
+
+export interface Overrides {
+  element: string;
+  playstyle: string;
+  stage: string;
+  rarity_min_show?: number;
+  rarity_min_highlight?: number;
+  weapons?: number[];
+  force_highlight?: number[];
+  force_hide?: number[];
+  force_neutral?: number[];
 }
 
 async function j<T>(url: string, init?: RequestInit): Promise<T> {
@@ -53,6 +74,13 @@ export const getCatalog = () => j<Catalog>("/api/catalog");
 export const getExplain = (buildId: string) => j<Explain>(`/api/filter/${buildId}/explain`);
 export const getArchetypeExplain = (el: string, play: string, stage: string) =>
   j<Explain>(`/api/archetype/${el}/${play}/${stage}/explain`);
+
+export const getArchetypeExplainCustom = (ov: Overrides) =>
+  j<Explain>("/api/archetype/explain", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(ov),
+  });
 
 async function saveBlob(r: Response, filename: string): Promise<void> {
   if (!r.ok) throw new Error(`${r.status} ${(await r.text()).slice(0, 200)}`);
@@ -75,7 +103,14 @@ export async function downloadFilter(buildId: string): Promise<void> {
   await saveBlob(r, `lootfilter_${buildId}.txt`);
 }
 
-export const downloadArchetype = (el: string, play: string, stage: string) =>
-  fetch(`/api/archetype/${el}/${play}/${stage}/filter`).then((r) =>
-    saveBlob(r, `lootfilter_generic_${el}_${play}_${stage}.txt`),
-  );
+export const downloadArchetype = (ov: Overrides, custom: boolean) => {
+  const name = `lootfilter_generic_${ov.element}_${ov.playstyle}_${ov.stage}${custom ? "_custom" : ""}.txt`;
+  const req = custom
+    ? fetch("/api/archetype/filter", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(ov),
+      })
+    : fetch(`/api/archetype/${ov.element}/${ov.playstyle}/${ov.stage}/filter`);
+  return req.then((r) => saveBlob(r, name));
+};
