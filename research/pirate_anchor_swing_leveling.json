@@ -1,0 +1,64 @@
+{
+  "id": "pirate_anchor_swing_leveling",
+  "name": "Pirate \u2014 Anchor Swing \u2014 Leveling",
+  "class": "Pirate",
+  "tree": "Plunderer",
+  "main_skills": [
+    "Anchor Swing"
+  ],
+  "element": "cold",
+  "splash_element": null,
+  "delivery": [
+    "cast",
+    "cooldown",
+    "aoe"
+  ],
+  "primary_attribute": "intelligence",
+  "cooldown_based": true,
+  "aoe": true,
+  "crit_scaling": "no",
+  "defense_model": "life",
+  "uses_shield": false,
+  "key_conversions": [],
+  "required_items": [
+    "Glacier Talons (progression)"
+  ],
+  "scaling_stats": [
+    "all_skills",
+    "cold_skills",
+    "cold_skill_damage_pct",
+    "cold_skill_damage_flat",
+    "magic_skill_damage",
+    "flat_elemental_skill_damage",
+    "primary_attribute",
+    "all_attributes",
+    "faster_cast_rate",
+    "skill_haste",
+    "mana_cost_reduced",
+    "ignore_cold_resist",
+    "ignore_all_resist",
+    "additive_element"
+  ],
+  "defense_priority": [
+    "life_flat",
+    "life_pct",
+    "all_resist",
+    "anti_freeze",
+    "faster_hit_recovery",
+    "life_on_kill",
+    "all_dmg_reduction"
+  ],
+  "stage": "leveling",
+  "stage_notes": {
+    "leveling": "XP gain + on-kill sustain + movement.",
+    "maps": "cap single resists, start magic find.",
+    "endgame": "swap to Cannonball once a real DPS weapon drops."
+  },
+  "sources": [
+    "game: talent_desc_anchorSwing ('anchor swinging around you dealing cold damage')",
+    "https://www.graxyguides.com/herosiege/builds/season-10-builds/pirate/anchor-swing"
+  ],
+  "uncertain": [
+    "Int vs Energy weighting for early mana comfort"
+  ]
+}

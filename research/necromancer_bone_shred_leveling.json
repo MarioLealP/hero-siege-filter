@@ -1,0 +1,60 @@
+{
+  "id": "necromancer_bone_shred_leveling",
+  "name": "Necromancer \u2014 Bone Shred \u2014 Leveling",
+  "class": "Necromancer",
+  "tree": "Bone",
+  "main_skills": [
+    "Bone Shred"
+  ],
+  "element": "arcane",
+  "splash_element": null,
+  "delivery": [
+    "cast",
+    "projectile",
+    "aoe"
+  ],
+  "primary_attribute": "intelligence",
+  "cooldown_based": false,
+  "aoe": true,
+  "crit_scaling": "optional",
+  "defense_model": "life",
+  "uses_shield": false,
+  "key_conversions": [],
+  "required_items": [],
+  "scaling_stats": [
+    "all_skills",
+    "arcane_skills",
+    "arcane_skill_damage_pct",
+    "arcane_skill_damage_flat",
+    "magic_skill_damage",
+    "flat_elemental_skill_damage",
+    "primary_attribute",
+    "all_attributes",
+    "faster_cast_rate",
+    "mana_cost_reduced",
+    "projectile_speed",
+    "ignore_arcane_resist",
+    "ignore_all_resist"
+  ],
+  "defense_priority": [
+    "life_flat",
+    "life_pct",
+    "all_resist",
+    "faster_hit_recovery",
+    "life_on_kill",
+    "all_dmg_reduction"
+  ],
+  "stage": "leveling",
+  "stage_notes": {
+    "leveling": "Point-blank bone shotgun; XP + on-kill sustain.",
+    "maps": "cap resists, keep cast rate.",
+    "endgame": "strong campaign clear; consider Bone Spear/Barrage."
+  },
+  "sources": [
+    "game: talent_desc_boneShred ('Unleash bone fragments dealing arcane damage')",
+    "https://tposegaming.com/hero-siege-season-10-tier-list/ (Bone Shred listed top leveler)"
+  ],
+  "uncertain": [
+    "Whether Necro bone builds meaningfully stack crit while leveling (set optional)"
+  ]
+}

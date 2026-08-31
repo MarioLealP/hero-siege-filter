@@ -1,0 +1,225 @@
+{
+  "_note": "Functional tags for every one of the 167 filterable stats. Drives the build-schema -> filter mapping. Fields: cat (category), el (element: fire/cold/lightning/arcane/poison/physical, or null), delivery (attack/cast/projectile/orbital/explosion/summon/sentry, or null), role (offense/defense/sustain/utility/farm), form (flat/pct/perlevel/base, or null).",
+
+  "attributes": {
+    "33": ["Strength","attribute","physical","perlevel:false"],
+    "34": ["Strength per Level","attribute","physical","perlevel:true"],
+    "36": ["Dexterity","attribute",null,"perlevel:false"],
+    "37": ["Dexterity per Level","attribute",null,"perlevel:true"],
+    "39": ["Energy","attribute",null,"perlevel:false"],
+    "40": ["Energy per Level","attribute",null,"perlevel:true"],
+    "42": ["Intelligence","attribute","magic","perlevel:false"],
+    "43": ["Intelligence per Level","attribute","magic","perlevel:true"],
+    "45": ["Armor (attribute)","attribute",null,"perlevel:false"],
+    "46": ["Armor per Level (attribute)","attribute",null,"perlevel:true"],
+    "48": ["Vitality","attribute",null,"perlevel:false"],
+    "49": ["Vitality per Level","attribute",null,"perlevel:true"],
+    "51": ["All Attributes","attribute","all","perlevel:false"]
+  },
+
+  "skill_levels": {
+    "201": ["All Skills","skill_level","all",null],
+    "202": ["Singular Skills","skill_level","singular",null],
+    "419": ["Sub Skills","skill_level","sub",null],
+    "222": ["Physical Skills","skill_level","physical",null],
+    "223": ["Cold Skills","skill_level","cold",null],
+    "224": ["Arcane Skills","skill_level","arcane",null],
+    "225": ["Fire Skills","skill_level","fire",null],
+    "226": ["Lightning Skills","skill_level","lightning",null],
+    "227": ["Poison Skills","skill_level","poison",null],
+    "112": ["Explosion Skills","skill_level",null,"explosion"],
+    "331": ["Summon Skills","skill_level",null,"summon"],
+    "335": ["Sentry Skills","skill_level",null,"sentry"]
+  },
+
+  "skill_damage": {
+    "101": ["Magic Skill Damage","skill_damage","all","form:pct"],
+    "153": ["Flat Elemental Skill Damage","skill_damage","all_elemental","form:flat"],
+    "133": ["Flat Fire Skill Damage","skill_damage","fire","form:flat"],
+    "134": ["Fire Skill Damage %","skill_damage","fire","form:pct"],
+    "137": ["Flat Cold Skill Damage","skill_damage","cold","form:flat"],
+    "138": ["Cold Skill Damage %","skill_damage","cold","form:pct"],
+    "141": ["Flat Arcane Skill Damage","skill_damage","arcane","form:flat"],
+    "142": ["Arcane Skill Damage %","skill_damage","arcane","form:pct"],
+    "145": ["Flat Lightning Skill Damage","skill_damage","lightning","form:flat"],
+    "146": ["Lightning Skill Damage %","skill_damage","lightning","form:pct"],
+    "149": ["Flat Poison Skill Damage","skill_damage","poison","form:flat"],
+    "150": ["Poison Skill Damage %","skill_damage","poison","form:pct"]
+  },
+
+  "additive_weapon_damage": {
+    "128": ["Flat Physical Damage","additive","physical","delivery:attack"],
+    "129": ["Physical Damage %","additive","physical","delivery:attack"],
+    "103": ["Physical Damage per Level","additive","physical","delivery:attack"],
+    "28":  ["Enhanced Damage","additive","physical","delivery:attack"],
+    "31":  ["Enhanced Damage per Level","additive","physical","delivery:attack"],
+    "132": ["Additive Fire Damage","additive","fire","delivery:attack"],
+    "136": ["Additive Cold Damage","additive","cold","delivery:attack"],
+    "140": ["Additive Arcane Damage","additive","arcane","delivery:attack"],
+    "144": ["Additive Lightning Damage","additive","lightning","delivery:attack"],
+    "148": ["Additive Poison Damage","additive","poison","delivery:attack"]
+  },
+
+  "attack_mechanics": {
+    "68": ["Attack Speed","attack",null,null],
+    "67": ["Attack Range","attack",null,null],
+    "74": ["Attack Rating","attack",null,"form:flat"],
+    "75": ["Attack Rating %","attack",null,"form:pct"],
+    "76": ["Attack Rating per Level","attack",null,"form:perlevel"],
+    "72": ["Chance for Critical Strike","crit",null,null],
+    "73": ["Critical Strike Damage","crit",null,null],
+    "77": ["Piercing","attack",null,null],
+    "78": ["Slow Target","attack",null,null],
+    "94": ["Ignore Target Defense","attack",null,null],
+    "95": ["Deadly Blow","attack",null,null],
+    "97": ["Crushing Blow","attack",null,null],
+    "99": ["Open Wounds","attack","physical",null]
+  },
+
+  "cast_cooldown": {
+    "196": ["Faster Cast Rate","cast",null,null],
+    "198": ["Skill Haste","cooldown",null,null],
+    "200": ["Mana Cost Reduced","cast",null,null]
+  },
+
+  "delivery_specific": {
+    "70":  ["Projectile Speed","delivery","","delivery:projectile"],
+    "111": ["Explosion Damage","delivery",null,"delivery:explosion"],
+    "437": ["Explosion AOE","delivery",null,"delivery:explosion"],
+    "465": ["Movement Speed Converted to Damage","conversion",null,null]
+  },
+
+  "penetration": {
+    "135": ["Ignore Fire Resistance","penetration","fire",null],
+    "139": ["Ignore Cold Resistance","penetration","cold",null],
+    "143": ["Ignore Arcane Resistance","penetration","arcane",null],
+    "147": ["Ignore Lightning Resistance","penetration","lightning",null],
+    "151": ["Ignore Poison Resistance","penetration","poison",null],
+    "152": ["Ignore All Resistance","penetration","all",null]
+  },
+
+  "ailments": {
+    "79": ["Extra Damage to Stunned","ailment_bonus",null,null],
+    "80": ["Extra Damage to Bleeding","ailment_bonus","physical",null],
+    "81": ["Extra Damage to Frozen","ailment_bonus","cold",null],
+    "82": ["Extra Damage to Poisoned","ailment_bonus","poison",null],
+    "83": ["Extra Damage to Burning","ailment_bonus","fire",null],
+    "84": ["Extra Damage to Stasis","ailment_bonus","arcane",null],
+    "85": ["Extra Damage to Shadow Burning","ailment_bonus","arcane",null],
+    "86": ["Extra Damage to Frost Bitten","ailment_bonus","cold",null],
+    "87": ["Extra Damage to Ailments","ailment_bonus","all",null],
+    "104": ["Increased Bleeding Frequency","ailment_freq","physical",null],
+    "105": ["Increased Poisoned Frequency","ailment_freq","poison",null],
+    "106": ["Increased Burning Frequency","ailment_freq","fire",null],
+    "107": ["Increased Stasis Frequency","ailment_freq","arcane",null],
+    "108": ["Increased Shadow Burning Frequency","ailment_freq","arcane",null],
+    "109": ["Increased Frost Bite Frequency","ailment_freq","cold",null],
+    "110": ["Increased Ailment Frequency","ailment_freq","all",null],
+    "250": ["Ailment Damage","ailment_bonus","all",null]
+  },
+
+  "life": {
+    "52": ["Life","sustain_life",null,"form:flat"],
+    "53": ["Life %","sustain_life",null,"form:pct"],
+    "54": ["Life per Level","sustain_life",null,"form:perlevel"],
+    "55": ["Life Replenish","sustain_life",null,"regen"],
+    "58": ["Life per Second","sustain_life",null,"regen"],
+    "59": ["Life After each Kill","sustain_life",null,"onkill"],
+    "57": ["Life Stolen per Hit","sustain_life",null,"leech:attack"]
+  },
+  "mana": {
+    "60": ["Mana","sustain_mana",null,"form:flat"],
+    "61": ["Mana %","sustain_mana",null,"form:pct"],
+    "62": ["Mana per Level","sustain_mana",null,"form:perlevel"],
+    "63": ["Mana Replenish","sustain_mana",null,"regen"],
+    "65": ["Mana per Second","sustain_mana",null,"regen"],
+    "66": ["Mana After each Kill","sustain_mana",null,"onkill"],
+    "64": ["Mana Stolen per Hit","sustain_mana",null,"leech:attack"]
+  },
+
+  "defense": {
+    "29": ["Enhanced Defense","defense",null,null],
+    "30": ["Enhanced Defense per Level","defense",null,null],
+    "155": ["Defense %","defense",null,null],
+    "156": ["Defense per Level","defense",null,null],
+    "169": ["Defense vs Missiles","defense",null,null],
+    "159": ["Physical Damage Reduction","dmg_reduction","physical",null],
+    "160": ["Magic Damage Reduction","dmg_reduction","magic",null],
+    "161": ["All Damage Reduction","dmg_reduction","all",null],
+    "162": ["Damage Reduced","dmg_reduction","all",null],
+    "170": ["Faster Hit Recovery","defense",null,null],
+    "167": ["Damage Taken Recouped as Mana","dmg_reduction",null,null],
+    "168": ["Damage Taken Recouped as Life","dmg_reduction",null,null],
+    "171": ["Damage Return","defense",null,"reflect"],
+    "474": ["Increased Damage Return","defense",null,"reflect"]
+  },
+
+  "resistances": {
+    "173": ["All Resistances","resist","all","form:base"],
+    "174": ["Maximum All Resists","resist","all","form:max"],
+    "175": ["Fire Resistance","resist","fire","form:base"],
+    "176": ["Maximum Fire Resist","resist","fire","form:max"],
+    "177": ["Cold Resistance","resist","cold","form:base"],
+    "178": ["Maximum Cold Resist","resist","cold","form:max"],
+    "179": ["Lightning Resistance","resist","lightning","form:base"],
+    "180": ["Maximum Lightning Resist","resist","lightning","form:max"],
+    "181": ["Arcane Resistance","resist","arcane","form:base"],
+    "182": ["Maximum Arcane Resist","resist","arcane","form:max"],
+    "183": ["Poison Resistance","resist","poison","form:base"],
+    "184": ["Maximum Poison Resist","resist","poison","form:max"],
+    "191": ["Fire Absorption","absorb","fire",null],
+    "192": ["Cold Absorption","absorb","cold",null],
+    "193": ["Poison Absorption","absorb","poison",null],
+    "194": ["Lightning Absorption","absorb","lightning",null],
+    "195": ["Arcane Absorption","absorb","arcane",null]
+  },
+
+  "anti_cc": {
+    "287": ["Half Freeze Duration","anti_cc","cold",null],
+    "288": ["Cannot be Frozen","anti_cc","cold",null],
+    "289": ["Poison Length Reduced","anti_cc","poison",null]
+  },
+
+  "utility": {
+    "25": ["Movement Speed","utility",null,null],
+    "26": ["Phasing","utility",null,null],
+    "27": ["Jumping Power","utility",null,null],
+    "281": ["Light Radius","utility",null,null]
+  },
+
+  "farm": {
+    "282": ["Increased Experience Gain","farm",null,"xp"],
+    "284": ["Magic Find","farm",null,"mf"],
+    "285": ["Magic Find per Level","farm",null,"mf"],
+    "286": ["Extra Gold from Kills","farm",null,"gold"],
+    "290": ["Merchant Prices","farm",null,"gold"]
+  },
+
+  "summon_block": {
+    "327": ["Summon Life %","summon_stat",null,"summon"],
+    "328": ["Summon Damage Reduction","summon_stat",null,"summon"],
+    "329": ["Summon Resistances","summon_stat",null,"summon"],
+    "330": ["Summon Amount","summon_stat",null,"summon"],
+    "332": ["Summon Damage %","summon_stat",null,"summon"],
+    "333": ["Summon Attack Speed","summon_stat",null,"summon"],
+    "334": ["Summon Movement Speed","summon_stat",null,"summon"]
+  },
+  "sentry_block": {
+    "336": ["Sentry Damage %","sentry_stat",null,"sentry"],
+    "337": ["Sentry Amount","sentry_stat",null,"sentry"],
+    "338": ["Sentry Attack Speed","sentry_stat",null,"sentry"],
+    "339": ["Sentry Duration","sentry_stat",null,"sentry"]
+  },
+
+  "flask_block": {
+    "385": ["Flask Mana Replenish %","flask_stat",null,null],
+    "386": ["Flask Instant Mana Replenish","flask_stat",null,null],
+    "388": ["Flask Life Replenish %","flask_stat",null,null],
+    "389": ["Flask Instant Life Replenish","flask_stat",null,null],
+    "391": ["Flask Duration","flask_stat",null,null],
+    "393": ["Flask Extra Stacks","flask_stat",null,null],
+    "394": ["Flask Stacks Recovered per Kill","flask_stat",null,null],
+    "395": ["Flask Stacks Recovered","flask_stat",null,null],
+    "396": ["Flask Cooldown","flask_stat",null,null]
+  }
+}

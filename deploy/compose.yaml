@@ -1,0 +1,24 @@
+# Vendor into /home/clockmost-infra/projects/herosiege-filter/ (source under app/,
+# same pattern as clockmost-console). herosiege.clockmost.com, VPN-only,
+# forward-auth. Stateless — no volumes, no secrets.
+name: herosiege-filter
+
+services:
+  herosiege-filter:
+    build:
+      context: ./app          # = the vendored repo root
+      dockerfile: app/Dockerfile
+    image: clockmost/herosiege-filter:0.1.0
+    container_name: herosiege-filter
+    restart: unless-stopped
+    networks: [authentik]      # reached only through Caddy; no host port
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8000/api/health').status==200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+networks:
+  authentik:
+    external: true

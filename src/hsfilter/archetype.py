@@ -1,0 +1,101 @@
+"""Generic archetype builds — flavor (element) x playstyle x stage, with no
+specific skill. Synthesises a Research the compiler can consume, so all
+element x playstyle x stage combinations work without an authored file.
+
+Use for off-meta / "weird shenanigan" builds where you know the shape but not a
+canonical skill.
+"""
+from __future__ import annotations
+
+from .models import Research
+
+ELEMENTS = ["physical", "fire", "cold", "lightning", "arcane", "poison"]
+PLAYSTYLES = ["melee", "ranged", "caster", "summon", "sentry"]
+STAGES = ["leveling", "maps", "endgame"]
+
+PLAYSTYLE_LABEL = {
+    "melee": "Melee", "ranged": "Ranged / attack", "caster": "Caster",
+    "summon": "Summoner", "sentry": "Sentry / totem",
+}
+
+_SHAPE = {
+    "melee": dict(delivery=["attack", "melee"], attr_phys="strength",
+                  crit="optional", defense="hybrid", cd=False),
+    "ranged": dict(delivery=["attack", "projectile"], attr_phys="dexterity",
+                   crit="yes", defense="hybrid", cd=False),
+    "caster": dict(delivery=["cast", "aoe"], attr_phys="intelligence",
+                   crit="no", defense="life", cd=False),
+    "summon": dict(delivery=["summon"], attr_phys="intelligence",
+                   crit="no", defense="life", cd=False),
+    "sentry": dict(delivery=["sentry"], attr_phys="intelligence",
+                   crit="no", defense="life", cd=False),
+}
+
+
+def archetype_research(element: str, playstyle: str, stage: str) -> Research:
+    if element not in ELEMENTS:
+        raise ValueError(element)
+    if playstyle not in PLAYSTYLES:
+        raise ValueError(playstyle)
+    if stage not in STAGES:
+        raise ValueError(stage)
+    s = _SHAPE[playstyle]
+
+    # attribute: physical flavour -> the playstyle's phys attribute;
+    # elemental flavour on an attack playstyle still scales the phys attribute
+    # (weapon hits), casters/minions scale Intelligence.
+    attr = s["attr_phys"] if element == "physical" or playstyle in ("melee", "ranged") \
+        else "intelligence"
+
+    caster_like = playstyle in ("caster", "summon", "sentry")
+    scaling = ["all_skills", f"{element}_skills"]
+    if caster_like:
+        scaling += [f"{element}_skill_damage_pct", f"{element}_skill_damage_flat",
+                    "magic_skill_damage", "flat_elemental_skill_damage",
+                    "faster_cast_rate", "mana_cost_reduced"]
+    else:
+        scaling += ["attack_speed", "attack_rating",
+                    "weapon_flat_phys", "weapon_pct_phys", "additive_element"]
+        if s["crit"] in ("yes", "optional"):
+            scaling += ["crit_chance", "crit_damage"]
+    if playstyle == "summon":
+        scaling = ["summon_skills", "summon_block", "all_skills", "sub_skills",
+                   "primary_attribute", "all_attributes"]
+    if playstyle == "sentry":
+        scaling = ["sentry_skills", "sentry_block", "all_skills", "sub_skills",
+                   "primary_attribute", "all_attributes"]
+    scaling += ["primary_attribute", "all_attributes",
+                f"ignore_{element}_resist", "ignore_all_resist"]
+
+    return Research.model_validate({
+        "id": f"generic_{element}_{playstyle}_{stage}",
+        "name": f"{element.capitalize()} {PLAYSTYLE_LABEL[playstyle]} — {stage.capitalize()}",
+        "class": "Generic",
+        "tree": "—",
+        "main_skills": [f"{element} {playstyle}"],
+        "element": element,
+        "splash_element": None,
+        "delivery": s["delivery"],
+        "primary_attribute": attr,
+        "cooldown_based": s["cd"],
+        "aoe": True,
+        "crit_scaling": s["crit"] if not caster_like else "no",
+        "defense_model": s["defense"],
+        "uses_shield": playstyle == "melee",
+        "key_conversions": [],
+        "required_items": [],
+        "scaling_stats": list(dict.fromkeys(scaling)),
+        "defense_priority": [
+            "life_flat", "life_pct", "all_resist",
+            *(["faster_hit_recovery"] if caster_like else ["phys_dmg_reduction", "all_dmg_reduction"]),
+            "life_on_kill", "anti_freeze",
+        ],
+        "stage": stage,
+        "stage_notes": {
+            "leveling": "Generic archetype — verify against your actual skill once you know it.",
+            "maps": "Cap resists, start capping single-element weaknesses.",
+            "endgame": "Push Ignore Resistance / Defense to 100% for your flavour.",
+        },
+        "sources": ["synthesised archetype — not a researched build"],
+        "uncertain": ["No specific skill; delivery/attribute are archetype defaults."],
+    })

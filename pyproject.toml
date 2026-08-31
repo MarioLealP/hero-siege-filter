@@ -1,0 +1,26 @@
+[project]
+name = "hsfilter"
+version = "0.1.0"
+description = "Hero Siege loot-filter format codec + build-aware filter generator"
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2.9"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hsfilter"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"research" = "hsfilter/_research"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff", "mypy"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "cli", "tests"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

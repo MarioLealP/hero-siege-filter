@@ -1,0 +1,58 @@
+{
+  "id": "marksman_gunner_drones_leveling",
+  "name": "Marksman \u2014 Gunner Drones \u2014 Leveling",
+  "class": "Marksman",
+  "tree": "Engineer",
+  "main_skills": [
+    "Gunner Drone",
+    "Master Mechanic"
+  ],
+  "element": "arcane",
+  "splash_element": null,
+  "delivery": [
+    "summon",
+    "projectile"
+  ],
+  "primary_attribute": "intelligence",
+  "cooldown_based": false,
+  "aoe": true,
+  "crit_scaling": "no",
+  "defense_model": "life",
+  "uses_shield": false,
+  "key_conversions": [],
+  "required_items": [],
+  "scaling_stats": [
+    "summon_skills",
+    "summon_block",
+    "all_skills",
+    "arcane_skills",
+    "sub_skills",
+    "primary_attribute",
+    "all_attributes",
+    "arcane_skill_damage_pct",
+    "projectile_speed",
+    "ignore_all_resist"
+  ],
+  "defense_priority": [
+    "vitality",
+    "life_flat",
+    "life_pct",
+    "all_resist",
+    "all_dmg_reduction",
+    "faster_hit_recovery"
+  ],
+  "stage": "leveling",
+  "stage_notes": {
+    "leveling": "Max Gunner Drone + support skills; drones clear, you kite.",
+    "maps": "stack Vitality (no built-in defense), cap resists.",
+    "endgame": "C.Y.C.L.O.P.S / Multitude; squishy, keep moving."
+  },
+  "sources": [
+    "game: talent_desc_gunnerDrone ('gunner drone which follows you and shoots bullets that bounce ... arcane damage')",
+    "https://tposegaming.com/hero-siege-season-10-tier-list/ (Gunner Drones listed top leveler)"
+  ],
+  "uncertain": [
+    "Exact Marksman tree names (Engineer/Sharpshooter best-effort)",
+    "how much personal +arcane skill damage carries to drone hits vs pure summon block"
+  ]
+}

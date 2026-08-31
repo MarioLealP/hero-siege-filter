@@ -1,0 +1,98 @@
+{
+  "game_version": "2024.x / Season 10 (Ebontharn)",
+  "retrieved": "2026-08-31",
+  "classes": [
+    {
+      "name": "Pirate",
+      "trees": [
+        "Gunner",
+        "Plunderer"
+      ],
+      "viable_builds": [
+        {
+          "build": "anchor_swing",
+          "skill": "Anchor Swing",
+          "tree": "Plunderer",
+          "archetype": "cold_caster",
+          "stages": [
+            "leveling",
+            "maps",
+            "endgame"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Necromancer",
+      "trees": [
+        "Bone",
+        "Blood",
+        "Summon"
+      ],
+      "viable_builds": [
+        {
+          "build": "bone_shred",
+          "skill": "Bone Shred",
+          "tree": "Bone",
+          "archetype": "arcane_caster",
+          "stages": [
+            "leveling"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Paladin",
+      "trees": [
+        "Justiciar",
+        "Lionheart"
+      ],
+      "viable_builds": [
+        {
+          "build": "lightning_fury",
+          "skill": "Lightning Fury",
+          "tree": "Justiciar",
+          "archetype": "lightning_caster",
+          "stages": [
+            "leveling",
+            "maps",
+            "endgame"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Samurai",
+      "trees": [
+        "Ronin",
+        "Emperor's Blade"
+      ],
+      "viable_builds": [
+        {
+          "build": "explosive_kunai",
+          "skill": "Explosive Kunai",
+          "tree": "Ronin",
+          "archetype": "phys_attacker",
+          "stages": [
+            "leveling",
+            "maps",
+            "endgame"
+          ]
+        }
+      ]
+    }
+  ],
+  "archetypes": [
+    "cold_caster",
+    "fire_caster",
+    "lightning_caster",
+    "arcane_caster",
+    "poison_caster",
+    "phys_attacker",
+    "bow_attacker",
+    "gun_attacker",
+    "summoner",
+    "sentry",
+    "hybrid"
+  ]
+}

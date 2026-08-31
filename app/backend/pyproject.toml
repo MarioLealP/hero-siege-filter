@@ -1,0 +1,19 @@
+[project]
+name = "hsfilter-api"
+version = "0.1.0"
+description = "Stateless read-only API: pick a build -> download a Hero Siege loot filter"
+requires-python = ">=3.12"
+dependencies = [
+  "hsfilter",
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.32",
+]
+
+[tool.uv.sources]
+hsfilter = { path = "../..", editable = true }
+
+[dependency-groups]
+dev = ["httpx", "pytest", "ruff", "mypy"]
+
+[tool.ruff]
+line-length = 100

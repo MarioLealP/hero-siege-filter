@@ -1,0 +1,5478 @@
+{
+ "Amazon": {
+  "AstropesGift": {
+   "desc": "Perform a lightning enhanced attack dealing physical damage and lightning damage.",
+   "element": "lightning",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Master of Javelin",
+    "Power Current",
+    "Astrope's Curse",
+    "Astrope's Revenge",
+    "Rapid Momentum",
+    "Powerstasis",
+    "Ending Fate",
+    "Astrope's Agility",
+    "Astrope's Dexterity",
+    "Zapping Voltage",
+    "Surging Stormbolt",
+    "Thundering Storm",
+    "Critical Thunderbolt",
+    "Eye of Storm"
+   ]
+  },
+  "CausticSpearhead": {
+   "desc": "Perform a burst attack dealing increased damage, additional poison damage and inflicting Poisoned on hit.",
+   "element": "poison",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "dot"
+   ],
+   "subtalents": [
+    "Stocked Quiver",
+    "Caustic Liquid",
+    "Fierce Spearheads",
+    "Venomous Touch",
+    "Splintering Arrows",
+    "Tribal Hunter's Aim",
+    "Rapid Arrows",
+    "Additional Venom",
+    "Arrow Wound",
+    "Erupting Spearheads",
+    "Caustic Arc",
+    "Caustic Rampage",
+    "Toxic Spores",
+    "Venomous Burst"
+   ]
+  },
+  "DeathFromAbove": {
+   "desc": "Call down a rain of falling spears on target location dealing poison damage and slowing monsters struck.",
+   "element": "poison",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "dot"
+   ],
+   "subtalents": [
+    "Rapid Spearhandling",
+    "Heavy Spears",
+    "Icebreaking Spearshower",
+    "Spearhandler's Intellect",
+    "Need for Speed",
+    "Beast Slayer",
+    "Safeheaven",
+    "Critical Arrowfall",
+    "Stacking Life",
+    "Dual Spearshower",
+    "Spear Delivery",
+    "Ancient Device",
+    "Detonation Shower",
+    "Storm of Spears"
+   ]
+  },
+  "Envenom": {
+   "desc": "On monster kill you have a chance to explode toxic fissures on all monsters around thje target dealing poison damage and inflicting Poisoned.",
+   "element": "poison",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot",
+    "explosion"
+   ],
+   "subtalents": [
+    "Toxic Fortune",
+    "Empowered Toxin",
+    "Toxic Afterburst",
+    "Corrosive Liquid",
+    "Lifesap",
+    "Toxic Reach",
+    "Spreading Disease",
+    "Crippling Poison",
+    "Added Venom",
+    "Venom Overflow",
+    "Stacked Weakness",
+    "Rapid End",
+    "Envenova",
+    "Venomwave"
+   ]
+  },
+  "LeapingAmbush": {
+   "desc": "Jump towards target location dealing poison damage and knocking up monsters around you upon landing.",
+   "element": "poison",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe",
+    "dot"
+   ],
+   "subtalents": [
+    "Power Quads",
+    "Heavyweight Slam",
+    "Tribal Spearnage",
+    "Landing Blast",
+    "Stunning Smash",
+    "Crippling the Weak",
+    "Venomous Blastwave",
+    "Adrenaline Rush",
+    "Anti-Antidote",
+    "Stoneskinned Warrior",
+    "Envenomous Groundslam",
+    "Master of Agility",
+    "Arc of Spears",
+    "Ground Stomper"
+   ]
+  },
+  "NoxiousStrike": {
+   "desc": "Unleash a poisonous strike dealing physical damage and  poison damage. Every third strike sends out piercing poisonous projectiles dealing damage and inflicting Poisoned on hit.",
+   "element": "poison",
+   "splash": [],
+   "scaling_hint": [
+    "dexterity"
+   ],
+   "delivery": [
+    "dot",
+    "projectile"
+   ],
+   "subtalents": [
+    "Corrosive Force",
+    "Touch of Noxus",
+    "Empowered Toxins",
+    "Noxious Bolts",
+    "Noxian Slash",
+    "Corrosive Reach",
+    "Envenoming Empowerment",
+    "Glimmering Venom",
+    "Crushing Corrosion",
+    "Noxious Duality",
+    "Spinning Speartips",
+    "Explosive Toxins",
+    "Elemental Fragmentation",
+    "Noxious Sequence"
+   ]
+  },
+  "Rebound": {
+   "desc": "Perform an attack dealing physical damage and  lightning damage that rebounds to the closest monster.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Jumping Spear",
+    "Damascus Speartip",
+    "Reaching Ricochet",
+    "Splitting Speartip",
+    "Multi Rebound",
+    "Accurate Spearshot",
+    "Increasing Odds",
+    "Penetrating Rebound",
+    "Marksmanship",
+    "Rapidfly",
+    "Electrocharged Rebound",
+    "Rebomb",
+    "Orbital Rebound",
+    "Kickback Projectile"
+   ]
+  },
+  "Spearnage": {
+   "desc": "Furiously throw lightning enchanted spears towards target location.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Lethal Spearstorm",
+    "Spear Storm",
+    "Accurate Spearing",
+    "Thundertips",
+    "Timefunneling Spears",
+    "Pointy Ends",
+    "Swift Glaives",
+    "Swiftstepping",
+    "Conqueror of Light",
+    "Sudden Flank",
+    "Spinning to Win",
+    "Lightning Ball",
+    "Boomerang Spears",
+    "Explosive Speartips"
+   ]
+  },
+  "StormDash": {
+   "desc": "Dash towards target location striking nearby monsters with chain lightning.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Agile Zapper",
+    "Zapping Force",
+    "Bouncing Current",
+    "Thunderfall",
+    "Hopping Surge",
+    "Landing Surge",
+    "Lightning Strikes",
+    "Voltage Struck",
+    "Electric Current",
+    "Agility Over Power",
+    "Lightning Trail",
+    "Storm Orbs",
+    "Storm Gates",
+    "Pillar of Storm"
+   ]
+  },
+  "ThunderFury": {
+   "desc": "Perform an attack dealing physical damage that spreads lightning behind the target.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [
+    "intelligence"
+   ],
+   "delivery": [],
+   "subtalents": [
+    "Roaring Thunder",
+    "Breaking Thunder",
+    "Photonic Transfer",
+    "Thunderstep",
+    "Storm\u00b4s Wisdom",
+    "Tectonic Hit",
+    "Tectonic Tremors",
+    "Executioneer\u00b4s Fury",
+    "Tectonic Impact",
+    "Thunder\u00b4s Reach",
+    "Arc Lightning",
+    "Leaping Thunder",
+    "Vacuuming Thunder",
+    "Electric Essence"
+   ]
+  }
+ },
+ "Bard": {
+  "CrowdDiver": {
+   "desc": "Charge towards target location knocking monsters up on hit dealing physical damage.",
+   "element": "physical",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Uppercuts.. So Many Uppercuts",
+    "Headbutt",
+    "Colliding Masses",
+    "Diving Stamina",
+    "Get Out The Way",
+    "Crowd Violation",
+    "Dirty Diver",
+    "Hammer Dive",
+    "Quick Dive",
+    "Lengthy Dive",
+    "Pit Fighters",
+    "Flying Fists",
+    "iFist",
+    "Blinkfist Strike"
+   ]
+  },
+  "HeadBanger": {
+   "desc": "Every third attack unleashes a headbang dealing area of effect damage. ",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Banging Hard",
+    "Hair Length",
+    "Whipping Faster",
+    "Hair Clipping",
+    "Taking Advantage",
+    "Crushing Hair Sweep",
+    "Ripping Hair",
+    "Vile Slash",
+    "Smacking Whip",
+    "Rupturing Headbang",
+    "Hair Whipper",
+    "Hair Tornado",
+    "Slapping Around",
+    "Hemorrhaging Hairbang"
+   ]
+  },
+  "MoshpitMassacre": {
+   "desc": "Summon a death metal crowd to fight monsters within the area radius draining a portion of your maximum mana over time dealing physical damage.",
+   "element": "physical",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot",
+    "summon"
+   ],
+   "subtalents": [
+    "Pit Crowd",
+    "Moshpit Mania",
+    "Amping Up The Crowd",
+    "Pit Fatality",
+    "MAKE IT BIGGER!!",
+    "Broken Noses",
+    "Pit Full Of Injuries",
+    "Going Crazy",
+    "Slamming Around",
+    "Brutal Intimacy",
+    "Follow The Lead",
+    "Pitfighting Colossus",
+    "Beach Balls",
+    "Total Anarchy"
+   ]
+  },
+  "ProgeniesOfTheGreatCataclysm": {
+   "desc": "Summon a massive amplifier playing black metal at high volume sending piercing notes towards nearby monsters bouncing from terrain dealing lightning damage. If you are too far from the amplifier it is pulled back to your position.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Black Metals Reach",
+    "Stage OSHA Violation",
+    "Longer Cord",
+    "The Sound of Darkness",
+    "Amping Up The Metal",
+    "Penetrating Soundwaves",
+    "Broken Electric Cord",
+    "Electric Soundwaves",
+    "Overheated Amplifier",
+    "Electrocuting Soundblast",
+    "Increasing Sound Levels",
+    "Crushing Sound Levels",
+    "Orbital Soundwaves",
+    "Tripping Electric Cord"
+   ]
+  },
+  "PyroTechnician": {
+   "desc": "Blink into the closest monster to target location unleashing an area of effect attack dealing physical and fire damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Heat To The Flames",
+    "Amping Up The Heat",
+    "Lit On Flames",
+    "Fueling The Engine",
+    "Afterflame",
+    "Melting Bones",
+    "Wounding Fire",
+    "Covering The Stage",
+    "Pulsating Pyrokinesis",
+    "Concentrated Scorching",
+    "Rapid Burns",
+    "Traveling Pyre",
+    "Circle of Burning",
+    "Burning Surface"
+   ]
+  },
+  "SacrilegiousSymphony": {
+   "desc": "Channel for a brief moment before unleashing a massive area of effect pulse around you dealing lightning damage.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe",
+    "summon"
+   ],
+   "subtalents": [
+    "Marked By The Devil",
+    "Echoing Riffs",
+    "Scorching Riffs",
+    "Blasting Soundwave",
+    "Free Will",
+    "Trembling Symphony",
+    "Increased Tempo",
+    "Symphony of Anxiety",
+    "Double the Satisfaction",
+    "Static Symphony",
+    "Sacrilegious Encore",
+    "Symphony of Destruction",
+    "Pulling the Crowd",
+    "Spiraling to Insanity"
+   ]
+  },
+  "SlayingRiffs": {
+   "desc": "Drop an amplifier from the sky smashing the ground and send notes towards enemies dealing lightning damage. Dropping an amplifier on another one causes the first one to explode.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion"
+   ],
+   "subtalents": [
+    "Multipicking",
+    "Heavy Notes",
+    "Breaking The Soundbarrier",
+    "Picking Skills",
+    "Widened Amplifiers",
+    "Stage Agility",
+    "Ear Penetration",
+    "Splitting Sound",
+    "Burning Acoustics",
+    "Paralyzing Volume",
+    "Bursting Sound",
+    "Echoing Sound Wall",
+    "Satanic Notes",
+    "Symphony of Destruction"
+   ]
+  },
+  "VisceralGrowl": {
+   "desc": "Unleash a visceral growl in a frontal cone dealing lightning damage.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Amplified Sound",
+    "Vocal Echo",
+    "Octavism",
+    "Acoustic Piercing",
+    "Sound Weight",
+    "After Growl",
+    "Reaching Roar",
+    "Vocal Therapy",
+    "Trembling Growl",
+    "Stuttering Frequency",
+    "Echo in the Darkness",
+    "Vocal Concentration",
+    "Tinnitus",
+    "Unleash The Metal"
+   ]
+  }
+ },
+ "Butcher": {
+  "Blender": {
+   "desc": "Swing two huge butchers knives around you dealing physical damage.",
+   "element": "physical",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Sharpened Cleavers",
+    "Industrial Sized",
+    "No Bits Nor Pieces",
+    "Ragefueled Energy",
+    "Extra Cleaver Addon",
+    "Obsidian Blades",
+    "Attachment Malfunction",
+    "It Will Blend",
+    "Blood Thirsting Killing Machine",
+    "Will it Blend?",
+    "A.I. Empowered Nanoblenders",
+    "Blenderang",
+    "Attachable Microblades",
+    "Blending Blood Pact"
+   ]
+  },
+  "BrutalizingSlash": {
+   "desc": "Attack with brutalizing area of effect attack causing monsters to bleed.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [
+    "strength",
+    "dexterity"
+   ],
+   "delivery": [
+    "dot"
+   ],
+   "subtalents": [
+    "Bucthering Skill",
+    "Bonebreaker",
+    "Unstoppable Rage",
+    "Descent to Madness",
+    "With 2 Hands",
+    "Skullsplitter",
+    "Afterlife Burner",
+    "Precision Equals Power",
+    "For the Weak",
+    "Bleeding the Prey",
+    "Pummeling Slashwave",
+    "Painmongering",
+    "Gutting Frenzy",
+    "Meet Daisy"
+   ]
+  },
+  "ButchersHook": {
+   "desc": "Flail a huge meat hook around you gathering all monsters struck then pulling and stunning them infront of you.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Everlasting Anger",
+    "Backed by Rage",
+    "Hook Discharge",
+    "Carcass Carrier",
+    "Fresh Meat",
+    "Pierce the Torso",
+    "Spin of Death",
+    "Hellsent",
+    "Immaculate Butcher",
+    "Bring the Carnage",
+    "Concussive Blow",
+    "Critical Velocity",
+    "Master of Meat Hooks",
+    "Welcome to Hell"
+   ]
+  },
+  "ChainRip": {
+   "desc": "Perform a powerful attack pulling all nearby monsters infront of you.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Ranged Suffering",
+    "Chains of Hatred",
+    "Torture the Skin",
+    "Break the Flesh",
+    "The Real Monster",
+    "Shift of Power",
+    "Rocket Propelled Chains",
+    "Chains Unchained",
+    "Rage Trance",
+    "They Never Know What Hit Them",
+    "Chains Attached",
+    "Chainfueled Hunting",
+    "Prey on the Weak",
+    "Carcass Rip"
+   ]
+  },
+  "ChainSwing": {
+   "desc": "Throw a meat hook that pulls you into it when connecting with monster or environment. Additionally fires chains to nearby monsters when landing.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile",
+    "summon"
+   ],
+   "subtalents": [
+    "The Huntsman",
+    "Immobilizing Hit",
+    "No Quarter",
+    "Demonic Chains",
+    "Introduce Fear",
+    "Physical Torture",
+    "Killing Spree",
+    "Scent of Prey",
+    "Entry Frenzy",
+    "Unblessed Path",
+    "Warm Welcome",
+    "Hookstorm",
+    "Prey of the Day",
+    "Centrifugal Force"
+   ]
+  },
+  "FuriousStrike": {
+   "desc": "Perform a powerful area of effect attack dealing physical damage and infecting monsters struck with a stack of rabies. Each stack of rabies increases attack damage dealt to the monster.",
+   "element": "physical",
+   "splash": [
+    "fire",
+    "lightning",
+    "poison",
+    "holy"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Wide Spread Epidemic",
+    "Down with Sickness",
+    "Furious Reach",
+    "Strike of Hate",
+    "Blade Uppercut",
+    "Serious Fever",
+    "Fueled Anger",
+    "Mediocre Unit",
+    "Stay Still!",
+    "Spread the Word",
+    "Consumed by Hatred",
+    "Flames of Fury",
+    "Sick to the Core",
+    "The Absolute Unit"
+   ]
+  },
+  "SlicingThrow": {
+   "desc": "Throw your weapon like a boomerang returning back to you dealing physical damage to monsters on its path. You can activate Daisy's Call to re-appear where the last thrown slicing throw is at any point in the flight.",
+   "element": "physical",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Cut In Half",
+    "Precision Blade",
+    "One Swift Strike",
+    "Cuts and Wounds",
+    "Splitting Chain",
+    "Burn the Corpses!",
+    "Daisy\u00b4s Insight",
+    "Executioner's Apprentice",
+    "Bladestorm",
+    "Bloody Combustion",
+    "Splitting blade",
+    "Slicing Vortex",
+    "Bladesaw Massacre",
+    "Daisy\u00b4s Regards"
+   ]
+  },
+  "SubmergedKnives": {
+   "desc": "Smash the ground pushing waves of butchers knives out of the ground dealing massive damage and knocking them up. Deals extra damage to bleeding targets.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot"
+   ],
+   "subtalents": [
+    "Impaling Horde",
+    "Agravating Wounds",
+    "Sharp Edges",
+    "Encased Cutters",
+    "Jugular Cut",
+    "The Bigger They Are",
+    "Blunt Cleaver",
+    "Extended Gutting",
+    "Nimble Handcraft",
+    "Meat Skewer",
+    "Tidal Knives",
+    "Sudden Chaining",
+    "Knifehoarder",
+    "Bone Daggers"
+   ]
+  }
+ },
+ "DemonSlayer": {
+  "AbsoluteMayhem": {
+   "desc": "Harness the power of your inner demon and fire multiple massive bullets in a line dealing physical damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Mayhem Up!",
+    "Absolute Carnage",
+    "Colossal Barrel",
+    "Stocked Capacity",
+    "Hypothermic Rounds",
+    "Bonehit",
+    "Explosive Empowered Rounds",
+    "Fear the Gun",
+    "Bicep Curls",
+    "Frostbiting Bullets",
+    "Impact Shrapnel",
+    "Line of Fire",
+    "Explosion Vacuum",
+    "Maniac Mayhem"
+   ]
+  },
+  "BulletHell": {
+   "desc": "Fire a barrage of bullets towards the aimed direction dealing physical damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Hellflame Bullets",
+    "More Bullets!",
+    "Slipping Triggerfinger",
+    "Steady Gunhold",
+    "Heavy Bullet Impact",
+    "Barrel Maintenance",
+    "Higher Caliber",
+    "Blasting Gunshot",
+    "Swift Rounds",
+    "Abusive Tactics",
+    "Bullet Storm",
+    "Nowhere to Hide",
+    "Demon\u00b4s Hurricane",
+    "Gunpowder"
+   ]
+  },
+  "DemonsCalling": {
+   "desc": "Become airborne and smash the ground dealing area of effect arcane damage and stunning monsters around you.",
+   "element": "arcane",
+   "splash": [
+    "shadow"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Pentagram Radius",
+    "Demon's Embrace",
+    "Hellflame Burst",
+    "Dark Essence",
+    "Dark Meteors",
+    "The Fiery Layer of Hell",
+    "Hellish Scorching",
+    "Demon's Mind",
+    "Devil in the Detail",
+    "Hell Infused Aftershock",
+    "Unholy Aftershock",
+    "Shadow Flames",
+    "Appearing from Shadows",
+    "Pentagram Shockwave"
+   ]
+  },
+  "FastSlices": {
+   "desc": "Perform a series of dashing attacks, dealing area of effect physical damage on second attack and stunning monsters around you on the final attack.",
+   "element": "physical",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Wide Slice",
+    "Slashing Strike",
+    "Expert Slayer",
+    "Demon's Heart",
+    "Ferocious Slice",
+    "Burning Blade",
+    "Molten Steel",
+    "Slayer's Intellect",
+    "Swift Deadstrike",
+    "Demon Slaying",
+    "Flaming Blades",
+    "Detonation Slice",
+    "Shadow Daggers",
+    "High Strike"
+   ]
+  },
+  "PossessedBullet": {
+   "desc": "Fire a satanic bullet possessed by darkness which explodes into multiple bullets on impact dealing physical damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion",
+    "projectile"
+   ],
+   "subtalents": [
+    "Secondary Haunting",
+    "Spirits Within Rounds",
+    "Exorcism",
+    "Hemorrhaging Possession",
+    "Blood Ripples",
+    "Bloodlusted Bullet",
+    "Longlasting Barrel",
+    "The Demon Within",
+    "Stop Resisting",
+    "Leeching Demon",
+    "Ghostwhirl",
+    "Seeking Host",
+    "Haunting",
+    "Malignance"
+   ]
+  },
+  "ShredderTrap": {
+   "desc": "Throw a shredder on the ground spinning with deadly speed dealing physical damage.",
+   "element": "physical",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Sharp Edged Shredders",
+    "Blood Hungry Blades",
+    "Bits and Pieces",
+    "Ripping Shredderblade",
+    "Slayer\u00b4s Adrenaline",
+    "Less is More",
+    "Forging Hands",
+    "Cutting Power",
+    "Slay the Wounded",
+    "Bigger and Sharper Blades",
+    "Comeback with a Cut",
+    "Woodshop",
+    "Circular Cutting",
+    "Gigashredder"
+   ]
+  },
+  "SliceOfShadows": {
+   "desc": "Perform an attack that releases a wave of shadow dealing physical damage.",
+   "element": "physical",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [
+    "strength"
+   ],
+   "delivery": [],
+   "subtalents": [
+    "Floating Shadow",
+    "Strenghtened Veil",
+    "Shadow Duality",
+    "Mist of Darkness",
+    "Stacking Shadow",
+    "Crushing Veil",
+    "Cold Shadow",
+    "Frostbitten Mist",
+    "Bitter Smoke",
+    "Looming Mist",
+    "Shadow Extraction",
+    "Shadow's Arc",
+    "Lingering Shadows",
+    "Scorching Shadow"
+   ]
+  },
+  "TriggerFinger": {
+   "desc": "Fire a burst shot dealing physical damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Slick Fingers",
+    "Triggerheavy",
+    "Gunslinging Slayer",
+    "Rapid Gunslinger",
+    "Burning Bullethole",
+    "Executing Gunshot",
+    "Bullet Fragmentation",
+    "Brand New Cavity",
+    "Supersonic Bullets",
+    "Gasoline Covered Ammunition",
+    "Piercing Mayhem",
+    "Fingertapped Killshot",
+    "It's Raining Bullets",
+    "Shredder Slugs"
+   ]
+  }
+ },
+ "Exo": {
+  "Asteroid": {
+   "desc": "Cast down an asteroid from the sky dealing cold damage when landing.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Astral Crush",
+    "Asteroid Aftershock",
+    "Impact Speed",
+    "World Ending Impact",
+    "A Gift From Space",
+    "Clairvoyant Prophet",
+    "Sharp Asteroids",
+    "Frozen Core",
+    "Coldshatter Impact",
+    "Perseids",
+    "Wave of Asteroids",
+    "Geomagnetic Reversal",
+    "Galactic Cataclysm",
+    "Planetary Collapse"
+   ]
+  },
+  "BlackHole": {
+   "desc": "Cast a black hole on target location that slows and pulls monsters towards it dealing cold damage.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Event Horizon",
+    "Super Massive",
+    "Time != Space",
+    "Mass Density",
+    "Interstellar Radiation",
+    "Watermelting Cold",
+    "Time Bender",
+    "Time Traveler",
+    "Subzero Frequency",
+    "Singularity",
+    "Galaxy Devouring Growth",
+    "Hidden in Plain Sight",
+    "Supermassive Black Hole",
+    "Empowered Singularity"
+   ]
+  },
+  "LunarOrbit": {
+   "desc": "Unleash small moons in your orbit dealing cold damage on hit. ",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Tidal Collision",
+    "Full Moon",
+    "Extrasolar Moons",
+    "Magnetic Pull",
+    "Loss of Orbit",
+    "Celestial Collapse",
+    "Lunar Cycle",
+    "Tidalwaves",
+    "Mass Meets Mass",
+    "Heavy Core",
+    "Crescent Moon",
+    "Lunar Architect",
+    "Orbit Breakout",
+    "Devastating Nebula"
+   ]
+  },
+  "ScorchingWhip": {
+   "desc": "Cast a scorching solar flare that whips forward dealing fire damage to monsters hit.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Double Whip",
+    "Celestial Burn",
+    "Overheating",
+    "Punishing Flames",
+    "Sun Gods Chosen",
+    "Solar Arch",
+    "Critical Temperature",
+    "Fire Starter",
+    "Scorching Snap",
+    "Celestial Aid",
+    "Solar Harvester",
+    "Blasting Whiplash",
+    "Flaming Whip",
+    "Whirlwhipper"
+   ]
+  },
+  "SolarDash": {
+   "desc": "Turn into a burning ball of fire traveling towards target location dealing fire damage leaving a trail of flames behind you.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot"
+   ],
+   "subtalents": [
+    "Interstellar Traveller",
+    "Burn Burn BURN",
+    "Solar Burst",
+    "Restoring Flames",
+    "Cooldown Lap",
+    "Plasma Dash",
+    "To Ashes",
+    "Protective Cover",
+    "Intense Flames",
+    "Shooting Star",
+    "Bursting Flames",
+    "Solar Carnage",
+    "The Sun Goddess",
+    "Photon Dash"
+   ]
+  },
+  "SolarFlare": {
+   "desc": "Unleash solar flare projectiles that homes towards monsters.",
+   "element": null,
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Solar Fireworks",
+    "Blue Flame Fire",
+    "Rapidfire Cannoneer",
+    "God Slayer",
+    "Explosive Flares",
+    "Solar's Edge",
+    "Everburning Fire",
+    "Flaming Hands",
+    "Celestial Step",
+    "Burst of Power",
+    "Grand Flare",
+    "Sun\u00b4s Orbit",
+    "Searing Flares",
+    "Solar Orbs"
+   ]
+  },
+  "SuperNova": {
+   "desc": "Explode into a supernova dealing fire damage on a large radius.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe",
+    "explosion"
+   ],
+   "subtalents": [
+    "White Dwarf Star",
+    "Renewing Flare",
+    "Penetrating Blast",
+    "Chained Explosions",
+    "Fight the Gravity",
+    "Weakening Nova",
+    "Chain Reactions",
+    "Fiery Frenzy",
+    "Blast Right Trough",
+    "Targeted Cosmic Event",
+    "Particle Outflux",
+    "Solar Shockwave",
+    "Connected by Sun",
+    "Planetary Collision"
+   ]
+  },
+  "Tsunami": {
+   "desc": "Direct your lunar mass to cast a wave of tsunami forward dealing cold damage.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Heavy Water",
+    "Arctic Aqua",
+    "Water Walker",
+    "Ramping Waves",
+    "Waterspout",
+    "Chaining Waves",
+    "Salt Balance",
+    "Giant Waves",
+    "Asphyxiating Depths",
+    "Beyond the Horizon",
+    "Trembling Tidalwave",
+    "Watery Turbulence",
+    "Ocean Pullback",
+    "The Last Water Bender"
+   ]
+  }
+ },
+ "Illusionist": {
+  "AgeProliferation": {
+   "desc": "Channel waves of fractal energy on the target monster sending pulses out dealing arcane damage to nearby monsters.",
+   "element": "arcane",
+   "splash": [
+    "fire",
+    "shadow"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Ancient Magic",
+    "Eons Ago",
+    "Bridge Between Reality",
+    "Restoring Proliferation",
+    "Breaking The Cycle",
+    "Effortless Path",
+    "Additional Faith",
+    "Rapid Aging",
+    "Burning Aging",
+    "Centuries Within Seconds",
+    "Growing Old",
+    "Age Multiliferation",
+    "Arcane Echo",
+    "Scorching Magic"
+   ]
+  },
+  "CircleOfGuardians": {
+   "desc": "Conjure a circle of Sand Guardians around you increasing Sand Guardians\u2019 arcane damage.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [
+    "energy"
+   ],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Rapid Deployment",
+    "Peer Pressure",
+    "Battalion of Guardians",
+    "Devastating Lunge",
+    "Lasting Sand Kingdom",
+    "Well Trained Troops",
+    "Magic Infused Blade",
+    "Far Reaching Spears",
+    "Everflowing Sands",
+    "Manipulation",
+    "Desert\u00b4s Army",
+    "Ancient Sand Goliath",
+    "Arcanic Sand Tether",
+    "Seven Nation Army"
+   ]
+  },
+  "GravitationalSlam": {
+   "desc": "Raise monsters in target location into the air smashing them down with quantum force dealing arcane damage.",
+   "element": "arcane",
+   "splash": [
+    "shadow"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Earth\u00b4s Pull",
+    "Astral Chaos",
+    "Shaken With Magic",
+    "Gravity at Will",
+    "Floating Range",
+    "Self-help",
+    "Stunned by Force",
+    "Gravitational Radius",
+    "Deep Slam",
+    "Force of Gravity",
+    "Void Slam",
+    "Gravitation Wave",
+    "Dimensional Slam",
+    "Antigravity Slam"
+   ]
+  },
+  "SandGuardian": {
+   "desc": "Conjure a Sand Guardian that attacks nearby monsters dealing arcane damage. ",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Hardened Sandstone",
+    "Durable Sand",
+    "Deserts Gladiators",
+    "Sand Frenzy",
+    "Battle IQ",
+    "Reserve Army",
+    "Lunge Attack",
+    "Dashing Sandstrike",
+    "Sand\u00b4s Edge",
+    "Deadly Guardians",
+    "Guardian Nevermore",
+    "Sand Mages",
+    "Sacrifice for the Throne",
+    "Guardians of the Orbital Sand"
+   ]
+  },
+  "TemporalHeroes": {
+   "desc": "Summon a fractal Viking, Pyromancer and Marksman to fight on your side.",
+   "element": null,
+   "splash": [
+    "fire",
+    "arcane"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Mirror Image",
+    "Summon Carnage",
+    "Larger Than Life",
+    "Quantum Immortality",
+    "More Aid",
+    "Accurate Clone",
+    "Tough Bones",
+    "Heroes of the Ether",
+    "Fractured Reality",
+    "Evasive Strategy",
+    "Augmented Heroics",
+    "The Four Horsemen",
+    "The Singularity",
+    "Summon Support"
+   ]
+  }
+ },
+ "Jotunn": {
+  "Avalanche": {
+   "desc": "Release a bellowing shout dealing cold damage to all monsters around you and freezing them.",
+   "element": "cold",
+   "splash": [
+    "lightning"
+   ],
+   "scaling_hint": [
+    "vitality"
+   ],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Devastating Snowslide",
+    "Devouring Snowpour",
+    "Timeless Cold",
+    "Colossus of Yggdrasil",
+    "Acute Hoarfrost",
+    "Frigid Safeguard",
+    "Snow Cataclysm ",
+    "Ephemeral Flurry",
+    "Further Collapse",
+    "Mending Winter",
+    "Neverending Winter",
+    "Glacial Radiance",
+    "Snowshade Bait",
+    "Nordic Stigma"
+   ]
+  },
+  "Blizzard": {
+   "desc": "Cast a freezing blizzard dealing area of effect cold damage and freezing monsters in the target area.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Intensified Snowfall",
+    "Eternal Winter",
+    "Frost Domain",
+    "Crackling Ice",
+    "Tracking Snowinds",
+    "Corrosive Ice",
+    "Hypothermic Temperature",
+    "Winter Echoes",
+    "Cold Necrosis",
+    "Chilling Coldsnap",
+    "Snowstorm Maelstrom",
+    "Frost Flurries",
+    "Frigid Eruption",
+    "Snowmageddon"
+   ]
+  },
+  "BreathOfIce": {
+   "desc": "Breathe glacial air freezing and dealing cold damage to monsters.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Fresh Mint",
+    "Crumbling Winds",
+    "Expansive Gasp",
+    "Ironfrost Lungs",
+    "Frozen Exhale",
+    "Freezing Point",
+    "Ice Skating",
+    "Frostbourne Winds",
+    "Cascading Exhale",
+    "Vacuuming Inhale",
+    "Frostbitten Lungs",
+    "Frost Charged Breath",
+    "Absolute Control",
+    "Frosted Throat"
+   ]
+  },
+  "FlashFreeze": {
+   "desc": "Perform an attack enhanced with ice that unleashes a chaining orb of ice, exploding into icicles at the end dealing additional cold damage.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion"
+   ],
+   "subtalents": [
+    "Hail Force",
+    "Excess Cold",
+    "Precise Tundra",
+    "Fractured Ice",
+    "Nordic Frenzy",
+    "Boreal Reach",
+    "Freezing Rage",
+    "Gelid Sequence",
+    "Eternal Cascade",
+    "Froststep",
+    "Icicle Bombardment",
+    "Recurving Stalactites",
+    "Swirling Wintershard ",
+    "Coldflash Volley"
+   ]
+  },
+  "FreezingLeap": {
+   "desc": "Leap through the air into target location freezing and dealing cold damage to monsters when landing.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Leap Force",
+    "Extended Field",
+    "Dazing Impact",
+    "Grand Impact",
+    "Concentrated Detonation",
+    "Echoing Frostquake ",
+    "Hare Spirit",
+    "Arctic Vulnerability ",
+    "Overwhelming Impacts",
+    "Frosted Territory",
+    "Superhero Landing",
+    "Seismic Icequake",
+    "Tectonic Stampede",
+    "Frostbending Leap"
+   ]
+  },
+  "FrozenBoulder": {
+   "desc": "Throw a frozen boulder dealing cold damage to monsters on its path.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Boulder Lob",
+    "Petrifying Frost",
+    "Bouncing Slab",
+    "Shattering Frost",
+    "Expanding Stonefrost",
+    "Subzero Temp",
+    "Frozen Throbbing",
+    "Pulsing Monolith",
+    "Stonecold Master",
+    "Demolishing Frostone",
+    "Rolling Winterstone",
+    "Overgrowing Boulder",
+    "Splinter Stones",
+    "Boulder Barrage"
+   ]
+  },
+  "OrbOfFrost": {
+   "desc": "Cast a frozen orb traveling in target direction releasing icicles, freezing and dealing cold damage to monsters on its path.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Festering Cold",
+    "Frost Icicles",
+    "Frozen Mass",
+    "Icy Winds",
+    "Cold Singularity",
+    "Coldsnap",
+    "Hypothermia",
+    "Timeless Tundra",
+    "Multicicles",
+    "Howling Ricochet",
+    "Glacial Shredder",
+    "Enlargening Frost Orb",
+    "Chaining Frost",
+    "Orb of Duality"
+   ]
+  },
+  "PortalOfIce": {
+   "desc": "Teleport to the target location and release a frost nova dealing cold damage.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Ice Travel",
+    "Cold-enhanced Warp ",
+    "Spiky Approach",
+    "Engulfing Nova",
+    "Blink Faster",
+    "Corrosive Frostbite",
+    "Shredding Chillstep",
+    "Efficient Iceblink",
+    "Cryo Armor",
+    "Icecold Bloodthirst",
+    "Hailstorm Orb",
+    "Winter Aparition",
+    "Permafrost Voidpull",
+    "Crystallized Pinnacles"
+   ]
+  },
+  "SweepFreeze": {
+   "desc": "",
+   "element": null,
+   "splash": [
+    "cold"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Arctic Breeze",
+    "Weakening Precision",
+    "Ice Trolls Lineage",
+    "Ice Trolls Agility",
+    "Frozen to the Core",
+    "Shattering Coldstrike",
+    "Lingering Fissure",
+    "Frost Shrapnel",
+    "Frozen Death",
+    "Death\u00b4s Touch",
+    "Frost Sunder Onslaught",
+    "Dissecting Vortex",
+    "Gelid Riptide",
+    "Unstoppable Assault"
+   ]
+  }
+ },
+ "Marauder": {
+  "Annihilation": {
+   "desc": "Violently rip all serrated chains out of monsters dealing area of effect damage. Targets affected by retiarius net take increased damage.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Forceful Rip",
+    "Attack Force by Force",
+    "More Violence!",
+    "Serrated Annihilation",
+    "Arena Controller",
+    "Brutal Reach",
+    "Everyone Gets it!",
+    "Rip the Wounds",
+    "Deep Cuts",
+    "Explosive Delivery",
+    "Rusted Chains",
+    "Symphony of Chains",
+    "Megadeath",
+    "Total Annihilation"
+   ]
+  },
+  "Bombardment": {
+   "desc": "Rapidly throw a barrage of small bombs in target direction dealing area of effect fire damage.",
+   "element": "fire",
+   "splash": [
+    "physical"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Double the Fuel",
+    "Spikeballrdment",
+    "Efficient Reload",
+    "Full Body Workout",
+    "Massive Strike",
+    "Fire Charges",
+    "Factory Upgrade",
+    "Efficient Production",
+    "Solid Explosive Fuel",
+    "Casual Bombing",
+    "All Around Annihilation",
+    "Clusterbombing",
+    "Big Bo-Ombing",
+    "ICBM"
+   ]
+  },
+  "BouncingGrenade": {
+   "desc": "Throw a grenade that bounces exploding into shrapnel on impact, dealing area of effect fire damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion",
+    "projectile"
+   ],
+   "subtalents": [
+    "Pressurized Bombs",
+    "Strong Lats",
+    "Nitroglycerine Solution",
+    "Elastic Cover",
+    "Ace Up Your Sleeve",
+    "Big Boy Bombs",
+    "Heavy Weight",
+    "Rubber Coated Shell",
+    "Sharp Shrapnels",
+    "Flammable Charge",
+    "Resetting Fuse",
+    "Blazing Rebound",
+    "Fiery Charge",
+    "Coast to Coast"
+   ]
+  },
+  "ChainTrap": {
+   "desc": "Throw a chain trap into the target location dealing arcane damage and hooking nearby monsters with chains.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Absolute Unit",
+    "Rusty Chaintip",
+    "Arcane Shattering Force",
+    "Target Hungry",
+    "Double Trouble",
+    "Serrated Chaintrap",
+    "Sharpened Chaintip",
+    "Efficient Reel",
+    "Longer Chains",
+    "C4 Charged Trap",
+    "Sharpened Tip",
+    "Spinning Trap",
+    "Betrayal",
+    "Wait for the Prey"
+   ]
+  },
+  "CrazyGrapple": {
+   "desc": "Throw a massive spike ball into target location dealing area of effect fire damage and dragging yourself towards it through the air.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "High RPM Reel",
+    "Thornspikes",
+    "Efficient Grappling",
+    "The Most the Best",
+    "Heatdash",
+    "In Flames",
+    "Burning Spikeball",
+    "Spikey Grappler",
+    "Blue Flames",
+    "Slingshot",
+    "Thorns of Sorrow",
+    "Cannonade Grapple",
+    "Arena Master",
+    "Explosive Grapple"
+   ]
+  },
+  "HeavyBall": {
+   "desc": "Flail a big chained spike ball dealing physical damage to monsters on its path. ",
+   "element": "physical",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "The Bigger the Better",
+    "Log Sized Arms",
+    "Surprise Bombing",
+    "Fire Frenzy",
+    "Multi Wield",
+    "Machine Drilled Spikes",
+    "Gladiator's Strength",
+    "Precision and Power",
+    "Full Body Training",
+    "Critical Mass",
+    "Heavy Swing",
+    "Sharpened Spikes",
+    "Warlord Lee's Apprentice",
+    "Terrain Collision"
+   ]
+  },
+  "MadnessControl": {
+   "desc": "Hook nearby monsters towards you stunning them and dealing arcane damage. Additionally summon a bomb from the sky onto your location creating an explosion that deals arcane damage. ",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion",
+    "summon"
+   ],
+   "subtalents": [
+    "Mad Rampage",
+    "Ground Zero",
+    "Powerful Chainstrike",
+    "Arena Police",
+    "We Are All Mad Here",
+    "Napalm Charge",
+    "Boom Boom BOOM",
+    "Capture and Punish",
+    "Effective Control",
+    "Keep Sane among Mad",
+    "Surging Madness",
+    "Area Control",
+    "Evasive Move",
+    "Blink and you are dead"
+   ]
+  },
+  "RetiariusNet": {
+   "desc": "Throw a retiarius net dealing area of effect arcane damage and stunning monsters hit.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Bigger Web",
+    "Well Knitted Net",
+    "Gladiators Resilience",
+    "Throwing Technique",
+    "Bouncing Net",
+    "Target for Destruction",
+    "Sharp String Net",
+    "Multinet Throw",
+    "Devastating Net",
+    "Elastic Strings",
+    "Rocket Boosted Net",
+    "Metal Net",
+    "Ricocheting Net",
+    "Arena Dominator"
+   ]
+  },
+  "SerratedChains": {
+   "desc": "Perform an area of effect attack with increased attack rating and damage attaching serrated chains to monsters. ",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "More Reach",
+    "Effective Steel",
+    "Open Their Wounds",
+    "Rust Poisoning",
+    "Power over Precision",
+    "Experienced Gladiator",
+    "Precision over Power",
+    "Sweeping Slash",
+    "Pierce the Plating",
+    "Bouncing Chains",
+    "Thousand Wounds",
+    "Rawest Power",
+    "Gladiator's Dash",
+    "Rusted Throns"
+   ]
+  },
+  "TheBigBoom": {
+   "desc": "Throw a huge bo-omb scattering into shrapnel on impact dealing area of effect fire damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Boomage",
+    "Even Bigger Bo-oM!",
+    "Leg Day",
+    "Wider Armory",
+    "Double Charges!",
+    "Pyro Enthusiast",
+    "Swift Bo-ombing",
+    "Burn the Arena",
+    "More Heat!",
+    "Rollin' Rollin' Rollin'",
+    "Bouncing Boom",
+    "Crashboom",
+    "Scattering Boom",
+    "Molten Boom"
+   ]
+  }
+ },
+ "Marksman": {
+  "ArrowRain": {
+   "desc": "Unleash a rain of arrows from the sky dealing increased damage.",
+   "element": null,
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Spot On",
+    "Long Reach",
+    "Rain Of Pain",
+    "Coverage",
+    "Sharper Tips",
+    "Split Fall",
+    "My Territory",
+    "Cutting Arrows",
+    "Wound Salt",
+    "Maiming Arrow",
+    "Scorching Volley",
+    "Kill Command",
+    "Contract Killer",
+    "Arrow Splinter"
+   ]
+  },
+  "ArrowRampage": {
+   "desc": "Unleash a swarm of arrows towards the direction aimed dealing arcane and physical damage.",
+   "element": "arcane",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Arrow to the Knee",
+    "Spinning Shrapnel",
+    "Shredding Hit",
+    "Bigger is Better",
+    "Exploding Arrowhead",
+    "Critical Hit",
+    "Crucial Strike",
+    "Arcanum Arrow",
+    "Arcanum Penetration",
+    "Blast Wave",
+    "Marked For Destruction",
+    "Tricky Tactics",
+    "Arrow Mayhem",
+    "Fiery Rain of Arrows"
+   ]
+  },
+  "ArrowTurret": {
+   "desc": "Build an arrow turret that shoots arrows at the closest monster dealing arcane damage.",
+   "element": "arcane",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile",
+    "sentry"
+   ],
+   "subtalents": [
+    "Burstshot",
+    "Deadshot",
+    "Arrow Turrets",
+    "Stuttershot",
+    "Freezing Shot",
+    "Multishot",
+    "High Velocity",
+    "Explosive Technician",
+    "Exploding Arrowhead",
+    "Hypothermic Impact",
+    "Colossalshot",
+    "Cyclone Turret",
+    "Piercing Arrowheads",
+    "This is My Design"
+   ]
+  },
+  "CannonTurret": {
+   "desc": "Build a cannon turret that launches cannonballs towards the nearest monster that explode into shrapnel, dealing area of effect arcane damage.",
+   "element": "arcane",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion",
+    "sentry"
+   ],
+   "subtalents": [
+    "Cannoningfodder",
+    "Cannon Turrets",
+    "Cannonballs",
+    "Stunning Blast",
+    "Doom Ball",
+    "Weakened Blast",
+    "Landing Spot",
+    "Line of Sight",
+    "Multishred",
+    "Frostbitten Fodder",
+    "Megacannon",
+    "Mid Air Crisis",
+    "Burst Artillery",
+    "Weakening Blast"
+   ]
+  },
+  "FragGrenade": {
+   "desc": "Throw a frag grenade dealing area of effect arcane damage launching shrapnel around.",
+   "element": "arcane",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Shrapnel",
+    "Fatal Range",
+    "Detonating",
+    "Fragging Penetration",
+    "Molten Shrapnel",
+    "Increased Potency",
+    "Flash Bang",
+    "Stunning Casualty",
+    "Blasting Wave",
+    "Smell of Burning",
+    "Cluster Bomb",
+    "Grenadier",
+    "Flames and Explosions",
+    "Giga Grenade"
+   ]
+  },
+  "GunnerDrones": {
+   "desc": "",
+   "element": null,
+   "splash": [
+    "fire",
+    "lightning",
+    "arcane"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Multitude",
+    "Rapidfire",
+    "Mecha Tinkering",
+    "Explosive Toolkit",
+    "Heat Unit",
+    "Detection",
+    "Burning Shot",
+    "Burst Engine",
+    "Immolating Impact",
+    "Splitting Shot",
+    "Circuit Breaker",
+    "C.Y.C.L.O.P.S.",
+    "M.E.C.H.A.",
+    "Nanodrones"
+   ]
+  },
+  "Landmine": {
+   "desc": "Lay down a landmine at the target location exploding shortly after detecting a nearby monster dealing arcane damage.",
+   "element": "arcane",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion",
+    "sentry"
+   ],
+   "subtalents": [
+    "Blasting Radius",
+    "Stacked Compound",
+    "Dead Zone",
+    "Shrapnel Wounds",
+    "Rolling Mine",
+    "Panzer Mine",
+    "Debilitating Mine",
+    "Crippling Impact",
+    "Stealth Mine",
+    "Napalm",
+    "Mine Field",
+    "Homing Landmine",
+    "Air Raid",
+    "Incendiary Mine"
+   ]
+  },
+  "Multishot": {
+   "desc": "Fire multiple arrows in an arc dealing increased damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Bow & String",
+    "Clear Mind",
+    "Steady Aim",
+    "Stacked Quiver",
+    "Agile Marksman",
+    "Wounding Impact",
+    "Wounded Target",
+    "Ambush",
+    "Headshot",
+    "Longshot",
+    "Tornadoshot",
+    "Arrow Nova",
+    "Concentration Volley",
+    "Raining Inferno"
+   ]
+  },
+  "RocketTurret": {
+   "desc": "Build a rocket turret that shoots rockets towards the nearest monster dealing area of effect arcane damage.",
+   "element": "arcane",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile",
+    "sentry"
+   ],
+   "subtalents": [
+    "Mini Sarmat",
+    "Blasting Power",
+    "Rocket Turrets",
+    "Mininuke",
+    "Multiblast",
+    "Fragmenting Blast",
+    "Field Scanner",
+    "Blastwave",
+    "Quick Silo",
+    "Stun Blast",
+    "Locked On",
+    "Barret Shot",
+    "Big Bertha",
+    "The Boom Box"
+   ]
+  },
+  "Trickshot": {
+   "desc": "Shoot an arrow with increased attack rating that bounces from monster to monster dealing increased attack damage.",
+   "element": null,
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Lung Capacity",
+    "Tenacity",
+    "Lethal Aim",
+    "Archery Skills",
+    "Looping Shot",
+    "Deadly Accuracy",
+    "Steady Hands",
+    "Agile Hunter",
+    "Killshot",
+    "Maiming Shot",
+    "Sniper's Touch",
+    "Splitting Trickshot",
+    "Scorching Arrow",
+    "Powershot"
+   ]
+  },
+  "Vault": {
+   "desc": "Vault in the direction aimed unleashing arrows towards nearby monsters dealing increased damage.",
+   "element": null,
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Forest Parkour",
+    "Vaultshot",
+    "Eagle Eye",
+    "Rapidshot",
+    "High Leap",
+    "Landing Strike",
+    "Hunter's Aim",
+    "Wounding Shot",
+    "Trail of Blood",
+    "Explosive Trail",
+    "Multivault",
+    "Leaping Cyclone",
+    "Safespace",
+    "iArrow"
+   ]
+  },
+  "VolatileShot": {
+   "desc": "Fire a colossal arrow exploding on hit dealing area of effect damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion",
+    "projectile"
+   ],
+   "subtalents": [
+    "Hawk Eye",
+    "Cannon Fodder",
+    "Far Sight",
+    "Armor Shatter",
+    "Techies",
+    "Explosive Tactics",
+    "Armor Swap",
+    "Strafing",
+    "Devastation",
+    "Military Tactics",
+    "Colossal Arrow",
+    "Volatile Multishot",
+    "Fire in the Hole!",
+    "Artillery"
+   ]
+  }
+ },
+ "Necromancer": {
+  "BoneShred": {
+   "desc": "Unleash bone fragments dealing arcane damage to monsters.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Endochondral Ossification",
+    "LRP5 Gene",
+    "Remodelling",
+    "Bone Disruption",
+    "Osteochondroma",
+    "Quick Growth",
+    "Bonerang",
+    "Exposed Fracture",
+    "Infected Wound",
+    "Bone Spurs",
+    "Bomb of Bones",
+    "Shattering Carcass",
+    "Orbiting Remains",
+    "Skeletal Split"
+   ]
+  },
+  "BoneSpear": {
+   "desc": "Launch a piercing bone spear dealing arcane damage.",
+   "element": "arcane",
+   "splash": [
+    "poison"
+   ],
+   "scaling_hint": [
+    "energy"
+   ],
+   "delivery": [],
+   "subtalents": [
+    "Bone Density",
+    "Mana Dweller",
+    "Raising Spirits",
+    "Bone Sling",
+    "Disease Ridden Bone",
+    "Autoimmune Disease",
+    "Sharp Edged Bone",
+    "Bone Conjuring",
+    "Fervoring Fever",
+    "Spiritual Tradeoff",
+    "Impaling Spine",
+    "Bone Nova",
+    "Plenty of Bone",
+    "Bone Splinters"
+   ]
+  },
+  "BoneSpirit": {
+   "desc": "Spawn a bone spirit that seeks out the nearest monster and explodes on impact, causing an Arcane damage explosion, then seeks out other mobs after the first impact.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion"
+   ],
+   "subtalents": [
+    "Divide Soul",
+    "Purifying Essence",
+    "Life Infusion",
+    "Ancient Possession",
+    "Cycle of Life",
+    "Touch of Arcana",
+    "Mark Target",
+    "Follow the Leader",
+    "Spirits Unleashed",
+    "Soul infusion",
+    "Ghouls of Agony",
+    "Furnace of Souls",
+    "Soul Sacrifice",
+    "Spirit Festival"
+   ]
+  },
+  "CorpseExplosion": {
+   "desc": "Cause all corpses in target area to explode and deal an explosive arcane damage.",
+   "element": "arcane",
+   "splash": [
+    "fire",
+    "poison"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion"
+   ],
+   "subtalents": [
+    "Volatile Magic",
+    "Violent Burst",
+    "Channeling Necromancy",
+    "Reaching Conduit",
+    "Homunculus",
+    "Reaper Within",
+    "Rush from the Harvest",
+    "Unfair Advantage",
+    "Presence of the Lich",
+    "Assured Passing",
+    "Convergence",
+    "Dissolvant Solution",
+    "Devouring Aura",
+    "Lich's Command"
+   ]
+  },
+  "MeatBomb": {
+   "desc": "Throw a huge lump of meat that explodes on impact dealing arcane damage and leaving corpse on the ground.",
+   "element": "arcane",
+   "splash": [
+    "poison"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion",
+    "projectile"
+   ],
+   "subtalents": [
+    "High Protein",
+    "Far Reaching Meat",
+    "Metabolic Lump",
+    "Cadavery",
+    "Elastic Meat",
+    "High Blood Pressure",
+    "Tossing The Meat",
+    "Double The Meat",
+    "Heavy Lump of Meat",
+    "Fleshy Leftovers",
+    "Strong Bones",
+    "Rotten Corpses",
+    "Multi Lumps",
+    "Colossal Carcass"
+   ]
+  },
+  "PoisonBreath": {
+   "desc": "Unleash a rotten breath of toxins dealing poison damage.",
+   "element": "poison",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot"
+   ],
+   "subtalents": [
+    "Neurotoxin",
+    "Aerial Fumes",
+    "Venomous Essence",
+    "Contamination",
+    "Acid Components",
+    "Poisonous Gas",
+    "Vile Bacteria",
+    "Toxic Lungs",
+    "Necrotic Intellect",
+    "Necrotic Ward",
+    "Acid Spit",
+    "Bio Hazard",
+    "Necrotic Tongue",
+    "Plague Breath"
+   ]
+  },
+  "PoisonNova": {
+   "desc": "Unleash a toxic poison nova dealing poison damage and inflicting Poisoned on all monsters hit.",
+   "element": "poison",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe",
+    "dot"
+   ],
+   "subtalents": [
+    "Hollow Fangs",
+    "Potent Venom",
+    "Embrace the Venom",
+    "Conjurer's Might",
+    "Venom's Reach",
+    "Weakening Infection",
+    "Down with the Sickness",
+    "Amplifying Mark",
+    "Overwhelming Presence",
+    "Toxic Twist",
+    "Poison Cloud",
+    "Virulent Blink",
+    "Center of Epidemy",
+    "Puppet Master"
+   ]
+  },
+  "RaiseSkeleton": {
+   "desc": "",
+   "element": null,
+   "splash": [
+    "poison"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Undead Army",
+    "Unholy Strike",
+    "Command for Haste",
+    "Absorb Vitality",
+    "Undead Berserker",
+    "Between the Ribs",
+    "Unholy Lifeforce",
+    "Toes Attached",
+    "Undying Rage",
+    "Last Stand",
+    "Zombies!",
+    "Winds of the Dead",
+    "Horde of Undead",
+    "Weapons Beyond Grave"
+   ]
+  },
+  "RaiseSkeletonMage": {
+   "desc": "Raise a skeleton mage from target corpse to fight on your side.",
+   "element": null,
+   "splash": [
+    "fire",
+    "lightning",
+    "arcane"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Undead Coven",
+    "Unholy Force",
+    "Reflection",
+    "Unholy Spellsling",
+    "Unholy Necrosis",
+    "Dark Bolts",
+    "Necrotic Mirage",
+    "Festering Scorch",
+    "Gluttony",
+    "Unholy Grasp",
+    "Cursed Blast",
+    "Chaining Scorn",
+    "Summon Archmage",
+    "Unholy Lightning"
+   ]
+  },
+  "SummonDamnedLegion": {
+   "desc": "Summon a damned legion to fight on your side.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Unhallowed Authority",
+    "Undead Leadership",
+    "Unholy Reverberation",
+    "Colossus Smash",
+    "Vile Shock",
+    "Mass Legion",
+    "Infused with Blood",
+    "Profane Zeal",
+    "Legionnaire Agility",
+    "Crimson Aura",
+    "Abombination",
+    "Thorned Revenant",
+    "Damned Sharpshooter",
+    "Catastrophic Legion"
+   ]
+  },
+  "VengefulSpirit": {
+   "desc": "",
+   "element": null,
+   "splash": [
+    "lightning",
+    "poison"
+   ],
+   "scaling_hint": [
+    "intelligence"
+   ],
+   "delivery": [],
+   "subtalents": [
+    "Hostile Intelligence",
+    "Nimble Spirit",
+    "Swift Bolts",
+    "Eternal Vengeance",
+    "Forking Bolts",
+    "Critical Wrath",
+    "Stacking Pain",
+    "Vacuuming Apparation",
+    "Extended Lightning",
+    "Retaliatory Transfusion",
+    "Contaminated Spirit",
+    "Hatred Reinforcements",
+    "Sacrificial Offering",
+    "Vengeful Poltergeist"
+   ]
+  }
+ },
+ "Nomad": {
+  "BladeStrike": {
+   "desc": "Perform a cleave attack with increased chance for critical strike and critical strike damage.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [
+    "vitality"
+   ],
+   "delivery": [],
+   "subtalents": [
+    "Ferocious Swipe",
+    "Blade\u00b4s Edge",
+    "Lethal Swing",
+    "Blade Master",
+    "Gut Slicer",
+    "Catch Up Blade",
+    "Cleaving Slash",
+    "Agile Striker",
+    "Bounty Hunting",
+    "Tribal Commander",
+    "Skewering Blades",
+    "Brutalizing Cleave",
+    "Stacked Blade",
+    "Giant Slayer"
+   ]
+  },
+  "ChainSlice": {
+   "desc": "Perform an enhanced attack that causes a sharp blade to chain between nearby monsters dealing damage.",
+   "element": null,
+   "splash": [
+    "poison"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Slice and Dice",
+    "Slicing Accuracy",
+    "Penetrating Flesh",
+    "Field Cover",
+    "Vagabond Quickblades",
+    "Extended Blade",
+    "Poisoned Shiv",
+    "Master Slicer",
+    "Agile Footwork",
+    "Infected Wounds",
+    "Bloodburn",
+    "Ghost Blade",
+    "Critical Shred",
+    "Chainception"
+   ]
+  },
+  "CloudOfSand": {
+   "desc": "Unleash a cloud of sand that travels forwards dealing arcane damage, by casting the skill again Nomad will re-locate on the sand clouds position dealing area of effect arcane damage and stunning nearby monsters.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Breeze",
+    "Desert's Spirit",
+    "Sand Twisters",
+    "Desert's Will",
+    "Desert's Endurance",
+    "Sandbender",
+    "Zephyr",
+    "Heavy Sand",
+    "Dust Storm",
+    "Hand of the Oasis",
+    "Cloud Bender",
+    "Field of Quicksand",
+    "Desert\u00b4s Echo",
+    "Ascension"
+   ]
+  },
+  "EyeOfRa": {
+   "desc": "Perform a light enchanted attack bringing rays of sun down to nearby monsters dealing increased damage.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [
+    "energy"
+   ],
+   "delivery": [],
+   "subtalents": [
+    "Sunburn",
+    "Ray\u00b4s of Wisdom",
+    "Solar Flow",
+    "Ultra Violet Radiation",
+    "Scorching Sun",
+    "Ra\u00b4s Wrath",
+    "Heat Paralysis",
+    "Piercing Sunlight",
+    "Armed Light",
+    "Piercing Radiation",
+    "God of Gods",
+    "Pillar of Light",
+    "Orbiting the Sun",
+    "Lightbringer"
+   ]
+  },
+  "FlyingScimitar": {
+   "desc": "Throw a huge piercing scimitar dealing increased damage to monsters in its path which returns back to you after a short delay.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Afterslice",
+    "Sharpened Blade",
+    "Slice and Flight",
+    "Widened Blade",
+    "Blade\u00b4s Vengeance",
+    "Rupturing Flyby",
+    "Scimitar\u00b4s Edge",
+    "Maiming Scimitar",
+    "Last Wish",
+    "Salted Blade",
+    "Flying Swarm",
+    "Sticking Blade",
+    "League of Nomad",
+    "Orbital Blade Strike"
+   ]
+  },
+  "PhantomBlade": {
+   "desc": "Spawn a ghostly blade that attacks nearby monsters dealing physiical damage and additional arcane damage.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [
+    "energy"
+   ],
+   "delivery": [],
+   "subtalents": [
+    "Paranormal Activity",
+    "Phantom Agility",
+    "Dimensional Intellect",
+    "Ghostly Reach",
+    "Malicious Essence",
+    "Essence of Time",
+    "Malevolent Pulse",
+    "Twice The Price",
+    "Ghost Dimension",
+    "Psychosis",
+    "Spirit Blades",
+    "Terrorized Mind",
+    "Spectral Ghostblade",
+    "Dimensional Ghostblade"
+   ]
+  },
+  "SandCarver": {
+   "desc": "Perform an attack that flings piercing sand at monsters.",
+   "element": null,
+   "splash": [
+    "arcane"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Desert Mix",
+    "Concentrated Sand",
+    "Glass Shards",
+    "Special Pouch",
+    "Vortex Master",
+    "Combat Skills",
+    "Swift Strikes",
+    "Raw Power",
+    "Headwind",
+    "Sand Infusion",
+    "Eviscerate",
+    "Parasitical Sand",
+    "Piercing Sands",
+    "Desert\u00b4s Blade"
+   ]
+  },
+  "SandGush": {
+   "desc": "Unleash a gush of sand that spawns tornadoes dealing arcane damage.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Desert\u00b4s Sand",
+    "Gushing Winds",
+    "Piercing Sand",
+    "Stranded Impact",
+    "Armor Piercing Flow",
+    "Gusting Winds",
+    "Desert Storm",
+    "Overwhelming Sand",
+    "Tamed Winds",
+    "Contaminated Wounds",
+    "Desert Cyclones",
+    "Sandstorm",
+    "Sand Tornado",
+    "Dust Devils"
+   ]
+  },
+  "SandTremors": {
+   "desc": "Strike a target causing sand tremors to hit nearby monsters dealing increased damage.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Amplified Frequency",
+    "Light Footwork",
+    "Oasis Impaler",
+    "Internal Bleeding",
+    "Waves of Despair",
+    "Shock Therapy",
+    "Tremor\u00b4s Reach",
+    "Conjuring Winds",
+    "Exchange of Life",
+    "Area of Impact",
+    "Shrouding Sand",
+    "Pulsating Tremors",
+    "Night at the Desert",
+    "Dune Warrior"
+   ]
+  },
+  "SandVortex": {
+   "desc": "Summon a massive vortex of quick sand that pulls monsters inside dealing arcane damage.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Desert Mass",
+    "Quicksand",
+    "Shredding Sand",
+    "Locust Whirlpool",
+    "Stuttering Pull",
+    "Desert Control",
+    "Lasting Whirlpool",
+    "Veil of Sand",
+    "Breaking Sands",
+    "Brain Damaging Whirl",
+    "Sunken Field",
+    "Accelerated Sand",
+    "Cycloning Kraken",
+    "Slow Burn"
+   ]
+  },
+  "ScimitarCharge": {
+   "desc": "Charge a short distance unleashing scimitar strike around you dealing increased damage to monsters struck.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Sharpened Dash",
+    "Whirling Radius",
+    "Lethal Reach",
+    "Dashing Reflexes",
+    "Keep the Distance",
+    "Deadly Rush",
+    "Mind Over Matter",
+    "Doubleslash",
+    "Debilitating Swirl",
+    "Unhinged Slash",
+    "Scimitar Storm",
+    "Slow Painful Death",
+    "Static Blade Vortex",
+    "Phantom Charge"
+   ]
+  }
+ },
+ "Paladin": {
+  "BallLightning": {
+   "desc": "Turn into a ball of lightning and dash towards to the target location, dealing lightning damage to nearby monsters upon landing.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Outbursting Charge",
+    "Thicker Coil",
+    "Flash from the Sky",
+    "Overcharge",
+    "Rapid Retreat",
+    "Charged Bolts",
+    "Phantom Ball",
+    "Within the Storm",
+    "Efficient Vains",
+    "Angelic Interference",
+    "Hovering Bolt",
+    "Pulsating Thunderball",
+    "Righteous Leap",
+    "Charging Ball"
+   ]
+  },
+  "DivineStorm": {
+   "desc": "Turn your attack into a divine storm dealing area of effect lightning damage around you.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Overloaded Coil",
+    "Charged Cells",
+    "Divine Ionization",
+    "Voltage Charge",
+    "Electron Jump",
+    "Heaven's Interference",
+    "Blow the Fuse",
+    "Overwhelming Power",
+    "Precision of the Storm",
+    "Dashing Flow",
+    "Chaining Storm",
+    "Eye of the Storm",
+    "Bad Omens",
+    "Charged Hurricane"
+   ]
+  },
+  "FistOfTheHeavens": {
+   "desc": "Call down a fist of divine energy exploding into multiple Holy Bolts dealing arcane damage.",
+   "element": "arcane",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion"
+   ],
+   "subtalents": [
+    "One with the Faith",
+    "Guardian Angels",
+    "Punish the Sinners",
+    "Trust in Faith",
+    "Heaven's Wrath",
+    "Heaven's Might",
+    "Divine Reach",
+    "Crusader of Heavens",
+    "Halting Luminosity",
+    "Blessed One",
+    "Divine Explosion",
+    "Forceful Salvation",
+    "Immaculate Warrior",
+    "Tiring Combat"
+   ]
+  },
+  "HolyBolt": {
+   "desc": "Cast a piercing bolt of holy light dealing arcane damage to monsters hit.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Divine Combustion",
+    "Heaven's Help",
+    "Lightforce",
+    "Bolt Rampage",
+    "Rewarded by the Angels",
+    "Call of Justice",
+    "Strengthened Will",
+    "Spoils of Holy War",
+    "Illumination",
+    "Reveal the Sinners",
+    "Rolling Judgement",
+    "Touch of Righteousness",
+    "Righteous Path",
+    "Divine Assbeating"
+   ]
+  },
+  "HolyHammer": {
+   "desc": "Summon a holy hammer that spirals outwards dealing arcane damage on hit.",
+   "element": "arcane",
+   "splash": [
+    "lightning"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Anvil Smash",
+    "Blessed Light",
+    "Divine Prayer",
+    "Free of Sin",
+    "Smite",
+    "Double Forge",
+    "Thor\u2019s Revenge",
+    "Sacred Hammer",
+    "Colossus Hammer",
+    "Slamming Mallet",
+    "Divine Lightning",
+    "Returning Lightforge",
+    "Orbital Light",
+    "Chaining Mallet"
+   ]
+  },
+  "HolyNova": {
+   "desc": "Cast a nova of holy light dealing arcane damage to monsters and healing all allies hit.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Crusade Allies",
+    "Practical Punishment",
+    "Strength Prayer",
+    "Strong Faith",
+    "Spiritual Awakening",
+    "Restore Light",
+    "Blessing Buff",
+    "Warrior's Light",
+    "Deliver Consequences",
+    "Heaven's Chosen",
+    "Righteous Transaction",
+    "Mark of Judgement",
+    "Remote Prayer",
+    "Faith's Winds"
+   ]
+  },
+  "HolyShockAura": {
+   "desc": "When active shock monsters around you dealing lightning damage.",
+   "element": "lightning",
+   "splash": [
+    "holy"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Adjusted Fuses",
+    "Larger Grid",
+    "Double the Hz",
+    "Voltage Increase",
+    "Concentrated Aura",
+    "Rupturing Lightning",
+    "Charge Mark",
+    "Conduit",
+    "Friendly Electron Flow",
+    "Defensive Charge",
+    "Surging Wrath",
+    "Lightning Tether",
+    "Chain Thunder",
+    "Gathering Storm"
+   ]
+  },
+  "LightningFury": {
+   "desc": "Strike monsters with increased attack damage causing lightning to chain between them dealing lightning damage.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [
+    "strength"
+   ],
+   "delivery": [],
+   "subtalents": [
+    "Lightning Stasis",
+    "Retribution",
+    "Million Volt Charge",
+    "Crackling Thunder",
+    "Breaking Soundbarrier",
+    "Electro Pulse",
+    "Forking Bolt",
+    "Low Resistance",
+    "Double Conduit",
+    "Maximize Fury",
+    "Storm Surge",
+    "Concentrated Fury",
+    "Ionizing Fury",
+    "Fury Within"
+   ]
+  },
+  "Vengeance": {
+   "desc": "Strike monsters with a lightning shock that splits towards nearby monsters, dealing physical damage and lightning damage.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [
+    "strength"
+   ],
+   "delivery": [],
+   "subtalents": [
+    "Higher Frequency",
+    "Uncontrolled Spike",
+    "Amped Amps",
+    "Power Surge",
+    "Recharging Strike",
+    "Overclock",
+    "Copper-plated Blade Edge",
+    "Direct Current",
+    "Destructive Voltage",
+    "Alternative Current",
+    "Charge Release",
+    "Thunderbolt",
+    "Electric Pillars",
+    "Self Shock"
+   ]
+  }
+ },
+ "Pirate": {
+  "AnchorSwing": {
+   "desc": "Unleash a massive anchor swinging around you dealing cold damage.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "On The Deck",
+    "Rusted Chain",
+    "Spin to Win",
+    "Sharpened Bill",
+    "Baby Anchor",
+    "iAnchor",
+    "Frozen Tip",
+    "Cold Smash",
+    "Man of War",
+    "Aerodynamic Chain",
+    "Anchoring the Anchor",
+    "Extended Weight",
+    "Colossal Anchor",
+    "Trembling Smash"
+   ]
+  },
+  "BombBarrage": {
+   "desc": "Start rapidly firing cannonballs dealing area of effect fire damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Bombardation",
+    "Barrage Blasting Radius",
+    "Bombination",
+    "Explosive Barrage",
+    "Piercing Blastwave",
+    "Scaled Blastradius",
+    "Molten Heat Bombs",
+    "Sharp Scatter",
+    "Quick Barrage",
+    "Critical Explosion",
+    "Crossed Spot",
+    "Bomb Shower",
+    "Rapid Barrage",
+    "Rain of Bombs"
+   ]
+  },
+  "Buckshot": {
+   "desc": "Quick draw your musket and release a ranged buckshot with increased damage and additional fire damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Black Powder",
+    "Stack of Slugs",
+    "Spiced Up",
+    "Eye Patch",
+    "Scorched Slugshot",
+    "Longshot",
+    "Colossus Slugs",
+    "Targeted Slugs",
+    "Firearm Expert",
+    "Sluglust",
+    "Big Slugs",
+    "One Slug to End Them All",
+    "Circle of Slugs",
+    "Slick Slugs"
+   ]
+  },
+  "Cannonball": {
+   "desc": "Shoot a cannonball that launches in the air on hit and deals area of effect damage when landing.",
+   "element": null,
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Cannon Scatter",
+    "Shrapnel Count",
+    "Cannon Accuracy",
+    "Steel Balls",
+    "Slowmode",
+    "Artillery Farshot",
+    "Empowered Blasting Powder",
+    "Mayday",
+    "Slay the Weak!",
+    "Blasting Balls",
+    "Bomb Trail",
+    "Blast the Horizon",
+    "Mega Shot",
+    "Rolling Balls"
+   ]
+  },
+  "ExplosiveBarrel": {
+   "desc": "Spawn a barrel of explosives which detonates after some time or when shot with a projectile dealing fire damage.",
+   "element": "fire",
+   "splash": [
+    "cold"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Explosive Containers",
+    "Barrel Blast Radius",
+    "Inflammable Liquid",
+    "Scatter Barrel",
+    "Sudden Dynamite",
+    "Stack of Explosives",
+    "MORE BARRELS!",
+    "Incendiary Explosives",
+    "Deepfrozen Barrel",
+    "Barrels of the Freljord",
+    "Bring the Grog!",
+    "Field of Explosives",
+    "Explosive Collision",
+    "Circle of TNT"
+   ]
+  },
+  "ExplosiveBullets": {
+   "desc": "",
+   "element": null,
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Grouping Up",
+    "Gunner's Glory",
+    "Shattering Blast",
+    "Sudden Scatter",
+    "Boss Killer",
+    "Multiplosion",
+    "Explosion Site",
+    "Target Locked",
+    "Napalm Infusion",
+    "Gasoline",
+    "Chain Reaction",
+    "Shotwave",
+    "Blast Pulse",
+    "Penetrating Trail"
+   ]
+  },
+  "FreezingChainShot": {
+   "desc": "",
+   "element": null,
+   "splash": [
+    "cold",
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Poseidon's Fist",
+    "Precision Chain",
+    "Good Ol' Ways",
+    "Pack a Punch",
+    "Shatter",
+    "Ice Age",
+    "Ice Healing",
+    "Gulf Stream",
+    "Grip Boots",
+    "Coldspot",
+    "Frozen Chain Rip",
+    "Coldsnap Vacuum",
+    "Catch of the Day",
+    "Freezing Whiplash"
+   ]
+  },
+  "LandAhoy": {
+   "desc": "Call for the main ship to bombard the targeted area dealing area of effect cold damage.       ",
+   "element": "cold",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Armada",
+    "Fire All!",
+    "Rum Infused Ammo",
+    "Blunder Bombs",
+    "Warheads",
+    "Strategic Airstrikes",
+    "Food for Cannon",
+    "Sonic Impact",
+    "MOAB",
+    "Fuel to the Fire",
+    "Concentrated Blast Radius",
+    "Land Annihilation",
+    "Traveling Bombardment",
+    "Reign of Fire"
+   ]
+  },
+  "Parrot": {
+   "desc": "Summon a parrot to peck your monsters dealing cold damage.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Peck Peck",
+    "Birdstrike",
+    "Flock Gathering",
+    "GM Crops",
+    "Birdflu Vax",
+    "Target Practise",
+    "Pirate's Best Friend",
+    "Upper Wing",
+    "Beak of Steel",
+    "Killing Command",
+    "Screech",
+    "Pecking Pack",
+    "Captain's Parrot",
+    "Pecking Order"
+   ]
+  },
+  "PowderTrail": {
+   "desc": "Throw a keg of gunpowder causing a chain of explosions dealing fire damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion",
+    "projectile"
+   ],
+   "subtalents": [
+    "Napalm Powder",
+    "Spinning Barrel",
+    "Blowing Up",
+    "Colliding Barrel",
+    "Heated Powder",
+    "Stacked Fumes",
+    "Powder Detonation",
+    "Dual Barrel",
+    "Mage of the Trails",
+    "Shortened Fuse",
+    "Barrel of Barrels",
+    "Fragmenting Barrel",
+    "Heavy Barrel",
+    "Flaming Barrels"
+   ]
+  },
+  "Torrent": {
+   "desc": "Summon a pool of corrupted water on target location bursting into a massive torrent that knocks up monsters struck dealing cold damage.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Splash Impact",
+    "Watery Fissure",
+    "Subzero Liquid",
+    "Torrenting Current",
+    "Waterwalk",
+    "Collateral Splash",
+    "Water Mass",
+    "Pillar of Water",
+    "Ocean\u00b4s Might",
+    "Hypothermic Liquid",
+    "Ocean Storm",
+    "Chaotic Wave",
+    "Whirlpool",
+    "Storm Pillar"
+   ]
+  }
+ },
+ "PlagueDoctor": {
+  "Crematus": {
+   "desc": "Unleash a breath of toxic flames dealing poison damage.",
+   "element": "poison",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot"
+   ],
+   "subtalents": [
+    "Gas Cilynder",
+    "Potent Exhaling",
+    "Corrosive Burning",
+    "Corrosive Embers",
+    "Trifurcate Blow",
+    "Toxic Dragonflight",
+    "Toxiamplified Alveoli",
+    "Tachypnea",
+    "Engulfing Pyre ",
+    "Bursting Pustules",
+    "Spiraling Cremation",
+    "Farflames",
+    "Unstable Contamination",
+    "Toxin Container"
+   ]
+  },
+  "JarOfLeeches": {
+   "desc": "Throw a glass jar towards target location releasing leeches dealing poison damage on impact.",
+   "element": "poison",
+   "splash": [],
+   "scaling_hint": [
+    "vitality"
+   ],
+   "delivery": [
+    "dot",
+    "projectile"
+   ],
+   "subtalents": [
+    "Leech Swarm",
+    "Power Sucktion",
+    "Nimble Creepers",
+    "Draining the Demons",
+    "Bloody Surprise",
+    "Overfed",
+    "Jar Handler",
+    "Leaking Dents",
+    "Call to Ascend",
+    "Blood Sharing",
+    "Jug Juggler",
+    "Blood-infused Leeches",
+    "Toxicophile Bloodsucker",
+    "Lasting Hunger"
+   ]
+  },
+  "Miasma": {
+   "desc": "Empower your attack with a mixture of chemicals causing the monster to release a toxic cloud dealing physical damage.",
+   "element": "physical",
+   "splash": [
+    "fire",
+    "poison"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Dense Haze",
+    "Contagious Mist",
+    "Harmful Poluents",
+    "Eroding Haze",
+    "Hasty Vapors",
+    "Hemoglobin Nova",
+    "Incendiary Fumes",
+    "Intense Malodor",
+    "Sweep Scourge",
+    "Meteoric Haze",
+    "Tenacious Stench",
+    "Shoulder Fling",
+    "Epidemic Dissemination",
+    "Epinephrine Addict"
+   ]
+  },
+  "PlagueMaster": {
+   "desc": "Cause all poisoned targets on target location to spread the plague and deal poison damage to monsters around them.",
+   "element": "poison",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot"
+   ],
+   "subtalents": [
+    "Plague Domain",
+    "Toxology",
+    "Flesh Melting",
+    "Neverending Infection",
+    "Crippling Poison Vial",
+    "Escalating Illness",
+    "Anemic Impact",
+    "Boundless Agent",
+    "Pathogens",
+    "Concussive Effect",
+    "Stacked Bacteria",
+    "Bulbonic Plague",
+    "Containment Breakout",
+    "Raise from the Pestilence"
+   ]
+  },
+  "PlagueOfRats": {
+   "desc": "Send plague rats in target direction dealing poison damage on impact. ",
+   "element": "poison",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot"
+   ],
+   "subtalents": [
+    "Horde of Rats",
+    "Gnawing Rodents",
+    "Lab Grown Rats",
+    "Bite Tethering",
+    "Plague Carriers",
+    "Painful Bite",
+    "Rodent Handler",
+    "Leptospirosis",
+    "Nimble Trainer",
+    "Plaguemausers",
+    "Ratsunami",
+    "Rat Den",
+    "Spreading Infestation",
+    "Ratpocalypse"
+   ]
+  },
+  "RandyTheRancidRat": {
+   "desc": "Summon randy the rancid rat to fight for you dealing poison damage.",
+   "element": "poison",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot",
+    "summon"
+   ],
+   "subtalents": [
+    "Vigorous Leader",
+    "Enhanced Jaws",
+    "Rat Invoker",
+    "Speed Chomps",
+    "Expansive Plague Mind",
+    "Disease Hoarder",
+    "Blood Transfusion",
+    "Armored Fur",
+    "Rage Sequence",
+    "Vital Division",
+    "Randy Rider",
+    "Dragorat",
+    "QA3-Modified Specimen",
+    "Gluttony"
+   ]
+  },
+  "SurgicalBloodLetting": {
+   "desc": "Throw a surgical knife with razor sharp accuracy that bounces from monster to monster dealing physical damage.",
+   "element": "physical",
+   "splash": [],
+   "scaling_hint": [
+    "vitality"
+   ],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Incisive Cuts",
+    "Cutting Edge",
+    "Bolting Scalpels",
+    "Expert Surgeon",
+    "Vitality Devourer",
+    "Exsanguination",
+    "Plhebotomist",
+    "Sanguine Eruption",
+    "Swift Precision",
+    "Lifeblood Harvest",
+    "Surgeon\u00b4s Vortex",
+    "Blood Thaumaturgist",
+    "Fracturing Knifestack",
+    "Cutting Storm"
+   ]
+  },
+  "ToxicFlask": {
+   "desc": "Throw a bouncing toxic flask towards target location dealing poison damage.",
+   "element": "poison",
+   "splash": [
+    "physical"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "dot",
+    "projectile"
+   ],
+   "subtalents": [
+    "One with the Poison",
+    "Harmful Vial",
+    "Modest Poison",
+    "Decomposing Materia",
+    "Heatseeking Flask",
+    "Resistant Crystal",
+    "Apothecary",
+    "Fake Throw",
+    "Agile Tosser",
+    "Flask Flip",
+    "Plague Radiator",
+    "Toxin Vials",
+    "Glassblowing Technician",
+    "Vial of Alchemy"
+   ]
+  }
+ },
+ "Prophet": {
+  "CarrionWorm": {
+   "desc": "Summons a carrion worm frequently attacking nearby monsters.",
+   "element": null,
+   "splash": [
+    "poison"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Empowered Nervous System",
+    "Lingering Mass",
+    "Wormtoxins",
+    "Inflammatory Touch",
+    "Worm Steroids",
+    "Burrowing Monstrosity",
+    "Parasitic Aftershock",
+    "Linked Nervous Systems",
+    "Pulsating Touch",
+    "Lingering Worm",
+    "Parasitic Aura",
+    "Earthworm",
+    "Conjured Branches",
+    "Devouring Worm"
+   ]
+  },
+  "EntColossus": {
+   "desc": "Summons an ent colossus to fight by your side.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Carrying Weight",
+    "Colossal Bark Smash",
+    "Ancient Bark",
+    "Executing Branches",
+    "Scorched Bark",
+    "Loaded Branch",
+    "Ancient Vitality",
+    "Unleash The Roots",
+    "Aged Tree Bark",
+    "Center of the Forest",
+    "Scorched Branchsmash",
+    "Colossal Canopy",
+    "Blood Hungry Roots",
+    "Trunk Crusher"
+   ]
+  },
+  "LeapingCharge": {
+   "desc": "Perform a charging leap forward inflicting physical damage to monsters on hit.",
+   "element": "physical",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Deadly Slashes",
+    "Wide Slashing",
+    "Rupturing Charge",
+    "Nurturing Slashes",
+    "Long Reaching Claws",
+    "Punctured Skin",
+    "Fatal Slashing",
+    "Deadly Slash",
+    "Raging Slash",
+    "Elusive Leap",
+    "Skipping Claws",
+    "Trail of Agony",
+    "Shuriken of Claws",
+    "Herald of Bones"
+   ]
+  },
+  "MaelstromOfFrost": {
+   "desc": "Summon a maelstrom of frost around you inflicting cold and physical damage on hit.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe",
+    "summon"
+   ],
+   "subtalents": [
+    "Freezing Wind",
+    "Maelstroms Magnitude",
+    "Frostburning Temperature",
+    "Coldsnapping Breeze",
+    "Hypothermic Snap",
+    "Intense Temperature",
+    "Frosted Bones",
+    "Leeching from Frost",
+    "Shattering Permafrost",
+    "Chaotic Growth",
+    "Endless Blizzard",
+    "Meteor of Ice",
+    "The Frozen Layer of Hell",
+    "Storm of Frost"
+   ]
+  },
+  "Raven": {
+   "desc": "Summon a raven circling around you attacking nearby monsters.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe",
+    "summon"
+   ],
+   "subtalents": [
+    "Power of the Flock",
+    "Cadaver Pecking",
+    "Frenzied Bird",
+    "Raven Eye",
+    "Master of Ravens",
+    "Ravens Flight",
+    "Battle Screech",
+    "Wounding Advantage",
+    "Wounds Ripped Open",
+    "Summon The Flock",
+    "Honey Stinger",
+    "Flock of Feathers",
+    "Rupturing Pull",
+    "Tempest of Ravens"
+   ]
+  },
+  "SpiritOfEnt": {
+   "desc": "Morph into an Ent with a chance to knock monsters back on hit stunning and dealing additional damage when colliding with terrain.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Ent\u00b4s Rage",
+    "Ent\u00b4s Bark",
+    "Ent\u00b4s Vitality",
+    "Ent\u00b4s Weight",
+    "Ent\u00b4s Thorns",
+    "Ent\u00b4s Wisdom",
+    "Ent\u00b4s Roots",
+    "Ent\u00b4s Trunk",
+    "Ent\u00b4s Heart",
+    "Ent\u00b4s Intellect",
+    "Reflecting Branches",
+    "Grizzly",
+    "Dominos of Trunks",
+    "Crushing Trunksmash"
+   ]
+  },
+  "SpiritOfForest": {
+   "desc": "Summons a spirit of the forest increasing life and mana for you and your party. Only one spirit can be summoned.",
+   "element": null,
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Vitality of Wilderness",
+    "Longer Lasting Harmony",
+    "Defense of Wilderness",
+    "Recuperating Mantra",
+    "Prayer of Nature",
+    "Manawell of Wilderness",
+    "Essence of Danger",
+    "Blessing of Wilderness",
+    "Purified Terrain",
+    "Oak\u00b4s Heart",
+    "Cursed Spirit",
+    "Forest\u00b4s Blessing",
+    "Mystic Voodoo",
+    "Malevolent Spirit"
+   ]
+  },
+  "SpiritOfVendigo": {
+   "desc": "",
+   "element": null,
+   "splash": [
+    "physical"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Wendigo\u00b4s Rage",
+    "Wendigo\u00b4s Hunger",
+    "Wendigo\u00b4s Agility",
+    "Wendigo\u00b4s Skin",
+    "Wendigo\u00b4s Focus",
+    "Wendigo\u00b4s Claws",
+    "Wendigo\u00b4s Paw",
+    "Wendigo\u00b4s Recuperation",
+    "Wendigo\u00b4s Bloodlust",
+    "Wendigo\u00b4s Endurance",
+    "Blood Thirsty Skinwalker",
+    "Clawarang",
+    "Flesh Ripping Beast",
+    "Blood Carnage"
+   ]
+  },
+  "StormHawk": {
+   "desc": "",
+   "element": null,
+   "splash": [
+    "fire",
+    "lightning"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Hawk\u00b4s Eye",
+    "Hawk\u00b4s Surge",
+    "Hawk\u00b4s Storm",
+    "Hawk\u00b4s Focus",
+    "Hawk\u00b4s Flight",
+    "Hawk\u00b4s Agility",
+    "Hawk\u00b4s Stasis",
+    "Hawk\u00b4s Hunger",
+    "Hawk\u00b4s Mind",
+    "Hawk\u00b4s Shadow",
+    "Stormbolts",
+    "Bird of Thunder",
+    "Thundering Bolt",
+    "Electric Screech"
+   ]
+  },
+  "SummonEnt": {
+   "desc": "Summons an ent to fight by your side.",
+   "element": null,
+   "splash": [
+    "poison"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Power of the Forest",
+    "Shielding Bark",
+    "Elder\u00b4s Branches",
+    "Aging Branch",
+    "Blood Hungering Bark",
+    "Quicker Roots",
+    "Poisoning Bark Smash",
+    "Canopy Growth",
+    "Penetrating Branches",
+    "Throwing Branches",
+    "Saplings",
+    "Charging Forest",
+    "Link of Nature",
+    "Flaming Branch"
+   ]
+  },
+  "ThornedBranch": {
+   "desc": "Throw a thorned branch dealing poison damage on hit.",
+   "element": "poison",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot",
+    "projectile"
+   ],
+   "subtalents": [
+    "Sharper Thorns",
+    "Conjurer of Branches",
+    "Critically Sharp Thorns",
+    "Thorned Splinters",
+    "Bouncing Branch",
+    "Concussive Branchblow",
+    "Venom Infusion",
+    "Amplified Venoms",
+    "Infecting the Wounds",
+    "Wooden Equilibrium",
+    "Branched Multitude",
+    "Forking Branches",
+    "Growth of Death",
+    "Falling Branches"
+   ]
+  },
+  "ThornedRoots": {
+   "desc": "Unleash a swarm of roots dealing poison damage on hit.",
+   "element": "poison",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot"
+   ],
+   "subtalents": [
+    "Strangulating Branches",
+    "Painful Thorns",
+    "Toxic Amplification",
+    "Thorned Wrath",
+    "Poison Ivy",
+    "Magnitude of Roots",
+    "Venomous Strangulation",
+    "Extended Roots",
+    "Asphyxiating Grasp",
+    "Rooted Essence",
+    "Nature\u00b4s Path",
+    "Gigathorn",
+    "Poison Roots",
+    "Hungering Hive Mind"
+   ]
+  },
+  "WoundingPaw": {
+   "desc": "Strike monsters with increased damage with a chance to unleash a ripple of blood.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Sharper Claws",
+    "Accurate Slash",
+    "Shredding Claws",
+    "Disorienting Crush",
+    "Pummeling The Disoriented",
+    "Amplified Rabies",
+    "Slick Movement",
+    "Critical Slashing",
+    "Slashing with Accuracy",
+    "Vital Siphoning",
+    "Accelerated Slash",
+    "Brutalizing Decomposition",
+    "Slashing Momentum",
+    "Animal Siphoning"
+   ]
+  }
+ },
+ "Pyromancer": {
+  "Armageddon": {
+   "desc": "Call down a rain of meteors from the sky dealing area of effect fire damage to monsters struck.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Falling Wrath",
+    "Storm of Fire",
+    "Colossal Chunks",
+    "Searing Meteor",
+    "Pyrokinetic Madness",
+    "Doomsday Clock",
+    "Blisters",
+    "Ball of Fire",
+    "Doom Fire",
+    "Blazing Pulse",
+    "Searing Concentration",
+    "Warm Shower",
+    "Blistering Bolt",
+    "Warped Doom"
+   ]
+  },
+  "BlazingTrail": {
+   "desc": "Leave behind a trail of fire dealing fire damage to monsters.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Timed Fire",
+    "Scorch",
+    "Expanded Flames",
+    "Flaming Steps",
+    "Agonizing Heat",
+    "Combusting Flames",
+    "Burning Veins",
+    "Paralyzing Fire",
+    "Crackling Heat",
+    "Fueled Flames",
+    "Forking Flames",
+    "Circle of Fire",
+    "Trail of Comets",
+    "Detonation Field"
+   ]
+  },
+  "BreathOfFire": {
+   "desc": "Breathe burning flames dealing fire damage and inflicting burning on hit.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot"
+   ],
+   "subtalents": [
+    "Expanding Heat",
+    "Burning Haze",
+    "Heat Combustion",
+    "Double Breeze",
+    "Scorching Exhale",
+    "Burning Lungs",
+    "Collateral Ignition",
+    "Burst of Heat",
+    "Breaking Point",
+    "Reverse Hypothermia",
+    "Hydra\u00b4s Breeze",
+    "Chain of Fire",
+    "Scorching Hellflame",
+    "Molten Orb"
+   ]
+  },
+  "Comet": {
+   "desc": "Call down a huge comet exploding on impact dealing area of effect fire damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion"
+   ],
+   "subtalents": [
+    "Blast Radius",
+    "Molten Rock",
+    "Skycaller",
+    "Comet Fragments",
+    "Molten Aftershock",
+    "Shattering Impact",
+    "Stunning Hit",
+    "Cracked Terrain",
+    "Searing Shrapnel",
+    "Flaming Terrain",
+    "Fiery Shower",
+    "Molten Starfall",
+    "Bouncing Comets",
+    "Crushing Comet"
+   ]
+  },
+  "FireNova": {
+   "desc": "Cast a nova of fire around you dealing fire damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe",
+    "projectile"
+   ],
+   "subtalents": [
+    "Extended Flames",
+    "Boiling Point",
+    "Heat Haze",
+    "Burning Agony",
+    "Crushing Flames",
+    "Rapid Flames",
+    "Mirror Flames",
+    "Armageddon Bolts",
+    "Agonizing Flames",
+    "Molten Trail",
+    "Scorching Bolts",
+    "Searing Tornado",
+    "Traveling Flames",
+    "Vacuum Flames"
+   ]
+  },
+  "Fireball": {
+   "desc": "Cast a fireball dealing fire damage to monsters.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Multicast",
+    "Ignition Radius",
+    "Inferno Ball",
+    "Gas Fumes",
+    "Searing Speed",
+    "Paralyzing Impact",
+    "Soulburn",
+    "Critical Burn",
+    "Mark of Doom",
+    "Burn baby burn!",
+    "Splitfire",
+    "Path of Destruction",
+    "Orbital Fire",
+    "Fireflies!"
+   ]
+  },
+  "Hydra": {
+   "desc": "Spawn a fiery hydra that shoots fireballs with area of effect fire damage towards the closest monster.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile",
+    "sentry"
+   ],
+   "subtalents": [
+    "Lasting Fire",
+    "Fiery Snakebite",
+    "Flaming Reach",
+    "Scorching Blast",
+    "More Heads More Fire!",
+    "Flaming Reflexes",
+    "Cloning Combustion",
+    "Burstfire",
+    "Burning Essence",
+    "Slitherin Army",
+    "Chaotic Calamity",
+    "Hydra Herder",
+    "Scorching Kraken",
+    "Searing Snakes"
+   ]
+  },
+  "InfernoSlash": {
+   "desc": "Send forward a fire enchanted cleave attack dealing increased damage and additional fire damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Infernal Reach",
+    "Scattering Flame",
+    "Molten Ground",
+    "Piercing Flame",
+    "Stacked Burn",
+    "Scorching Slash",
+    "Nerve Damage",
+    "Accelerated Fumes",
+    "Igniting Wind",
+    "Third Degree Burns",
+    "Infernal Cleave",
+    "Searing Fork",
+    "Fearful Flames",
+    "Flies of Agony"
+   ]
+  },
+  "PhoenixFlight": {
+   "desc": "Charge forward through the air dealing area of effect fire damage when landing.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Flaming Pecker",
+    "Swift Flight",
+    "Scorching Fury",
+    "Infused Flames",
+    "Searing Touch",
+    "Burning Screech",
+    "Collateral Burning",
+    "Afterburn",
+    "Molten Feathers",
+    "Mental Heat",
+    "Rise from the Ashes",
+    "Seed of Fulmination",
+    "Wings of the Phoenix",
+    "Burning Wings"
+   ]
+  },
+  "ScorchingAura": {
+   "desc": "Scorch monsters around you dealing fire damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Scorched Lands",
+    "Sixt Degree Burns",
+    "Burning Necrosis",
+    "Flaming Fissure",
+    "Rapid Burning",
+    "Burnt Feet",
+    "IGNITE THE FLAMES!",
+    "Ground Blaze",
+    "Scorching Agony",
+    "Burn Them All!",
+    "Searing Burst",
+    "Burning Soul",
+    "Scorching Harvester",
+    "RELEASE THE CHAOS!"
+   ]
+  },
+  "Volcano": {
+   "desc": "Spawn a molten volcano that deals fire damage around it and spews out burning rocks that explode on hit.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot",
+    "explosion"
+   ],
+   "subtalents": [
+    "Eruption",
+    "Extended Lava",
+    "Danger Zone",
+    "Searing Mountain",
+    "Colossal Fragment",
+    "Crackling Earth",
+    "Scorching Lava",
+    "Crushing Fragment",
+    "Too Hot to Touch",
+    "Lava Dipping",
+    "Yellowstone",
+    "Lava Trail",
+    "I Am The Volcano Now!",
+    "Trail of Volcanoes"
+   ]
+  }
+ },
+ "Redneck": {
+  "ChainSlash": {
+   "desc": "",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Wider Chain",
+    "Accelerated Chain",
+    "Double The Logging",
+    "Rupturing Slash",
+    "Chaining Uppercut",
+    "The Motor Goes BRRRRR!",
+    "Bigger Saw",
+    "Strengthened Bloodlust",
+    "Malfunctioning Chainsaw",
+    "Bloody Carnage",
+    "Giant Slash",
+    "Woodcutter\u00b4s Madness",
+    "Gas To The Chainsaws",
+    "Sawing Momentum"
+   ]
+  },
+  "ChainsawMassacre": {
+   "desc": "Violently spin your chainsaw dealing damage to monsters around you. Going the full distance unleashes a whirl attack with increased damage and area of effect.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Wielding The Saw",
+    "Saw Through The Woods",
+    "Sawing Execution",
+    "Final Stand",
+    "Optimal Working Hours",
+    "Overtime",
+    "Critical Wounding",
+    "Resilient Sustain",
+    "Logging Machine",
+    "Calling in Sick",
+    "Logger\u00b4s Lil Helpers",
+    "Raging Sawblades",
+    "Standstill Focus",
+    "Woodcutter\u00b4s Expertise"
+   ]
+  },
+  "MoonshineMolotov": {
+   "desc": "Throw a bottle of moonshine that ignites the impacted area on fire and sends out burning oil.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot",
+    "projectile"
+   ],
+   "subtalents": [
+    "Extra Gasoline",
+    "Double Bourbon",
+    "Wider Flames",
+    "Scorching Collision",
+    "Gas Leak",
+    "Oil Spilled Flask",
+    "Burn The Demons",
+    "Redeeming Flames",
+    "Bottle Flip",
+    "Resilient Liquid",
+    "Heated Melting Point",
+    "Set The World On Fire!",
+    "Flaming Tar",
+    "Blazing Trail of Flames"
+   ]
+  },
+  "PickupRaid": {
+   "desc": "Call your hillbilly friends to siege your opponents in a pickup truck dealing fire damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Ignition",
+    "Oil Leak",
+    "Napalm Filling",
+    "V12 Engine",
+    "Shattering Shells",
+    "Speed Dial",
+    "Billy & Little Bob",
+    "Double Barrel",
+    "Moonshine Miles",
+    "Crackling Fire",
+    "Suicide Squad",
+    "Freedom Convoy",
+    "Drunken Air Raid",
+    "Tarethiel MC"
+   ]
+  },
+  "Pipebombs": {
+   "desc": "Throw a barrage of handcrafted pipe bombs dealing area of effect fire damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Stacked Bag",
+    "Lowered Weight",
+    "TNT Mass",
+    "Bomberman",
+    "Splitting Explosive",
+    "Wounding Blast",
+    "Salt Covering",
+    "Blasting Powder",
+    "Anti Fatigue",
+    "Upwards Pressure",
+    "Fiery Infusion",
+    "Disorienting Blast",
+    "Eat This!",
+    "Colossal Explosive"
+   ]
+  },
+  "RogueChainsaw": {
+   "desc": "Throw a chainsaw on the ground spinning and dealing increased damage and additional arcane damage to monsters struck.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Overheating Engine",
+    "Ripping Impact",
+    "Handling Skills",
+    "Rough Chains",
+    "Engine Gone Wild",
+    "Chaining Chainsaws",
+    "Empty The Workbag",
+    "Ruthless Chainsaws",
+    "Consumed Rupture",
+    "Full Gas Tank",
+    "Slice Em Up!",
+    "Shredding Squad",
+    "Homing Chainsaws",
+    "Circle of Cutting"
+   ]
+  },
+  "TireFire": {
+   "desc": "Throw a truck tire that deals fire damage on hit.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Tire Density",
+    "Increased Stock",
+    "Scaling Up",
+    "Hard Hitter",
+    "Bouncy Tire",
+    "Flaming Tire",
+    "Overheated",
+    "The Machinist",
+    "Oily Tire",
+    "Impact Angle",
+    "Monster Truck Tire",
+    "Mini Tires",
+    "Donuts",
+    "Loose Tire"
+   ]
+  },
+  "TreeTrunkTriumph": {
+   "desc": "Summon a massive tree and cut it down on nearby monsters dealing increased damage and additional arcane damage.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Splinters",
+    "Treefall",
+    "Heavy Trunk",
+    "Sequoia",
+    "Sticking Splinters",
+    "Skillfull Fall",
+    "Sudden Treefall",
+    "Maiming Collision",
+    "Heavy Fall",
+    "Clear The Way",
+    "Stack of Trunks",
+    "Giant Red Tree",
+    "Splitting Fall",
+    "Falling Forest"
+   ]
+  }
+ },
+ "Samurai": {
+  "BattleGlance": {
+   "desc": "Perform an area of effect attack with increased damage and attack rating.",
+   "element": null,
+   "splash": [
+    "shadow"
+   ],
+   "scaling_hint": [
+    "vitality"
+   ],
+   "delivery": [],
+   "subtalents": [
+    "Quick Strike",
+    "Honed Blade",
+    "Refined Technique",
+    "Intanglible",
+    "Execution",
+    "Restorative Strikes",
+    "Spinning Katanas",
+    "From Behind",
+    "Guided Swing",
+    "Burst of Speed",
+    "Shadow From Within",
+    "Blood Harvest",
+    "Perfection",
+    "Evasive Prodigy"
+   ]
+  },
+  "BladeBarrier": {
+   "desc": "Summon a barrier of rotating blades around you dealing Physical Damage and additional Arcane Damage.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe",
+    "summon"
+   ],
+   "subtalents": [
+    "Rotational Force",
+    "Cursed Blades",
+    "Barrier Extension",
+    "Damascus Steel Blades",
+    "Infinite Potential",
+    "Battle Wounds",
+    "Crippling Hits",
+    "Laceration",
+    "Sharp Greeting",
+    "Spirit Fire",
+    "Twin Barriers",
+    "Forgotten Arts",
+    "Body And Soul",
+    "Spinning Armory"
+   ]
+  },
+  "EmpiresSlash": {
+   "desc": "Perform an area of effect attack blinking a short distance and dealing physical damage to monsters in its path. Empire slash lowers Omnislashes cooldown when it strikes a monster.",
+   "element": "physical",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "cooldown"
+   ],
+   "subtalents": [
+    "Steel Cutter",
+    "Destructive Force",
+    "Mastering The Sword",
+    "On The Mark",
+    "Emperor's Command",
+    "Piercing Backslash",
+    "Slithering Blade",
+    "Absorb Life",
+    "Wounding Slash",
+    "Time To Spare",
+    "Unbridled Rage",
+    "Bloodcovered Edge",
+    "Cone Of Death",
+    "Muda Muda Muda Muda Muda"
+   ]
+  },
+  "ExplodingBolas": {
+   "desc": "Throw bolas that deal arcane damage on impact and again when they explode after a short delay. ",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion",
+    "projectile"
+   ],
+   "subtalents": [
+    "Explosive Outburst",
+    "Improved Design",
+    "Close Impact",
+    "Fastbol",
+    "Multibolas",
+    "Low Blow",
+    "Another One",
+    "Tough Fall",
+    "Speedslinger",
+    "Longer Ropes",
+    "Loaded Charge",
+    "Clusterducks",
+    "Magnetic String",
+    "Bola'd Stasis"
+   ]
+  },
+  "ExplosiveKunai": {
+   "desc": "Throw an explosive kunai that explodes and splits on impact, causing smaller explosions that deal Arcane damage.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion",
+    "projectile"
+   ],
+   "subtalents": [
+    "Stronger Explosives",
+    "Packed Up Kunai",
+    "Satisfaction",
+    "Split Up",
+    "Willful Sacrifice",
+    "First Is Best",
+    "Ronin's Curse",
+    "Doubleblast",
+    "Bouncy Kunai",
+    "Concussive Explosions",
+    "Doubleforking Kunai",
+    "Penetration Volley",
+    "Chainsplosions",
+    "Little Slicers"
+   ]
+  },
+  "Omnislash": {
+   "desc": "Become untargetable and rapidly strike monsters multiple times with increased attack rating dealing increased damage.",
+   "element": null,
+   "splash": [
+    "lightning",
+    "poison",
+    "shadow"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Clean Hits",
+    "Extra Cut",
+    "No Hesitation",
+    "Powerful Slashes",
+    "Looming Cover",
+    "Nail In The Coffin",
+    "Emperor's Orders",
+    "Killstrike",
+    "Thirst For Death",
+    "Cutting Machine",
+    "Lucky Strikes",
+    "Rain Of Chaos",
+    "Poison Coated Daggers",
+    "Thunder Slashes"
+   ]
+  },
+  "Quickslash": {
+   "desc": "Perform a quick dash unleashing area of effect slash dealing increased physical damage and knocking up monsters.",
+   "element": "physical",
+   "splash": [
+    "shadow"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Lightspeed",
+    "Greater Slash",
+    "Dual Hit",
+    "Exposed Weakness",
+    "Top to Bottom",
+    "Exploitation",
+    "Spirit Double",
+    "Origin Point",
+    "Lost Teachings",
+    "Switch it Up",
+    "Plan Ahead",
+    "Multiplicative Duality",
+    "Mechanical Advantage",
+    "Now You See Me"
+   ]
+  },
+  "ShadowStep": {
+   "desc": "Step into the shadows, re-appearing at the target location dealing Arcane Damage to all nearby monsters.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Traversal",
+    "Calm And Collected",
+    "Groundshaker",
+    "Improved Lethality",
+    "Shadow Ally",
+    "Stepping Stone",
+    "Sonic Boom",
+    "Crushing Step",
+    "Planned Out",
+    "Speed Demon",
+    "Daggerstorms",
+    "Bargain With Demons",
+    "Vortex Step",
+    "Pulsating Shadows"
+   ]
+  },
+  "ShurikenThrow": {
+   "desc": "Throw three piercing Shurikens at your target dealing increased damage.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Pointy Edges",
+    "Quickthrow",
+    "Forceful Flight",
+    "Twin Shurikens",
+    "Shady Trickster",
+    "Starstruck",
+    "Empowering Shurikens",
+    "Sharp stars",
+    "Throwing Profiency",
+    "Manainfused Shurikens",
+    "Shadow Shuriken",
+    "Cutting Field",
+    "Ripping Flesh",
+    "Slicing Ricochet"
+   ]
+  },
+  "SmokeBomb": {
+   "desc": "Explode a smoke bomb dealing arcane damage.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "explosion"
+   ],
+   "subtalents": [
+    "Weakening Powder",
+    "Key to Precision",
+    "Acidic Component",
+    "Thick Clouds",
+    "Mindfulness",
+    "Greater Impact",
+    "Preparation",
+    "Swift Deploy",
+    "Feel the Heat",
+    "Burning Weakness",
+    "Adjusted Formula",
+    "Stealth Zone",
+    "Monster Cleansing",
+    "Smoke Trail"
+   ]
+  }
+ },
+ "Shaman": {
+  "ChaosTotem": {
+   "desc": "Summon a totem that rapidly shoots chaos bolts dealing arcane damage.",
+   "element": "arcane",
+   "splash": [
+    "fire",
+    "shadow"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile",
+    "summon"
+   ],
+   "subtalents": [
+    "Soulburning Bolts",
+    "Hour of Chaos",
+    "Chaos Shattering",
+    "Doomsday Clock",
+    "Chaos Aura",
+    "Chaos Arc",
+    "Split Chaos",
+    "Uncontrollable Reaction",
+    "Reach of Chaos",
+    "Chaos Pulse",
+    "Manafunneled Chaos",
+    "Chaos Embodied",
+    "Arcing Destruction",
+    "Colossal Chaos"
+   ]
+  },
+  "EarthBind": {
+   "desc": "Raise vines from the ground dealing poison damage, poisoning and rooting monsters in place.",
+   "element": "poison",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot",
+    "summon"
+   ],
+   "subtalents": [
+    "Lasting Roots",
+    "Sharp Oaks",
+    "Nature's Intellect",
+    "Increased Pressure",
+    "Rooting Wave",
+    "Expanding Roots",
+    "Lingering Oak",
+    "Poisonous Ivy",
+    "Strangling Thorns",
+    "Paralyzing Leaves",
+    "Field of Roots",
+    "Wildfire Growth",
+    "Shattering Thorns",
+    "Quick Strangulation"
+   ]
+  },
+  "EarthTotem": {
+   "desc": "Summon a totem that fires rock fragments that deal area of effect arcane damage on hit.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Earth Master",
+    "Rapid Earth",
+    "Fragmenting Totemstones",
+    "Earth God",
+    "Runic Earth",
+    "Dense Earth",
+    "Stunning Earth",
+    "Ravaging Earth",
+    "Double Boulder",
+    "Earth Caller",
+    "Entangling Roots",
+    "Fragmented Volley",
+    "The Rolling Stones",
+    "Wind Totem"
+   ]
+  },
+  "FireTotem": {
+   "desc": "Spawn a totem that casts piercing fire projectiles dealing fire damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile",
+    "summon"
+   ],
+   "subtalents": [
+    "Fire Master",
+    "Flame Scorching",
+    "Burning Radius",
+    "Overheated Flames",
+    "Scattering Flames",
+    "Light the Soil",
+    "Arcfire",
+    "Gas into the Flames",
+    "Totemscorch",
+    "Flamescarred Sentry",
+    "Firestorm Totems",
+    "Homing Flames",
+    "Multiplying Fire",
+    "Paralyzing Napalm"
+   ]
+  },
+  "Fissures": {
+   "desc": "Rip the ground open with magic causing cracks that release fissures dealing arcane damage.",
+   "element": "arcane",
+   "splash": [
+    "lightning"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Trembling Earth",
+    "Scorching Steam",
+    "Debilitating Burst",
+    "Magnetic Field",
+    "Trembling Pull",
+    "Earth Crack",
+    "Comet Fall",
+    "Field of Landmass",
+    "Rumbling Impact",
+    "Frequent Shaking",
+    "Enlargening Earthquake",
+    "Electrocharged Fissures",
+    "Manual Quake",
+    "Natural Disaster"
+   ]
+  },
+  "MeteorStorm": {
+   "desc": "Call down a meteor storm on target location dealing arcane damage.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [
+    "energy"
+   ],
+   "delivery": [],
+   "subtalents": [
+    "Meteor Strike",
+    "Massive Stone",
+    "Extended Meteorshower",
+    "Meteoric Fragmentation",
+    "Heat Seeking Storm",
+    "Concentrated Shattering",
+    "Rolling Meteorite",
+    "Manaburning Meteorology",
+    "Colossus Destroyer",
+    "Hellflame Meteors",
+    "Astroheated Shower",
+    "Storm of Comets",
+    "Back Into Orbit",
+    "Rain From Hell"
+   ]
+  },
+  "RockFragments": {
+   "desc": "Unleash rock fragments towards target location dealing arcane damage.",
+   "element": "arcane",
+   "splash": [
+    "fire",
+    "lightning"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Multistone Fragments",
+    "Stonegrowth",
+    "Reinforced Stone",
+    "Swift Fragments",
+    "Arcanastone",
+    "Fragment Growth",
+    "Disorienting Impact",
+    "Feint Crush",
+    "Impaired Stone",
+    "Heavystone Crash",
+    "Accumulating Density",
+    "Elemental Fragments",
+    "Colossus Stone Fragment",
+    "Mad Rockslinger"
+   ]
+  },
+  "SpiritWolves": {
+   "desc": "Spawn a spirit wolf to fight on your side.",
+   "element": null,
+   "splash": [
+    "lightning"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Sharpened Teeth",
+    "Wolf Pack",
+    "Astral Fur",
+    "Cleave Slash",
+    "Ravaging Strike",
+    "Wolf\u00b4s Claw",
+    "Pack Leader",
+    "Pummeling Rage",
+    "Rupturing Slice",
+    "Wounding Trail",
+    "Spiritual Rabies",
+    "Alpha",
+    "Lightning Fangs",
+    "Howling Pack"
+   ]
+  },
+  "StormTotem": {
+   "desc": "Summon a totem that releases chain lightning on nearby monsters dealing lightning damage.",
+   "element": "lightning",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Storm Master",
+    "Circuitbreaking",
+    "Storm Current",
+    "Storm God",
+    "Static Duality",
+    "Connected by Storm",
+    "Static Electroshock",
+    "Storming Bolt",
+    "Struck by Thunder",
+    "Collapsing Thunder",
+    "Lightning Rods",
+    "Surging Sentry",
+    "Stormclaw Totem",
+    "Charged Totem"
+   ]
+  },
+  "TectonicBoulder": {
+   "desc": "Unleash a massive boulder that travels forward dealing arcane damage.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Bouncy Boulder",
+    "Stoned Mind",
+    "Boulder Momentum",
+    "Stone Density",
+    "Fractured Balance",
+    "Crushing Boulder",
+    "Chunky Stone",
+    "Frosted Pebble",
+    "Frostbiting Boulder",
+    "Fragmentation",
+    "Tiny Stones",
+    "Colossal Boulder",
+    "Molten Boulder",
+    "Stone Slinger"
+   ]
+  },
+  "Tornado": {
+   "desc": "Summon a tornado traveling towards target direction dealing arcane damage to monsters on its path.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Wind\u00b4s Force",
+    "Sudden Winds",
+    "Cyclone Radius",
+    "Tempest Mind",
+    "Windstorm\u00b4s Wrath",
+    "Piercing Typhoon",
+    "Flowing Spiral",
+    "Punishing Tempest",
+    "Tempeststep",
+    "Afterflow",
+    "Orbital Winds",
+    "Storm Growth",
+    "Splitting Cyclone",
+    "Absolute Tempest"
+   ]
+  },
+  "Twisters": {
+   "desc": "Unleash small twisters towards target location dealing arcane damage to monsters on their path.",
+   "element": "arcane",
+   "splash": [
+    "lightning"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Twisted Winds",
+    "Twistering Multitude",
+    "Whispering Winds",
+    "Sharp Gust",
+    "Wind\u00b4s Trajectory",
+    "Gust\u00b4s Bite",
+    "Windstruck",
+    "Windstep",
+    "Upward Spiral",
+    "Piercing Winds",
+    "Entangling Gust",
+    "Explosive Gust",
+    "Splitting Twister",
+    "Ripping Gust"
+   ]
+  }
+ },
+ "ShieldLancer": {
+  "BattleCharge": {
+   "desc": "Charge towards target location knocking monsters up and dealing arcane damage on impact.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [
+    "armor"
+   ],
+   "delivery": [],
+   "subtalents": [
+    "Battle Charged",
+    "Arena Glider",
+    "Concrete Wall",
+    "Rampaging Assault ",
+    "Turtle Armor",
+    "Rocket Boots",
+    "Shoulder Slam",
+    "Spear Dasher",
+    "Bluntforce Trauma",
+    "Provoking Arrival",
+    "Bulldozer",
+    "Hyper Assault",
+    "Ground Slammer",
+    "Call of the Fallen Heroes"
+   ]
+  },
+  "Counter": {
+   "desc": "When active all monster attacks get countered with thrusting lances dealing arcane damage.",
+   "element": "arcane",
+   "splash": [
+    "physical"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Sharp Vengeance",
+    "Vengeful Hit",
+    "Double Edge",
+    "Rupturing Lance",
+    "Spell Reflection",
+    "Battle Magus",
+    "Lusting Blood",
+    "Stunning Lance",
+    "Cheap Counter",
+    "Bursting Lances",
+    "Insatiable Challenger",
+    "Volley Build-up",
+    "Give No Quarter",
+    "Versus the World"
+   ]
+  },
+  "CrushingLance": {
+   "desc": "Call a crushing lance down from the sky smashing the target location dealing area of effect physical damage.",
+   "element": "physical",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Sharp Point",
+    "Devastating Impact",
+    "Precision Blow",
+    "Dormant Javelin",
+    "Finishing Stagger",
+    "Two for One",
+    "Rapidcast Artillery",
+    "Landspike",
+    "Pulverizing Shock",
+    "Scorching Quake",
+    "Annihilating Salvo",
+    "Magnetized Glaive",
+    "Seismic Perforation",
+    "Marked for Javelinstrike"
+   ]
+  },
+  "GloriousStrike": {
+   "desc": "Perform a powerful attack dealing physical area of effect damage.",
+   "element": "physical",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Radiant Glory",
+    "Lance Training",
+    "Jousting Master",
+    "Piercing Thrust",
+    "Brutal Knight",
+    "Blood Satiable",
+    "Heroic Onslaught",
+    "Leave no Survivors",
+    "Sparring Haste",
+    "High Reach",
+    "Punisher",
+    "Unstoppable Piker",
+    "Javelin Harbinger",
+    "Valiant Combo"
+   ]
+  },
+  "HonedDefenses": {
+   "desc": "Every time you get hit by a monster attack gain stacks. At maximum stacks unleash a huge area of effect pulse dealing arcane damage to monsters around you. Can also be casted early to consume the stacks.       ",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [
+    "armor"
+   ],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Fortified Bastion",
+    "Lucky Defense",
+    "Engulfing Wave",
+    "Thorn Surge",
+    "Deadly Resistance",
+    "Hold!",
+    "Optimized Safeguard",
+    "Weakening Counter",
+    "Oppresive Countermeasure",
+    "Deflective Fortification",
+    "Sky Bulwark",
+    "Hauling Surge",
+    "Risen Guards",
+    "Unstoppable Goliath"
+   ]
+  },
+  "LanceThrust": {
+   "desc": "Perform a long ranged lance attack piercing monsters in a line dealing physical damage. If the lance comes in contact with a commending banner you get dragged to the banner smashing the ground stunning monsters on impact.",
+   "element": "physical",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Battle Experienced",
+    "Pole Reach",
+    "Heroic Arrival",
+    "Punctured Organs",
+    "Tactical Distancing",
+    "Swift Striking",
+    "Polearm Expertise",
+    "Blood Harvester",
+    "Stab Sequence",
+    "Volatile Irontip",
+    "Head Collector ",
+    "Legion Exterminator",
+    "Trust in the Thrust",
+    "Commend to Onslaught"
+   ]
+  },
+  "ShieldSlam": {
+   "desc": "Strike with your shield dealing physical damage based on the defense of your shield.",
+   "element": "physical",
+   "splash": [],
+   "scaling_hint": [
+    "armor"
+   ],
+   "delivery": [],
+   "subtalents": [
+    "Obsidian Shield",
+    "Gradient Strikes",
+    "Concussive Bash",
+    "Skull Fracture",
+    "Offensive Safeguard",
+    "Field Coverage",
+    "Violent Bash",
+    "Hardening Stance",
+    "Vanguard",
+    "Rogue Shield",
+    "Groundquake Bulwark",
+    "Knight\u00b4s Templar",
+    "Thorned Aegis",
+    "Captain Tarethiel"
+   ]
+  },
+  "ShieldWall": {
+   "desc": "Cast a wall of shields around you blocking monster projectiles dealing arcane and physical damage on hit. Hitting an enemy with Shield Wall generates a Honed Defenses stack.",
+   "element": "arcane",
+   "splash": [
+    "poison"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe",
+    "projectile"
+   ],
+   "subtalents": [
+    "Spiked Shields",
+    "Durable Wall",
+    "More Shields!",
+    "Split Reflection",
+    "Defensive Radius",
+    "Shield Growth",
+    "Critical Thorn",
+    "Noxious Shields",
+    "Breaking Spikes",
+    "Dissolving Corrosion",
+    "Gravitational Aegis",
+    "Porkupine Carapace",
+    "Shield Vortex",
+    "Insatiable Bulwark"
+   ]
+  }
+ },
+ "Stormweaver": {
+  "ApocalypticThunder": {
+   "desc": "Cast a high voltage thunder bolt on target spot stunning and dealing massive area of effect damage.",
+   "element": null,
+   "splash": [
+    "lightning"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Voltage Amplification",
+    "Center of the Storm",
+    "Immobilizing Thunderstrike",
+    "Speed of Sound",
+    "Spontanious Rupture",
+    "Conjurers Skill",
+    "Horizontal Travel",
+    "Shocking Lightningstrike",
+    "30000 Degrees",
+    "Fracturing Thunder",
+    "Lightning Rod",
+    "Symphony of the Storm",
+    "Lethal Voltage",
+    "Superstorm"
+   ]
+  },
+  "ChargedBolts": {
+   "desc": "Unleash multiple sparking bolts of electricity dealing lightning damage on hit.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Bigger Outlet ",
+    "Electric Vains ",
+    "Flash Bolt ",
+    "Halting Storm ",
+    "Weakening Charge ",
+    "Efficient Wiring ",
+    "Non-conductive Boots ",
+    "Static Buildup ",
+    "Additive Voltage ",
+    "Electrocharged Therapy ",
+    "Electric Field ",
+    "World Ender ",
+    "Loaded Thunder ",
+    "Railgun "
+   ]
+  },
+  "LightningSurge": {
+   "desc": "Unleash a surge of lightning dealing lightning damage.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Amplified Storm",
+    "Storm\u00b4s Prophet",
+    "Shocked to the Core",
+    "Heated Lightning",
+    "Piercing Bolt",
+    "Restoring Surge",
+    "Voltaic Pressure",
+    "Storm Summoner",
+    "Lightning Strikes Twice!",
+    "Grounding Surge",
+    "Surging Comeback",
+    "Supercharged",
+    "Concurrent Current",
+    "Surging Tornado"
+   ]
+  },
+  "StaticShock": {
+   "desc": "Shock target location with static electricity inflicting monsters with static shock dealing lightning damage over time. ",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "dot"
+   ],
+   "subtalents": [
+    "High Voltage Shock",
+    "Uprising Charge",
+    "Field of Shock",
+    "Initial Zap",
+    "Multishock",
+    "Storms Reach",
+    "Storm Infused Vains",
+    "Lingering Electricity",
+    "Charged Shock",
+    "Weakening Strike",
+    "Self Ionization",
+    "Leeching Shock",
+    "Thunders Embrace",
+    "Ultimate Static Current"
+   ]
+  },
+  "StormBolt": {
+   "desc": "Unleash a bolt of lightning dealing area of effect lightning damage.",
+   "element": "lightning",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Bolts of Devastation",
+    "Beaming Cast",
+    "Expanding Storm",
+    "Static Explosion",
+    "Tiny Storms",
+    "Surging Colossus",
+    "Quantity of Power",
+    "Unleash Discharge",
+    "Storm Breeds Storm",
+    "Bouncing Bolts",
+    "Pulsating Bolt",
+    "Bouncing Charge",
+    "Storm Claw",
+    "Magnetize"
+   ]
+  },
+  "StormCloud": {
+   "desc": "Conjure a storm cloud at target location striking monsters with surges of lightning dealing lightning damage.",
+   "element": "lightning",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Rapid and Intense Glaciation",
+    "Demolishing Discharge",
+    "Storm Conjurer",
+    "Shocking Thunder",
+    "Destructive Cloudburst",
+    "Maelstorm",
+    "Supercell Storm",
+    "Heatcharged Lightning",
+    "Thunder\u00b4s Roar",
+    "Homing Tempest",
+    "Orbiting Tempest",
+    "Storm Front",
+    "Aftershock",
+    "Apocalyptic Event"
+   ]
+  }
+ },
+ "Viking": {
+  "Berserk": {
+   "desc": "Every successful hit with berserk increases your attack damage, attack speed and movement speed for berserk stacking up to 8 times.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Insanity",
+    "Restless Feet",
+    "Dual Swing",
+    "Fearless Focus",
+    "Brutalize",
+    "Axe Throw",
+    "Bursting Madness",
+    "Berserker\u00b4s Reach",
+    "Heavy Hitter",
+    "Bring Me Another One!",
+    "Berserker\u00b4s Insanity",
+    "Deadly Advantage",
+    "GRAAAAAGH!",
+    "Giant\u00b4s Grasp"
+   ]
+  },
+  "Charge": {
+   "desc": "Charge forward dealing arcane damage and stunning monsters on impact.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Power Charge",
+    "Hyperfocus",
+    "Bodyslam",
+    "Resilience",
+    "Overconfidence",
+    "Spirit Breaker",
+    "Violent Momentum",
+    "Berserking Ram",
+    "Crushing Impact",
+    "Frenzied Mind ",
+    "Forceful Grab",
+    "Crashquake",
+    "Whirling Charge",
+    "Mountain Fall"
+   ]
+  },
+  "OdinsFury": {
+   "desc": "Powerful warcry which deals arcane damage and stuns monsters around you.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Crippling Shout ",
+    "Howling Cry ",
+    "Mind Tactics",
+    "Flaming Fury",
+    "Echoing Roar",
+    "Tormenting Shout",
+    "Emotional Damage",
+    "Echo of Duality",
+    "Shout of the Hunt",
+    "Dominating Howl",
+    "Warcry",
+    "Pulsing Echo",
+    "Trembling Roar",
+    "Roaring Carnage"
+   ]
+  },
+  "SeismicSlam": {
+   "desc": "Smash monsters in front of you dealing damage and knocking them up and stunning them.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Colossal Smash",
+    "Seismic Energy",
+    "Lethal Crush",
+    "Cheap Slam",
+    "Seismic Aftershock",
+    "Power Slam",
+    "Earth Root",
+    "Slamming Flurry",
+    "Defiling Carcass",
+    "Shattered Earth",
+    "Polar Shift",
+    "Echoing Slam",
+    "Seismic Crack",
+    "Younger Dryas"
+   ]
+  },
+  "Shockwave": {
+   "desc": "Smash the ground causing a shockwave that deals area of effect damage and stuns monsters. ",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Richter Scale",
+    "Earth Shaker",
+    "Ground Fissure",
+    "Shocking Crust",
+    "Multi Trail",
+    "Cracked Earth",
+    "Meteorology",
+    "Duck and Cover",
+    "Afterquake",
+    "Land Mass",
+    "Trembling Trail",
+    "Cataclysmic Smash",
+    "Forking Crust",
+    "Earthen Maelstrom"
+   ]
+  },
+  "Throw": {
+   "desc": "When using any of the abilities, you have a chance to throw a piercing lance at a nearby monster dealing physical damage.",
+   "element": "physical",
+   "splash": [
+    "arcane",
+    "shadow"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "projectile"
+   ],
+   "subtalents": [
+    "Home Run",
+    "Raging Power",
+    "Power Throw",
+    "Colossal Liftoff",
+    "Flipper",
+    "Power Fall",
+    "Breaking Fall",
+    "Bouncing Around",
+    "Bulls Eye",
+    "Dive Bomb",
+    "Ragesling",
+    "Vacuum Pitch",
+    "Dimensional Pitch",
+    "Echoing Throw"
+   ]
+  },
+  "Whirlwind": {
+   "desc": "Spin your weapons around you dealing damage to monsters struck.",
+   "element": null,
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Sharp Winds",
+    "Wounding Spin",
+    "Deadly Blow",
+    "Typhoon",
+    "Airborne Debris",
+    "Cycloning Step",
+    "Second Wind",
+    "Burning Air",
+    "Trail of Fire",
+    "Scorching Heat",
+    "Sharpened Blades",
+    "Detonation",
+    "Negative Pressure",
+    "Airborne"
+   ]
+  },
+  "YmirsChampion": {
+   "desc": "Perform a cold enhanced strike with additive cold damage, Increased attack damage and attack rating. Attacks also freeze monsters and summons a spinning axe that deals additional damage.",
+   "element": "cold",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Viking\u00b4s Carnage",
+    "Raging Sustain",
+    "Slashing Cleavers",
+    "Rimeforged Hatchet",
+    "Ymir\u00b4s Focus",
+    "Expanding Territory",
+    "Rapid Spinning",
+    "Frosted Blow",
+    "Rending Hatchet",
+    "Power of Multitude",
+    "Collateral Damage",
+    "Chainslicing Tomahawk",
+    "Scattering Battlegear",
+    "Shattering Axes"
+   ]
+  },
+  "Zeal": {
+   "desc": "Strike three fast and powerful attacks with increased attack rating.",
+   "element": null,
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Rapid Striking",
+    "Fatal Blows",
+    "Weapon Marksman",
+    "Brutal Slashes",
+    "Axes, More Axes!",
+    "Slicing Perfection",
+    "Hemorrhaging Blows",
+    "Bleeding Out",
+    "Finish Them!",
+    "Cleaving Zeal",
+    "Throwing Fury",
+    "Blood Ripple",
+    "Sundering Strikes",
+    "Zealing Blow"
+   ]
+  }
+ },
+ "WhiteMage": {
+  "BlackMass": {
+   "desc": "Summon all the coven's cultists to march in the name of satan inflicting arcane damage to monsters on their path.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [
+    "energy"
+   ],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Dark Gathering",
+    "Cult's Migration",
+    "Loyal Followers",
+    "Raise Morale",
+    "The Devil Within",
+    "Darkness Infused",
+    "Bloated Followers",
+    "Crowd Stomp",
+    "Eternal Corruption",
+    "Murder Frenzy",
+    "Shadow Puppets",
+    "Protective Circle",
+    "Loyal Followers",
+    "Cult Bishops"
+   ]
+  },
+  "BurstOfLight": {
+   "desc": "Cast a ray of divine light dealing arcane damage and lights monsters on heavenly fire.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [
+    "energy"
+   ],
+   "delivery": [],
+   "subtalents": [
+    "Manabinded Cast",
+    "Solar Infusion",
+    "Piercing Ray",
+    "Heaven's Brightness",
+    "Total Illumination",
+    "Forking Glare",
+    "Lens Flare",
+    "Light Orb",
+    "Blazing Light",
+    "Blinding Light",
+    "Holy Beam",
+    "Burning Smite",
+    "Purification",
+    "Light Within"
+   ]
+  },
+  "ChainOfHolyLight": {
+   "desc": "Cast a holy lightning jumping from monster to monster dealing arcane damage.",
+   "element": "lightning",
+   "splash": [
+    "fire"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Holy Velocity",
+    "Plasma Burst",
+    "Holy Discharge",
+    "Divine Divergence",
+    "Amplifying Prayer",
+    "Spellbreak Prayer",
+    "Celestial Light",
+    "Sacred Steps",
+    "Lightened Path",
+    "Light's Embrace",
+    "God\u00b4s Altar",
+    "Recursive Light",
+    "Echo of Heavens",
+    "God's Grasp"
+   ]
+  },
+  "DarkOath": {
+   "desc": "Conjure an aura that unleashes waves of unholy energy around you inflicting arcane damage to nearby monsters.",
+   "element": "arcane",
+   "splash": [
+    "shadow"
+   ],
+   "scaling_hint": [],
+   "delivery": [
+    "aoe"
+   ],
+   "subtalents": [
+    "Soulburn",
+    "Oath Amplifier",
+    "Healing Corruption",
+    "Shadows Reach",
+    "Covens Oath",
+    "Pulse of Vitality",
+    "Lust for Power",
+    "Shadowsteps",
+    "Intrusive Corruption",
+    "Devastating Pulse",
+    "Sacrificial Oath",
+    "Soul Collector",
+    "Corrupting Pulse",
+    "Burning Darkness"
+   ]
+  },
+  "HeavenlyFire": {
+   "desc": "Light the target location into holy fire dealing arcane damage.",
+   "element": "fire",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Lamb of God",
+    "Flame of the Heavens",
+    "Heaven's Burn",
+    "Scorched Retribution",
+    "Heaven's Blessing",
+    "Heavenly Smite",
+    "Inner Ignition",
+    "Shattering Flames",
+    "Ethereal Burn",
+    "Word of God",
+    "Essence of Heavens",
+    "Chain of Fire",
+    "Righteous Path",
+    "Ascendant Flame"
+   ]
+  },
+  "ManaOrb": {
+   "desc": "Summon a pulsating orb of mana that replenishes mana for players and deals arcane damage to monsters.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [
+    "energy"
+   ],
+   "delivery": [
+    "summon"
+   ],
+   "subtalents": [
+    "Conduit",
+    "Mana Incursion",
+    "Burst of Energy",
+    "Energy Charges",
+    "Corrupting Manapulse",
+    "Meditation",
+    "Mage's Might",
+    "Amplified Magic",
+    "Heaven's Aid",
+    "Energy Fountain",
+    "Energy Orbit",
+    "Chosen One",
+    "Hauling Manawell",
+    "Compacting Power"
+   ]
+  },
+  "RestlessSpirits": {
+   "desc": "Unleash restless spirits from an unholy dimension to seek new hosts inflicting arcane damage to the target.",
+   "element": "arcane",
+   "splash": [
+    "shadow"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Arcane Echoes",
+    "Shadowflame Affliction",
+    "Spiritual Expansion",
+    "Wraiths Call",
+    "Spectral Efficiency",
+    "Phantom Step",
+    "Hexbound Spirits",
+    "Wraiths Fury",
+    "Shattering Spirits",
+    "Spectral Velocity",
+    "Spirit Circle",
+    "Master of Spirits",
+    "Soul Termination",
+    "Feast on the Harvest"
+   ]
+  },
+  "SatansMark": {
+   "desc": "Mark the monsters on target area for satan causing them to unleash pulses of arcane damage when struck by other abilities and attacks. ",
+   "element": "arcane",
+   "splash": [
+    "lightning"
+   ],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Heil Satan",
+    "Long Lasting Darkness",
+    "Mark of the Beast",
+    "Grasp of Lucifer",
+    "Satanic Transe",
+    "Blood Ritual",
+    "The Black Bible",
+    "Messenger of Satan",
+    "Reach of Darkness",
+    "False Prophecy",
+    "The Black Mass",
+    "The Rapture",
+    "The Devil In I",
+    "Soul Combustion"
+   ]
+  },
+  "ShadowBolt": {
+   "desc": "Gather your inner darkness and unleash a powerful piercing shadow bolt that deals arcane damage to monsters on its path. The shadow bolt slows down after hitting a target.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Consuming Flames",
+    "Arcane Surge",
+    "Power of the Dark Side",
+    "Dark Conjurer",
+    "Taunting Shadows",
+    "Inner Corruption",
+    "Shadows Dispair",
+    "Flames of Corruption",
+    "Warlock from the Shadows",
+    "Warlocks Might",
+    "Shadow Flame",
+    "Shadow Beams",
+    "Shadows Grasp",
+    "Shadow Cascade"
+   ]
+  },
+  "SoulSpurn": {
+   "desc": "Rip the souls from nearest monsters dealing arcane damage and restoring your life and mana.",
+   "element": "arcane",
+   "splash": [],
+   "scaling_hint": [],
+   "delivery": [],
+   "subtalents": [
+    "Last Mortal Act",
+    "Solidify",
+    "Repeating Reaping",
+    "Consume",
+    "Highway to Purgatory",
+    "Restore",
+    "Revitalise",
+    "Floating Cultist",
+    "Shattering Destruction",
+    "Corrupted Rapture",
+    "Soulfilled Tradeoff",
+    "Purgatory",
+    "Lifeline Tether",
+    "Harvest the Damned"
+   ]
+  }
+ }
+}

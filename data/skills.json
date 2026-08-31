@@ -1,0 +1,6455 @@
+[
+ {
+  "slug": "absoluteMayhem",
+  "name": "Absolute Mayhem",
+  "desc_en": "Harness the power of your inner demon and fire multiple massive bullets in a line dealing physical damage.",
+  "elements": [
+   "fire",
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "absoluteZero",
+  "name": "Absolute Zero",
+  "desc_en": "Applies Cold Break on Attack.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "acceleratedFlames",
+  "name": "Accelerated Flames",
+  "desc_en": "Increases the speed of your projectiles.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "adrenalineMomentum",
+  "name": "Adrenaline Momentum",
+  "desc_en": "chance to gain a stack of adrenaline momentum on hit increasing your movement speed and attack speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "afterShock",
+  "name": "Aftershock",
+  "desc_en": "Chance on kill to cast Apocalyptic Thunder on the closest monster with increased lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "ageProliferation",
+  "name": "Age Proliferation",
+  "desc_en": "Channel waves of fractal energy on the target monster sending pulses out dealing arcane damage to nearby monsters.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "agility",
+  "name": "Agility",
+  "desc_en": "Temporarily increases your movement speed and attack speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "agonyOfSouls",
+  "name": "Agony of Souls",
+  "desc_en": "Unleash a soul nova dealing fire damage",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "aoe",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "aimbot",
+  "name": "Aimbot",
+  "desc_en": "All casts and attacks are targeted towards the closest target.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "ampingUp",
+  "name": "Amping Up",
+  "desc_en": "Chance on spellhit or strike to gain a stack of amping up increasing your cast rate for a short duration.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "amplifyDamage",
+  "name": "Amplify damage",
+  "desc_en": "Curse monsters in the target area decreasing their damage dealt and inflicting arcane break.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "amunRasDemise",
+  "name": "Amun Ra\u00b4s Demise",
+  "desc_en": "Monsters have a chance to explode on death dealing a portion of their maximum life as fire damage in a small area",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "anchorSwing",
+  "name": "Anchor Swing",
+  "desc_en": "Unleash a massive anchor swinging around you dealing cold damage.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "angelicVibrance",
+  "name": "Angel\u2019s Vibrance Aura",
+  "desc_en": "Increases all resistances, life replenish and mana replenish for you and all party members",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "annihilation",
+  "name": "Annihilation",
+  "desc_en": "Violently rip all serrated chains out of monsters dealing area of effect damage. Targets affected by retiarius net take increased damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "antiSocialPitFighter",
+  "name": "Antisocial Pit Fighter",
+  "desc_en": "Chance to apply increased magic find on kill.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "apocalypticThunder",
+  "name": "Apocalyptic Thunder",
+  "desc_en": "Cast a high voltage thunder bolt on target spot stunning and dealing massive area of effect damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "arcaneInfusedPsychosis",
+  "name": "Arcane Infused Psychosis",
+  "desc_en": "Breaks target\u2019s Arcane Resistance causing all skills to deal increased arcane damage",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "arcaneWrath",
+  "name": "Arcane Wrath",
+  "desc_en": "Causes your arcane damage skills to inflict shadow burn on monsters for a short period.",
+  "elements": [
+   "arcane",
+   "shadow"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "armageddon",
+  "name": "Armageddon",
+  "desc_en": "Call down a rain of meteors from the sky dealing area of effect fire damage to monsters struck.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "armorCrush",
+  "name": "Armor Crush",
+  "desc_en": "Battle charge inflicts armor break and lowers monster attack rating on hit. ",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "arrowRain",
+  "name": "Arrow Rain",
+  "desc_en": "Unleash a rain of arrows from the sky dealing increased damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "arrowRampage",
+  "name": "Arrow Rampage",
+  "desc_en": "Unleash a swarm of arrows towards the direction aimed dealing arcane and physical damage.",
+  "elements": [
+   "arcane",
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "arrowTurret",
+  "name": "Arrow Turret",
+  "desc_en": "Build an arrow turret that shoots arrows at the closest monster dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "projectile",
+   "sentry"
+  ]
+ },
+ {
+  "slug": "artilleryAid",
+  "name": "Artillery Aid",
+  "desc_en": "Call for the artillery, raining arrows to monsters around the initial target dealing physical damage",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "asteroid",
+  "name": "Asteroid",
+  "desc_en": "Cast down an asteroid from the sky dealing cold damage when landing.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "astralIntellect",
+  "name": "Astral Intellect",
+  "desc_en": "Cast to move all spawned totems to you. Passively increases the attack range of all totems. ",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "astropesBattleMaiden",
+  "name": "Astrope's Battle Maiden",
+  "desc_en": "Temporarily increases your lightning skill damage and attack speed.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "astropesGift",
+  "name": "Astrope's Gift",
+  "desc_en": "Perform a lightning enhanced attack dealing physical damage and lightning damage.",
+  "elements": [
+   "lightning",
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "avalanche",
+  "name": "Avalanche",
+  "desc_en": "Release a bellowing shout dealing cold damage to all monsters around you and freezing them.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "avatarOfFire",
+  "name": "Avatar of Fire",
+  "desc_en": "Temporarily turns you into an avatar of fire; Increasing your attack speed, fire damage, spell critical damage and spell critical chance.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "avatarOfFrost",
+  "name": "Avatar of Frost",
+  "desc_en": "Increases your cold skill damage.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "awakeningFury",
+  "name": "Awakening Fury",
+  "desc_en": "On hit gain a chance to increase your attack damage for a short duration.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "awareness",
+  "name": "Awareness",
+  "desc_en": "Increases your movement speed for a short period",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "balefulAura",
+  "name": "Baleful Aura",
+  "desc_en": "Increases magic skill damage and attack damage for all nearby party members.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "ballLightning",
+  "name": "Ball Lightning",
+  "desc_en": "Turn into a ball of lightning and dash towards to the target location, dealing lightning damage to nearby monsters upon landing.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "basicMovement",
+  "name": "Movement",
+  "desc_en": "Move around without attacking.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "battleAgility",
+  "name": "Battle Agility",
+  "desc_en": "Increases your movement speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "battleCharge",
+  "name": "Battle Charge",
+  "desc_en": "Charge towards target location knocking monsters up and dealing arcane damage on impact.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "battleGlance",
+  "name": "Battle Glance",
+  "desc_en": "Perform an area of effect attack with increased damage and attack rating.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "beacon",
+  "name": "B.E.A.C.O.N.",
+  "desc_en": "Build a beacon that increases nearby allies arcane skill damage and mana replenish.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "benediction",
+  "name": "Benediction",
+  "desc_en": "When healed by your abilities, smite monsters around you with holy lightning.",
+  "elements": [
+   "lightning",
+   "holy"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "berserk",
+  "name": "Berserk",
+  "desc_en": "Every successful hit with berserk increases your attack damage, attack speed and movement speed for berserk stacking up to 8 times.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "berserkersRage",
+  "name": "Berserker's Rage",
+  "desc_en": "Gain Increased Life Steal and attack damage, decreasing your all resistances",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "blackHole",
+  "name": "Black Hole",
+  "desc_en": "Cast a black hole on target location that slows and pulls monsters towards it dealing cold damage.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "blackMass",
+  "name": "Black Mass",
+  "desc_en": "Summon all the coven's cultists to march in the name of satan inflicting arcane damage to monsters on their path.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "bladeBarrier",
+  "name": "Blade Barrier",
+  "desc_en": "Summon a barrier of rotating blades around you dealing Physical Damage and additional Arcane Damage.",
+  "elements": [
+   "arcane",
+   "physical"
+  ],
+  "delivery_hint": [
+   "aoe",
+   "summon"
+  ]
+ },
+ {
+  "slug": "bladeStrike",
+  "name": "Blade Strike",
+  "desc_en": "Perform a cleave attack with increased chance for critical strike and critical strike damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "blazingTrail",
+  "name": "Blazing Trail",
+  "desc_en": "Leave behind a trail of fire dealing fire damage to monsters.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "blender",
+  "name": "Blender",
+  "desc_en": "Swing two huge butchers knives around you dealing physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "blessedNature",
+  "name": "Blessed Nature",
+  "desc_en": "Increases poison skill damage.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "blindingLight",
+  "name": "Blinding Light",
+  "desc_en": "You emit a blinding light that gives you chance to evade monster attacks. You also have increased cast rate while in Solar Form",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "blizzard",
+  "name": "Blizzard",
+  "desc_en": "Cast a freezing blizzard dealing area of effect cold damage and freezing monsters in the target area.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "bloodBolts",
+  "name": "Blood Bolts",
+  "desc_en": "Unleash bolts of blood towards target location dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "bloodDemons",
+  "name": "Blood Demons",
+  "desc_en": "Chance on spellcast to summon a blood demon towards the closest monster dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "bloodMoon",
+  "name": "Blood Moon",
+  "desc_en": "Turn the orbiting moons into blood moons increasing their cold damage and causing them to inflict bleeding on hit.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "bloodOfSpartan",
+  "name": "Spartan Defense",
+  "desc_en": "Increases your Defense and damage return for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "bloodSurge",
+  "name": "Blood Surge",
+  "desc_en": "Channel a massive surge of blood towards target direction dealing arcane damage to enemies in its path.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "bloodSustenance",
+  "name": "Blood Sustenance",
+  "desc_en": "Gain increased attack damage and life stolen per hit from bleeding targets.",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "bloodTendrils",
+  "name": "Blood Tendrils",
+  "desc_en": "Blood surge now causes its target to release blood tendrils for a portion of its damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "bombBarrage",
+  "name": "Bomb Barrage",
+  "desc_en": "Start rapidly firing cannonballs dealing area of effect fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "bombardment",
+  "name": "Bombardment",
+  "desc_en": "Rapidly throw a barrage of small bombs in target direction dealing area of effect fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "boneBarrage",
+  "name": "Bone Barrage",
+  "desc_en": "Unleash a barrage of bones in target direction dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "boneFragments",
+  "name": "Bone Fragments",
+  "desc_en": "Cast fragments of bone towards target location dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "boneShred",
+  "name": "Bone Shred",
+  "desc_en": "Unleash bone fragments dealing arcane damage to monsters.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "boneSpear",
+  "name": "Bone Spear",
+  "desc_en": "Launch a piercing bone spear dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "boneSpirit",
+  "name": "Bone Spirit",
+  "desc_en": "Spawn a bone spirit that seeks out the nearest monster and explodes on impact, causing an Arcane damage explosion, then seeks out other mobs after the first impact.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "boneStorm",
+  "name": "Bone Storm",
+  "desc_en": "Summon a storm of bone and cartilage surrounding you dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "boosterShot",
+  "name": "Booster Shot",
+  "desc_en": "When attacking have a chance to inject yourself with a mRNA gene altering shot temporarily increasing your attack damage and movement speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "bottleOfRadogate",
+  "name": "Fleet Footwork",
+  "desc_en": "Increases your movement speed and gives you Phasing for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "bottleOfSake",
+  "name": "Drunken Kung Fu",
+  "desc_en": "Increases your attack damage and Critical Strike damage for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "bouncingGrenade",
+  "name": "Bouncing Grenade",
+  "desc_en": "Throw a grenade that bounces exploding into shrapnel on impact, dealing area of effect fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "breathOfFire",
+  "name": "Breath of Fire",
+  "desc_en": "Breathe burning flames dealing fire damage and inflicting burning on hit.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "breathOfIce",
+  "name": "Breath of Ice",
+  "desc_en": "Breathe glacial air freezing and dealing cold damage to monsters.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "brutalizingSlash",
+  "name": "Brutalizing Slash",
+  "desc_en": "Attack with brutalizing area of effect attack causing monsters to bleed.",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "bruteForce",
+  "name": "Brute Force",
+  "desc_en": "Increases your chance of critical strike and critical strike damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "buckshot",
+  "name": "Buckshot",
+  "desc_en": "Quick draw your musket and release a ranged buckshot with increased damage and additional fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "bulletHell",
+  "name": "Bullet Hell",
+  "desc_en": "Fire a barrage of bullets towards the aimed direction dealing physical damage.",
+  "elements": [
+   "fire",
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "burstOfLight",
+  "name": "Burst of Light",
+  "desc_en": "Cast a ray of divine light dealing arcane damage and lights monsters on heavenly fire.",
+  "elements": [
+   "fire",
+   "arcane"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "burstOfSpeed",
+  "name": "Burst of Speed",
+  "desc_en": "Gain increased movement speed for a short period after killing a monster.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "burstOfVenom",
+  "name": "Burst of Venom",
+  "desc_en": "Your attacks inject a stack of venom on hit causing them to unleash a burst of venom at six stacks.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "bushido",
+  "name": "Bushido",
+  "desc_en": "Activate to gain a buff that increases your attack damage for every 10% of missing Life.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "butchersFury",
+  "name": "Butcher's Fury",
+  "desc_en": "Unleash a shockwave of blood dealing physical damage and stunning monsters",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "butchersHook",
+  "name": "Butchers Hook",
+  "desc_en": "Flail a huge meat hook around you gathering all monsters struck then pulling and stunning them infront of you.",
+  "elements": [],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "caffeinatedCoffeeContainer",
+  "name": "The Fragrance of Dark Coffee",
+  "desc_en": "Increases your Damage to Burning Targets",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "callForWar",
+  "name": "Call For War",
+  "desc_en": "Command all Sand Guardians to charge to target area. Passively increases Sand Guardian dash range.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "cannonTurret",
+  "name": "Cannon Turret",
+  "desc_en": "Build a cannon turret that launches cannonballs towards the nearest monster that explode into shrapnel, dealing area of effect arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "sentry"
+  ]
+ },
+ {
+  "slug": "cannonball",
+  "name": "Cannonball",
+  "desc_en": "Shoot a cannonball that launches in the air on hit and deals area of effect damage when landing.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "carrionWorm",
+  "name": "Carrion Worm",
+  "desc_en": "Summons a carrion worm frequently attacking nearby monsters.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "cartilageBuildUp",
+  "name": "Cartilage Build Up",
+  "desc_en": "When damaged by cartilage and bone monsters are stacked up and at 10 stacks they explode spreading bone and cartilage around them dealing arcane damage. ",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "causticSpearhead",
+  "name": "Caustic Spearhead",
+  "desc_en": "Perform a burst attack dealing increased damage, additional poison damage and inflicting Poisoned on hit.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "celestialCreation",
+  "name": "Celestial Creation",
+  "desc_en": "Chance on kill to cast your last used sentry skill.",
+  "elements": [],
+  "delivery_hint": [
+   "sentry"
+  ]
+ },
+ {
+  "slug": "celestialMight",
+  "name": "Celestial Might",
+  "desc_en": "All Elemental Skill damage increases are converted to Arcane.",
+  "elements": [
+   "arcane",
+   "elemental"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "chainLightning",
+  "name": "Chain Lightning",
+  "desc_en": "Lightning Surge now unleashes chain lightning when colliding with a monster.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "chainOfHolyLight",
+  "name": "Chain of Holy Lightning",
+  "desc_en": "Cast a holy lightning jumping from monster to monster dealing arcane damage.",
+  "elements": [
+   "lightning",
+   "arcane",
+   "holy"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "chainRip",
+  "name": "Chain Rip",
+  "desc_en": "Perform a powerful attack pulling all nearby monsters infront of you.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "chainSlice",
+  "name": "Chainslice",
+  "desc_en": "Perform an enhanced attack that causes a sharp blade to chain between nearby monsters dealing damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "chainSwing",
+  "name": "Chain Swing",
+  "desc_en": "Throw a meat hook that pulls you into it when connecting with monster or environment. Additionally fires chains to nearby monsters when landing.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "chainTrap",
+  "name": "Chain Trap",
+  "desc_en": "Throw a chain trap into the target location dealing arcane damage and hooking nearby monsters with chains.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "chainsawMassacre",
+  "name": "Chainsaw Massacre",
+  "desc_en": "Violently spin your chainsaw dealing damage to monsters around you. Going the full distance unleashes a whirl attack with increased damage and area of effect.",
+  "elements": [],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "chainsawMastery",
+  "name": "Chainsaw Mastery",
+  "desc_en": "Increases your damage and attack rating when using a chainsaw.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "chainsawSlash",
+  "name": "Chainsaw Slash",
+  "desc_en": "Perform an area of effect attack attaching a spinning chainsaw on monsters for a short period of time.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "chantOfWeakness",
+  "name": "Chant of Weakness",
+  "desc_en": "Poisoned targets take increased poison damage.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "chaosTotem",
+  "name": "Chaos Totem",
+  "desc_en": "Summon a totem that rapidly shoots chaos bolts dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "projectile",
+   "summon"
+  ]
+ },
+ {
+  "slug": "charge",
+  "name": "Charge",
+  "desc_en": "Charge forward dealing arcane damage and stunning monsters on impact.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "chargedBolts",
+  "name": "Charged Bolts",
+  "desc_en": "Unleash multiple sparking bolts of electricity dealing lightning damage on hit.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "cheapShot",
+  "name": "Cheapshot",
+  "desc_en": "Sand Guardians gain a chance to deal a deadly attack with increased arcane damage and stunning their target.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "chooserOfTheSlain",
+  "name": "Chooser of the Slain",
+  "desc_en": "Increases your life and mana after kill.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "circleOfGuardians",
+  "name": "Circle of Guardians",
+  "desc_en": "Conjure a circle of Sand Guardians around you increasing Sand Guardians\u2019 arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "cloudOfSand",
+  "name": "Cloud of Sand",
+  "desc_en": "Unleash a cloud of sand that travels forwards dealing arcane damage, by casting the skill again Nomad will re-locate on the sand clouds position dealing area of effect arcane damage and stunning nearby monsters.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "coffeeMug",
+  "name": "Caffeinated",
+  "desc_en": "Increases your movement speed for a short period of time!",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "collector",
+  "name": "Collector",
+  "desc_en": "Activates a random Shrine event.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "collision",
+  "name": "Collision",
+  "desc_en": "Leap forward from your orbit and smash the ground dealing cold damage in an area. Then dash forward on the surface of earth for short period of time and deal cold damage.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "combatOrder",
+  "name": "Combat Order",
+  "desc_en": "Sand Guardians gain a chance to perform an area of effect attack dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "combatOrders",
+  "name": "Combat Orders",
+  "desc_en": "Powerful warcry which buffs your and your party members maximum life and mana.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "combustibleOil",
+  "name": "Combustible Oil",
+  "desc_en": "Increases your fire skill damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "comet",
+  "name": "Comet",
+  "desc_en": "Call down a huge comet exploding on impact dealing area of effect fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "commandMinions",
+  "name": "Command Minions",
+  "desc_en": "Command all of your minions to either move to a location or attack a monster",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "commandersValor",
+  "name": "Commander\u00b4s Valor",
+  "desc_en": "Summons gain increased critical strike chance and critical strike damage.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "commendingBanner",
+  "name": "Commending Banner",
+  "desc_en": "Place a commending banner on the target location increasing nearby players attack speed and attack rating.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "concentrationAura",
+  "name": "Concentration Aura",
+  "desc_en": "When active, increases your and your party members attack rating.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "conjuredHex",
+  "name": "Conjured Hex",
+  "desc_en": "Curses all monsters in target location to be Hexed and Breaking their Arcane Resistances",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "cornered",
+  "name": "Cornered",
+  "desc_en": "Your attacks cause monsters to get knocked back with increased damage, if they are knocked into the wall they get stunned.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "corpseExplosion",
+  "name": "Corpse Explosion",
+  "desc_en": "Cause all corpses in target area to explode and deal an explosive arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "corrosionDarkness",
+  "name": "Corrosion of Darkness",
+  "desc_en": "Increases your Poisoned damage for a short period of time.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "counter",
+  "name": "Counter",
+  "desc_en": "When active all monster attacks get countered with thrusting lances dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "cravingForAnotherKilling",
+  "name": "Craving For Another Killing",
+  "desc_en": "Increases your attack damage, life per hit and attack speed for a short duration.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "cravingForAttention",
+  "name": "Craving For Attention",
+  "desc_en": "Gain fire skill damage for a portion of your total enhanced damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "crazyGrapple",
+  "name": "Crazy Grapple",
+  "desc_en": "Throw a massive spike ball into target location dealing area of effect fire damage and dragging yourself towards it through the air.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "crematus",
+  "name": "Crematus",
+  "desc_en": "Unleash a breath of toxic flames dealing poison damage.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "criticalAccuracy",
+  "name": "Critical Accuracy",
+  "desc_en": "Increases your attack rating and critical strike damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "crowMasksPresence",
+  "name": "Crow Mask's Presence",
+  "desc_en": "Increases your life and all resistances.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "crowdDiver",
+  "name": "Crowd Dive",
+  "desc_en": "Charge towards target location knocking monsters up on hit dealing physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "crowdPummeler",
+  "name": "Crowd Pummeler",
+  "desc_en": "Chance to unleash notes from monsters on hit dealing physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "crushingLance",
+  "name": "Crushing Lance",
+  "desc_en": "Call a crushing lance down from the sky smashing the target location dealing area of effect physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "cursedGround",
+  "name": "Cursed Ground",
+  "desc_en": "Corrupt the ground in the target area inflicting poison break on monsters affected area.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "daisysCall",
+  "name": "Daisy\u00b4s Call",
+  "desc_en": "Instantly teleport to your last existing Slicing Throw.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "damageReflect",
+  "name": "Damage Reflect",
+  "desc_en": "Increases your damage return.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "darkOath",
+  "name": "Dark Oath",
+  "desc_en": "Conjure an aura that unleashes waves of unholy energy around you inflicting arcane damage to nearby monsters.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "darkSideofTheMoon",
+  "name": "Dark Side of the Moon",
+  "desc_en": "While active, slow monsters around you. Also increases your mana replenish and energy.",
+  "elements": [],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "deadlyWhirl",
+  "name": "Deadly Whirl",
+  "desc_en": "Throw your weapon at the closest monster when striking a monster with Whirlwind or Chainsaw Massacre dealing physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "deathFromAbove",
+  "name": "Death from Above",
+  "desc_en": "Call down a rain of falling spears on target location dealing poison damage and slowing monsters struck.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "deathsAnguish",
+  "name": "Death's Anguish",
+  "desc_en": "Summons a malevolent Skull from a corpse, homing into the nearest monster dealing Arcane area of effect damage",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "deepRooted",
+  "name": "Deep Rooted",
+  "desc_en": "Increases all resistances.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "defensiveShout",
+  "name": "Defensive Shout",
+  "desc_en": "Powerful warcry which buffs your and your party members defense rating.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "defianceAura",
+  "name": "Defiance Aura",
+  "desc_en": "Increases Defense for you and all party members",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "defunctSurgeon",
+  "name": "Defunct Surgeon",
+  "desc_en": "Temporarily increase your attack speed and life stolen per hit. When active lose a portion of your maximum life per second (Non-fatal).",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "deliriumTremens",
+  "name": "Drunken Delirium",
+  "desc_en": "Loose control of your movement due to this tragic state of mind",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "demolishingWinds",
+  "name": "Demolishing Winds",
+  "desc_en": "Whirlwind now unleashes tornadoes dealing portion of the Whirlwinds damage to monsters struck.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "demolitionExpert",
+  "name": "Demolition Expert",
+  "desc_en": "chance to throw additional grenades.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "demonForm",
+  "name": "Demon Form",
+  "desc_en": "Temporarily turn into a demon gaining increased attack damage and attack speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "demonicPresence",
+  "name": "Demonic Presence",
+  "desc_en": "Increases your arcane skill damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "demonsCalling",
+  "name": "Demon\u00b4s Calling",
+  "desc_en": "Become airborne and smash the ground dealing area of effect arcane damage and stunning monsters around you.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "demonsPresence",
+  "name": "Demon\u00b4s Presence",
+  "desc_en": "Temporarily increase your attack speed and attack damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "demonsShield",
+  "name": "Demon\u00b4s Shield",
+  "desc_en": "Increases all resistances and movement speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "despair",
+  "name": "Despair",
+  "desc_en": "Reduces your movement speed and all resistances",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "devastatingCharge",
+  "name": "Devastating Charge",
+  "desc_en": "When hitting monsters with Charge release a pulse dealing additional arcane damage and decreasing monster attack rating.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "devoutDoctor",
+  "name": "Devout Doctor",
+  "desc_en": "Gain physical damage based on your maximum life.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "digestSouls",
+  "name": "Digest Souls",
+  "desc_en": "By sacrificing your victims to the devil temporarily gain increased movement speed and arcane skill damage after killing a monster.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "dimensionalDisplacement",
+  "name": "Dimensional Displacement",
+  "desc_en": "Warp a short distance towards target location temporarily gaining increased movement speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "dissipatingTornado",
+  "name": "Dissipating Tornado",
+  "desc_en": "Summon a dissipating tornado around you that pulls nearby monsters and causes you to dodge all attacks and unleash sand at monsters when they strike you dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "aoe",
+   "summon"
+  ]
+ },
+ {
+  "slug": "dissipation",
+  "name": "Dissipation",
+  "desc_en": "Sand Guardians explode upon expiration dealing area of effect arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "divineHealing",
+  "name": "Divine Healing",
+  "desc_en": "Using flash heal temporarily increases your life replenish.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "divinePiercing",
+  "name": "Divine Piercing",
+  "desc_en": "Causes your attacks to Pierce and break monster armor",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "divineStorm",
+  "name": "Divine Storm",
+  "desc_en": "Turn your attack into a divine storm dealing area of effect lightning damage around you.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "divineWisdom",
+  "name": "Divine Wisdom",
+  "desc_en": "Increases your mana and mana replenish.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "doomCannon",
+  "name": "Doomcannon",
+  "desc_en": "Fire three cannonballs exploding upon landing dealing physical damage",
+  "elements": [
+   "fire",
+   "physical"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "doubleSwing",
+  "name": "Double Swing",
+  "desc_en": "Causes your attacks to happen twice with increased damage",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "dragonsPresence",
+  "name": "Dragon\u00b4s Presence",
+  "desc_en": "Inflicts monsters on flames when struck.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "dragonsWrath",
+  "name": "Dragon\u00b4s Wrath",
+  "desc_en": "Executes monsters below a threshold.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "durableWear",
+  "name": "Durable Wear",
+  "desc_en": "Increases your defense.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "eagleEye",
+  "name": "Eagle Eye",
+  "desc_en": "Increases your attack damage, additional physical damage and critical strike damage when using ranged weapons.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "earthBind",
+  "name": "Earth Bind",
+  "desc_en": "Raise vines from the ground dealing poison damage, poisoning and rooting monsters in place.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "earthTotem",
+  "name": "Earth Totem",
+  "desc_en": "Summon a totem that fires rock fragments that deal area of effect arcane damage on hit.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "projectile",
+   "summon"
+  ]
+ },
+ {
+  "slug": "earthsGrace",
+  "name": "Earth's Grace",
+  "desc_en": "Increases your maximum life and mana.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "electricCells",
+  "name": "Electric Cells",
+  "desc_en": "Gain increased flat mana replenish and energy.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "elixirOfDeath",
+  "name": "Berserker\u2019s Rage",
+  "desc_en": "Increases your Attack Damage and Magic skill damage for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "elixirOfUnworldlyCognition",
+  "name": "Untamed Knowledge",
+  "desc_en": "Increases your Experience Gain for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "empiresSlash",
+  "name": "Empire\u2019s Slash",
+  "desc_en": "Perform an area of effect attack blinking a short distance and dealing physical damage to monsters in its path. Empire slash lowers Omnislashes cooldown when it strikes a monster.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "cooldown"
+  ]
+ },
+ {
+  "slug": "emptyBottleOfVodka",
+  "name": "Drunken Infused Wisdom",
+  "desc_en": "Increases All Skills for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "endingFate",
+  "name": "Ending Fate",
+  "desc_en": "While in Holy Form gain increased base life regen after killing a monster and while in Unholy Form rip the monster apart after killing a monster causing huge area of effect damage.",
+  "elements": [
+   "holy"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "enragedMania",
+  "name": "Enraged Mania",
+  "desc_en": "Increase attack area of effect range and attack speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "entColossus",
+  "name": "Summon Ent Colossus",
+  "desc_en": "Summons an ent colossus to fight by your side.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "envenom",
+  "name": "Envenom",
+  "desc_en": "On monster kill you have a chance to explode toxic fissures on all monsters around thje target dealing poison damage and inflicting Poisoned.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot",
+   "explosion"
+  ]
+ },
+ {
+  "slug": "essenceOutburst",
+  "name": "Essence Outburst",
+  "desc_en": "Needs explanation",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "eternalArmor",
+  "name": "Eternal Armor",
+  "desc_en": "Increases your total damage return by a portion of your armor.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "evasion",
+  "name": "Evasion",
+  "desc_en": "Gain a chance to evade melee and ranged attacks.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "execute",
+  "name": "Execute",
+  "desc_en": "Deal extra attack damage to monsters below 30% Life.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "execution",
+  "name": "Execution",
+  "desc_en": "Your melee physical attacks have a chance to execute low health monsters.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "expansiveMind",
+  "name": "Expansive Mind",
+  "desc_en": "Increases your mana and mana replenish.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "experiencedLogger",
+  "name": "Experienced Logger",
+  "desc_en": "Increases your chance for critical strike and critical strike damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "explodingBolas",
+  "name": "Exploding Bolas",
+  "desc_en": "Throw bolas that deal arcane damage on impact and again when they explode after a short delay. ",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "explodingMice",
+  "name": "Exploding Mice",
+  "desc_en": "Plague of Rats explode on impact causing poison damage.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot",
+   "explosion"
+  ]
+ },
+ {
+  "slug": "explosiveBarrel",
+  "name": "Explosive Barrel",
+  "desc_en": "Spawn a barrel of explosives which detonates after some time or when shot with a projectile dealing fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "explosiveBullet",
+  "name": "Explosive Bullets",
+  "desc_en": "Striking a monster leaves a charge in them that detonates after a short delay dealing area of effect fire damage and stunning them.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "explosiveKunai",
+  "name": "Explosive Kunai",
+  "desc_en": "Throw an explosive kunai that explodes and splits on impact, causing smaller explosions that deal Arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "eyeOfRa",
+  "name": "Eye of Ra",
+  "desc_en": "Perform a light enchanted attack bringing rays of sun down to nearby monsters dealing increased damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "eyeOfTarethiel",
+  "name": "Eye of Tarethiel",
+  "desc_en": "Activates your third eye for a short period, shocking any nearby monsters with chain lightning dealing arcane damage",
+  "elements": [
+   "lightning",
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "eyeOfTheStorm",
+  "name": "Eye of the Storm",
+  "desc_en": "Increases your lightning skill damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "faceBreakers",
+  "name": "Face Breakers",
+  "desc_en": "Increases your attack damage",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "fallenGodsBloodLust",
+  "name": "Fallen God\u00b4s Bloodlust",
+  "desc_en": "A portion of your Attack Speed is added as Faster Cast Rate. Attack Speed granted by weapons does not count toward this effect.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "fallenJustice",
+  "name": "Fallen Justice",
+  "desc_en": "When hitting monsters with a skill or an attack you have a chance to unleash a powerful earth shock at the target location dealing damage on a large radius.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "fanOfKnives",
+  "name": "Fan of Knives",
+  "desc_en": "Attacks have a chance to throw knives around you dealing damage physical damage to nearby monsters. Additionally the knives have a chance to ricochet to nearby monsters.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "aoe",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "fanaticismAura",
+  "name": "Fanaticism Aura",
+  "desc_en": "When active, increases your and your party members attack speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "fastSlices",
+  "name": "Fast Slices",
+  "desc_en": "Perform a series of dashing attacks, dealing area of effect physical damage on second attack and stunning monsters around you on the final attack.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "fatality",
+  "name": "Fatality",
+  "desc_en": "When a bleeding monster dies it will explode and deal physical area of effect damage to nearby monsters.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "dot",
+   "explosion"
+  ]
+ },
+ {
+  "slug": "faultLine",
+  "name": "Fault Line",
+  "desc_en": "Send forward a shockwave that cracks the earth below all monsters around the initial target dealing physical damage",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "feint",
+  "name": "Feint",
+  "desc_en": "Gain a chance to evade melee and ranged attacks.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "fieryPresence",
+  "name": "Fiery Presence",
+  "desc_en": "Increases your fire skill damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "fireBall",
+  "name": "Fireball",
+  "desc_en": "Cast a fireball dealing fire damage to monsters.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "fireEnchant",
+  "name": "Fire Enchant",
+  "desc_en": "Enchant your attacks with additive fire damage inflicting burning on monsters. Your spells also apply a stack of Ignite. ",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "fireNova",
+  "name": "Fire Nova",
+  "desc_en": "Cast a nova of fire around you dealing fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "aoe",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "fireShield",
+  "name": "Fire Shield",
+  "desc_en": "Cast a shield of fire that increases your Physical damage reduction and deals fire damage to monsters around you. ",
+  "elements": [
+   "fire",
+   "physical"
+  ],
+  "delivery_hint": [
+   "aoe",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "fireTotem",
+  "name": "Fire Totem",
+  "desc_en": "Spawn a totem that casts piercing fire projectiles dealing fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "fishing",
+  "name": "Fishing",
+  "desc_en": "Throw a lure at a nearby fishing spot.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "fissures",
+  "name": "Fissures",
+  "desc_en": "Rip the ground open with magic causing cracks that release fissures dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "fistOfTheHeavens",
+  "name": "Fist of the Heavens",
+  "desc_en": "Call down a fist of divine energy exploding into multiple Holy Bolts dealing arcane damage.",
+  "elements": [
+   "arcane",
+   "holy"
+  ],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "flailMastery",
+  "name": "Flail Mastery",
+  "desc_en": "Increase attack speed, attack damage and cast rate when using mace weapons.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "flashFreeze",
+  "name": "Flash Freeze",
+  "desc_en": "Perform an attack enhanced with ice that unleashes a chaining orb of ice, exploding into icicles at the end dealing additional cold damage.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "flashHeal",
+  "name": "Flash Heal",
+  "desc_en": "Heal yourself and any nearby allies.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "fleetFeet",
+  "name": "Fleet Feet",
+  "desc_en": "Increases your chance of Dodging monster attacks and projectiles for a short period",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "flockOfVultures",
+  "name": "Flock of Vultures",
+  "desc_en": "Unleash a swarm of flying crows dealing fire damage on a large radius inflicting burning on hit.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "flurry",
+  "name": "Flurry",
+  "desc_en": "Unleash a flurry of arrows dealing physical damage",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "flyingScimitar",
+  "name": "Flying Scimitar",
+  "desc_en": "Throw a huge piercing scimitar dealing increased damage to monsters in its path which returns back to you after a short delay.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "forHonor",
+  "name": "For Honor",
+  "desc_en": "Temporarily increases your attack damage and movement speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "forceOverwhelming",
+  "name": "Force Overwhelming",
+  "desc_en": "Temporarily increase your attack damage, attack rating and attack speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "forkingProjectiles",
+  "name": "Forking Projectiles",
+  "desc_en": "Physical projectiles split into two projectiles on the first hit, also splitting the damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "fortunateAura",
+  "name": "Fortunate Aura",
+  "desc_en": "Increases magic find and experience gain for all nearby party members.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "fractalMind",
+  "name": "Fractal Mind",
+  "desc_en": "Increases your movement speed and magic skill damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "fragGrenade",
+  "name": "Frag Grenade",
+  "desc_en": "Throw a frag grenade dealing area of effect arcane damage launching shrapnel around.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "freezeChainShot",
+  "name": "Freezing Chain Shot",
+  "desc_en": "Shoot a piercing chain shot that freezes and deals cold damage to monsters struck.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "freezingEnchant",
+  "name": "Freezing Enchant",
+  "desc_en": "Chance on spell hit to unleash a powerful area of effect spell on target location dealing cold damage and Freezing monsters",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "freezingLeap",
+  "name": "Freezing Leap",
+  "desc_en": "Leap through the air into target location freezing and dealing cold damage to monsters when landing.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "freezingTouch",
+  "name": "Freezing Touch",
+  "desc_en": "Freeze enemies on hit, shattering them upon death, leaving no on-death effects. You become Frozen for 2 seconds whenever you get hit (Reducing your Action Speed by 20%). Cannot Be Frozen stat no longer works on you.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "freshCut",
+  "name": "Fresh Cut",
+  "desc_en": "Throw pieces of fresh hot kebab meat dealing damage and setting monsters on fire.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "frostSunder",
+  "name": "Frost Sunder",
+  "desc_en": "Unleash a barrage of piercing icicles dealing cold and physical damage freezing on hit.",
+  "elements": [
+   "cold",
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "frozenBoulder",
+  "name": "Frozen Boulder",
+  "desc_en": "Throw a frozen boulder dealing cold damage to monsters on its path.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "frozenCanisterRounds",
+  "name": "Frozen Canister Rounds",
+  "desc_en": "Infuses your attacks with extra cold damage and Freezing, draining your mana with every attack",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "frozenHide",
+  "name": "Frozen Hide",
+  "desc_en": "Cast a frost enhanced shield on yourself reducing incoming physical damage, freezing and dealing cold damage to monsters that attack you.",
+  "elements": [
+   "cold",
+   "physical",
+   "frost"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "frozenLead",
+  "name": "Frozen Lead",
+  "desc_en": "Use specially hand crafted frozen lead to increase your cold skill damage.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "fuelTheFlames",
+  "name": "Fuel the Flames!!",
+  "desc_en": "Throw oil all around you on a large area.",
+  "elements": [],
+  "delivery_hint": [
+   "aoe",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "fuelToFire",
+  "name": "Fuel to Fire",
+  "desc_en": "Increase your damage dealt for a short period of time. Every corpse close to you will be siphoned for additional damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "furiousStrike",
+  "name": "Furious Strike",
+  "desc_en": "Perform a powerful area of effect attack dealing physical damage and infecting monsters struck with a stack of rabies. Each stack of rabies increases attack damage dealt to the monster.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "gabrielsAnnihilation",
+  "name": "Gabriel\u2019s Annihilation",
+  "desc_en": "Unleash a surge of unholy lightning dealing Lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "gabrielsGlory",
+  "name": "Gabriel\u2019s Glory",
+  "desc_en": "Unleash a nova of holy energy dealing arcane damage",
+  "elements": [
+   "arcane",
+   "holy"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "gabrielsRevenge",
+  "name": "Gabriel\u2019s Revenge",
+  "desc_en": "Summon three unholy swords behind you slicing forward dealing arcane damage to monsters on hit.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "gabrielsShadow",
+  "name": "Gabriel\u2019s Shadow",
+  "desc_en": "Summon\u2019s Gabriels shadow charging through the screen dealing physical damage to monsters on its path.",
+  "elements": [
+   "physical",
+   "shadow"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "gateway",
+  "name": "Gateway",
+  "desc_en": "Instantly teleport to target spot.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "ghostCrew",
+  "name": "Ghost Crew",
+  "desc_en": "Summons have a chance on hit to summon a Ghost Crew member to fight on your side for a short duration.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "ghostlyPotion",
+  "name": "Parallel Dimension",
+  "desc_en": "Increases your Skill damage for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glacialArmor",
+  "name": "Glacial Armor",
+  "desc_en": "Increases your all resistances.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glacialTremors",
+  "name": "Glacial Tremors",
+  "desc_en": "Every 4th attack unleashes an area of effect blast dealing cold damage.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "gladiatorsRoll",
+  "name": "Gladiator\u00b4s Roll",
+  "desc_en": "Roll the dice when attacking for a random effect.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "gloriousStrike",
+  "name": "Glorious Strike",
+  "desc_en": "Perform a powerful attack dealing physical area of effect damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glory",
+  "name": "Glory",
+  "desc_en": "Gain increased attack damage and magic skill damage for a short period.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphArtfulDodger",
+  "name": "Artful Dodger",
+  "desc_en": "Dodging or blocking attacks or projectiles grants you increased movement speed, attack speed and attack damage.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "glyphAvarice",
+  "name": "Avariciousness ",
+  "desc_en": "Picking up gold grants you a stack of Avarice. Each stack increases your Magic Find and Gold Find.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphCorrosion",
+  "name": "Corrosion",
+  "desc_en": "Your damage over time effects last longer. Every second a monster is affected by damage over time the damage they take from that element is increased.",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "glyphDrunkard",
+  "name": "Drunkard Mayhem",
+  "desc_en": "Each active buff you have decreases your damage taken.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphEcho",
+  "name": "Echoes of the Void",
+  "desc_en": "Every 30 seconds cast your last used skill dealing increased damage. The cooldown is reduced by 0.5 seconds after each kill.",
+  "elements": [],
+  "delivery_hint": [
+   "cooldown"
+  ]
+ },
+ {
+  "slug": "glyphElementalist",
+  "name": "Elementalist",
+  "desc_en": "Gain magic skill damage for every 100 points of maximum mana.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphGravity",
+  "name": "Gravity ",
+  "desc_en": "You are surrounded by a gravity field slowing and pulling monsters towards you and lowering their damage dealt. The field grows whenever you hit a monster with a spell and decreases in size over time.",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "glyphInfinity",
+  "name": "Infinity",
+  "desc_en": "Casting an elemental skill has a chance to double cast it.",
+  "elements": [
+   "elemental"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphLongevity",
+  "name": "Longevity",
+  "desc_en": "All orbiting skills last longer and pulse when hitting monsters dealing damage in area of effect.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphMagistriker",
+  "name": "Magistriker",
+  "desc_en": "Your magic skill damage is increased based on your total attacks per second.",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "glyphMinionMastery",
+  "name": "Minion Mastery",
+  "desc_en": "Increases your summons attack speed. The bonus gets doubled for 8 seconds whenever you summon or command them.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "glyphMixture",
+  "name": "Mixture of Doom",
+  "desc_en": "Your poison skills create a field of venom that poisons monsters for a portion of the damage dealt and breaks their poison resistances.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "glyphMonstrosity",
+  "name": "Monstrosity",
+  "desc_en": "Dealing elemental damage to monsters grants you a stack of Manastream increasing your magic skill damage. 1000 stacks grants you 80% reduced mana costs, increased cast rate and increased cooldown recovery rate for a short period and dropping the stacks.",
+  "elements": [
+   "elemental"
+  ],
+  "delivery_hint": [
+   "cooldown"
+  ]
+ },
+ {
+  "slug": "glyphMysticInsight",
+  "name": "Mystic Insight",
+  "desc_en": "Your spells can now critically strike. Gain critical spell chance and increased critical spell damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphNordicWinter",
+  "name": "Nordic Winter",
+  "desc_en": "cold damage has a chance to stack freeze on monsters. At 5 stacks inflict Deep Freeze which deals 50% of incoming damage as cold damage for 5 seconds and causes the monster to take increased damage.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfAlchemist",
+  "name": "Glyph of Alchemist",
+  "desc_en": "Adds a chance to spawn a treasure chest when killing an ancient monster.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfAlfather",
+  "name": "Glyph of Alfather",
+  "desc_en": "Increases the chance to drop an angelic key on monster kills.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfAngel",
+  "name": "Glyph of Angel",
+  "desc_en": "Adds a chance to increase magic find value of monster kills.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfArtisan",
+  "name": "Glyph of Artisan",
+  "desc_en": "Increases the chance to drop jewels and orbs on monster kills.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfBattle",
+  "name": "Glyph of Battle",
+  "desc_en": "Increases the chance to spawn eternal battlefield when entering a fresh zone.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfBifrost",
+  "name": "Glyph of Bifr\u00f6st",
+  "desc_en": "Increases the chance to drop a bifr\u00f6st key on monster kills.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfGamba",
+  "name": "Glyph of Gamba",
+  "desc_en": "Increases the chance of shrines spawning as a gamba machine when entering a fresh zone.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfGeras",
+  "name": "Glyph of Geras",
+  "desc_en": "Increases the chance to spawn a traveling merchant when entering a fresh zone.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfGoblin",
+  "name": "Glyph of Goblin",
+  "desc_en": "Adds a chance to summon a treasure goblin when killing an ancient monster.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "glyphOfGreed",
+  "name": "Glyph of Greed",
+  "desc_en": "Adds a chance to drop extra gold on monster kills.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfJewelcrafter",
+  "name": "Glyph of Jewelcrafter",
+  "desc_en": "Adds a chance to increase gem drop chance on monster kills.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfKeyMaster",
+  "name": "Glyph of Key Master",
+  "desc_en": "Increases the chance to drop dungeon keys.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfLoot",
+  "name": "Glyph of Loot",
+  "desc_en": "Adds a chance to increase loot amount on monster kills.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfPrimeEvil",
+  "name": "Glyph of Prime Evil",
+  "desc_en": "Increases the chance to drop prime evil parts from act bosses.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfRelic",
+  "name": "Glyph of Relic",
+  "desc_en": "Increases the chance to drop a relic on monster kills.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfRift",
+  "name": "Glyph of Rift",
+  "desc_en": "Increases the chance to spawn an unstable rift when entering a fresh zone.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfRunemaster",
+  "name": "Glyph of Runemaster",
+  "desc_en": "Adds a chance to increase rune drop chance on monster kills.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfSatanicDice",
+  "name": "Glyph of Satanic Dice",
+  "desc_en": "Increases the chance to drop a satanic dice on monster kills.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfShadow",
+  "name": "Glyph of Shadow",
+  "desc_en": "Increases the chance to spawn shadow realm when entering a fresh zone.",
+  "elements": [
+   "shadow"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfTower",
+  "name": "Glyph of Tower",
+  "desc_en": "Increases the chance to spawn a chaos tower when entering a fresh zone.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOfTreasure",
+  "name": "Glyph of Treasure",
+  "desc_en": "Increases the chance of higher value chests when entering a fresh zone.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphOverloaded",
+  "name": "Overloader",
+  "desc_en": "When using a ranged weapon your attacks gains increased projectile speed and critical strike damage.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "glyphPrecision",
+  "name": "Precision",
+  "desc_en": "Increases your chance to ignore target defense.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphSingularity",
+  "name": "Singularity",
+  "desc_en": "Every 7 seconds your next projectile will pull nearby monsters to it when destroyed.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "glyphSpellSlinger",
+  "name": "Spellslinger",
+  "desc_en": "Increases your magic skill damage. Gain increased cast rate for a portion of your magic skill damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphSurvivorsShield",
+  "name": "Survivor\u2019s Shield",
+  "desc_en": "When losing 35% of your maximum life become immune to all damage and healing for a short period.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphTempestStrikes",
+  "name": "Tempest Strikes",
+  "desc_en": "Striking monsters grant you a stack of Tempest. Each stack of Tempest increases your attack speed and movement speed. When you reach max stacks, become empowered doubling the effect for a short period and dropping the stacks.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "glyphTinkerer",
+  "name": "Tinkerer",
+  "desc_en": "Every 10th cast, your area of effect skills gain the Tinkerer buff for a short duration causing your next explosion to explode multiple times with increased area of effect.",
+  "elements": [],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "glyphTitansPower",
+  "name": "Titan\u2019s Power",
+  "desc_en": "Every 30 seconds your attack for the next two seconds gains increased area of effect, projectile speed and damage. Cooldown is reduced by 0.5 seconds each time you stun a target.",
+  "elements": [],
+  "delivery_hint": [
+   "cooldown",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "glyphZapper",
+  "name": "Zapper",
+  "desc_en": "Dealing lightning damage to monsters has a chance to electrocute them causing them to discharge a chain lightning at nearby monsters whenever they are struck dealing a portion of incoming damage as lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "goburinsGreed",
+  "name": "Goburin\u00b4s Greed",
+  "desc_en": "Gain a stack of goburin\u00b4s greed after monster kill increasing your magic find for a short duration.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "goldInlaidMysteriousPotion",
+  "name": "Endless Wealth",
+  "desc_en": "Increases your Magic Find and Extra Gold from kills for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "gravesGrasp",
+  "name": "Grave's Grasp",
+  "desc_en": "Summon a shadow anomaly to fight for you for a short period",
+  "elements": [
+   "shadow"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "gravitationalSlam",
+  "name": "Gravitation Slam",
+  "desc_en": "Raise monsters in target location into the air smashing them down with quantum force dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "grenado",
+  "name": "Grenade Jump",
+  "desc_en": "Blast yourself into the air leaving a cluster of grenades behind dealing fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "grimBones",
+  "name": "Grim Bones",
+  "desc_en": "Send forward a shockwave of bone spikes dealing physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "gunnerDrone",
+  "name": "Gunner Drone",
+  "desc_en": "Build a gunner drone which follows you and shoots bullets that bounce from monster to monster dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "projectile",
+   "summon"
+  ]
+ },
+ {
+  "slug": "gutRippersSpikeball",
+  "name": "Gut Ripper's Spikeball",
+  "desc_en": "Summons a deadly Spike Ball to orbit around you for a short period",
+  "elements": [],
+  "delivery_hint": [
+   "aoe",
+   "summon"
+  ]
+ },
+ {
+  "slug": "gutSpread",
+  "name": "Gut Spread",
+  "desc_en": "Every 6th cast causes your intestines to boil and burst lumps of blood around you dealing a portion of blood bolts damage as arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "hastefulAura",
+  "name": "Hasteful Aura",
+  "desc_en": "Increases movement speed and cast rate for all nearby party members.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "headBanger",
+  "name": "Headbanger",
+  "desc_en": "Every third attack unleashes a headbang dealing area of effect damage. ",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "healingZone",
+  "name": "Healing Zone",
+  "desc_en": "Bless the area around you with divine energy healing yourself and nearby allies.",
+  "elements": [],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "heartAttack",
+  "name": "Heart Attack",
+  "desc_en": "Increases your chance for critical strikes and critical strike damage when using a melee weapon.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "heartSurge",
+  "name": "Heart Surge",
+  "desc_en": "When you cast, a floating projectile of blood is created, after a short delay when you stop casting, all of these projectiles are launched forward.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "heavenlyFire",
+  "name": "Heavenly Fire",
+  "desc_en": "Light the target location into holy fire dealing arcane damage.",
+  "elements": [
+   "fire",
+   "arcane",
+   "holy"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "heavyBall",
+  "name": "Heavy Ball",
+  "desc_en": "Flail a big chained spike ball dealing physical damage to monsters on its path. ",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "hellFire",
+  "name": "Hellfire",
+  "desc_en": "Unleash flames of hell fire traveling forward dealing fire damage",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "hemorrhage",
+  "name": "Hemorrhage",
+  "desc_en": "Rupture inflicts armor break on all bleeding targets.",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "hexBeast",
+  "name": "Hex Beast",
+  "desc_en": "Follower projectiles explode on impact dealing additional damage on a large radius.",
+  "elements": [],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "highDb",
+  "name": "High dB",
+  "desc_en": "Notes have a chance to unleash a sonar pulse on hit dealing increased lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "highVoltageAura",
+  "name": "High Voltage Aura",
+  "desc_en": "Increases your and party members lightning skill damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "hillbillyRage",
+  "name": "Hillbilly Rage",
+  "desc_en": "Temporarily increases your fire skill damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "holyAura",
+  "name": "Holy Aura",
+  "desc_en": "When active, increases your and your party members attack damage and magic skill damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "holyBolt",
+  "name": "Holy Bolt",
+  "desc_en": "Cast a piercing bolt of holy light dealing arcane damage to monsters hit.",
+  "elements": [
+   "arcane",
+   "holy"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "holyForm",
+  "name": "Holy Form",
+  "desc_en": "Activate Holy Form gaining increased life replenish and life steal at the cost of damage dealt. Any damage dealt while in this form is decreased.",
+  "elements": [
+   "holy"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "holyFreezeAura",
+  "name": "Holy Freeze Aura",
+  "desc_en": "Freezes and deals cold damage to all nearby monsters",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "holyHammer",
+  "name": "Holy Hammer",
+  "desc_en": "Summon a holy hammer that spirals outwards dealing arcane damage on hit.",
+  "elements": [
+   "arcane",
+   "holy"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "holyNova",
+  "name": "Holy Nova",
+  "desc_en": "Cast a nova of holy light dealing arcane damage to monsters and healing all allies hit.",
+  "elements": [
+   "arcane",
+   "holy"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "holyRetribution",
+  "name": "Holy Retribution",
+  "desc_en": "Increases your mana after kill.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "holyShield",
+  "name": "Holy Shield",
+  "desc_en": "By the power of god bless yourself and any nearby allies with immortality for a short period.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "holyShockAura",
+  "name": "Holy Shock Aura",
+  "desc_en": "When active shock monsters around you dealing lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "homingMissile",
+  "name": "Homing Missile",
+  "desc_en": "Launch a barrage of homing missiles which seeks down its target dealing area of effect arcane and physical damage.",
+  "elements": [
+   "arcane",
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "homingMissiles",
+  "name": "Homing Missiles",
+  "desc_en": "Unleash a homing missile dealing Physical area of effect damage",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "honedDefenses",
+  "name": "Honed Defenses",
+  "desc_en": "Every time you get hit by a monster attack gain stacks. At maximum stacks unleash a huge area of effect pulse dealing arcane damage to monsters around you. Can also be casted early to consume the stacks.       ",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "hungerForBlood",
+  "name": "Hunger For Blood",
+  "desc_en": "Deal increased damage to bleeding targets.",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "hydra",
+  "name": "Hydra",
+  "desc_en": "Spawn a fiery hydra that shoots fireballs with area of effect fire damage towards the closest monster.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "hyperCharged",
+  "name": "Hyper Charged",
+  "desc_en": "Chance on Cast to gain increased faster cast rate for a short period of time.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "icicles",
+  "name": "Icicles",
+  "desc_en": "Every 5th time you cast a spell also release Icicles dealing cold damage.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "ignite",
+  "name": "Ignite",
+  "desc_en": "All fire enchanted attacks add a stack of ignite on the monster, causing them to combust at 10 stacks dealing area of effect fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "impale",
+  "name": "Impale",
+  "desc_en": "Summon spikes from the ground impaling monsters in a target area dealing arcane damage and knocking them up.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "impetus",
+  "name": "Impetus",
+  "desc_en": "Send impaling spikes out of the ground at target location dealing Physical area of effect damage and stunning monsters.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "infernoSlash",
+  "name": "Inferno Slash",
+  "desc_en": "Send forward a fire enchanted cleave attack dealing increased damage and additional fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "insaneRiff",
+  "name": "Insane Riff",
+  "desc_en": "Every fifth spell cast is empowered with increased lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "insatiableHunger",
+  "name": "Insatiable Hunger",
+  "desc_en": "Awaken the full potential of both holy and unholy to gain both benefits for a short period of time with increased effectiveness.",
+  "elements": [
+   "holy"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "jaggedGauntlet",
+  "name": "Jagged Gauntlet",
+  "desc_en": "Spells and attacks have a chance to deal increased damage based on your critical strike damage. This effect does not count as a critical hit. Your critical chance is halved and your critical damage is capped.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "jarOfLeeches",
+  "name": "Jar of Leeches",
+  "desc_en": "Throw a glass jar towards target location releasing leeches dealing poison damage on impact.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "judgement",
+  "name": "Judgement",
+  "desc_en": "Unleash a powerful area of effect spell dealing arcane damage",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "jungleCamouflage",
+  "name": "Jungle Camouflage",
+  "desc_en": "Temporarily increases your poison skill damage.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "killingSpree",
+  "name": "Killing Spree",
+  "desc_en": "Gain stacks of Killing Spree on monster kills gaining increased attack speed and movement speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "kneeCap",
+  "name": "Kneecap",
+  "desc_en": "Increases your attack rating and chance for critical strike.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "knightsResilience",
+  "name": "Knight's Resilience",
+  "desc_en": "Increases your life and all resistances.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "knightsVigor",
+  "name": "Knight\u00b4s Vigor",
+  "desc_en": "Gain increased maximum life and vitality.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "ladyLuck",
+  "name": "Roll the Dice",
+  "desc_en": "The die has been rolled.. if the crowns combined stats surpass 777 gain lady luck\u00b4s blessing as bonus stats.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "lanceThrow",
+  "name": "Lance Throw",
+  "desc_en": "When using any of the abilities, you have a chance to throw a piercing lance at a nearby monster dealing physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "lanceThrust",
+  "name": "Lance Thrust",
+  "desc_en": "Perform a long ranged lance attack piercing monsters in a line dealing physical damage. If the lance comes in contact with a commending banner you get dragged to the banner smashing the ground stunning monsters on impact.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "landAhoy",
+  "name": "Land Ahoy!",
+  "desc_en": "Call for the main ship to bombard the targeted area dealing area of effect cold damage.       ",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "landMine",
+  "name": "Landmine",
+  "desc_en": "Lay down a landmine at the target location exploding shortly after detecting a nearby monster dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "laserSight",
+  "name": "Laser Sight",
+  "desc_en": "Provides a visual reference point for better accuracy.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "lastStand",
+  "name": "Last Stand",
+  "desc_en": "Restore yourself to full life and temporarily gain increased magic skill damage and physical damage reduction.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "leapingAmbush",
+  "name": "Leaping Ambush",
+  "desc_en": "Jump towards target location dealing poison damage and knocking up monsters around you upon landing.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "aoe",
+   "dot"
+  ]
+ },
+ {
+  "slug": "leapingCharge",
+  "name": "Leaping Charge",
+  "desc_en": "Perform a charging leap forward inflicting physical damage to monsters on hit.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "lethalTempo",
+  "name": "Lethal Tempo",
+  "desc_en": "Increases your attack speed and critical strike damage for a short period",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "leviathansPresence",
+  "name": "Leviathan\u2019s Presence",
+  "desc_en": "Periodically unleash shockwaves dealing arcane damage based on your max life knocking monsters back.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "lifeBloodAura",
+  "name": "Lifeblood Aura",
+  "desc_en": "When active, increases your and your party members Life and life replenish.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "lifeTap",
+  "name": "Life Tap",
+  "desc_en": "Curse monsters in the target area increasing any attackers life steal when striking the target.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "lightningFury",
+  "name": "Lightning Fury",
+  "desc_en": "Strike monsters with increased attack damage causing lightning to chain between them dealing lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "lightningSurge",
+  "name": "Lightning Surge",
+  "desc_en": "Unleash a surge of lightning dealing lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "lightsEmbrace",
+  "name": "Light's Embrace",
+  "desc_en": "Increases your cast rate.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "lilithsRage",
+  "name": "Lilith\u2019s Rage",
+  "desc_en": "Cause monsters to explode dealing damage based on their maximum life, monsters hit by this explosion will also be affected by Lilith\u2019s Rage. This explosion doesnt benefit from any explosion modifiers.",
+  "elements": [],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "lingeringFrost",
+  "name": "Lingering Frost",
+  "desc_en": "Converts all elemental skill damage to cold skill damage. All skills now scale from cold damage.",
+  "elements": [
+   "cold",
+   "elemental"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "linkOfSand",
+  "name": "Link of Sand",
+  "desc_en": "Pull yourself into the closest Sand Guardian in the target location temporarily empowering all nearby Sand Guardians arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "liquidContainers",
+  "name": "Liquid Containers",
+  "desc_en": "Your left foremost potions are now permanently active with a portion of the power. You can no longer use potions.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "liveByTheSword",
+  "name": "Live by the Sword",
+  "desc_en": "Temporarily increases your attack speed and movement speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "livingBomb",
+  "name": "Living Bomb",
+  "desc_en": "Throw a molten bomb which explodes and sticks a ticking bomb on the monsters dealing damage over time and finally exploding. monsters within explosion radius also get the debuff.",
+  "elements": [],
+  "delivery_hint": [
+   "dot",
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "loadedPulse",
+  "name": "Loaded Pulse",
+  "desc_en": "Storm Bolt now creates an additional static pulse dealing increased area of effect lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "loggersEndurance",
+  "name": "Logger\u2019s Endurance",
+  "desc_en": "Increases your life and life replenish.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "lostAtSea",
+  "name": "Lost at Sea",
+  "desc_en": "Gives Walson a chance to cast Tsunami when attacking.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "lunarAura",
+  "name": "Lunar Aura",
+  "desc_en": "Increases your attack rating, additive arcane damage and all resistances",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "lunarForm",
+  "name": "Lunar Form",
+  "desc_en": "Turn into a living moon and gain additional cold damage. Every time you jump, cast Collision instead.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "lunarOrbit",
+  "name": "Lunar Orbit",
+  "desc_en": "Unleash small moons in your orbit dealing cold damage on hit. ",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "madnessControl",
+  "name": "Madness Control",
+  "desc_en": "Hook nearby monsters towards you stunning them and dealing arcane damage. Additionally summon a bomb from the sky onto your location creating an explosion that deals arcane damage. ",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "summon"
+  ]
+ },
+ {
+  "slug": "maelstromOfFrost",
+  "name": "Maelstrom of Frost",
+  "desc_en": "Summon a maelstrom of frost around you inflicting cold and physical damage on hit.",
+  "elements": [
+   "cold",
+   "physical",
+   "frost"
+  ],
+  "delivery_hint": [
+   "aoe",
+   "summon"
+  ]
+ },
+ {
+  "slug": "mageFury",
+  "name": "Magefury",
+  "desc_en": "Chance on cast to unleash arcane explosions on monsters around you dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "aoe",
+   "explosion"
+  ]
+ },
+ {
+  "slug": "maggotEyeElixir",
+  "name": "Absolute Power",
+  "desc_en": "Increases your attack speed and attack rating for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "magnumOpus",
+  "name": "MAGNUM OPUS",
+  "desc_en": "You can now roll critical strike multiple times until failure, every consequent critical strike roll lowers the chance of the next one.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "malediction",
+  "name": "Malediction",
+  "desc_en": "Your unholy essence drives birds into insanity, casts have a chance to send crows towards random nearby monsters exploding into arcane damage on impact.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "malpractice",
+  "name": "Malpractice",
+  "desc_en": "Increases the force of surgical blood letting causing targets to bleed.",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "manaBender",
+  "name": "Mana Bender",
+  "desc_en": "Converts a portion of your Energy into Magic damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "manaDevour",
+  "name": "Mana Devour",
+  "desc_en": "Instantly restores a portion of your mana.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "manaDwelling",
+  "name": "Manadwelling",
+  "desc_en": "Adds a portion of your mana as physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "manaFiend",
+  "name": "Manafiend",
+  "desc_en": "Reduce the mana cost of all skills.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "manaOrb",
+  "name": "Mana Orb",
+  "desc_en": "Summon a pulsating orb of mana that replenishes mana for players and deals arcane damage to monsters.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "manaPoolAura",
+  "name": "Manapool Aura",
+  "desc_en": "When active, increases your and your party members mana replenish.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "manaShield",
+  "name": "Mana Shield",
+  "desc_en": "When active, create a mana shield around you that reduces magic damage taken and absorbs a portion of damage taken as mana.",
+  "elements": [],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "martyr",
+  "name": "Martyr",
+  "desc_en": "Sacrifice your own blood when taking damage from any source temporarily increasing your life and mana replenish.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "masterMechanic",
+  "name": "Master Mechanic",
+  "desc_en": "Temporarily increase the attack speed and arcane damage of all your turrets and drones!",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "masterPoisoner",
+  "name": "Master Poisoner",
+  "desc_en": "Increases your poison skill damage.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "masterTrapMaker",
+  "name": "Master Trap Maker",
+  "desc_en": "Passively increases the arcane damage dealt by chain traps and provides a chance for critical hits as well as a proc chance for traps to activate rapidly causing the trap and its hooks to travel faster.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "meatBomb",
+  "name": "Meat Bomb",
+  "desc_en": "Throw a huge lump of meat that explodes on impact dealing arcane damage and leaving corpse on the ground.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "meatShield",
+  "name": "Meat Shield",
+  "desc_en": "Cast a meat shield reducing physical damage taken.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "melonForm",
+  "name": "Melon Form",
+  "desc_en": "Become the ultimate Elemelon",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeAuraExpert",
+  "name": "Aura Expert",
+  "desc_en": "Increases the value of Mercenarys aura.",
+  "elements": [],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "mercenaryMeleeBacklash",
+  "name": "Backlash",
+  "desc_en": "monsters have a chance to get stunned when attacking the Mercenary.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeBlessedStrike",
+  "name": "Blessed Strike",
+  "desc_en": "The Mercenary unleashes a powerful long ranged attack.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeBrutalBash",
+  "name": "Brutal Bash",
+  "desc_en": "The Mercenary has a chance on attack to deal additional damage, knock back monsters and slow them.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeChargeStrike",
+  "name": "Charge Strike",
+  "desc_en": "The Mercenary charges into the closest monster stunning and damaging all monsters around.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeCommandersHeart",
+  "name": "Commander's Heart",
+  "desc_en": "Increases Mercenary health regeneration.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeDefenses",
+  "name": "Defenses",
+  "desc_en": "Increases the Mercenarys Armor.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeEvasiveTactics",
+  "name": "Evasive Tactics",
+  "desc_en": "Increases the Mercenarys Dodge chance.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeFatalStrike",
+  "name": "Fatal Strike",
+  "desc_en": "Increases the Mercenarys critical attack damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeHulkingRage",
+  "name": "Hulking Rage",
+  "desc_en": "Increases life per hit from melee attacks.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleePlatedArmor",
+  "name": "Plated Armor",
+  "desc_en": "Increases damage reduction from all sources.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeProtectingCharge",
+  "name": "Protecting Charge",
+  "desc_en": "The Mercenary detects monsters attacking the player charging, stunning and dealing damage to them.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeSpikedArmor",
+  "name": "Spiked Armor",
+  "desc_en": "Increases damage return from monster attacks.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeStackedPain",
+  "name": "Stacked Pain",
+  "desc_en": "Incoming attacks generated stacks of pain. Once fully stacked, release a powerful area of effect pulse that deals damage and stuns monsters.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeStackedRage",
+  "name": "Stacked Rage",
+  "desc_en": "Each attack on a monster generates a stack of rage. When fully stacked the Mercenary releases a powerful area of effect attack that deals damage and breaks monster armor.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeSwordGrip",
+  "name": "Sword Grip",
+  "desc_en": "Increases damage done by melee attacks.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeTaunt",
+  "name": "Taunt",
+  "desc_en": "The Mercenary taunts nearby monsters.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryMeleeWarriorsMight",
+  "name": "Warrior's Might",
+  "desc_en": "Increases the Mercenarys Strength.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryRangedAbilityExpert",
+  "name": "Ability Expert",
+  "desc_en": "Increases the Mercenarys Explosion area of effect.",
+  "elements": [],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "mercenaryRangedArtilleryCommand",
+  "name": "Artillery Command",
+  "desc_en": "The Mercenary drops a huge bomb into the nearest monster which scatters arrows around when hitting the ground.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryRangedAuraExpert",
+  "name": "Aura Expert",
+  "desc_en": "Increases the value of Mercenarys aura.",
+  "elements": [],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "mercenaryRangedBrainfreeze",
+  "name": "Brainfreeze",
+  "desc_en": "The Mercenary has a chance on attack to deal area of effect damage and confuse all monsters impacted.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryRangedBurstofAgility",
+  "name": "Burst of Agility",
+  "desc_en": "The Mercenary has a chance on attack to give the Player and Mercenary an attack speed boost.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryRangedExplosiveShot",
+  "name": "Explosive Shot",
+  "desc_en": "Each attack on a monster stacks up. When fully stacked the Mercenary shoots a projectile that explodes on collision.",
+  "elements": [],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "mercenaryRangedHawkEye",
+  "name": "Hawk Eye",
+  "desc_en": "Increases the Mercenarys Attack Power.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryRangedHeatseekingMissile",
+  "name": "Heatseeking Missile",
+  "desc_en": "The Mercenary launches a barrage of Heat Seeking Missiles.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryRangedHuntersTrap",
+  "name": "Hunter's Trap",
+  "desc_en": "The Mercenary throws a trap that hooks nearby monsters in damaging and stunning them.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "mercenaryRangedPiercingshot",
+  "name": "Piercingshot",
+  "desc_en": "The Mercenary has a chance on attack to shoot a piercing projectile with increased damage.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "mercenaryRangedPowershot",
+  "name": "Powershot",
+  "desc_en": "The Mercenary shoots a powerful piercing shot that stuns monsters on impact.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "mercenaryRangedQuickslugs",
+  "name": "Quickslugs",
+  "desc_en": "The Mercenary has a chance on attack to perform a burstshot.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryRangedRapidfire",
+  "name": "Rapidfire",
+  "desc_en": "Increases the Mercenarys attack speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryRangedRavensClaw",
+  "name": "Raven's Claw",
+  "desc_en": "Increases the Mercenarys Critical attack damage and Critical Rate.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryRangedShatterArmor",
+  "name": "Shatter Armor",
+  "desc_en": "The Mercenary has a chance on attack to break monster resistances.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryRangedSoulFunnel",
+  "name": "Soul Funnel",
+  "desc_en": "Increases the Mercenarys life per hit.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenaryRangedSpreadshot",
+  "name": "Spreadshot",
+  "desc_en": "The Mercenary has a chance on attack to shoot multiple projectiles with increased damage.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "mercenaryRangedTriggerPower",
+  "name": "Trigger Power",
+  "desc_en": "Increases the Mercenarys Strength.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenarySpellArcaneApocalypse",
+  "name": "Arcane Apocalypse",
+  "desc_en": "The Mercenary blasts all nearby monsters with arcane explosions dealing damage and slowing them.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "mercenarySpellArcaneBarrage",
+  "name": "Arcane Barrage",
+  "desc_en": "The Mercenary has a chance on attack to unleash a barrage of arcane bolts.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenarySpellArcaneBlast",
+  "name": "Arcane Blast",
+  "desc_en": "The Mercenary blasts the nearest monster with a powerful Arcane Blast.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenarySpellArcaneFire",
+  "name": "Arcane Fire",
+  "desc_en": "The Mercenary has a chance on attack to scorch the ground beneath the target.",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "mercenarySpellArcaneLink",
+  "name": "Arcane Link",
+  "desc_en": "The Mercenary creates an Arcane Link between the Mercenary and the Player dealing damage to monsters it collides with.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenarySpellArcaneMeteor",
+  "name": "Arcane Meteor",
+  "desc_en": "The Mercenary has a chance on attack to cast an Arcane Meteor down from the sky damaging monsters it impacts.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenarySpellArcaneNova",
+  "name": "Arcane Nova",
+  "desc_en": "The Mercenary has a chance on attack to unleash an Arcane Nova dealing damage to monsters.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "mercenarySpellArcanesBlessing",
+  "name": "Arcane's Blessing",
+  "desc_en": "The Mercenary has a chance on attack to buff Player and Mercenary Ability Power.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenarySpellAuraExpert",
+  "name": "Aura Expert",
+  "desc_en": "Increases the value of Mercenarys aura.",
+  "elements": [],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "mercenarySpellCosmicBolt",
+  "name": "Cosmic Bolt",
+  "desc_en": "Taking damage stacks up. Once fully stacked the Mercenary casts a Cosmic Bolt towards the nearest monster.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenarySpellElementalIntellect",
+  "name": "Elemental Intellect",
+  "desc_en": "Increases the Mercenarys magic skill damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenarySpellMagicChain",
+  "name": "Magic Chain",
+  "desc_en": "The Mercenary casts a chain of Arcane that bounces from monster to monster dealing damage and lowering their magic resistance.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "mercenarySpellManaflux",
+  "name": "Manaflux",
+  "desc_en": "Increases Mercenary\u2019s Maximum Mana.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenarySpellReplenishingTouch",
+  "name": "Replenishing Touch",
+  "desc_en": "The Mercenary replenishes mana.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenarySpellReptilianBrain",
+  "name": "Reptilian Brain",
+  "desc_en": "The Mercenary gains cooldown reduction.",
+  "elements": [],
+  "delivery_hint": [
+   "cooldown"
+  ]
+ },
+ {
+  "slug": "mercenarySpellSpellburn",
+  "name": "Spellburn",
+  "desc_en": "The Mercenary has a chance on attack to burn and slow monsters.",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "mercenarySpellTomeofPower",
+  "name": "Tome of Power",
+  "desc_en": "Increases the Mercenarys arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mercenarySpellWordofProtection",
+  "name": "Word of Protection",
+  "desc_en": "The Mercenary has a chance on attack to shield the player for a portion of maximum health.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "meteor",
+  "name": "Meteor",
+  "desc_en": "Cast a powerful meteor forwards dealing area of effect fire damage on impact.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "meteorStorm",
+  "name": "Meteor Storm",
+  "desc_en": "Call down a meteor storm on target location dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "miasma",
+  "name": "Miasma",
+  "desc_en": "Empower your attack with a mixture of chemicals causing the monster to release a toxic cloud dealing physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mirrorAura",
+  "name": "Mirror Aura",
+  "desc_en": "Causes all of your skills to be double casted",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "mirrorDimension",
+  "name": "Mirror Dimension",
+  "desc_en": "Gives you a chance to open the dimensional portal and mirror spell casts.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "monsterThrow",
+  "name": "Throw!",
+  "desc_en": "Pick up and throw a monster which deals area of effect arcane damage and stuns monsters upon landing.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "moonlight",
+  "name": "Moonlight",
+  "desc_en": "Increases your movement speed and cold damage dealt.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "moonshineMadness",
+  "name": "Moonshine Madness",
+  "desc_en": "Increases your Attack Rating, Movement Speed and Faster Cast Rate.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "moonshineMolotov",
+  "name": "Moonshine Molotov",
+  "desc_en": "Throw a bottle of moonshine that ignites the impacted area on fire and sends out burning oil.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "moshpitMassacre",
+  "name": "Moshpit Massacre",
+  "desc_en": "Summon a death metal crowd to fight monsters within the area radius draining a portion of your maximum mana over time dealing physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "dot",
+   "summon"
+  ]
+ },
+ {
+  "slug": "multishot",
+  "name": "Multishot",
+  "desc_en": "Fire multiple arrows in an arc dealing increased damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "mysticOrb",
+  "name": "Mystic Orb",
+  "desc_en": "Summon a Mystic Orb which pulsates dealing arcane damage to monsters and Replenishing Mana for allies",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "mysticSand",
+  "name": "Mystic Sand",
+  "desc_en": "Increases your arcane skill damage and cast rate.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "naturesProphet",
+  "name": "Nature's Prophet",
+  "desc_en": "Increases your arcane skill damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "norseResistance",
+  "name": "Norse Resistance",
+  "desc_en": "Increases all of your resistances.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "noxiousStrike",
+  "name": "Noxious Strike",
+  "desc_en": "Unleash a poisonous strike dealing physical damage and  poison damage. Every third strike sends out piercing poisonous projectiles dealing damage and inflicting Poisoned on hit.",
+  "elements": [
+   "poison",
+   "physical"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "oasisAura",
+  "name": "Oasis Aura",
+  "desc_en": "When active, increases your and your party members attack rating, movement speed and arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "odinsDemise",
+  "name": "Odin\u2019s Demise",
+  "desc_en": "Conjure a ball of ethereal energy homing towards the nearest monster causing the ground to burn and unleashing spinning axes to orbit the flames dealing arcane damage",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "odinsFury",
+  "name": "Odin's Fury",
+  "desc_en": "Powerful warcry which deals arcane damage and stuns monsters around you.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "odinsWrath",
+  "name": "Odin's Wrath",
+  "desc_en": "Summon two spinning axes orbiting the target location dealing physical damage",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "oilSpill",
+  "name": "Oil Spill",
+  "desc_en": "Spill oil on the ground slowing and lowering monster attack rating. Oil also ignites into flames when coming in contact with Moonshine Molotov dealing additional burning damage.",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "ominousPresence",
+  "name": "Ominous Aura",
+  "desc_en": "When active, increases your and your party members arcane skill damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "omnislash",
+  "name": "Omnislash",
+  "desc_en": "Become untargetable and rapidly strike monsters multiple times with increased attack rating dealing increased damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "oops",
+  "name": "Oops",
+  "desc_en": "Toxic flask also leaves a pool of poisonous substance on the ground dealing poison damage, poisoning and slowing monsters. Oops.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "orbOfFrost",
+  "name": "Orb of Frost",
+  "desc_en": "Cast a frozen orb traveling in target direction releasing icicles, freezing and dealing cold damage to monsters on its path.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "ossification",
+  "name": "Ossification",
+  "desc_en": "Increases your defense and gives you a burst of movement speed after killing a monster.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "overwhelmingPower",
+  "name": "Overwhelming Power",
+  "desc_en": "Increases your attack damage based on your maximum Mana",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "parrot",
+  "name": "Parrot",
+  "desc_en": "Summon a parrot to peck your monsters dealing cold damage.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "parry",
+  "name": "Parry",
+  "desc_en": "Gives you a chance to parry incoming attacks.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "permaFrost",
+  "name": "Permafrost",
+  "desc_en": "Frozen monsters have a chance explode into an area of effect pulse when shattered.",
+  "elements": [],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "phantomBlade",
+  "name": "Phantom Blade",
+  "desc_en": "Spawn a ghostly blade that attacks nearby monsters dealing physiical damage and additional arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "phantomMomentum",
+  "name": "Phantom Momentum",
+  "desc_en": "Gain stacks of phantom momentum while moving providing increased movement speed and dodge chance, lose the stacks once you get hit.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "phantomSlice",
+  "name": "Phantom Slice",
+  "desc_en": "Chance on attack to summon Phantom Leviathans essence to strike monsters dealing area of effect damage.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "phoenixFlight",
+  "name": "Phoenix Flight",
+  "desc_en": "Charge forward through the air dealing area of effect fire damage when landing.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "pickupRaid",
+  "name": "Pickup Raid",
+  "desc_en": "Call your hillbilly friends to siege your opponents in a pickup truck dealing fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "piercingBone",
+  "name": "Piercing Bone",
+  "desc_en": "Chance when striking to unleash piercing bone spikes in an arc dealing physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "piercingSand",
+  "name": "Piercing Sand",
+  "desc_en": "Sand Guardians break monster arcane resistances on attack.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "pipeBombs",
+  "name": "Pipe Bombs",
+  "desc_en": "Throw a barrage of handcrafted pipe bombs dealing area of effect fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "plagueMaster",
+  "name": "Plague Master",
+  "desc_en": "Cause all poisoned targets on target location to spread the plague and deal poison damage to monsters around them.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "plagueOfRats",
+  "name": "Plague of Rats",
+  "desc_en": "Send plague rats in target direction dealing poison damage on impact. ",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "poisonBreath",
+  "name": "Poison Breath",
+  "desc_en": "Unleash a rotten breath of toxins dealing poison damage.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "poisonNova",
+  "name": "Poison Nova",
+  "desc_en": "Unleash a toxic poison nova dealing poison damage and inflicting Poisoned on all monsters hit.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "aoe",
+   "dot"
+  ]
+ },
+ {
+  "slug": "portalOfIce",
+  "name": "Portal of Ice",
+  "desc_en": "Teleport to the target location and release a frost nova dealing cold damage.",
+  "elements": [
+   "cold",
+   "frost"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "possessedBullet",
+  "name": "Possessed Bullet",
+  "desc_en": "Fire a satanic bullet possessed by darkness which explodes into multiple bullets on impact dealing physical damage.",
+  "elements": [
+   "fire",
+   "physical"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "powderKeg",
+  "name": "Powder Keg",
+  "desc_en": "Throw a huge keg of gunpowder exploding upon landing dealing fire damage and leaving the ground burning.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "dot",
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "powderTrail",
+  "name": "Powder Trail",
+  "desc_en": "Throw a keg of gunpowder causing a chain of explosions dealing fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "powerOfTheAncients",
+  "name": "Power of the Ancients",
+  "desc_en": "Gain additional cold skill damage based on your mana.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "powerOfVoid",
+  "name": "Chaos Unleashed",
+  "desc_en": "Causes your skills to rain down comets dealing fire damage for a short period of time",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "powerShot",
+  "name": "Powershot",
+  "desc_en": "Summons a huge arrow which fires forward after a short delay dealing Physical area of effect damage",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile",
+   "summon"
+  ]
+ },
+ {
+  "slug": "praetorianBlood",
+  "name": "Vampirism",
+  "desc_en": "Increases your life Steal for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "precognition",
+  "name": "Precognition",
+  "desc_en": "Increases your arcane skill damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "prismaticPotion",
+  "name": "Prismatic Skin",
+  "desc_en": "Increases your all resistances for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "progeniesOfTheGreatCataclysm",
+  "name": "Progenies of the Great Cataclysm",
+  "desc_en": "Summon a massive amplifier playing black metal at high volume sending piercing notes towards nearby monsters bouncing from terrain dealing lightning damage. If you are too far from the amplifier it is pulled back to your position.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "programmersDelirium",
+  "name": "Programmer\u00b4s Delirium",
+  "desc_en": "Increases the power of stats on your ring slots.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "proteinShake",
+  "name": "Flexing",
+  "desc_en": "Increases your Strength and Vitality for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "pulsingCharge",
+  "name": "Pulsing Charge",
+  "desc_en": "Charged bolts pulse when hitting a monster.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "pyroTechnician",
+  "name": "Pyro Technician",
+  "desc_en": "Blink into the closest monster to target location unleashing an area of effect attack dealing physical and fire damage.",
+  "elements": [
+   "fire",
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "quickSlash",
+  "name": "Quickslash",
+  "desc_en": "Perform a quick dash unleashing area of effect slash dealing increased physical damage and knocking up monsters.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "radBull",
+  "name": "Hyper Activity",
+  "desc_en": "Increases your attack speed and movement speed for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "radiantPower",
+  "name": "Radiant Power",
+  "desc_en": "Gain magic skill damage based on your maximum mana for a short duration.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "raiseSkeletonMage",
+  "name": "Raise Skeleton Mage",
+  "desc_en": "Raise a skeleton mage from target corpse to fight on your side.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "raiseSkeletonWarrior",
+  "name": "Raise Skeleton",
+  "desc_en": "Raise a skeleton warrior from target corpse to fight on your side.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "rakhulsCarnage",
+  "name": "King Rakhul\u2019s Carnage",
+  "desc_en": "Perform a powerful leap attack smashing all monsters infront of you with physical damage and stunning them",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "randyTheRancidRat",
+  "name": "Randy the Rancid Rat",
+  "desc_en": "Summon randy the rancid rat to fight for you dealing poison damage.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot",
+   "summon"
+  ]
+ },
+ {
+  "slug": "rapidFire",
+  "name": "Rapid Fire",
+  "desc_en": "Temporarily increase your attack speed and physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "raven",
+  "name": "Summon Raven",
+  "desc_en": "Summon a raven circling around you attacking nearby monsters.",
+  "elements": [],
+  "delivery_hint": [
+   "aoe",
+   "summon"
+  ]
+ },
+ {
+  "slug": "reapersCulling",
+  "name": "Reaper\u00b4s Culling",
+  "desc_en": "You can no longer critically hit or miss the target and now deal increased physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "reapingThrow",
+  "name": "Reaping Throw",
+  "desc_en": "Summon Grim Reaper\u00b4s scythe and throw with deadly force dealing Elemental damage.",
+  "elements": [
+   "elemental"
+  ],
+  "delivery_hint": [
+   "projectile",
+   "summon"
+  ]
+ },
+ {
+  "slug": "rebound",
+  "name": "Rebound",
+  "desc_en": "Perform an attack dealing physical damage and  lightning damage that rebounds to the closest monster.",
+  "elements": [
+   "lightning",
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "recallSummons",
+  "name": "Recall Summons",
+  "desc_en": "Recalls all your summons.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "redemptionAura",
+  "name": "Redemption Aura",
+  "desc_en": "Increases life replenish for you and all party members",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "relicCharmedBlood",
+  "name": "Charmed Blood",
+  "desc_en": "Your life leech lasts for longer without penalty.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "remiges",
+  "name": "Remiges",
+  "desc_en": "Increases your parrots cold damage and attack speed.       ",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "rendFlesh",
+  "name": "Rend Flesh",
+  "desc_en": "Attacks have a chance to inflict bleeding on monsters in a small area around the target.",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "resilientGladiator",
+  "name": "Resilient Gladiator",
+  "desc_en": "Increases your physical damage reduction and life.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "restlessSpirits",
+  "name": "Restless Spirits",
+  "desc_en": "Unleash restless spirits from an unholy dimension to seek new hosts inflicting arcane damage to the target.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "retiariusNet",
+  "name": "Retiarius Net",
+  "desc_en": "Throw a retiarius net dealing area of effect arcane damage and stunning monsters hit.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "returningProjectiles",
+  "name": "Returning Projectiles",
+  "desc_en": "Projectiles return after a short delay with reduced damage.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "reverseCard",
+  "name": "Card Throw",
+  "desc_en": "chance to throw a reverse card towards target on hit dealing a portion of the damage.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "revvedUp",
+  "name": "Revved Up",
+  "desc_en": "Temporarily increases your attack speed and damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "ricochet",
+  "name": "Ricochet",
+  "desc_en": "Projectiles with physical damage bounce off of walls.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "rimskinAssassin",
+  "name": "Rimskin Assassin",
+  "desc_en": "Your melee physical attacks have a chance to uppercut monsters launching them in to air stunning and dealing area of effect damage when landing.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "rockFragments",
+  "name": "Rock Fragments",
+  "desc_en": "Unleash rock fragments towards target location dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "rocketTurret",
+  "name": "Rocket Turret",
+  "desc_en": "Build a rocket turret that shoots rockets towards the nearest monster dealing area of effect arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "projectile",
+   "sentry"
+  ]
+ },
+ {
+  "slug": "rogueChainsaw",
+  "name": "Rogue Chainsaw",
+  "desc_en": "Throw a chainsaw on the ground spinning and dealing increased damage and additional arcane damage to monsters struck.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "rupture",
+  "name": "Rupture",
+  "desc_en": "Perform a rupturing area of effect attack inflicting bleed to targets on hit.",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "rupturingStrike",
+  "name": "Rupturing Strike",
+  "desc_en": "Deal increased attack damage and cause monsters struck to Bleed",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "sacrilegiousScorn",
+  "name": "Sacrilegious Scorn",
+  "desc_en": "While in Holy Form gain increased attack speed and while in Unholy Form gain increased Critical damage.",
+  "elements": [
+   "holy"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "sacrilegiousSymphony",
+  "name": "Sacrilegious Symphony",
+  "desc_en": "Channel for a brief moment before unleashing a massive area of effect pulse around you dealing lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "sandCarver",
+  "name": "Sand Carver",
+  "desc_en": "Perform an attack that flings piercing sand at monsters.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "sandEntombment",
+  "name": "Sand Entombment",
+  "desc_en": "Chance on kill to unleash a pulse of sand dealing arcane area of effect damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "sandGuardian",
+  "name": "Sand Guardians",
+  "desc_en": "Conjure a Sand Guardian that attacks nearby monsters dealing arcane damage. ",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "sandGush",
+  "name": "Sand Gush",
+  "desc_en": "Unleash a gush of sand that spawns tornadoes dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "sandTremors",
+  "name": "Sand Tremors",
+  "desc_en": "Strike a target causing sand tremors to hit nearby monsters dealing increased damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "sandVortex",
+  "name": "Sand Vortex",
+  "desc_en": "Summon a massive vortex of quick sand that pulls monsters inside dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "sandsOfTime",
+  "name": "Sands of Time",
+  "desc_en": "Temporarily increase your arcane skill damage and cast rate.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "sanguineFlow",
+  "name": "Sanguine Flow",
+  "desc_en": "Chance when struck to spawn life globes around you.",
+  "elements": [],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "sanguineLeech",
+  "name": "Sanguine Leech",
+  "desc_en": "Chance on cast to summon a Sanguine Leech dealing damage and providing you increased life replenish for a short duration.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "satansMark",
+  "name": "Satan\u2019s Mark",
+  "desc_en": "Mark the monsters on target area for satan causing them to unleash pulses of arcane damage when struck by other abilities and attacks. ",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "satansMelody",
+  "name": "Satan\u00b4s Melody",
+  "desc_en": "Gain increased lightning skill damage for a short duration and a chance to unleash guitar picks in an arc on hit.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "scarletSacrifice",
+  "name": "Scarlet Sacrifice",
+  "desc_en": "Summons have a chance when attacking to become enraged gaining increased damage and attack speed, enraged monsters will die after a short duration.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "scentOfTheWolf",
+  "name": "Scent of the Wolf",
+  "desc_en": "Increases spirit wolves arcane damage and life.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "scimitarCharge",
+  "name": "Scimitar Charge",
+  "desc_en": "Charge a short distance unleashing scimitar strike around you dealing increased damage to monsters struck.",
+  "elements": [],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "scorchingAura",
+  "name": "Scorching Aura",
+  "desc_en": "Scorch monsters around you dealing fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "aoe",
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "scorchingFlames",
+  "name": "Scorching Flames",
+  "desc_en": "Scorches the ground with flames dealing fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "scorchingWhip",
+  "name": "Scorching Whip",
+  "desc_en": "Cast a scorching solar flare that whips forward dealing fire damage to monsters hit.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "searingChains",
+  "name": "Searing Chains",
+  "desc_en": "When striking a monster unleash a powerful chain attack dealing increased damage, additional fire damage and stunning monsters struck.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "seedOfDestruction",
+  "name": "Seed of Destruction",
+  "desc_en": "Plant the seed of destruction on all monsters around the target location exploding after a delay dealing Arcane area of effect damage",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "seismicSlam",
+  "name": "Seismic Slam",
+  "desc_en": "Smash monsters in front of you dealing damage and knocking them up and stunning them.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "serratedChains",
+  "name": "Serrated Chains",
+  "desc_en": "Perform an area of effect attack with increased attack rating and damage attaching serrated chains to monsters. ",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "setSail",
+  "name": "Set Sail",
+  "desc_en": "Temporarily increases your cold skill damage and mana replenish.       ",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "shadeOfSobek",
+  "name": "Shade of Sobek",
+  "desc_en": "Chance on cast to summon the shade of sobek to fight by your side for a short duration.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "shadowAnomalies",
+  "name": "Shadow Anomalies",
+  "desc_en": "Casting Demon's Calling now spawns five shadow anomalies that perform Demon's Calling with increased arcane damage.",
+  "elements": [
+   "arcane",
+   "shadow"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "shadowBarrage",
+  "name": "Shadow Barrage",
+  "desc_en": "Unleash a barrage of Shadow Bolts dealing arcane damage",
+  "elements": [
+   "arcane",
+   "shadow"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "shadowBolt",
+  "name": "Shadow Bolt",
+  "desc_en": "Gather your inner darkness and unleash a powerful piercing shadow bolt that deals arcane damage to monsters on its path. The shadow bolt slows down after hitting a target.",
+  "elements": [
+   "arcane",
+   "shadow"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "shadowFlames",
+  "name": "Shadowflames",
+  "desc_en": "Unleash flames of shadow traveling forward dealing arcane damage.",
+  "elements": [
+   "arcane",
+   "shadow"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "shadowStep",
+  "name": "Shadow Step",
+  "desc_en": "Step into the shadows, re-appearing at the target location dealing Arcane Damage to all nearby monsters.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "shadowWeave",
+  "name": "Shadow Weave",
+  "desc_en": "Increases your Skill damage",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "shadowsGrasp",
+  "name": "Shadow's Grasp",
+  "desc_en": "Summon a shockwave of grasping hands dealing arcane damage",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "shieldMaster",
+  "name": "Shield Master",
+  "desc_en": "Increases your attack damage and attack rating when using a Shield.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "shieldSlam",
+  "name": "Shield Slam",
+  "desc_en": "Strike with your shield dealing physical damage based on the defense of your shield.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "shieldWall",
+  "name": "Shield Wall",
+  "desc_en": "Cast a wall of shields around you blocking monster projectiles dealing arcane and physical damage on hit. Hitting an enemy with Shield Wall generates a Honed Defenses stack.",
+  "elements": [
+   "arcane",
+   "physical"
+  ],
+  "delivery_hint": [
+   "aoe",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "shineBright",
+  "name": "Shine Bright",
+  "desc_en": "Gain increased movement speed and attack speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "shitaMorphosis",
+  "name": "Shitamorphosis",
+  "desc_en": "Merges your essence with the almighty Steve impairing your movement speed and causing you to become Paralyzed",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "shockwave",
+  "name": "Shockwave",
+  "desc_en": "Smash the ground causing a shockwave that deals area of effect damage and stuns monsters. ",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "shrapnelShells",
+  "name": "Shrapnel Shells",
+  "desc_en": "Infuses your attacks with Burning damage based on your attack damage, draining your mana with every attack",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "shredderTrap",
+  "name": "Shredder Trap",
+  "desc_en": "Throw a shredder on the ground spinning with deadly speed dealing physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "shroomOfDoom",
+  "name": "Shroom of Doom",
+  "desc_en": "Throw a toxic shroom bouncing from existing shrooms and dealing Poison area of effect damage to monsters",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "shurikenThrow",
+  "name": "Shuriken Throw",
+  "desc_en": "Throw three piercing Shurikens at your target dealing increased damage.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "singleOut",
+  "name": "Single Out",
+  "desc_en": "Monsters that have no other monsters around them take increased arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "skeletonMastery",
+  "name": "Summon Mastery",
+  "desc_en": "Increases the life and arcane damage of all your summons.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "skinWalker",
+  "name": "Skinwalker",
+  "desc_en": "A portion of your life is added as physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "slayingRiffs",
+  "name": "Slaying Riffs",
+  "desc_en": "Drop an amplifier from the sky smashing the ground and send notes towards enemies dealing lightning damage. Dropping an amplifier on another one causes the first one to explode.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "sliceOfShadows",
+  "name": "Slice of Shadows",
+  "desc_en": "Perform an attack that releases a wave of shadow dealing physical damage.",
+  "elements": [
+   "physical",
+   "shadow"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "slicingThrow",
+  "name": "Slicing Throw",
+  "desc_en": "Throw your weapon like a boomerang returning back to you dealing physical damage to monsters on its path. You can activate Daisy's Call to re-appear where the last thrown slicing throw is at any point in the flight.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "smartFuse",
+  "name": "Smart Fuse",
+  "desc_en": "Grenade now explodes instantly instead of after a delay.",
+  "elements": [],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "smokeBomb",
+  "name": "Smoke Bomb",
+  "desc_en": "Explode a smoke bomb dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "solarBurst",
+  "name": "Solar Burst",
+  "desc_en": "When you kill a monster, summon a burning burst of solar fire beneath the dead monster that deals area of effect fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile",
+   "summon"
+  ]
+ },
+ {
+  "slug": "solarDash",
+  "name": "Solar Dash",
+  "desc_en": "Turn into a burning ball of fire traveling towards target location dealing fire damage leaving a trail of flames behind you.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "solarFlare",
+  "name": "Solar Flare",
+  "desc_en": "Unleash solar flare projectiles that homes towards monsters.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "solarForm",
+  "name": "Solar Form",
+  "desc_en": "Turn into a living sun and gain additional fire damage. Every time you cast an active ability in solar form you unleash a fiery pulse around you.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "aoe",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "soulBurn",
+  "name": "Soulburn",
+  "desc_en": "Causes your fire damage skills to inflict burning on monsters for a short period.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "soulBurst",
+  "name": "Soul Burst",
+  "desc_en": "Chance on kill to randomly gain increased movement speed, attack speed or faster cast rate.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "soulLeech",
+  "name": "Soul Leech",
+  "desc_en": "Leech life out of monsters in target area dealing arcane damage and healing you.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "soulSpurn",
+  "name": "Soul Spurn",
+  "desc_en": "Rip the souls from nearest monsters dealing arcane damage and restoring your life and mana.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "soulTap",
+  "name": "Soul Tap",
+  "desc_en": "Infuses the souls of all monsters in target area to increase your life Steal for a short period",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "soundsOfSilence",
+  "name": "Sounds of Silence",
+  "desc_en": "Converts a portion of your intelligence into lightning skill damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "spaceTimeEquilibrium",
+  "name": "Spacetime Equilibrium",
+  "desc_en": "Increases the duration of buffs and decreases the duration of debuffs on you.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "spearnage",
+  "name": "Spearnage",
+  "desc_en": "Furiously throw lightning enchanted spears towards target location.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "spectralScatter",
+  "name": "Spectral Scatter",
+  "desc_en": "Your ranged projectiles now fork after a short delay dealing increased damage.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "spiderlings",
+  "name": "Spiderlings",
+  "desc_en": "Summon spiderlings for a short period",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "spinalTap",
+  "name": "Spinal Tap",
+  "desc_en": "Rip the spine out of monsters at target location dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "spiritLink",
+  "name": "Spirit Link",
+  "desc_en": "Link of Sand increases your magic skill damage and physical damage reduction for a short period.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "spiritOfEnt",
+  "name": "Spirit of the Ent",
+  "desc_en": "Morph into an Ent with a chance to knock monsters back on hit stunning and dealing additional damage when colliding with terrain.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "spiritOfForest",
+  "name": "Summon Spirit of The Forest",
+  "desc_en": "Summons a spirit of the forest increasing life and mana for you and your party. Only one spirit can be summoned.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "spiritOfHawk",
+  "name": "Storm Hawk",
+  "desc_en": "Morph into a storm hawk gaining flying and convert a portion of your physical damage into lightning damage. Your Basic Attacks and Wounding Paw now fire an arc of lightning bolts, unleashing a Chain Lightning effect.",
+  "elements": [
+   "fire",
+   "lightning",
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "spiritOfWendigo",
+  "name": "Spirit of The Wendigo",
+  "desc_en": "Morph into a wendigo gaining increased combat stats.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "spiritWolves",
+  "name": "Spirit Wolves",
+  "desc_en": "Spawn a spirit wolf to fight on your side.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "spiritualDuality",
+  "name": "Spiritual Duality",
+  "desc_en": "While in Holy Form increases your life Per Hit and while in Unholy Form increases your attack damage.",
+  "elements": [
+   "holy"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "spiritualGuide",
+  "name": "Spiritual Guide",
+  "desc_en": "Increases your mana and mana replenish.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "splitReality",
+  "name": "Split Reality",
+  "desc_en": "Detach from your quantum self leaving your fractal self behind that explodes when coming in contact with a monster dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "spontaneousCombustion",
+  "name": "Spontaneous Combustion",
+  "desc_en": "When igniting oil in flames, also make the monsters combust dealing area of effect fire damage around them.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "spreadShot",
+  "name": "Spreadshot",
+  "desc_en": "Causes your projectiles to split into multiple projectiles on hit dealing physical damage",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "sproutingIvy",
+  "name": "Sprouting Ivy",
+  "desc_en": "Unleash a chain of venom dealing poison damage and Poisoning monsters",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "staticShock",
+  "name": "Static Shock",
+  "desc_en": "Shock target location with static electricity inflicting monsters with static shock dealing lightning damage over time. ",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "staticShot",
+  "name": "Staticshot",
+  "desc_en": "Enhances your projectiles with static energy causing a chain lightning on hit dealing Lightning damage",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "steve",
+  "name": "Steve\u2019s Itchy Sack",
+  "desc_en": "Send\u2019s Stickman Steve on the offense dealing arcane damage",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "stoneSkinAura",
+  "name": "Stoneskin Aura",
+  "desc_en": "Increases damage reduction for all nearby party members.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "stoneskin",
+  "name": "Stoneskin",
+  "desc_en": "Increases your defense rating.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "stormBolt",
+  "name": "Storm Bolt",
+  "desc_en": "Unleash a bolt of lightning dealing area of effect lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "stormCaller",
+  "name": "Storm Caller",
+  "desc_en": "Call down bolts of thunder striking all monsters around the target dealing Lightning damage",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "stormCloud",
+  "name": "Storm Cloud",
+  "desc_en": "Conjure a storm cloud at target location striking monsters with surges of lightning dealing lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "stormDash",
+  "name": "Storm Dash",
+  "desc_en": "Dash towards target location striking nearby monsters with chain lightning.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "stormTotem",
+  "name": "Storm Totem",
+  "desc_en": "Summon a totem that releases chain lightning on nearby monsters dealing lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "submergedKnives",
+  "name": "Submerged Knives",
+  "desc_en": "Smash the ground pushing waves of butchers knives out of the ground dealing massive damage and knocking them up. Deals extra damage to bleeding targets.",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "summonAbomination",
+  "name": "Summon Abomination",
+  "desc_en": "Summon an Abomination to fight on your side.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "summonDamnedLegion",
+  "name": "Summon Damned Legion",
+  "desc_en": "Summon a damned legion to fight on your side.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "summonEnt",
+  "name": "Summon Ent",
+  "desc_en": "Summons an ent to fight by your side.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "summonFrenzy",
+  "name": "Summon Frenzy",
+  "desc_en": "Temporarily enrage your summons increasing their attack speed and movement speed.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "summonHeretic",
+  "name": "Summon Heretic",
+  "desc_en": "Summon a Fallen Heretic to fight on your side.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "summonResistances",
+  "name": "Summon Resistances",
+  "desc_en": "Increases all resistances and physical damage reduction of your summons.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "summonVengefulSpirit",
+  "name": "Summon Vengeful Spirit",
+  "desc_en": "Summon a vengeful spirit to fight on your side.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "sunRay",
+  "name": "Healing Sunrays",
+  "desc_en": "Increases your life and mana stolen per hit.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "sungLeesUnleashedRage",
+  "name": "Momentary Insanity",
+  "desc_en": "Increases your Bleed damage for a short period of time",
+  "elements": [],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "superShot",
+  "name": "Supershot",
+  "desc_en": "Enhances your projectiles with unstable energy causing a shockwave on hit dealing physical damage",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "supernova",
+  "name": "Supernova",
+  "desc_en": "Explode into a supernova dealing fire damage on a large radius.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "surgicalBloodLetting",
+  "name": "Surgical Blood Letting",
+  "desc_en": "Throw a surgical knife with razor sharp accuracy that bounces from monster to monster dealing physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "surstromming",
+  "name": "Taste of Heaven",
+  "desc_en": "Increases your life replenish and mana replenish for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "swampsEssence",
+  "name": "Swamp\u00b4s Essence",
+  "desc_en": "Increases your maximum life.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "swordHandler",
+  "name": "Sword Handler",
+  "desc_en": "Increases your life stolen per hit, attack rating and damage when using swords.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "symphonyOfThunder",
+  "name": "Symphony of Thunder",
+  "desc_en": "Gain increased lightning damage for a short period of time also zapping all monsters with thunderbolts when hit by a lightning skill.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "taunt",
+  "name": "Taunt",
+  "desc_en": "Taunt monsters to attack you. Additional points increase the monster amount and duration.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "tectonicBoulder",
+  "name": "Tectonic Boulder",
+  "desc_en": "Unleash a massive boulder that travels forward dealing arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "teleport",
+  "name": "Teleport",
+  "desc_en": "Move through the ether for a short distance instantaneously",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "temporalHeroes",
+  "name": "Temporal Heroes",
+  "desc_en": "Summon a fractal Viking, Pyromancer and Marksman to fight on your side.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "theBatteryWithin",
+  "name": "The Battery Within",
+  "desc_en": "Gain increased life, mana and all resistances.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "theBigBoom",
+  "name": "The Big Bo-oM",
+  "desc_en": "Throw a huge bo-omb scattering into shrapnel on impact dealing area of effect fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "theEmbodimentOfAurgelmir",
+  "name": "The Embodiment of Aurgelmir",
+  "desc_en": "Summon the power of Aurgelmir and temporarily turn into a war machine of the frozen tundra increasing your attack damage, attack speed and life replenish.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "theShopIsOpen",
+  "name": "The Shop is Open",
+  "desc_en": "Summon Torstein and his toys",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "theVeneratedOne",
+  "name": "The Venerated One",
+  "desc_en": "Temporarily increases your cast rate and mana replenish.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "thornOfVitality",
+  "name": "Thorn of Vitality",
+  "desc_en": "Converts every point of Vitality into damage return.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "thornedBranch",
+  "name": "Thorned Branch",
+  "desc_en": "Throw a thorned branch dealing poison damage on hit.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "thornedRoots",
+  "name": "Thorned Roots",
+  "desc_en": "Unleash a swarm of roots dealing poison damage on hit.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "thornsAura",
+  "name": "Thorn\u2019s Aura",
+  "desc_en": "Causes monster attacks to reflect a portion of their damage back to them",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "thorsFury",
+  "name": "Thor's Fury",
+  "desc_en": "Temporarily increases your attack speed and lightning skill damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "thrillOfTheHunt",
+  "name": "Thrill of the Hunt",
+  "desc_en": "Increases your movement speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "thunderFury",
+  "name": "Thunder Fury",
+  "desc_en": "Perform an attack dealing physical damage that spreads lightning behind the target.",
+  "elements": [
+   "lightning",
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "thunderGoddessesChosen",
+  "name": "Thunder Goddesses Chosen",
+  "desc_en": "Increases lightning skill damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "thunderOrb",
+  "name": "Thunder Orb",
+  "desc_en": "Conjures a traveling orb of thunder shocking nearby monsters with chainlightning.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "thunderShield",
+  "name": "Thunder Shield",
+  "desc_en": "Cast a shield of thunder reducing damage taken and shocking monsters attacking you dealing lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "tideOfBlood",
+  "name": "Tide of Blood",
+  "desc_en": "Unleash a falling blood moon exploding into smaller moons which explode into smaller moons dealing magic damage.",
+  "elements": [],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "tidesOfChaos",
+  "name": "Tides of Chaos",
+  "desc_en": "Chance on attack to conjure tides of chaos sending forward ghastly waves and summoning torrents dealing damage and stunning monsters on hit.",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "timeDeceleration",
+  "name": "Time Deceleration",
+  "desc_en": "Break time and space causing all nearby monsters to take arcane damage and Slowing them.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "tireFire",
+  "name": "Tire Fire",
+  "desc_en": "Throw a truck tire that deals fire damage on hit.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "titaniumChains",
+  "name": "Titanium Chains",
+  "desc_en": "Monsters affected by Serrated Chains explode upon death dealing physical damage.",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "explosion"
+  ]
+ },
+ {
+  "slug": "tornado",
+  "name": "Tornado",
+  "desc_en": "Summon a tornado traveling towards target direction dealing arcane damage to monsters on its path.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "torrent",
+  "name": "Torrent",
+  "desc_en": "Summon a pool of corrupted water on target location bursting into a massive torrent that knocks up monsters struck dealing cold damage.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "touchDown",
+  "name": "Touch Down",
+  "desc_en": "Throw the target monster dealing physical damage to other monsters around when landing",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "touchOfDeath",
+  "name": "Touch of Death",
+  "desc_en": "Unleash the plague on monsters around target location dealing poison damage.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot"
+  ]
+ },
+ {
+  "slug": "toxicFlask",
+  "name": "Toxic Flask",
+  "desc_en": "Throw a bouncing toxic flask towards target location dealing poison damage.",
+  "elements": [
+   "poison"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "toxicRemains",
+  "name": "Toxic Remains",
+  "desc_en": "Chance on hit to unleash toxic gas inflicting Poisoned on monsters hit.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "tramplingForce",
+  "name": "Trampling Force",
+  "desc_en": "Portion of over capped movement speed added as attack damage and magic skill damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "treasureHunter",
+  "name": "Treasure Hunter",
+  "desc_en": "Search for a treasure from the corpses of dead monsters with additional magic find.       ",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "treeTrunkTriumph",
+  "name": "Tree Trunk Triumph",
+  "desc_en": "Summon a massive tree and cut it down on nearby monsters dealing increased damage and additional arcane damage.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "tremblingSmash",
+  "name": "Trembling Smash",
+  "desc_en": "Smash the ground infront of you dealing massive area of effect damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "trickShot",
+  "name": "Trickshot",
+  "desc_en": "Shoot an arrow with increased attack rating that bounces from monster to monster dealing increased attack damage.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "triggerFinger",
+  "name": "Trigger Finger",
+  "desc_en": "Fire a burst shot dealing physical damage.",
+  "elements": [
+   "fire",
+   "physical"
+  ],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "truthSeeker",
+  "name": "Truth Seeker",
+  "desc_en": "Causes all projectiles to become homing",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "tsunami",
+  "name": "Tsunami",
+  "desc_en": "Direct your lunar mass to cast a wave of tsunami forward dealing cold damage.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "turretMastery",
+  "name": "Turret Mastery",
+  "desc_en": "Increase arcane damage and attack speed of all turrets and drones.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "twisters",
+  "name": "Twisters",
+  "desc_en": "Unleash small twisters towards target location dealing arcane damage to monsters on their path.",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "unboundPower",
+  "name": "Unbound Power",
+  "desc_en": "Enables equipping any type of weapon.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "unholyForm",
+  "name": "Unholy Form",
+  "desc_en": "Activate Unholy Form gaining increased damage at the cost inflicting a portion of your max life as damage to your self every time you cast, attack or proc something. Any life replenish when in this form is lowered.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "unstableBomb",
+  "name": "Unstable Bomb",
+  "desc_en": "All bombs scatter small bombs around when exploding dealing fire damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "vacuumingStrike",
+  "name": "Vacuuming Strike",
+  "desc_en": "Pulls all monsters in front of you dealing physical damage",
+  "elements": [
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "valorsDefender",
+  "name": "Valor\u2019s Defender",
+  "desc_en": "Summon two big shields that are orbited by Spiked Shields",
+  "elements": [],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "vault",
+  "name": "Vault",
+  "desc_en": "Vault in the direction aimed unleashing arrows towards nearby monsters dealing increased damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "vectorShroud",
+  "name": "Vector Shroud",
+  "desc_en": "Emits a portion of your total damage return to monsters within the auras range.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "vengeance",
+  "name": "Vengeance",
+  "desc_en": "Strike monsters with a lightning shock that splits towards nearby monsters, dealing physical damage and lightning damage.",
+  "elements": [
+   "lightning",
+   "physical"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "visceralGrowl",
+  "name": "Visceral Growl",
+  "desc_en": "Unleash a visceral growl in a frontal cone dealing lightning damage.",
+  "elements": [
+   "lightning"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "voidPull",
+  "name": "Void\u00b4s Pull",
+  "desc_en": "Chance on monster kill to form a black hole slowly pulling monsters into its center.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "volatileShot",
+  "name": "Volatile Shot",
+  "desc_en": "Fire a colossal arrow exploding on hit dealing area of effect damage.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "volcano",
+  "name": "Volcano",
+  "desc_en": "Spawn a molten volcano that deals fire damage around it and spews out burning rocks that explode on hit.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "dot",
+   "explosion",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "wallOfEternity",
+  "name": "Wall of Eternity",
+  "desc_en": "Chance when struck to unleash a wall of marching mummies dealing damage and knocking back monsters on hit.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "walsonsAid",
+  "name": "Walson\u00b4s Aid",
+  "desc_en": "Walson orbits you and attacks monsters stunning and dealing area of effect cold damage.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "warriorsPath",
+  "name": "Warrior\u00b4s Path",
+  "desc_en": "Increases your attack damage and magic skill damage for a short period.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "warriorsSpirit",
+  "name": "Warrior\u2019s Spirit",
+  "desc_en": "Increases your attack speed.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "warsong",
+  "name": "Warsong",
+  "desc_en": "Curse monsters in target location to deal reduced damage",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "waveLength",
+  "name": "Wave Length",
+  "desc_en": "Increases the projectile speed of all skills.",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "wayOfTheWarrior",
+  "name": "Way of the Warrior",
+  "desc_en": "Increases your attack damage and magic skill damage.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "weaponMaster",
+  "name": "Weapon Master",
+  "desc_en": "Increases your attack damage and attack rating when you are using weapons without a shield.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "weaponThrow",
+  "name": "Weapon Throw",
+  "desc_en": "Throw your weapon dealing increased damage",
+  "elements": [],
+  "delivery_hint": [
+   "projectile"
+  ]
+ },
+ {
+  "slug": "whiplash",
+  "name": "Whiplash",
+  "desc_en": "Scorching Whip now creates a chaining fire ball that bounces between monsters. Fire balls can hit the same target multiple times.",
+  "elements": [
+   "fire"
+  ],
+  "delivery_hint": [
+   "dot",
+   "projectile"
+  ]
+ },
+ {
+  "slug": "whirlwind",
+  "name": "Whirlwind",
+  "desc_en": "Spin your weapons around you dealing damage to monsters struck.",
+  "elements": [],
+  "delivery_hint": [
+   "aoe"
+  ]
+ },
+ {
+  "slug": "willoWisp",
+  "name": "Will-O-Wisp",
+  "desc_en": "Summons now have ghastly skulls orbitin them inflicting burning to monsters on hit for a portion of the summons damage.",
+  "elements": [],
+  "delivery_hint": [
+   "dot",
+   "summon"
+  ]
+ },
+ {
+  "slug": "wingsOfHatred",
+  "name": "Wings of Hatred",
+  "desc_en": "Removes jumping collisions and reduces diminishing when landing after jumping.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "witchesPotion",
+  "name": "Conjured Replenishment",
+  "desc_en": "Instantly recover full life and Mana, increasing your life replenish and mana replenish for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "wizardPotion",
+  "name": "Rapidcaster",
+  "desc_en": "Increases your faster cast rate for a short period of time",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "wizardsRoll",
+  "name": "Wizard\u00b4s Roll",
+  "desc_en": "Roll the dice when casting for a random effect.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "wizardsWrath",
+  "name": "Wizard's Wrath",
+  "desc_en": "Increases your cast rate and arcane damage for a short period",
+  "elements": [
+   "arcane"
+  ],
+  "delivery_hint": []
+ },
+ {
+  "slug": "woundingPaw",
+  "name": "Wounding Paw",
+  "desc_en": "Strike monsters with increased damage with a chance to unleash a ripple of blood.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "wreckingBall",
+  "name": "Wrecking Ball",
+  "desc_en": "Increases the damage and range of Heavy Ball.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "ymirsChampion",
+  "name": "Ymir's Champion",
+  "desc_en": "Perform a cold enhanced strike with additive cold damage, Increased attack damage and attack rating. Attacks also freeze monsters and summons a spinning axe that deals additional damage.",
+  "elements": [
+   "cold"
+  ],
+  "delivery_hint": [
+   "summon"
+  ]
+ },
+ {
+  "slug": "zeal",
+  "name": "Zeal",
+  "desc_en": "Strike three fast and powerful attacks with increased attack rating.",
+  "elements": [],
+  "delivery_hint": []
+ },
+ {
+  "slug": "zooooooom",
+  "name": "Zoooooom",
+  "desc_en": "Zoom Zoom Zoom!",
+  "elements": [],
+  "delivery_hint": []
+ }
+]
