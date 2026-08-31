@@ -8,7 +8,7 @@ services:
     build:
       context: ./app          # = the vendored repo root
       dockerfile: app/Dockerfile
-    image: clockmost/herosiege-filter:0.4.0
+    image: clockmost/herosiege-filter:0.5.0
     container_name: herosiege-filter
     restart: unless-stopped
     networks: [authentik]      # reached only through Caddy; no host port

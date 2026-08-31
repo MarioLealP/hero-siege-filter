@@ -11,24 +11,21 @@ from .models import Profile
 
 _RANKS = ("tr0", "tr1", "tr2", "tr3", "tr4")  # grade 0..4 (Common..Satanic)
 
-# Slot-aware chase: an affix only gets the beam on its "home" slots; on other
-# slots it stays *visible* (item still drops, no beam) — never hidden, so an
-# off-slot roll is never missed. ARPG convention; tune per HS as we learn it.
-_H, _C, _B, _W, _G, _A, _SH, _R, _BE, _CH = (
-    "t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8", "t10")
+# Slot-aware chase — an affix beams only on its "home" slots; elsewhere it stays
+# *visible* (item still drops, no beam), never hidden.
+#
+# HS turns out to be permissive: the loot filter exposes all 167 affixes on every
+# slot, and affixes span item types (Enhanced Defense rolls on Rings *and*
+# Amulets, different ranges). The game's affix-pool data is buried in a
+# YYC-compiled item generator we couldn't crack. So we only slot-lock the handful
+# of stats that are unambiguously slot-specific in every ARPG; everything else
+# beams wherever it's a chase stat.
+_BOOTS, _WEAPON, _CHARM = "t2", "t3", "t10"
 SLOT_BEAM: dict[int, set[str]] = {
-    25: {_B, _CH},                       # Movement Speed -> boots, charm
-    26: {_B},                            # Phasing -> boots
-    170: {_BE, _B, _SH, _H},             # Faster Hit Recovery
-    67: {_W},                            # Attack Range -> weapon
-    53: {_C, _SH, _BE},                  # Life % -> chest, shield, belt
-    196: {_A, _R, _G, _W, _H},           # Faster Cast Rate
-    198: {_A, _R, _BE, _CH},             # Skill Haste
-    68: {_G, _W, _R, _A},                # Attack Speed
-    72: {_G, _A, _R}, 73: {_G, _A, _R},  # Crit chance / damage
-    284: {_H, _R, _A, _CH, _G, _B},      # Magic Find
-    285: {_H, _R, _A, _CH, _G, _B},
-    **{sid: {_A, _H, _W, _CH} for sid in (201, 202, 419, 222, 223, 224, 225, 226, 227)},  # +skills
+    25: {_BOOTS, _CHARM},   # Movement Speed
+    26: {_BOOTS, _CHARM},   # Phasing
+    465: {_BOOTS, _CHARM},  # Movement Speed Converted to Damage
+    67: {_WEAPON},          # Attack Range
 }
 
 
