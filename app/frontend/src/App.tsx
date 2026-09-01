@@ -156,7 +156,17 @@ export function App() {
         </span>
         <span className="ef-label hidden sm:block">{"// loot filter"}</span>
         <span className="flex-1" />
-        <span className="ef-mono text-[0.6875rem] text-ink-3">{catalog?.game_version ?? "…"}</span>
+        <span className="ef-mono text-[0.6875rem] text-ink-3">
+          {catalog?.game_version ?? "…"}
+          {catalog?.build?.sha ? (
+            <span className="text-ink-4">
+              {" · "}
+              <span title={catalog.build.built || undefined}>
+                v{catalog.build.image} · {catalog.build.sha}
+              </span>
+            </span>
+          ) : null}
+        </span>
         <ThemeToggle surface={surface} onToggle={toggleTheme} />
       </header>
       <div className="ef-rule--tri" style={{ height: 2 }} />

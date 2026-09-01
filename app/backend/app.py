@@ -11,9 +11,10 @@ against the on-disk catalog.
 """
 from __future__ import annotations
 
+import json
 import pathlib
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
@@ -24,20 +25,51 @@ from hsfilter import (ATTRIBUTE_LABEL, ATTRIBUTES, ELEMENTS, PLAYSTYLE_LABEL, PL
 from hsfilter.catalog import catalog as build_catalog
 from hsfilter.catalog import known_build_ids, load_build, validate_all
 
-app = FastAPI(title="Hero Siege loot filter", version="0.1.0", docs_url="/api/docs")
+app = FastAPI(title="Hero Siege loot filter", version="0.10.1", docs_url="/api/docs")
 
 STATIC_DIR = pathlib.Path(__file__).parent / "static"
+
+
+def _build_stamp() -> dict:
+    p = pathlib.Path(__file__).parent / "_build.json"
+    try:
+        d = json.loads(p.read_text())
+    except (OSError, ValueError):
+        d = {}
+    return {"sha": d.get("sha") or "dev", "built": d.get("built") or "",
+            "image": app.version}
+
+
+BUILD = _build_stamp()
+
+
+@app.middleware("http")
+async def _cache_control(request: Request, call_next):
+    resp = await call_next(request)
+    path = request.url.path
+    if path.startswith("/assets/"):
+        resp.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+    elif path == "/" or path.endswith(".html") or not path.startswith("/api"):
+        resp.headers["Cache-Control"] = "no-cache"
+    return resp
+
+
+@app.get("/api/version")
+def version() -> dict:
+    return BUILD
 
 
 @app.get("/api/health")
 def health() -> dict:
     errs = validate_all()
-    return {"ok": not errs, "builds": len(known_build_ids()), "errors": errs}
+    return {"ok": not errs, "builds": len(known_build_ids()),
+            "build": BUILD, "errors": errs}
 
 
 @app.get("/api/catalog")
 def catalog() -> dict:
     c = build_catalog()
+    c["build"] = BUILD
     c["archetype_options"] = {
         "elements": ELEMENTS,
         "playstyles": [{"id": p, "label": PLAYSTYLE_LABEL[p]} for p in PLAYSTYLES],

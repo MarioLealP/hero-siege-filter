@@ -20,6 +20,9 @@ COPY research/ ./research/
 COPY data/ ./data/
 COPY app/backend/pyproject.toml ./app/backend/pyproject.toml
 COPY app/backend/app.py ./app/backend/app.py
+# build stamp — deploy writes real values into the vendored tree; the committed
+# default keeps a clean checkout building.
+COPY app/backend/_build.json ./app/backend/_build.json
 
 RUN pip install --no-cache-dir "." "fastapi>=0.115" "uvicorn[standard]>=0.32"
 

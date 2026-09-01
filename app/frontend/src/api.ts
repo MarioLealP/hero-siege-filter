@@ -12,6 +12,7 @@ export interface CatalogClass {
 }
 export interface Catalog {
   game_version: string;
+  build: { sha: string; built: string; image: string };
   archetypes: string[];
   classes: CatalogClass[];
   builds: {
