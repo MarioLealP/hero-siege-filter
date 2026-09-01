@@ -162,11 +162,9 @@ export function App() {
         <span className="ef-mono text-[0.6875rem] text-ink-3">
           {catalog?.game_version ?? "…"}
           {catalog?.build?.sha ? (
-            <span className="text-ink-4">
+            <span className="text-ink-4" title={catalog.build.built || undefined}>
               {" · "}
-              <span title={catalog.build.built || undefined}>
-                v{catalog.build.image} · {catalog.build.sha}
-              </span>
+              {catalog.build.sha}
             </span>
           ) : null}
         </span>
