@@ -20,6 +20,7 @@ type Custom = {
   weapons?: number[];
   runeword_bases?: boolean;
   socket_counts?: number[];
+  grade_escalation?: boolean;
   force_highlight: number[];
   force_hide: number[];
   force_neutral: number[];
@@ -33,6 +34,7 @@ function isCustom(c: Custom): boolean {
     c.grade_beam_min !== undefined ||
     c.weapons !== undefined ||
     c.runeword_bases === true ||
+    c.grade_escalation === true ||
     c.force_highlight.length > 0 ||
     c.force_hide.length > 0 ||
     c.force_neutral.length > 0
@@ -89,6 +91,7 @@ export function App() {
       weapons: c.weapons,
       runeword_bases: c.runeword_bases ?? false,
       socket_counts: c.socket_counts ?? null,
+      grade_escalation: c.grade_escalation ?? false,
       force_highlight: c.force_highlight,
       force_hide: c.force_hide,
       force_neutral: c.force_neutral,
@@ -365,6 +368,23 @@ export function App() {
                   between grade floor and beam, chase affixes show but don&apos;t glow
                 </p>
 
+                <label className="flex cursor-pointer items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={c.grade_escalation ?? false}
+                    onChange={(e) => {
+                      setC((prev) => ({ ...prev, grade_escalation: e.target.checked }));
+                    }}
+                  />
+                  <span className="ef-label">
+                    Grade escalation
+                    <span className="text-ink-4">
+                      {" "}
+                      · show off-list stats (no glow) on A/S-grade rolls
+                    </span>
+                  </span>
+                </label>
+
                 <div>
                   <label className="flex cursor-pointer items-center gap-2">
                     <input
@@ -517,6 +537,11 @@ export function App() {
                 {show.runeword.on ? (
                   <span className="ef-tag" style={{ borderColor: "var(--ef-accent)" }}>
                     runeword bases · {show.runeword.socket_counts.join("/")} soc
+                  </span>
+                ) : null}
+                {show.grade_escalation ? (
+                  <span className="ef-tag" style={{ borderColor: "var(--ef-accent)" }}>
+                    grade escalation
                   </span>
                 ) : null}
                 <span className="flex-1" />

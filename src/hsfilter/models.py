@@ -131,6 +131,11 @@ class Profile(BaseModel):
     forces Common items visible again and beams anything with `socket_counts`
     sockets (default 2..6) so white runeword bases surface without disturbing
     the rest of the filter.
+
+    `grade_escalation` borrows the community-filter idea of scaling the bar for
+    "interesting" with roll quality: an off-list stat stays hidden on a D/C/B
+    roll but becomes visible (not beamed) on an A- or S-grade roll, so a
+    god-tier roll of something the build doesn't chase still reaches the ground.
     """
     id: str
     name: str
@@ -144,6 +149,7 @@ class Profile(BaseModel):
     grade_beam_min: int = 0
     runeword_bases: bool = False
     socket_counts: list[int] = []
+    grade_escalation: bool = False   # surface off-list stats on A/S-grade rolls
 
 
 # ---- catalog + API shapes ------------------------------------------------

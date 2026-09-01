@@ -98,6 +98,7 @@ class Overrides(BaseModel):
     weapons: list[int] | None = None          # weapon-type bit positions, or [] / null
     runeword_bases: bool = False              # surface white runeword bases on gear slots
     socket_counts: list[int] | None = None    # which socket counts to beam (2..6); null = all
+    grade_escalation: bool = False            # surface off-list stats on A/S-grade rolls
     force_highlight: list[int] = []
     force_hide: list[int] = []
     force_neutral: list[int] = []
@@ -127,6 +128,10 @@ def _archetype_profile(element: str, playstyle: str, stage: str,
         if bad:
             raise HTTPException(422, f"bad weapon bits: {bad}")
         p.wtc = sum(1 << b for b in ov.weapons) or None
+    if ov.grade_escalation:
+        p.grade_escalation = True
+        p.notes += (" Grade escalation: off-list stats surface (no beam) on"
+                    " A/S-grade rolls.")
     if ov.runeword_bases:
         p.runeword_bases = True
         if ov.socket_counts is not None:
@@ -180,6 +185,7 @@ def _explain_payload(p, attribute: str | None = None, explosion: bool = False) -
             "socket_counts": p.socket_counts or [2, 3, 4, 5, 6],
             "slots": ["Helmet", "Chest", "Boots", "Weapon", "Shield"],
         },
+        "grade_escalation": p.grade_escalation,
         "weapon_types": WEAPON_TYPES,
         "rarity": {
             "item_min": p.item_rarity_min,

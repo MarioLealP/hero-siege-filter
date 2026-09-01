@@ -27,6 +27,19 @@ SLOT_BEAM: dict[int, set[str]] = {
     67: {_WEAPON},          # Attack Range
 }
 
+# Slots where the affix filter isn't meaningful -- items roll broadly or you
+# grab them regardless. Community filters treat these highlight-only; so do we.
+HIGHLIGHT_ONLY_SLOTS = {"t10", "t11", "t15", "t18"}  # Charm Consumable Socketable Vial
+
+
+def _hide_states(escalate: bool) -> list[int]:
+    """Grade states (D..S) for a hidden affix. Off at every grade normally; with
+    grade-escalation on, an A/S-grade roll surfaces (visible, no beam)."""
+    if escalate:
+        return [GRADE_STATE_OFF, GRADE_STATE_OFF, GRADE_STATE_OFF,
+                GRADE_STATE_VISIBLE, GRADE_STATE_VISIBLE]
+    return [GRADE_STATE_OFF] * 5
+
 
 def _chase_states(show_min: int, beam_min: int, beams_here: bool) -> list[int]:
     """5 grade states (D..S) for a chase affix on one slot.
@@ -64,7 +77,7 @@ def profile_to_slots(p: Profile) -> dict[str, dict]:
     show_min = max(0, min(4, p.grade_show_min))
     beam_min = max(show_min, min(4, p.grade_beam_min))
     grid = rarity_grid(p.item_rarity_min, show_min)
-    off_all = [GRADE_STATE_OFF] * 5
+    hide_states = _hide_states(p.grade_escalation)
 
     # runeword-hunt pass: on the craftable slots, force Common visible again and
     # beam bases with the wanted socket count. Purely additive — the show mask
@@ -76,8 +89,9 @@ def profile_to_slots(p: Profile) -> dict[str, dict]:
     slots: dict[str, dict] = {}
     for key in SLOTS:
         affixes: dict[int, list[int]] = {}
-        for i in hd:
-            affixes[i] = list(off_all)
+        if key not in HIGHLIGHT_ONLY_SLOTS:
+            for i in hd:
+                affixes[i] = list(hide_states)
         for i in hi:
             beams_here = i not in SLOT_BEAM or key in SLOT_BEAM[i]
             st = _chase_states(show_min, beam_min, beams_here)
