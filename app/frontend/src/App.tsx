@@ -8,9 +8,11 @@ import {
   type Catalog,
   type Explain,
   type Overrides,
+  type Runeword,
   downloadArchetype,
   getArchetypeExplainCustom,
   getCatalog,
+  getRunewords,
 } from "@/api";
 
 type Custom = {
@@ -47,6 +49,7 @@ function toggle(list: number[], id: number): number[] {
 
 export function App() {
   const { surface, toggle: toggleTheme } = useTheme();
+  const [tab, setTab] = useState<"filter" | "runewords">("filter");
   const [catalog, setCatalog] = useState<Catalog | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -159,7 +162,26 @@ export function App() {
         <span className="font-display text-base font-bold tracking-[0.22em] uppercase">
           hero&nbsp;siege
         </span>
-        <span className="ef-label hidden sm:block">{"// loot filter"}</span>
+        <nav className="flex gap-1">
+          {(["filter", "runewords"] as const).map((t) => (
+            <button
+              key={t}
+              type="button"
+              className="ef-btn ef-btn--ghost"
+              aria-pressed={tab === t}
+              style={
+                tab === t
+                  ? { borderColor: "var(--ef-accent)", color: "var(--ef-accent-ink)" }
+                  : undefined
+              }
+              onClick={() => {
+                setTab(t);
+              }}
+            >
+              {t === "filter" ? "loot filter" : "runewords"}
+            </button>
+          ))}
+        </nav>
         <span className="flex-1" />
         <span className="ef-mono text-[0.6875rem] text-ink-3">
           {catalog?.game_version ?? "…"}
@@ -174,7 +196,9 @@ export function App() {
       </header>
       <div className="ef-rule--tri" style={{ height: 2 }} />
 
-      <main className="mt-8 flex flex-col gap-8">
+      {tab === "runewords" ? <RunewordsPanel /> : null}
+
+      <main className="mt-8 flex flex-col gap-8" hidden={tab !== "filter"}>
         <Slab
           kicker="// LOOT FILTER"
           headline={show ? (show.name.split(" — ")[0] ?? "Filter") : "Pick a build"}
@@ -666,6 +690,150 @@ export function App() {
         ) : null}
       </main>
     </div>
+  );
+}
+
+function RunewordsPanel() {
+  const [data, setData] = useState<Runeword[] | null>(null);
+  const [note, setNote] = useState("");
+  const [err, setErr] = useState<string | null>(null);
+  const [q, setQ] = useState("");
+  const [soc, setSoc] = useState<number | null>(null);
+  const [base, setBase] = useState("");
+  const [notableOnly, setNotableOnly] = useState(false);
+
+  useEffect(() => {
+    getRunewords()
+      .then((r) => {
+        setData(r.runewords);
+        setNote(r.disclaimer);
+      })
+      .catch((e: unknown) => {
+        setErr(String(e));
+      });
+  }, []);
+
+  const bases = useMemo(() => {
+    const s = new Set<string>();
+    for (const rw of data ?? []) for (const b of rw.bases) s.add(b);
+    return [...s].toSorted();
+  }, [data]);
+
+  const rows = (data ?? [])
+    .filter((rw) => !notableOnly || rw.notable)
+    .filter((rw) => soc === null || rw.sockets === soc)
+    .filter((rw) => !base || rw.bases.includes(base))
+    .filter((rw) => {
+      const t = q.toLowerCase().trim();
+      if (!t) return true;
+      return (
+        rw.name.toLowerCase().includes(t) ||
+        rw.runes.toLowerCase().includes(t) ||
+        rw.bases.some((b) => b.toLowerCase().includes(t))
+      );
+    });
+
+  return (
+    <section className="mt-8 flex flex-col gap-5">
+      <Slab
+        kicker="// RUNEWORDS"
+        headline="Runeword reference"
+        detail="craft only in a Common base · sockets = rune count · order matters"
+        watermark="HERO SIEGE"
+      />
+      {err ? <p className="ef-mono text-sm text-crimson">API error — {err}</p> : null}
+      <p className="ef-mono text-[0.625rem] text-ink-4">{note}</p>
+
+      <div className="flex flex-wrap items-center gap-3">
+        <input
+          className="ef-input flex-1"
+          style={{ minWidth: "12rem" }}
+          placeholder="search name / rune / base…"
+          value={q}
+          onChange={(e) => {
+            setQ(e.target.value);
+          }}
+        />
+        <label className="flex cursor-pointer items-center gap-2">
+          <input
+            type="checkbox"
+            checked={notableOnly}
+            onChange={(e) => {
+              setNotableOnly(e.target.checked);
+            }}
+          />
+          <span className="ef-label">notable only</span>
+        </label>
+      </div>
+
+      <div className="flex flex-wrap gap-1">
+        {[null, 2, 3, 4, 5, 6].map((n) => (
+          <button
+            key={n ?? "any"}
+            type="button"
+            className="ef-btn"
+            style={
+              soc === n
+                ? { borderColor: "var(--ef-accent)", color: "var(--ef-accent-ink)" }
+                : undefined
+            }
+            onClick={() => {
+              setSoc(n);
+            }}
+          >
+            {n === null ? "any soc" : `${n} soc`}
+          </button>
+        ))}
+        <select
+          className="ef-select ml-2"
+          value={base}
+          onChange={(e) => {
+            setBase(e.target.value);
+          }}
+        >
+          <option value="">any base</option>
+          {bases.map((b) => (
+            <option key={b} value={b}>
+              {b}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse text-sm">
+          <thead>
+            <tr className="border-b border-line text-left">
+              <th className="ef-label py-2 pr-3">Runeword</th>
+              <th className="ef-label py-2 pr-3">Runes (in order)</th>
+              <th className="ef-label py-2 pr-3">Bases</th>
+              <th className="ef-label py-2 pr-3">Soc</th>
+              <th className="ef-label py-2">Lvl</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((rw) => (
+              <tr key={rw.name} className="border-b border-line align-top">
+                <td className="py-2 pr-3 font-medium">
+                  {rw.notable ? <span style={{ color: "var(--ef-accent)" }}>◆ </span> : null}
+                  {rw.name}
+                  {rw.note ? (
+                    <div className="ef-mono mt-0.5 text-[0.625rem] text-ink-4">{rw.note}</div>
+                  ) : null}
+                </td>
+                <td className="ef-mono py-2 pr-3 whitespace-nowrap">{rw.runes}</td>
+                <td className="py-2 pr-3 text-ink-2">{rw.bases.join(", ")}</td>
+                <td className="ef-mono py-2 pr-3">{rw.sockets}</td>
+                <td className="ef-mono py-2">{rw.level}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="ef-mono text-[0.625rem] text-ink-4">
+        {rows.length} / {data?.length ?? 0} shown
+      </p>
+    </section>
   );
 }
 

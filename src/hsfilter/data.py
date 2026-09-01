@@ -7,6 +7,7 @@ _D = pathlib.Path(__file__).parent / "data"
 
 STATS: dict[str, dict] = json.loads((_D / "stats.json").read_text())
 TAXONOMY: dict = json.loads((_D / "stat_taxonomy.json").read_text())
+RUNEWORDS: dict = json.loads((_D / "runewords.json").read_text())
 
 NAME: dict[int, str] = {int(k): v["name"] for k, v in STATS.items() if k.isdigit()}
 ALL_IDS: set[int] = set(NAME)

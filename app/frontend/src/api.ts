@@ -93,7 +93,22 @@ async function j<T>(url: string, init?: RequestInit): Promise<T> {
   return r.json() as Promise<T>;
 }
 
+export interface Runeword {
+  name: string;
+  runes: string;
+  bases: string[];
+  sockets: number;
+  level: number;
+  notable?: boolean;
+  note?: string;
+}
+export interface Runewords {
+  disclaimer: string;
+  runewords: Runeword[];
+}
+
 export const getCatalog = () => j<Catalog>("/api/catalog");
+export const getRunewords = () => j<Runewords>("/api/runewords");
 export const getExplain = (buildId: string) => j<Explain>(`/api/filter/${buildId}/explain`);
 export const getArchetypeExplain = (el: string, play: string, stage: string) =>
   j<Explain>(`/api/archetype/${el}/${play}/${stage}/explain`);

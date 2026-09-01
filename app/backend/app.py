@@ -25,7 +25,7 @@ from hsfilter import (ATTRIBUTE_LABEL, ATTRIBUTES, ELEMENTS, PLAYSTYLE_LABEL, PL
 from hsfilter.catalog import catalog as build_catalog
 from hsfilter.catalog import known_build_ids, load_build, validate_all
 
-app = FastAPI(title="Hero Siege loot filter", version="0.10.4", docs_url="/api/docs")
+app = FastAPI(title="Hero Siege loot filter", version="0.10.5", docs_url="/api/docs")
 
 STATIC_DIR = pathlib.Path(__file__).parent / "static"
 
@@ -57,6 +57,12 @@ async def _cache_control(request: Request, call_next):
 @app.get("/api/version")
 def version() -> dict:
     return BUILD
+
+
+@app.get("/api/runewords")
+def runewords() -> dict:
+    from hsfilter import RUNEWORDS
+    return RUNEWORDS
 
 
 @app.get("/api/health")
