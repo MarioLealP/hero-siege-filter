@@ -25,7 +25,7 @@ from hsfilter import (ATTRIBUTE_LABEL, ATTRIBUTES, ELEMENTS, PLAYSTYLE_LABEL, PL
 from hsfilter.catalog import catalog as build_catalog
 from hsfilter.catalog import known_build_ids, load_build, validate_all
 
-app = FastAPI(title="Hero Siege loot filter", version="0.10.5", docs_url="/api/docs")
+app = FastAPI(title="Hero Siege loot filter", version="0.10.6", docs_url="/api/docs")
 
 STATIC_DIR = pathlib.Path(__file__).parent / "static"
 

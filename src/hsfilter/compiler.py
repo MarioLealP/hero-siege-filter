@@ -8,6 +8,31 @@ from .data import (ALL_IDS, ATTR, E_ABS, E_ADD, E_IGN, E_MAXRES, E_RES,
                    E_SD_FLAT, E_SD_PCT, E_SKILLS, NAME)
 from .models import Profile, Research
 
+# Stays visible (no glow) on every build — acceptable filler you would not
+# reject an item for, but would not chase. Everything else the rules don't
+# name gets hidden (section L). Mirrors the community filters' small neutral band.
+KEEP_NEUTRAL = {
+    54,   # Life per Level
+    55, 58,   # Life Replenish / Life per Second
+    59, 66,   # Life / Mana after each Kill
+    386, 389,  # Flask instant mana / life replenish
+    419,  # Sub Skills
+    474,  # Increased Damage Return
+}
+
+# Hidden by section L but still worth surfacing on an A/S roll (a god-tier roll
+# of one of these can make an item worth a look on any build).
+ESCALATE_ANYWAY = {
+    28, 29, 31,                     # enhanced damage / defense (+per level)
+    52, 53, 54, 173, 174, 152,      # life, all resists, ignore-all-res
+    175, 176, 177, 178, 179, 180, 181, 182, 183, 184,   # single + max resists
+    68, 72, 73,                     # attack speed, crit chance / damage
+    201, 51, 250,                   # all skills, all attributes, ailment damage
+    132, 136, 140, 144, 148,        # additive elemental weapon damage
+    159, 160, 161, 162, 170,        # damage reduction / faster hit recovery
+    198, 200, 196,                  # skill haste, mana cost, faster cast
+}
+
 CASTER_KILL = [67, 68, 74, 75, 76, 77, 78, 94, 95, 97, 99]
 SUMMON_BLOCK = [327, 328, 329, 330, 332, 333, 334, 331]
 SENTRY_BLOCK = [336, 337, 338, 339, 335]
@@ -174,6 +199,8 @@ def compile_build(research: Research | dict) -> Profile:
     # H. cast / cooldown
     if is_caster:
         c.set([196, 200], "highlight", "caster cast stats")
+        c.set([198, 202], "highlight", "caster: skill haste / singular skills")
+        c.set([60, 66], "highlight", "caster: mana pool / mana on kill")
     elif is_attacker:
         c.set([196, 200], "hide", "attacker: no cast")
     if r.cooldown_based:
@@ -206,8 +233,23 @@ def compile_build(research: Research | dict) -> Profile:
     if r.defense_model not in ("shield_block", "hybrid") and pa != "armor":
         c.set(OFF_DEFENSE, "hide", "armor/defense unused")
 
+    # L. tighten — community filters keep the neutral band tiny (~10 stats).
+    #    Anything a rule didn't explicitly want is hidden, not left on the ground.
+    #    These are "junk for this build": still hidden even on A/S rolls, so grade
+    #    escalation only ever surfaces stats a rule deliberately hid (off-element
+    #    skills, wrong attributes, caster attack mechanics …), never absorptions /
+    #    merchant prices / defense-vs-missiles / etc.
+    junk: list[int] = []
+    for i in ALL_IDS:
+        if i not in c.state and i not in KEEP_NEUTRAL:
+            c.state[i] = "hide"
+            c.why[i] = "not wanted for this build"
+            if i not in ESCALATE_ANYWAY:
+                junk.append(i)
+
     hi = sorted(i for i, s in c.state.items() if s == "highlight")
     hd = sorted(i for i, s in c.state.items() if s == "hide")
+    junk_s = sorted(junk)
 
     # rarity policy. Default is the community-filter style (MisterSleepyCat):
     # NEVER hide an item by rarity or a roll by low grade -- item_rarity_min and
@@ -230,10 +272,11 @@ def compile_build(research: Research | dict) -> Profile:
     notes = (f"{r.class_} / {'+'.join(r.main_skills)} / {stage}. element={el}"
              + (f" splash={splash}" if splash else "")
              + f" delivery={sorted(delivery)}."
-             + " No rarity/grade floor; off-list stats surface on A/S rolls;"
+             + " No rarity/grade floor; most off-list stats surface on A/S rolls;"
              + f" chase glow from {_G[grade_beam_min]}+.")
     prof = Profile(id=r.id, name=r.name, notes=notes,
                    wtc=r.wtc, soc=None, highlight=hi, hide=hd,
+                   hide_no_escalate=junk_s,
                    item_rarity_min=item_min, grade_show_min=grade_show_min,
                    grade_beam_min=grade_beam_min, grade_escalation=True,
                    runeword_bases=runeword_default)

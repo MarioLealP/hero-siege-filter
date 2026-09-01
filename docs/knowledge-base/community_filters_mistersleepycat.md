@@ -104,6 +104,31 @@ For **Socketable (`t15`)** and **Vial (`t18`)** several filters set
 gem / vial, with a glow on the good ones. Not fully consistent (Prophet
 still hides on `t15`).
 
+## Tightening pass (2026-09-01, second round)
+
+Mario: "I feel like we're not filtering enough." Compared our compiled
+output to ten of his filters and confirmed it: his neutral band (stats
+visible on the ground with no glow) is **0-17 stats**; ours was **38-63**.
+His model is a hard allowlist — highlight the ~10-20 the build wants, hide
+the other ~145.
+
+Fixes:
+- **Section L in the compiler**: anything a rule did not explicitly want
+  is now hidden, not left neutral. Neutral band drops to ~4
+  (`KEEP_NEUTRAL`: life-per-level, life/mana regen + on-kill, flask
+  instants, Sub Skills, Increased Damage Return).
+- Section L splits its hides: **`ESCALATE_ANYWAY`** stats (life, all
+  resists, single resists, crit, attack speed, enhanced dmg, additive
+  elemental, damage reduction, haste) still surface on A/S rolls;
+  everything else (`Profile.hide_no_escalate` -- absorptions, merchant
+  prices, flask-on-gear, mana-per-second, projectile speed for casters,
+  damage-recoup) stays hidden even at S grade.
+- Filled real compiler gaps section L exposed: casters now highlight
+  Skill Haste, Singular Skills, Mana, Mana-on-Kill.
+
+Result: HL ~40, hide ~120 (of which ~25 never come back), neutral ~4 -
+in the same shape as his filters.
+
 ## Brought into our tool (2026-09-01) — now the DEFAULT
 
 Mario's call: "do his way as default and grey out the options that

@@ -74,10 +74,12 @@ def _validate(p: Profile) -> tuple[list[int], list[int]]:
 def profile_to_slots(p: Profile) -> dict[str, dict]:
     """Build the per-slot spec that codec.encode_v3 consumes."""
     hi, hd = _validate(p)
+    no_esc = set(p.hide_no_escalate)
     show_min = max(0, min(4, p.grade_show_min))
     beam_min = max(show_min, min(4, p.grade_beam_min))
     grid = rarity_grid(p.item_rarity_min, show_min)
     hide_states = _hide_states(p.grade_escalation)
+    hide_hard = [GRADE_STATE_OFF] * 5
 
     # runeword-hunt pass: on the craftable slots, force Common visible again and
     # beam bases with the wanted socket count. Purely additive — the show mask
@@ -91,7 +93,7 @@ def profile_to_slots(p: Profile) -> dict[str, dict]:
         affixes: dict[int, list[int]] = {}
         if key not in HIGHLIGHT_ONLY_SLOTS:
             for i in hd:
-                affixes[i] = list(hide_states)
+                affixes[i] = list(hide_hard if i in no_esc else hide_states)
         for i in hi:
             beams_here = i not in SLOT_BEAM or key in SLOT_BEAM[i]
             st = _chase_states(show_min, beam_min, beams_here)

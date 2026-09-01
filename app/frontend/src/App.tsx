@@ -372,7 +372,7 @@ export function App() {
                     Grade escalation
                     <span className="text-ink-4">
                       {" "}
-                      · community default · never hide by rarity or low grade; off-list stats
+                      · community default · never hide by rarity or low grade; most off-list stats
                       surface (no glow) on A/S rolls
                     </span>
                   </span>

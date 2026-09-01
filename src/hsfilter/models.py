@@ -144,6 +144,7 @@ class Profile(BaseModel):
     soc: int | None = None
     highlight: list[int]
     hide: list[int]
+    hide_no_escalate: list[int] = []   # hidden AND kept hidden even on A/S rolls (pure junk)
     item_rarity_min: int = 0
     grade_show_min: int = 0
     grade_beam_min: int = 0
