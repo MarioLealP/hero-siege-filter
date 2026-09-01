@@ -209,36 +209,28 @@ def compile_build(research: Research | dict) -> Profile:
     hi = sorted(i for i, s in c.state.items() if s == "highlight")
     hd = sorted(i for i, s in c.state.items() if s == "hide")
 
-    # rarity policy — two axes:
-    #   item_rarity_min : 0 Common .. 4 Satanic — hide items below this rarity.
-    #   grade_show_min  : 0 D .. 4 S — suppress affix rolls below this grade.
-    #   grade_beam_min  : 0 D .. 4 S — beam chase affixes at/above this grade.
-    # grade_show_min ramps with the difficulty bracket so a low-level character
-    # who can't find high grades still sees the lower ones (Mario's ask).
-    item_min, grade_show_min, grade_beam_min = {
-        # legacy 3-stage names
-        "leveling": (0, 0, 0),
-        "maps": (1, 0, 2),
-        "endgame": (3, 2, 4),
-        # difficulty brackets
-        "normal": (0, 0, 0),      # campaign ~lv1-70 — grab everything
-        "nightmare": (1, 0, 2),   # ~lv70-100 — hide Common items, beam B+ rolls
-        "hell1": (2, 1, 3),       # Hell 1-3, just hit 100 — Rare+ items, hide D, beam A+
-        "hell3": (3, 2, 4),       # Hell 3-5, Incarnation — Mythic+ items, hide D/C, beam S
-        "hell5": (3, 3, 4),       # Hell 5+ speedfarm — Mythic+ items, only B+ rolls, beam S
+    # rarity policy. Default is the community-filter style (MisterSleepyCat):
+    # NEVER hide an item by rarity or a roll by low grade -- item_rarity_min and
+    # grade_show_min stay 0. Grade escalation is on by default (set below), so
+    # off-list stats still surface on A/S rolls. Only grade_beam_min (where the
+    # chase glow starts) ramps with the bracket. The user can re-impose the hard
+    # floors from the UI (which turns grade escalation off).
+    item_min, grade_show_min = 0, 0
+    grade_beam_min = {
+        "leveling": 0, "maps": 2, "endgame": 4,
+        "normal": 0, "nightmare": 2, "hell1": 3, "hell3": 4, "hell5": 4,
     }[stage]
 
     _G = ["D", "C", "B", "A", "S"]
-    _R = ["Common", "Superior", "Rare", "Mythic", "Satanic"]
     notes = (f"{r.class_} / {'+'.join(r.main_skills)} / {stage}. element={el}"
              + (f" splash={splash}" if splash else "")
              + f" delivery={sorted(delivery)}."
-             + f" Items {_R[item_min]}+; affix rolls {_G[grade_show_min]}+"
-             + f" ({_G[grade_beam_min]}+ beams).")
+             + " No rarity/grade floor; off-list stats surface on A/S rolls;"
+             + f" chase glow from {_G[grade_beam_min]}+.")
     prof = Profile(id=r.id, name=r.name, notes=notes,
                    wtc=r.wtc, soc=None, highlight=hi, hide=hd,
                    item_rarity_min=item_min, grade_show_min=grade_show_min,
-                   grade_beam_min=grade_beam_min)
+                   grade_beam_min=grade_beam_min, grade_escalation=True)
     prof.__dict__["_why"] = {i: c.why[i] for i in hi + hd}
     return prof
 

@@ -81,7 +81,7 @@ export interface Overrides {
   weapons?: number[];
   runeword_bases?: boolean;
   socket_counts?: number[] | null;
-  grade_escalation?: boolean;
+  grade_escalation?: boolean | null;
   force_highlight?: number[];
   force_hide?: number[];
   force_neutral?: number[];

@@ -34,7 +34,7 @@ function isCustom(c: Custom): boolean {
     c.grade_beam_min !== undefined ||
     c.weapons !== undefined ||
     c.runeword_bases === true ||
-    c.grade_escalation === true ||
+    c.grade_escalation !== undefined ||
     c.force_highlight.length > 0 ||
     c.force_hide.length > 0 ||
     c.force_neutral.length > 0
@@ -91,7 +91,7 @@ export function App() {
       weapons: c.weapons,
       runeword_bases: c.runeword_bases ?? false,
       socket_counts: c.socket_counts ?? null,
-      grade_escalation: c.grade_escalation ?? false,
+      grade_escalation: c.grade_escalation ?? null,
       force_highlight: c.force_highlight,
       force_hide: c.force_hide,
       force_neutral: c.force_neutral,
@@ -123,6 +123,7 @@ export function App() {
   const show =
     explain && (explain.id === baseId || explain.id === `${baseId}_custom`) ? explain : null;
   const neutral = show ? 167 - show.highlight.length - show.hide.length : 0;
+  const escOn = c.grade_escalation ?? show?.grade_escalation ?? true;
 
   const download = () => {
     setBusy(true);
@@ -328,10 +329,35 @@ export function App() {
               </div>
 
               <div className="flex flex-col gap-5">
+                <label className="flex cursor-pointer items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={escOn}
+                    onChange={(e) => {
+                      setC((prev) => ({
+                        ...prev,
+                        grade_escalation: e.target.checked,
+                        ...(e.target.checked
+                          ? { item_rarity_min: undefined, grade_show_min: undefined }
+                          : {}),
+                      }));
+                    }}
+                  />
+                  <span className="ef-label">
+                    Grade escalation
+                    <span className="text-ink-4">
+                      {" "}
+                      · community default · never hide by rarity or low grade; off-list stats
+                      surface (no glow) on A/S rolls
+                    </span>
+                  </span>
+                </label>
+
                 <GradeRow
                   label="Hide items below rarity"
                   grades={show.rarities}
                   value={show.rarity.item_min}
+                  disabled={escOn}
                   onPick={(gi) => {
                     setC((prev) => ({ ...prev, item_rarity_min: gi }));
                   }}
@@ -340,6 +366,7 @@ export function App() {
                   label="Hide affix rolls below grade"
                   grades={show.grades}
                   value={show.rarity.grade_show_min}
+                  disabled={escOn}
                   onPick={(gi) => {
                     setC((prev) => ({
                       ...prev,
@@ -361,27 +388,10 @@ export function App() {
                   }}
                 />
                 <p className="ef-mono text-[0.625rem] text-ink-4">
-                  item rarity (Common…Satanic) and affix-roll grade (D…S) are separate · below the
-                  rarity floor an item never drops · below the grade floor that roll is suppressed ·
-                  between grade floor and beam, chase affixes show but don&apos;t glow
+                  {escOn
+                    ? "grade escalation on — the two hide floors are off; turn it off to gate drops by item rarity or roll grade"
+                    : "item rarity (Common…Satanic) and affix-roll grade (D…S) are separate · below the rarity floor an item never drops · below the grade floor that roll is suppressed"}
                 </p>
-
-                <label className="flex cursor-pointer items-center gap-2">
-                  <input
-                    type="checkbox"
-                    checked={c.grade_escalation ?? false}
-                    onChange={(e) => {
-                      setC((prev) => ({ ...prev, grade_escalation: e.target.checked }));
-                    }}
-                  />
-                  <span className="ef-label">
-                    Grade escalation
-                    <span className="text-ink-4">
-                      {" "}
-                      · show off-list stats (no glow) on A/S-grade rolls
-                    </span>
-                  </span>
-                </label>
 
                 <div>
                   <label className="flex cursor-pointer items-center gap-2">
@@ -515,16 +525,24 @@ export function App() {
                 <span className="ef-tag">{show.highlight.length} highlight</span>
                 <span className="ef-tag">{show.hide.length} dimmed</span>
                 <span className="ef-tag">{neutral} neutral</span>
-                <span className="ef-tag">items {show.rarity.item_from}+</span>
-                <span className="ef-tag">
-                  rolls {show.rarity.show_from}+ · beam {show.rarity.beam_from}+
-                </span>
-                {show.rarity.item_suppressed.length > 0 ? (
+                {show.grade_escalation ? (
+                  <span className="ef-tag" style={{ borderColor: "var(--ef-accent)" }}>
+                    grade escalation · no floor · beam {show.rarity.beam_from}+
+                  </span>
+                ) : (
+                  <>
+                    <span className="ef-tag">items {show.rarity.item_from}+</span>
+                    <span className="ef-tag">
+                      rolls {show.rarity.show_from}+ · beam {show.rarity.beam_from}+
+                    </span>
+                  </>
+                )}
+                {!show.grade_escalation && show.rarity.item_suppressed.length > 0 ? (
                   <span className="ef-tag" style={{ color: "var(--ef-ink-4)" }}>
                     {show.rarity.item_suppressed.join(" / ")} items off
                   </span>
                 ) : null}
-                {show.rarity.grade_suppressed.length > 0 ? (
+                {!show.grade_escalation && show.rarity.grade_suppressed.length > 0 ? (
                   <span className="ef-tag" style={{ color: "var(--ef-ink-4)" }}>
                     grade {show.rarity.grade_suppressed.join(" / ")} off
                   </span>
@@ -535,11 +553,6 @@ export function App() {
                 {show.runeword.on ? (
                   <span className="ef-tag" style={{ borderColor: "var(--ef-accent)" }}>
                     runeword bases · {show.runeword.socket_counts.join("/")} soc
-                  </span>
-                ) : null}
-                {show.grade_escalation ? (
-                  <span className="ef-tag" style={{ borderColor: "var(--ef-accent)" }}>
-                    grade escalation
                   </span>
                 ) : null}
                 <span className="flex-1" />
@@ -669,20 +682,22 @@ function GradeRow({
   grades,
   value,
   minIdx = 0,
+  disabled: rowDisabled = false,
   onPick,
 }: {
   label: string;
   grades: string[];
   value: number;
   minIdx?: number;
+  disabled?: boolean;
   onPick: (gi: number) => void;
 }) {
   return (
-    <div>
+    <div style={rowDisabled ? { opacity: 0.4, pointerEvents: "none" } : undefined}>
       <span className="ef-label">{label}</span>
       <div className="mt-2 flex flex-wrap gap-1">
         {grades.map((g, gi) => {
-          const disabled = gi < minIdx;
+          const disabled = rowDisabled || gi < minIdx;
           return (
             <button
               key={g}
@@ -690,7 +705,7 @@ function GradeRow({
               className="ef-btn"
               disabled={disabled}
               style={
-                gi === value
+                gi === value && !rowDisabled
                   ? { borderColor: "var(--ef-accent)", color: "var(--ef-accent-ink)" }
                   : disabled
                     ? { opacity: 0.3 }

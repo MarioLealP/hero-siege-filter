@@ -25,7 +25,7 @@ from hsfilter import (ATTRIBUTE_LABEL, ATTRIBUTES, ELEMENTS, PLAYSTYLE_LABEL, PL
 from hsfilter.catalog import catalog as build_catalog
 from hsfilter.catalog import known_build_ids, load_build, validate_all
 
-app = FastAPI(title="Hero Siege loot filter", version="0.10.1", docs_url="/api/docs")
+app = FastAPI(title="Hero Siege loot filter", version="0.10.3", docs_url="/api/docs")
 
 STATIC_DIR = pathlib.Path(__file__).parent / "static"
 
@@ -98,7 +98,7 @@ class Overrides(BaseModel):
     weapons: list[int] | None = None          # weapon-type bit positions, or [] / null
     runeword_bases: bool = False              # surface white runeword bases on gear slots
     socket_counts: list[int] | None = None    # which socket counts to beam (2..6); null = all
-    grade_escalation: bool = False            # surface off-list stats on A/S-grade rolls
+    grade_escalation: bool | None = None      # surface off-list stats on A/S rolls; None = keep default (on)
     force_highlight: list[int] = []
     force_hide: list[int] = []
     force_neutral: list[int] = []
@@ -128,10 +128,10 @@ def _archetype_profile(element: str, playstyle: str, stage: str,
         if bad:
             raise HTTPException(422, f"bad weapon bits: {bad}")
         p.wtc = sum(1 << b for b in ov.weapons) or None
-    if ov.grade_escalation:
-        p.grade_escalation = True
-        p.notes += (" Grade escalation: off-list stats surface (no beam) on"
-                    " A/S-grade rolls.")
+    if ov.grade_escalation is not None:
+        p.grade_escalation = ov.grade_escalation
+        if not ov.grade_escalation:
+            p.notes += " Grade escalation off — hard rarity/grade floors apply."
     if ov.runeword_bases:
         p.runeword_bases = True
         if ov.socket_counts is not None:

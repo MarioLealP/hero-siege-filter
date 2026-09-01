@@ -104,15 +104,28 @@ For **Socketable (`t15`)** and **Vial (`t18`)** several filters set
 gem / vial, with a glow on the good ones. Not fully consistent (Prophet
 still hides on `t15`).
 
-## Brought into our tool (2026-09-01)
+## Brought into our tool (2026-09-01) — now the DEFAULT
 
-1. **`grade_escalation` toggle** — his grade-escalation idea. Off-list
-   stats surface (visible, no beam) on A/S rolls. Fits Mario's "don't
-   hide stuff I might want" instinct.
-2. **Highlight-only slots** — Charm / Consumable / Socketable / Vial
-   (`t10 t11 t15 t18`) never get hide entries now, matching his
-   `hs: []` treatment of gems/vials. Chase highlights still apply.
-3. **Universal keepers** already covered: our section-A baseline
+Mario's call: "do his way as default and grey out the options that
+conflict."
+
+1. **No rarity/grade floor by default.** `compile_build` now returns
+   `item_rarity_min = 0`, `grade_show_min = 0` for every stage — an item
+   is never hidden for being low rarity, a roll is never hidden for being
+   low grade. Only `grade_beam_min` (where the chase glow starts) still
+   ramps with the bracket (D / A / S for leveling / mid / endgame).
+2. **`grade_escalation` on by default** (`Profile.grade_escalation=True`
+   from the compiler). Off-list stats surface (visible, no beam) on A/S
+   rolls. `Overrides.grade_escalation` is tri-state (`None` = keep
+   default on).
+3. **UI**: the "Hide items below rarity" and "Hide affix rolls below
+   grade" rows are **greyed out while grade escalation is on**. Unchecking
+   grade escalation re-enables them (and clears the auto-suppression) so a
+   user can still build a hard-floor filter.
+4. **Highlight-only slots** — Charm / Consumable / Socketable / Vial
+   (`t10 t11 t15 t18`) never get hide entries, matching his `hs: []`
+   treatment of gems/vials. Chase highlights still apply.
+5. **Universal keepers** already covered: our section-A baseline
    highlights Phasing (26), Life (52), All Skills (201), Movement Speed
    (25) on every slot — verified, superset of his.
 
