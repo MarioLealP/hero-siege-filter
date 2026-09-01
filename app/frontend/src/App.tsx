@@ -33,7 +33,7 @@ function isCustom(c: Custom): boolean {
     c.grade_show_min !== undefined ||
     c.grade_beam_min !== undefined ||
     c.weapons !== undefined ||
-    c.runeword_bases === true ||
+    c.runeword_bases !== undefined ||
     c.grade_escalation !== undefined ||
     c.force_highlight.length > 0 ||
     c.force_hide.length > 0 ||
@@ -89,7 +89,7 @@ export function App() {
       grade_show_min: c.grade_show_min,
       grade_beam_min: c.grade_beam_min,
       weapons: c.weapons,
-      runeword_bases: c.runeword_bases ?? false,
+      runeword_bases: c.runeword_bases ?? null,
       socket_counts: c.socket_counts ?? null,
       grade_escalation: c.grade_escalation ?? null,
       force_highlight: c.force_highlight,
@@ -124,10 +124,11 @@ export function App() {
     explain && (explain.id === baseId || explain.id === `${baseId}_custom`) ? explain : null;
   const neutral = show ? 167 - show.highlight.length - show.hide.length : 0;
   const escOn = c.grade_escalation ?? show?.grade_escalation ?? true;
+  const rwOn = c.runeword_bases ?? show?.runeword.on ?? false;
 
   const download = () => {
     setBusy(true);
-    downloadArchetype(ov, custom)
+    downloadArchetype(ov, custom, { runeword: rwOn, escalation: escOn })
       .catch((e: unknown) => {
         setErr(String(e));
       })
@@ -397,7 +398,7 @@ export function App() {
                   <label className="flex cursor-pointer items-center gap-2">
                     <input
                       type="checkbox"
-                      checked={c.runeword_bases ?? false}
+                      checked={rwOn}
                       onChange={(e) => {
                         setC((prev) => ({ ...prev, runeword_bases: e.target.checked }));
                       }}
@@ -406,12 +407,12 @@ export function App() {
                       Surface runeword bases
                       <span className="text-ink-4">
                         {" "}
-                        · show Common gear + beam socketed bases on{" "}
+                        · default through Hell 1 · beam socketed bases on{" "}
                         {show.runeword.slots.join(" / ")}
                       </span>
                     </span>
                   </label>
-                  {c.runeword_bases ? (
+                  {rwOn ? (
                     <div className="mt-2 flex flex-wrap gap-1">
                       {[2, 3, 4, 5, 6].map((n) => {
                         const cur = c.socket_counts ?? [2, 3, 4, 5, 6];

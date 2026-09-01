@@ -79,7 +79,7 @@ export interface Overrides {
   grade_show_min?: number;
   grade_beam_min?: number;
   weapons?: number[];
-  runeword_bases?: boolean;
+  runeword_bases?: boolean | null;
   socket_counts?: number[] | null;
   grade_escalation?: boolean | null;
   force_highlight?: number[];
@@ -126,11 +126,15 @@ export async function downloadFilter(buildId: string): Promise<void> {
   await saveBlob(r, `lootfilter_${buildId}.txt`);
 }
 
-export const downloadArchetype = (ov: Overrides, custom: boolean) => {
+export const downloadArchetype = (
+  ov: Overrides,
+  custom: boolean,
+  eff: { runeword: boolean; escalation: boolean },
+) => {
   const a = ov.attribute ? `_${ov.attribute.slice(0, 3)}` : "";
   const x = ov.explosion ? "_expl" : "";
-  const rw = ov.runeword_bases ? "_rw" : "";
-  const esc = ov.grade_escalation ? "_esc" : "";
+  const rw = eff.runeword ? "_rw" : "";
+  const esc = eff.escalation ? "" : "_noesc";
   const name = `lootfilter_generic_${ov.element}_${ov.playstyle}${a}${x}${rw}${esc}_${ov.stage}${
     custom ? "_custom" : ""
   }.txt`;

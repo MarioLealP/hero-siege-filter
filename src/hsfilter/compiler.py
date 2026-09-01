@@ -221,6 +221,11 @@ def compile_build(research: Research | dict) -> Profile:
         "normal": 0, "nightmare": 2, "hell1": 3, "hell3": 4, "hell5": 4,
     }[stage]
 
+    # Runeword-base surfacing is a leveling / early-Hell tool (community advice:
+    # once you only show items with the affixes you want, a socketed base
+    # highlights from the affix anyway). On by default through Hell 1, off after.
+    runeword_default = stage in ("leveling", "maps", "normal", "nightmare", "hell1")
+
     _G = ["D", "C", "B", "A", "S"]
     notes = (f"{r.class_} / {'+'.join(r.main_skills)} / {stage}. element={el}"
              + (f" splash={splash}" if splash else "")
@@ -230,7 +235,8 @@ def compile_build(research: Research | dict) -> Profile:
     prof = Profile(id=r.id, name=r.name, notes=notes,
                    wtc=r.wtc, soc=None, highlight=hi, hide=hd,
                    item_rarity_min=item_min, grade_show_min=grade_show_min,
-                   grade_beam_min=grade_beam_min, grade_escalation=True)
+                   grade_beam_min=grade_beam_min, grade_escalation=True,
+                   runeword_bases=runeword_default)
     prof.__dict__["_why"] = {i: c.why[i] for i in hi + hd}
     return prof
 

@@ -122,7 +122,11 @@ conflict."
    grade" rows are **greyed out while grade escalation is on**. Unchecking
    grade escalation re-enables them (and clears the auto-suppression) so a
    user can still build a hard-floor filter.
-4. **Highlight-only slots** — Charm / Consumable / Socketable / Vial
+4. **Runeword-base surfacing on by default through Hell 1**
+   (`leveling / maps / normal / nightmare / hell1`), off from Hell 3 on —
+   it is a leveling / early-Hell tool. `Overrides.runeword_bases` is
+   tri-state (`None` = keep the per-stage default).
+5. **Highlight-only slots** — Charm / Consumable / Socketable / Vial
    (`t10 t11 t15 t18`) never get hide entries, matching his `hs: []`
    treatment of gems/vials. Chase highlights still apply.
 5. **Universal keepers** already covered: our section-A baseline

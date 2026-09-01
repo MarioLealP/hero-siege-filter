@@ -25,7 +25,7 @@ from hsfilter import (ATTRIBUTE_LABEL, ATTRIBUTES, ELEMENTS, PLAYSTYLE_LABEL, PL
 from hsfilter.catalog import catalog as build_catalog
 from hsfilter.catalog import known_build_ids, load_build, validate_all
 
-app = FastAPI(title="Hero Siege loot filter", version="0.10.3", docs_url="/api/docs")
+app = FastAPI(title="Hero Siege loot filter", version="0.10.4", docs_url="/api/docs")
 
 STATIC_DIR = pathlib.Path(__file__).parent / "static"
 
@@ -96,7 +96,7 @@ class Overrides(BaseModel):
     grade_show_min: int | None = Field(None, ge=0, le=4)    # suppress affix rolls below this grade
     grade_beam_min: int | None = Field(None, ge=0, le=4)    # beam chase affixes at/above this grade
     weapons: list[int] | None = None          # weapon-type bit positions, or [] / null
-    runeword_bases: bool = False              # surface white runeword bases on gear slots
+    runeword_bases: bool | None = None        # surface white runeword bases on gear slots; None = keep default (on ≤ Hell 1)
     socket_counts: list[int] | None = None    # which socket counts to beam (2..6); null = all
     grade_escalation: bool | None = None      # surface off-list stats on A/S rolls; None = keep default (on)
     force_highlight: list[int] = []
@@ -132,16 +132,17 @@ def _archetype_profile(element: str, playstyle: str, stage: str,
         p.grade_escalation = ov.grade_escalation
         if not ov.grade_escalation:
             p.notes += " Grade escalation off — hard rarity/grade floors apply."
-    if ov.runeword_bases:
-        p.runeword_bases = True
-        if ov.socket_counts is not None:
-            bad = [n for n in ov.socket_counts if not 2 <= n <= 6]
-            if bad:
-                raise HTTPException(422, f"bad socket counts: {bad}")
-            p.socket_counts = sorted(set(ov.socket_counts))
+    if ov.runeword_bases is not None:
+        p.runeword_bases = ov.runeword_bases
+    if ov.socket_counts is not None:
+        bad = [n for n in ov.socket_counts if not 2 <= n <= 6]
+        if bad:
+            raise HTTPException(422, f"bad socket counts: {bad}")
+        p.socket_counts = sorted(set(ov.socket_counts))
+    if p.runeword_bases:
         counts = p.socket_counts or [2, 3, 4, 5, 6]
-        p.notes += (f" Runeword bases: Common gear shown + {'/'.join(map(str, counts))}"
-                    "-socket bases beamed on helmet/chest/boots/weapon/shield.")
+        p.notes += (f" Runeword bases: {'/'.join(map(str, counts))}-socket bases"
+                    " beamed on helmet/chest/boots/weapon/shield.")
     hi, hd = set(p.highlight), set(p.hide)
     for i in ov.force_neutral:
         hi.discard(i)
