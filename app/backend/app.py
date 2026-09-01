@@ -64,6 +64,8 @@ class Overrides(BaseModel):
     grade_show_min: int | None = Field(None, ge=0, le=4)    # suppress affix rolls below this grade
     grade_beam_min: int | None = Field(None, ge=0, le=4)    # beam chase affixes at/above this grade
     weapons: list[int] | None = None          # weapon-type bit positions, or [] / null
+    runeword_bases: bool = False              # surface white runeword bases on gear slots
+    socket_counts: list[int] | None = None    # which socket counts to beam (2..6); null = all
     force_highlight: list[int] = []
     force_hide: list[int] = []
     force_neutral: list[int] = []
@@ -93,6 +95,16 @@ def _archetype_profile(element: str, playstyle: str, stage: str,
         if bad:
             raise HTTPException(422, f"bad weapon bits: {bad}")
         p.wtc = sum(1 << b for b in ov.weapons) or None
+    if ov.runeword_bases:
+        p.runeword_bases = True
+        if ov.socket_counts is not None:
+            bad = [n for n in ov.socket_counts if not 2 <= n <= 6]
+            if bad:
+                raise HTTPException(422, f"bad socket counts: {bad}")
+            p.socket_counts = sorted(set(ov.socket_counts))
+        counts = p.socket_counts or [2, 3, 4, 5, 6]
+        p.notes += (f" Runeword bases: Common gear shown + {'/'.join(map(str, counts))}"
+                    "-socket bases beamed on helmet/chest/boots/weapon/shield.")
     hi, hd = set(p.highlight), set(p.hide)
     for i in ov.force_neutral:
         hi.discard(i)
@@ -131,6 +143,11 @@ def _explain_payload(p, attribute: str | None = None, explosion: bool = False) -
         "grades": _GRADE,
         "rarities": _RARITY,
         "archetype": {"attribute": attribute, "explosion": explosion},
+        "runeword": {
+            "on": p.runeword_bases,
+            "socket_counts": p.socket_counts or [2, 3, 4, 5, 6],
+            "slots": ["Helmet", "Chest", "Boots", "Weapon", "Shield"],
+        },
         "weapon_types": WEAPON_TYPES,
         "rarity": {
             "item_min": p.item_rarity_min,

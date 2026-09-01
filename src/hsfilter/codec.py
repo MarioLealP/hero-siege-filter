@@ -13,8 +13,14 @@ v2  (what we WRITE): one line of base64 -> UTF-8 JSON.
 
 v3  (what the game SAVES and reads): base64( u8 ver=3 | u32 zlib_len | zlib(body) ).
     body: ffff | u16 ver=3 | u32 wtc | u8 slot_count
-          then per slot: u8 slotid | u16 pre(0x3f) | 7x u8 tiermask
+          then per slot: u8 slotid | u16 sockets | 7x u8 tiermask
                          | u16 entry_count | entry[ u16 affix, u16 packed ] ...
+    sockets      : low byte = socket counts to SHOW, high byte = counts to BEAM;
+                   bit i (0..5) = (i+1) sockets. 0x003f = "1..6 shown, none
+                   beamed" = no socket filtering (the neutral default). Confirmed
+                   in-game 2026-09-01: helmet "show only 4-socket" -> 0x0008,
+                   "show + beam 4-socket" -> 0x0808. Lets you surface runeword
+                   bases (a white base needs sockets == the recipe's rune count).
     Two independent axes:
       tiermask[g]  (g = affix-grade column D,C,B,A,S) : a 5-bit ITEM-RARITY mask,
                    bit0 Common .. bit4 Satanic; 1 = that (grade, rarity) cell can
@@ -70,6 +76,21 @@ GRADE_STATE_VISIBLE = 0
 GRADE_STATE_OFF = 1
 GRADE_STATE_BEAM = 2
 
+SOCKETS_ANY = 0x3F  # low byte 1..6 all shown, high byte 0 -> no socket filtering
+# slots a runeword can be crafted in (a white base + sockets == rune count);
+# gloves / amulet / ring / belt / charm never take a runeword.
+RUNEWORD_SLOTS = ("t0", "t1", "t2", "t3", "t6")  # Helmet Chest Boots Weapon Shield
+
+
+def socket_field(show: set[int] | None = None, beam: set[int] | None = None) -> int:
+    """The per-slot u16: low byte = socket counts (1..6) to show, high byte =
+    counts to beam. `show=None` -> 0x3f (all shown, no filtering)."""
+    def mask(counts: set[int] | None, default: int) -> int:
+        if counts is None:
+            return default
+        return sum(1 << (n - 1) for n in counts if 1 <= n <= 6) & 0x3F
+    return mask(show, 0x3F) | (mask(beam, 0) << 8)
+
 
 def rarity_grid(item_rarity_min: int = 0, grade_show_min: int = 0) -> list[int]:
     """The 5 affix-grade columns (D..S) of a slot's tiermask.
@@ -88,7 +109,7 @@ def encode_v3(
     wtc: int = 0,
 ) -> str:
     """slots: {slot_key: {"rarity_grid": [5 ints], "affixes": {id: [5 ints]},
-                          "sockets": [ints 1..6] | None}}"""
+                          "socket_field": u16 | None}}"""
     body = bytearray(b"\xff\xff")
     body += struct.pack("<H", 3)
     body += struct.pack("<I", wtc)
@@ -97,7 +118,8 @@ def encode_v3(
     for k in keys:
         s = slots[k]
         body += struct.pack("<B", SLOT_ID[k])
-        body += struct.pack("<H", 0x3F)
+        sf = s.get("socket_field")
+        body += struct.pack("<H", SOCKETS_ANY if sf is None else int(sf) & 0xFFFF)
         grid = s.get("rarity_grid") or [0x1F] * 5
         body += bytes(grid[:5]) + b"\x1f\x1f"
         ents = []
@@ -180,8 +202,10 @@ class Filter:
     # ---- v3 (read only) --------------------------------------------------
     # container : base64( u8 ver=3 | u32 zlib_len | zlib(body) )
     # body      : ffff | u16 ver | u32 wtc | u8 slotcount
-    #             then per slot: u8 slotid | u16 pre(0x3f) | 7x u8 tiermask
+    #             then per slot: u8 slotid | u16 sockets | 7x u8 tiermask
     #                            | u16 entcount | entries[ u16 affix, u16 packed ]
+    #   sockets : low byte = socket counts shown, high byte = counts beamed;
+    #             bit i = (i+1) sockets. 0x003f = no socket filtering.
     #   tiermask[g] (g = affix-grade column D..S) : 5-bit item-rarity mask,
     #               bit0 Common .. bit4 Satanic; 1 = that (grade,rarity) cell drops.
     #               bytes 5-6 are spare (always 0x1f).
@@ -203,6 +227,8 @@ class Filter:
             off += 1
             pre = struct.unpack_from("<H", body, off)[0]
             off += 2
+            sock_show = [n + 1 for n in range(6) if (pre & 0xFF) & (1 << n)]
+            sock_beam = [n + 1 for n in range(6) if (pre >> 8) & (1 << n)]
             tiermask = body[off:off + 7]
             off += 7
             ecount = struct.unpack_from("<H", body, off)[0]
@@ -214,6 +240,8 @@ class Filter:
                 states = [(packed >> (2 * g)) & 3 for g in range(5)]
                 entries.append((affix, packed, states))
             slots[slotid] = {"pre": pre,
+                             "sockets_shown": sock_show,
+                             "sockets_beamed": sock_beam,
                              "tiermask": tiermask.hex(),
                              "grid": [tiermask[g] for g in range(5)],
                              "entries": entries}

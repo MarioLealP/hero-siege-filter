@@ -8,7 +8,7 @@ emit v3 directly -- see hsfilter.codec for the byte layout.
 from __future__ import annotations
 
 from .codec import (GRADE_STATE_BEAM, GRADE_STATE_OFF, GRADE_STATE_VISIBLE,
-                    SLOTS, encode_v3, rarity_grid)
+                    RUNEWORD_SLOTS, SLOTS, encode_v3, rarity_grid, socket_field)
 from .data import ALL_IDS
 from .models import Profile
 
@@ -66,6 +66,13 @@ def profile_to_slots(p: Profile) -> dict[str, dict]:
     grid = rarity_grid(p.item_rarity_min, show_min)
     off_all = [GRADE_STATE_OFF] * 5
 
+    # runeword-hunt pass: on the craftable slots, force Common visible again and
+    # beam bases with the wanted socket count. Purely additive — the show mask
+    # stays "all" so nothing the main filter wants is hidden.
+    rw_counts = {n for n in (p.socket_counts or [2, 3, 4, 5, 6]) if 2 <= n <= 6}
+    rw_grid = [col | 0x01 for col in grid]
+    rw_socket = socket_field(show=None, beam=rw_counts)
+
     slots: dict[str, dict] = {}
     for key in SLOTS:
         affixes: dict[int, list[int]] = {}
@@ -76,10 +83,11 @@ def profile_to_slots(p: Profile) -> dict[str, dict]:
             st = _chase_states(show_min, beam_min, beams_here)
             if any(v != GRADE_STATE_VISIBLE for v in st):
                 affixes[i] = st
+        rw_here = p.runeword_bases and key in RUNEWORD_SLOTS
         slots[key] = {
-            "rarity_grid": list(grid),
+            "rarity_grid": list(rw_grid if rw_here else grid),
             "affixes": affixes,
-            "sockets": [p.soc] if p.soc else None,
+            "socket_field": rw_socket if rw_here else None,
         }
     return slots
 

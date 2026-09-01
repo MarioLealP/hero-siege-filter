@@ -125,6 +125,12 @@ class Profile(BaseModel):
                       that grade; between show and beam they are visible only.
     `hide` affixes are turned off at every grade; `highlight` affixes are the
     chase list that beams.
+
+    `runeword_bases` layers a runeword-hunt pass on top: on the five slots a
+    runeword can be crafted in (helmet / chest / boots / weapon / shield) it
+    forces Common items visible again and beams anything with `socket_counts`
+    sockets (default 2..6) so white runeword bases surface without disturbing
+    the rest of the filter.
     """
     id: str
     name: str
@@ -136,6 +142,8 @@ class Profile(BaseModel):
     item_rarity_min: int = 0
     grade_show_min: int = 0
     grade_beam_min: int = 0
+    runeword_bases: bool = False
+    socket_counts: list[int] = []
 
 
 # ---- catalog + API shapes ------------------------------------------------

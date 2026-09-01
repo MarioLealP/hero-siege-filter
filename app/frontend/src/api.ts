@@ -48,6 +48,7 @@ export interface Explain {
   grades: string[];
   rarities: string[];
   archetype: { attribute: string | null; explosion: boolean };
+  runeword: { on: boolean; socket_counts: number[]; slots: string[] };
   weapon_types: string[];
   rarity: {
     item_min: number;
@@ -76,6 +77,8 @@ export interface Overrides {
   grade_show_min?: number;
   grade_beam_min?: number;
   weapons?: number[];
+  runeword_bases?: boolean;
+  socket_counts?: number[] | null;
   force_highlight?: number[];
   force_hide?: number[];
   force_neutral?: number[];
@@ -123,7 +126,8 @@ export async function downloadFilter(buildId: string): Promise<void> {
 export const downloadArchetype = (ov: Overrides, custom: boolean) => {
   const a = ov.attribute ? `_${ov.attribute.slice(0, 3)}` : "";
   const x = ov.explosion ? "_expl" : "";
-  const name = `lootfilter_generic_${ov.element}_${ov.playstyle}${a}${x}_${ov.stage}${
+  const rw = ov.runeword_bases ? "_rw" : "";
+  const name = `lootfilter_generic_${ov.element}_${ov.playstyle}${a}${x}${rw}_${ov.stage}${
     custom ? "_custom" : ""
   }.txt`;
   const req = fetch("/api/archetype/filter", {

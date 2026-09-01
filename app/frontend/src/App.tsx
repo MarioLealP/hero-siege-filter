@@ -18,6 +18,8 @@ type Custom = {
   grade_show_min?: number;
   grade_beam_min?: number;
   weapons?: number[];
+  runeword_bases?: boolean;
+  socket_counts?: number[];
   force_highlight: number[];
   force_hide: number[];
   force_neutral: number[];
@@ -30,6 +32,7 @@ function isCustom(c: Custom): boolean {
     c.grade_show_min !== undefined ||
     c.grade_beam_min !== undefined ||
     c.weapons !== undefined ||
+    c.runeword_bases === true ||
     c.force_highlight.length > 0 ||
     c.force_hide.length > 0 ||
     c.force_neutral.length > 0
@@ -84,6 +87,8 @@ export function App() {
       grade_show_min: c.grade_show_min,
       grade_beam_min: c.grade_beam_min,
       weapons: c.weapons,
+      runeword_bases: c.runeword_bases ?? false,
+      socket_counts: c.socket_counts ?? null,
       force_highlight: c.force_highlight,
       force_hide: c.force_hide,
       force_neutral: c.force_neutral,
@@ -351,6 +356,61 @@ export function App() {
                 </p>
 
                 <div>
+                  <label className="flex cursor-pointer items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={c.runeword_bases ?? false}
+                      onChange={(e) => {
+                        setC((prev) => ({ ...prev, runeword_bases: e.target.checked }));
+                      }}
+                    />
+                    <span className="ef-label">
+                      Surface runeword bases
+                      <span className="text-ink-4">
+                        {" "}
+                        · show Common gear + beam socketed bases on{" "}
+                        {show.runeword.slots.join(" / ")}
+                      </span>
+                    </span>
+                  </label>
+                  {c.runeword_bases ? (
+                    <div className="mt-2 flex flex-wrap gap-1">
+                      {[2, 3, 4, 5, 6].map((n) => {
+                        const cur = c.socket_counts ?? [2, 3, 4, 5, 6];
+                        const on = cur.includes(n);
+                        return (
+                          <button
+                            key={n}
+                            type="button"
+                            className="ef-btn"
+                            style={
+                              on
+                                ? { borderColor: "var(--ef-accent)", color: "var(--ef-accent-ink)" }
+                                : { color: "var(--ef-ink-4)", opacity: 0.5 }
+                            }
+                            onClick={() => {
+                              setC((prev) => {
+                                const base = prev.socket_counts ?? [2, 3, 4, 5, 6];
+                                const next = toggle(base, n).toSorted((a, b) => a - b);
+                                return {
+                                  ...prev,
+                                  socket_counts: next.length > 0 ? next : undefined,
+                                };
+                              });
+                            }}
+                          >
+                            {n} soc
+                          </button>
+                        );
+                      })}
+                      <span className="ef-mono ml-1 self-center text-[0.625rem] text-ink-4">
+                        socket count = rune count of the recipe you want
+                      </span>
+                    </div>
+                  ) : null}
+                </div>
+
+                <div>
                   <span className="ef-label">Weapon types on the filter</span>
                   <div className="mt-2 flex flex-wrap gap-1">
                     {Object.entries(opts?.weapon_groups ?? {}).map(([name, bits]) => {
@@ -443,6 +503,11 @@ export function App() {
                 ) : null}
                 {show.weapons ? (
                   <span className="ef-tag">{show.weapons.length} weapon types</span>
+                ) : null}
+                {show.runeword.on ? (
+                  <span className="ef-tag" style={{ borderColor: "var(--ef-accent)" }}>
+                    runeword bases · {show.runeword.socket_counts.join("/")} soc
+                  </span>
                 ) : null}
                 <span className="flex-1" />
                 <button className="ef-btn ef-btn--primary" disabled={busy} onClick={download}>
