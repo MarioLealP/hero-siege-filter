@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
-# Pull the current endfield.css from the design-system repo into src/styles/.
+# Re-vendor src/styles/endfield.css from the design-system source.
 #
-# The design system lives in its own repo (git.clockmost.com/Benylin/endfield-design);
-# this template vendors a copy so a fresh clone builds offline. Re-run after the
-# design system ships a new version.
+# The Endfield design system is maintained separately; this repo keeps a vendored
+# copy under src/styles/ so a fresh clone builds offline. Point EF_SRC at your
+# checkout (a path) or a raw URL and re-run after the design system changes.
 #
-#   scripts/sync-endfield.sh
-#   EF_SRC=~/Projects/endfield-design/endfield.css scripts/sync-endfield.sh   # local checkout
+#   EF_SRC=../../../endfield-design/endfield.css scripts/sync-endfield.sh
+#   EF_SRC=https://example.com/endfield.css      scripts/sync-endfield.sh
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
 DEST="src/styles/endfield.css"
-SRC="${EF_SRC:-https://git.clockmost.com/Benylin/endfield-design/raw/branch/main/endfield.css}"
+SRC="${EF_SRC:-}"
+
+if [ -z "$SRC" ]; then
+  echo "set EF_SRC to the design system's endfield.css (path or URL)" >&2
+  exit 1
+fi
 
 if [ -f "$SRC" ]; then
   cp "$SRC" "$DEST"
@@ -19,5 +24,4 @@ else
   curl -fsSL "$SRC" -o "$DEST"
 fi
 
-lines=$(wc -l < "$DEST")
-echo "synced $DEST  (<-  $SRC,  $lines lines)"
+echo "synced $DEST  (<- $SRC, $(wc -l < "$DEST") lines)"

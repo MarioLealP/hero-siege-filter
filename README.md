@@ -92,6 +92,14 @@ uv run cli/hsf.py explain pirate_anchor_swing_leveling   # highlight/hide + reas
 uv run cli/hsf.py build   pirate_anchor_swing_leveling --install
 ```
 
+## Run the web app
+
+```
+docker compose -f deploy/compose.yaml up -d --build   # SPA + API on :8000
+```
+
+See `deploy/README.md` for the no-compose path and reverse-proxy notes.
+
 ## Docs
 
 - `docs/hero-siege-scaling.md` — how skills scale (element × delivery ×
