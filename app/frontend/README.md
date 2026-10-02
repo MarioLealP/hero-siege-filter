@@ -16,14 +16,14 @@ pnpm sync:endfield  # re-vendor src/styles/endfield.css (needs EF_SRC)
 
 ## Stack
 
-| Concern   | Choice                                        |
-| --------- | --------------------------------------------- |
-| Framework | React 19 + Vite 8 (oxc JSX transform, no Babel) |
-| Language  | TypeScript, native compiler (`tsc --noEmit`)  |
+| Concern   | Choice                                             |
+| --------- | -------------------------------------------------- |
+| Framework | React 19 + Vite 8 (oxc JSX transform, no Babel)    |
+| Language  | TypeScript, native compiler (`tsc --noEmit`)       |
 | Styling   | Tailwind v4 (`@tailwindcss/vite`) + `endfield.css` |
-| Lint      | oxlint (`--deny-warnings`)                     |
-| Format    | oxfmt                                          |
-| Test      | Vitest + Testing Library (jsdom)              |
+| Lint      | oxlint (`--deny-warnings`)                         |
+| Format    | oxfmt                                              |
+| Test      | Vitest + Testing Library (jsdom)                   |
 
 Prettier and ESLint are intentionally not installed.
 
