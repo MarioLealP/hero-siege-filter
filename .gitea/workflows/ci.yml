@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app/frontend
+    steps:
+      - uses: actions/checkout@v4
+      # version comes from package.json "packageManager"
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: app/frontend/package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm fmt:check
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      # the catalog check runs inside the image build (app/Dockerfile)
+
+  deploy:
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    container:
+      image: catthehacker/ubuntu:act-latest
+      volumes: [/var/run/docker.sock:/var/run/docker.sock]
+    steps:
+      - uses: actions/checkout@v4
+      - name: build stamp
+        run: printf '{"sha": "%s", "built": "%s"}\n' "$(git rev-parse --short HEAD)" "$(date -u +%FT%TZ)" > app/backend/_build.json
+      - name: build, push, promote (shared deploy.sh)
+        env:
+          DOCKERFILE: app/Dockerfile
+          REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
+          INFRA_DEPLOY_KEY: ${{ secrets.INFRA_DEPLOY_KEY }}
+          INFRA_REPO_URL: ${{ secrets.INFRA_REPO_URL }}
+          INFRA_KNOWN_HOSTS: ${{ secrets.INFRA_KNOWN_HOSTS }}
+          NTFY_TOKEN: ${{ secrets.NTFY_TOKEN }}
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: curl -fsSL https://git.clockmost.com/Benylin/ci-workflows/raw/branch/main/deploy.sh | bash -s -- herosiege-filter
