@@ -37,7 +37,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: build stamp
-        run: printf '{"sha": "%s", "built": "%s"}\n' "$(git rev-parse --short HEAD)" "$(date -u +%FT%TZ)" > app/backend/_build.json
+        run: |
+          printf '{"sha": "%s", "built": "%s"}\n' "$(git rev-parse --short HEAD)" "$(date -u +%FT%TZ)" > app/backend/_build.json
       - name: build, push, promote (shared deploy.sh)
         env:
           DOCKERFILE: app/Dockerfile
